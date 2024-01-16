@@ -13,7 +13,7 @@ class MapNoteHoverDisplay extends BasePlaceableHUD {
       classes: super.defaultOptions.classes,
       minimizable: false,
       resizable: false,
-      template: "modules/map-note-hover-display/template.html",
+      template: "modules/token-note-hover-display/templates/template.html",
     })
   }
 
