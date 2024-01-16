@@ -1,0 +1,15 @@
+{
+    "name": "token-note-hover-display",
+    "title": "Token Note Hover Display",
+    "description": "Displays the contents of the note of the hovered token.",
+    "version": "1.0.0",
+    "minimumCoreVersion": 11,
+    "compatibleCoreVersion": 11,
+    "author": "FriendlyLambda and jendave",
+    "esmodules": [
+        "./token-note-hover-display.js"
+    ],
+    "url": "https://gitlab.com/jendave/token-note-hover-display",
+    "manifest": "https://gitlab.com/jendave/token-note-hover-display/-/raw/main/module.json",
+    "download": "https://gitlab.com/jendave/token-note-hover-display/-/archive/v1.0.0/map-note-hover-display-v1.0.0.zip"
+}
