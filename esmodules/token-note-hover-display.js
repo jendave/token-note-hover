@@ -1,7 +1,7 @@
-const MODULE_NAME = "map-note-hover-display"
-const ELEMENT_ID = "map-note-hover-display"
+const MODULE_NAME = "token-note-hover-display"
+const ELEMENT_ID = "token-note-hover-display"
 
-class MapNoteHoverDisplay extends BasePlaceableHUD {
+class TokenNoteHoverDisplay extends BasePlaceableHUD {
   constructor(note, options) {
     super(note, options)
     this.data = note
@@ -33,11 +33,11 @@ class MapNoteHoverDisplay extends BasePlaceableHUD {
     const darkMode = game.settings.get(MODULE_NAME, "darkMode")
 
     if (this.object) {
-      const mapNoteXPosition = this.object.x
-      const mapNoteYPosition = this.object.y
+      const tokenNoteXPosition = this.object.x
+      const tokenNoteYPosition = this.object.y
       const viewportWidth = visualViewport.width
-      const mapNoteIconWidth = this.object.controlIcon.width
-      const mapNoteIconHeight = this.object.controlIcon.height
+      const tokenNoteIconWidth = this.object.controlIcon.width
+      const tokenNoteIconHeight = this.object.controlIcon.height
       const orientation =
         (this.object.getGlobalPosition()?.x ?? 0) < viewportWidth / 2 ? "right" : "left"
 
@@ -52,11 +52,11 @@ class MapNoteHoverDisplay extends BasePlaceableHUD {
         width: "auto",
         "max-width": `${game.settings.get(MODULE_NAME, "maxWidth")}px`,
         height: "auto",
-        top: mapNoteYPosition - mapNoteIconHeight / 2,
+        top: tokenNoteYPosition - tokenNoteIconHeight / 2,
         left:
           orientation === "right"
-            ? mapNoteXPosition + mapNoteIconWidth
-            : mapNoteXPosition - mapNoteIconWidth,
+            ? tokenNoteXPosition + tokenNoteIconWidth
+            : tokenNoteXPosition - tokenNoteIconWidth,
         transform: orientation === "right" ? "" : "translateX(-100%)",
         "overflow-wrap": "break-word",
         "text-align": "left",
@@ -70,8 +70,8 @@ class MapNoteHoverDisplay extends BasePlaceableHUD {
 
 function registerSettings() {
   game.settings.register(MODULE_NAME, "enabled", {
-    name: "Show map note hover display",
-    hint: "Display the journal entry for a map note when it's hovered",
+    name: "Show token note hover display",
+    hint: "Display the journal entry for a token note when it's hovered",
     scope: "client",
     type: Boolean,
     default: false,
@@ -109,7 +109,7 @@ Hooks.on("init", () => {
 
 Hooks.on("renderHeadsUpDisplay", (_app, html) => {
   html.append(`<template id="${ELEMENT_ID}"></template>`)
-  canvas.hud.mapNoteHoverDisplay = new MapNoteHoverDisplay()
+  canvas.hud.tokenNoteHoverDisplay = new TokenNoteHoverDisplay()
 })
 
 Hooks.on("hoverNote", (note, hovered) => {
@@ -117,9 +117,9 @@ Hooks.on("hoverNote", (note, hovered) => {
     // If the note is hovered by the mouse cursor (not via alt/option)
     if (hovered && note.mouseInteractionManager.state === 1) {
       console.log("rendering note display")
-      canvas.hud.mapNoteHoverDisplay.bind(note)
+      canvas.hud.tokenNoteHoverDisplay.bind(note)
     } else {
-      canvas.hud.mapNoteHoverDisplay.clear()
+      canvas.hud.tokenNoteHoverDisplay.clear()
     }
   }
 })
