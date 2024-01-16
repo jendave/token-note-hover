@@ -112,7 +112,7 @@ jobs:
             CHANGELOG.md                         \
             LICENSE                              \
             templates/                           \ 
-            esmodules/                            
+            esmodules/
 
           # styles/                              \
           # language/                            \
