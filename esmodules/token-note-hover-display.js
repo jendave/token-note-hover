@@ -19,8 +19,26 @@ class TokenNoteHoverDisplay extends BasePlaceableHUD {
 
   getData() {
     const data = super.getData()
-    const entry = this.object.entry
-    const content = TextEditor.enrichHTML(entry.data.content, { secrets: entry.isOwner })
+    const entry = this.object.actor
+    let tempContent = "";
+    if (this.object.actor.data.type === 'starship') {
+      tempContent = TextEditor.decodeHTML(entry.data.data.notes)
+    } else if (this.object.actor.data.type === 'character') {
+      tempContent = TextEditor.decodeHTML(entry.data.data.notes)
+    } else if (this.object.actor.data.type === 'foe') {
+      tempContent = TextEditor.decodeHTML(Array.from(entry.data.items.values()).map(c => c.system.description))
+    } else if (this.object.actor.data.type === 'shared') {
+      tempContent = TextEditor.decodeHTML(entry.data.system.biography)
+    } else if (this.object.actor.data.type === 'site') {
+      tempContent = TextEditor.decodeHTML(entry.data.data.notes)
+    } else {
+      tempContent = TextEditor.decodeHTML(entry.data.data.description)
+    }
+    const content = tempContent;
+    /*
+    * this:TokenNoteHoverDisplay
+    * object.actor.data.data.description
+    */
 
     data.title = entry.data.name
     data.body = content
@@ -36,8 +54,8 @@ class TokenNoteHoverDisplay extends BasePlaceableHUD {
       const tokenNoteXPosition = this.object.x
       const tokenNoteYPosition = this.object.y
       const viewportWidth = visualViewport.width
-      const tokenNoteIconWidth = this.object.controlIcon.width
-      const tokenNoteIconHeight = this.object.controlIcon.height
+      const tokenNoteIconWidth = this.object.width
+      const tokenNoteIconHeight = this.object.height
       const orientation =
         (this.object.getGlobalPosition()?.x ?? 0) < viewportWidth / 2 ? "right" : "left"
 
@@ -52,10 +70,10 @@ class TokenNoteHoverDisplay extends BasePlaceableHUD {
         width: "auto",
         "max-width": `${game.settings.get(MODULE_NAME, "maxWidth")}px`,
         height: "auto",
-        top: tokenNoteYPosition - tokenNoteIconHeight / 2,
+        top: tokenNoteYPosition, // - tokenNoteIconHeight, // / 2,
         left:
           orientation === "right"
-            ? tokenNoteXPosition + tokenNoteIconWidth
+            ? tokenNoteXPosition + (2.5 * tokenNoteIconWidth)
             : tokenNoteXPosition - tokenNoteIconWidth,
         transform: orientation === "right" ? "" : "translateX(-100%)",
         "overflow-wrap": "break-word",
@@ -69,12 +87,13 @@ class TokenNoteHoverDisplay extends BasePlaceableHUD {
 }
 
 function registerSettings() {
+  console.log(MODULE_NAME + ' | Initializing token-note-hover-display');
   game.settings.register(MODULE_NAME, "enabled", {
     name: "Show token note hover display",
-    hint: "Display the journal entry for a token note when it's hovered",
+    hint: "Display the token note for a token when it's hovered",
     scope: "client",
     type: Boolean,
-    default: false,
+    default: true,
     config: true,
   })
   game.settings.register(MODULE_NAME, "darkMode", {
@@ -87,7 +106,7 @@ function registerSettings() {
   })
   game.settings.register(MODULE_NAME, "fontSize", {
     name: "Text size override",
-    hint: "Override the base text size for the journal entry display. Example: 1.5rem.",
+    hint: "Override the base text size for the token entry display. Example: 1.5rem.",
     scope: "client",
     type: String,
     default: "",
@@ -112,12 +131,12 @@ Hooks.on("renderHeadsUpDisplay", (_app, html) => {
   canvas.hud.tokenNoteHoverDisplay = new TokenNoteHoverDisplay()
 })
 
-Hooks.on("hoverNote", (note, hovered) => {
+Hooks.on("hoverToken", (token, hovered) => {
   if (game.settings.get(MODULE_NAME, "enabled")) {
     // If the note is hovered by the mouse cursor (not via alt/option)
-    if (hovered && note.mouseInteractionManager.state === 1) {
-      console.log("rendering note display")
-      canvas.hud.tokenNoteHoverDisplay.bind(note)
+    if (hovered) {
+      // && token.mouseInteractionManager.state === 1
+      canvas.hud.tokenNoteHoverDisplay.bind(token)
     } else {
       canvas.hud.tokenNoteHoverDisplay.clear()
     }
