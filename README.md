@@ -15,3 +15,16 @@ Just install the package and then opt in for yourself in the settings. This pack
 # Credit
 
 I developed this module based on the functionality in [Pin Cushion](https://github.com/death-save/pin-cushion)—thank you to [Death Save Development](https://github.com/death-save) for their great work!
+
+this:ImageHoverHUD
+this:TokenNoteHoverDisplay
+object.actor.data.data.description
+
+<p><strong>Atmosphere:</strong> Toxic</p>
+<p><strong>Observed from space:</strong> Powerful magnetic field</p>
+<p><strong>Settlements:</strong> None</p>
+<p><strong>Star:</strong> Smoldering Red Star</p>
+<p><strong>Planetside feature:</strong> Layer of suspended liquid</p>
+<p><strong>Planetside feature:</strong> Floating islands</p>
+<p><strong>Settlements</strong>: @Actor[GJcAnLFE2pCdq2k0]{Eris}</p>
+<p>&nbsp;</p>

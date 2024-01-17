@@ -111,8 +111,7 @@ jobs:
             README.md                            \
             CHANGELOG.md                         \
             LICENSE                              \
-            templates/                           \ 
-            esmodules/
+            templates/                           
 
           # styles/                              \
           # language/                            \
