@@ -12,7 +12,7 @@ Just install the package and then opt in for yourself in the settings. This pack
 
 # Screenshot
 
-![Screenshot](https://gitlab.com/friendlylambda/map-note-hover-display/-/raw/b8cae1bf64019c9fd6068393dc5d42e42fb2d274/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/jendave/token-note-hover-display/main/docs/screenshot.jpg)
 
 # Credit
 
