@@ -20,17 +20,23 @@ class TokenNoteHoverDisplay extends BasePlaceableHUD {
   getData() {
     const data = super.getData()
     const entry = this.object.actor
+
     let tempContent = "";
     if (this.object.actor.data.type === 'starship') {
       tempContent = TextEditor.decodeHTML(entry.data.data.notes)
     } else if (this.object.actor.data.type === 'character') {
-      tempContent = TextEditor.decodeHTML(entry.data.data.notes)
+      if (entry.sheet?.constructor.name === 'IronswornCharacterSheetV2') {
+        tempContent = TextEditor.decodeHTML(entry.data.system.biography)
+      } else if (entry.sheet?.constructor.name === 'StarforgedCharacterSheet') {
+        tempContent = TextEditor.decodeHTML(entry.data.data.notes)
+      }
+      // tempContent = TextEditor.decodeHTML(entry.data.data.notes) //IS tempContent = TextEditor.decodeHTML(entry.data.system.biography)
     } else if (this.object.actor.data.type === 'foe') {
       tempContent = TextEditor.decodeHTML(Array.from(entry.data.items.values()).map(c => c.system.description))
     } else if (this.object.actor.data.type === 'shared') {
       tempContent = TextEditor.decodeHTML(entry.data.system.biography)
     } else if (this.object.actor.data.type === 'site') {
-      tempContent = TextEditor.decodeHTML(entry.data.data.notes)
+      tempContent = TextEditor.decodeHTML(entry.data.system.description)
     } else {
       tempContent = TextEditor.decodeHTML(entry.data.data.description)
     }
@@ -90,7 +96,7 @@ function registerSettings() {
   console.log(MODULE_NAME + ' | Initializing token-note-hover-display');
   game.settings.register(MODULE_NAME, "enabled", {
     name: "Show token note hover display",
-    hint: "Display the token note for a token when it's hovered",
+    hint: "Display the note for a token when it's hovered",
     scope: "client",
     type: Boolean,
     default: true,
@@ -135,7 +141,6 @@ Hooks.on("hoverToken", (token, hovered) => {
   if (game.settings.get(MODULE_NAME, "enabled")) {
     // If the note is hovered by the mouse cursor (not via alt/option)
     if (hovered) {
-      // && token.mouseInteractionManager.state === 1
       canvas.hud.tokenNoteHoverDisplay.bind(token)
     } else {
       canvas.hud.tokenNoteHoverDisplay.clear()
