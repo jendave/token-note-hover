@@ -1,6 +1,8 @@
-# Map Note Hover Display
+# Ironsworn/Starforged Token Note Hover Display
 
-A single-purpose module that provides a HUD view of a map note's journal entry contents when hovered.
+This project is based on [Map Note Hover Display](https://gitlab.com/friendlylambda/map-note-hover-display)
+
+A single-purpose module that provides a HUD view of a token note contents when hovered.
 
 It provides some basic customization options in the settings, such as a light theme and a dark theme.
 
@@ -14,17 +16,6 @@ Just install the package and then opt in for yourself in the settings. This pack
 
 # Credit
 
-I developed this module based on the functionality in [Pin Cushion](https://github.com/death-save/pin-cushion)—thank you to [Death Save Development](https://github.com/death-save) for their great work!
+This project is based on [Map Note Hover Display](https://gitlab.com/friendlylambda/map-note-hover-display)
 
-this:ImageHoverHUD
-this:TokenNoteHoverDisplay
-object.actor.data.data.description
-
-<p><strong>Atmosphere:</strong> Toxic</p>
-<p><strong>Observed from space:</strong> Powerful magnetic field</p>
-<p><strong>Settlements:</strong> None</p>
-<p><strong>Star:</strong> Smoldering Red Star</p>
-<p><strong>Planetside feature:</strong> Layer of suspended liquid</p>
-<p><strong>Planetside feature:</strong> Floating islands</p>
-<p><strong>Settlements</strong>: @Actor[GJcAnLFE2pCdq2k0]{Eris}</p>
-<p>&nbsp;</p>
+This module based on the functionality in [Pin Cushion](https://github.com/death-save/pin-cushion)—thank you to [Death Save Development](https://github.com/death-save) for their great work!
