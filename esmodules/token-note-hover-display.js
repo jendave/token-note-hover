@@ -17,40 +17,73 @@ class TokenNoteHoverDisplay extends BasePlaceableHUD {
     })
   }
 
-  getData() {
+  async getData() {
     const data = super.getData()
     const entry = this.object.actor
 
     let tempContent = "";
-    switch (entry.data.type) {
-      case 'starship':
-        tempContent = TextEditor.decodeHTML(entry.data.data.notes);
-        break;
-      case 'character':
-        if (entry.sheet?.constructor.name === 'IronswornCharacterSheetV2') {
-          tempContent = TextEditor.decodeHTML(entry.data.system.biography);
-        } else if (entry.sheet?.constructor.name === 'StarforgedCharacterSheet') {
-          tempContent = TextEditor.decodeHTML(entry.data.data.notes);
-        }
-        break;
-      case 'foe':
-        tempContent = TextEditor.decodeHTML(Array.from(entry.data.items.values()).map(c => c.system.description));
-        break;
-      case 'shared':
-        tempContent = TextEditor.decodeHTML(entry.data.system.biography);
-        break;
-      case 'site':
-        tempContent = TextEditor.decodeHTML(entry.data.system.description);
-        break;
-      case 'location':
-        tempContent = TextEditor.decodeHTML(entry.data.data.description);
-        break;
-    }
-    const content = tempContent;
-    data.title = entry.data.name
-    data.body = content
+    let entryIsOwner = true;
+    if (entry) {
+      entryIsOwner = entry.isOwner ?? true;
 
-    return data
+      switch (entry.data.type) {
+        case 'starship':
+          tempContent = await TextEditor.enrichHTML(entry.data.data.notes, {
+            secrets: entryIsOwner,
+            documents: true,
+            async: true,
+          });
+          break;
+        case 'character':
+          if (entry.sheet?.constructor.name === 'IronswornCharacterSheetV2') {
+            tempContent = await TextEditor.enrichHTML(entry.data.system.biography, {
+              secrets: entryIsOwner,
+              documents: true,
+              async: true,
+            });
+          } else if (entry.sheet?.constructor.name === 'StarforgedCharacterSheet') {
+            tempContent = await TextEditor.enrichHTML(entry.data.data.notes, {
+              secrets: entryIsOwner,
+              documents: true,
+              async: true,
+            });
+          }
+          break;
+        case 'foe':
+          tempContent = await TextEditor.enrichHTML(Array.from(entry.data.items.values()).map(c => c.system.description), {
+            secrets: entryIsOwner,
+            documents: true,
+            async: true,
+          });
+          break;
+        case 'shared':
+          tempContent = await TextEditor.enrichHTML(entry.data.system.biography, {
+            secrets: entryIsOwner,
+            documents: true,
+            async: true,
+          });
+          break;
+        case 'site':
+          tempContent = await TextEditor.enrichHTML(entry.data.system.description, {
+            secrets: entryIsOwner,
+            documents: true,
+            async: true,
+          });
+          break;
+        case 'location':
+          tempContent = await TextEditor.enrichHTML(entry.data.data.description, {
+            secrets: entryIsOwner,
+            documents: true,
+            async: true,
+          });
+          break;
+      }
+      const content = tempContent;
+      data.title = entry.data.name
+      data.body = content
+
+      return data
+    }
   }
 
   setPosition() {
