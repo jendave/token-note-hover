@@ -22,22 +22,29 @@ class TokenNoteHoverDisplay extends BasePlaceableHUD {
     const entry = this.object.actor
 
     let tempContent = "";
-    if (entry.data.type === 'starship') {
-      tempContent = TextEditor.decodeHTML(entry.data.data.notes)
-    } else if (entry.data.type === 'character') {
-      if (entry.sheet?.constructor.name === 'IronswornCharacterSheetV2') {
-        tempContent = TextEditor.decodeHTML(entry.data.system.biography)
-      } else if (entry.sheet?.constructor.name === 'StarforgedCharacterSheet') {
-        tempContent = TextEditor.decodeHTML(entry.data.data.notes)
-      }
-    } else if (entry.data.type === 'foe') {
-      tempContent = TextEditor.decodeHTML(Array.from(entry.data.items.values()).map(c => c.system.description))
-    } else if (entry.data.type === 'shared') {
-      tempContent = TextEditor.decodeHTML(entry.data.system.biography)
-    } else if (entry.data.type === 'site') {
-      tempContent = TextEditor.decodeHTML(entry.data.system.description)
-    } else {
-      tempContent = TextEditor.decodeHTML(entry.data.data.description)
+    switch (entry.data.type) {
+      case 'starship':
+        tempContent = TextEditor.decodeHTML(entry.data.data.notes);
+        break;
+      case 'character':
+        if (entry.sheet?.constructor.name === 'IronswornCharacterSheetV2') {
+          tempContent = TextEditor.decodeHTML(entry.data.system.biography);
+        } else if (entry.sheet?.constructor.name === 'StarforgedCharacterSheet') {
+          tempContent = TextEditor.decodeHTML(entry.data.data.notes);
+        }
+        break;
+      case 'foe':
+        tempContent = TextEditor.decodeHTML(Array.from(entry.data.items.values()).map(c => c.system.description));
+        break;
+      case 'shared':
+        tempContent = TextEditor.decodeHTML(entry.data.system.biography);
+        break;
+      case 'site':
+        tempContent = TextEditor.decodeHTML(entry.data.system.description);
+        break;
+      case 'location':
+        tempContent = TextEditor.decodeHTML(entry.data.data.description);
+        break;
     }
     const content = tempContent;
     data.title = entry.data.name
