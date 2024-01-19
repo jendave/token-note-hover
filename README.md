@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/github/license/jendave/token-note-hover)](LICENSE)
 
 # Features and Notes
-This module provides a pop-up display of note from a token when it is hovered over.
+The `Token Note Hover` module displays the note of a hovered-over token.
 
 It provides some basic customization options in the settings, such as a light theme and a dark theme.
 
@@ -28,7 +28,7 @@ https://github.com/jendave/token-note-hover/releases/latest/download/module.json
 ```
 
 # Screenshot
-![Screenshot](https://raw.githubusercontent.com/jendave/token-note-hover-display/main/docs/screenshot.jpg)
+![Screenshot](https://raw.githubusercontent.com/jendave/token-note-hover/main/docs/screenshot.jpg)
 
 # Credits
 Module by David Hudson and licensed for use under the [MIT license](https://opensource.org/license/mit/).
