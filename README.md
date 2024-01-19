@@ -1,21 +1,36 @@
-# Ironsworn/Starforged Token Note Hover Display
+# Token Note Hover for Ironsworn & Starforged 
 
-This project is based on [Map Note Hover Display](https://gitlab.com/friendlylambda/map-note-hover-display)
+![GitHub all releases](https://img.shields.io/github/downloads/jendave/token-note-hover/total)
+[![Latest Version](https://img.shields.io/github/v/release/jendave/token-note-hover?display_name=tag&sort=semver&label=Latest%20Version)](https://github.com/jendave/stoken-note-hover/releases/latest)
+![Foundry Version](https://img.shields.io/endpoint?url=https://foundryshields.com/version?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjendave%2Ftoken-note-hover%2Fmain%2Fmodule.json)
+[![License](https://img.shields.io/github/license/jendave/token-note-hover)](LICENSE)
 
-A single-purpose module that provides a HUD view of a token note contents when hovered.
+# Features and Notes
+This module provides a pop-up display of note from a token when it is hovered over.
 
 It provides some basic customization options in the settings, such as a light theme and a dark theme.
 
-# Usage
+All settings, including `enable module` are client-side only so each player must enable the features they need.
 
-Just install the package and then opt in for yourself in the settings. This package requires each user to opt in if they want to see the hover displays so that it's not annoying for those who don't need it.
+The module currently only supports Ironsworn and Ironsworn: Starforged.
+
+# Contact
+* [Ironsworn/Starforged Discord Server - FoundryVTT Channel](https://discord.com/channels/437120373436186625/867434336201605160)
+* [GitHub Repository](https://github.com/jendave/token-note-hover)
+
+# Module Installation
+To install the module, search for `Token Note Hover` in the `Add-On Modules` tab of of the Foundry VTT game setup screen. Then click on `Install`.
+
+Or use this URL and click on `Install`:
+
+```
+https://github.com/jendave/token-note-hover/releases/latest/download/module.json
+```
 
 # Screenshot
-
 ![Screenshot](https://raw.githubusercontent.com/jendave/token-note-hover-display/main/docs/screenshot.jpg)
 
-# Credit
+# Credits
+Module by David Hudson and licensed for use under the [MIT license](https://opensource.org/license/mit/).
 
-This project is based on [Map Note Hover Display](https://gitlab.com/friendlylambda/map-note-hover-display)
-
-This module based on the functionality in [Pin Cushion](https://github.com/death-save/pin-cushion)—thank you to [Death Save Development](https://github.com/death-save) for their great work!
+This project is based on [Map Note Hover Display](https://gitlab.com/friendlylambda/map-note-hover-display) by [Friendly Lambda](https://gitlab.com/friendlylambda).

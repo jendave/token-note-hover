@@ -1,7 +1,7 @@
-const MODULE_NAME = "token-note-hover-display"
-const ELEMENT_ID = "token-note-hover-display"
+const MODULE_NAME = "token-note-hover"
+const ELEMENT_ID = "token-note-hover"
 
-class TokenNoteHoverDisplay extends BasePlaceableHUD {
+class TokenNoteHover extends BasePlaceableHUD {
   constructor(note, options) {
     super(note, options)
     this.data = note
@@ -13,7 +13,7 @@ class TokenNoteHoverDisplay extends BasePlaceableHUD {
       classes: super.defaultOptions.classes,
       minimizable: false,
       resizable: false,
-      template: "modules/token-note-hover-display/templates/template.html",
+      template: "modules/token-note-hover/templates/template.html",
     })
   }
 
@@ -127,10 +127,10 @@ class TokenNoteHoverDisplay extends BasePlaceableHUD {
 }
 
 function registerSettings() {
-  console.log(MODULE_NAME + ' | Initializing token-note-hover-display');
+  console.log(MODULE_NAME + ' | Initializing token-note-hover');
   game.settings.register(MODULE_NAME, "enabled", {
-    name: "Show token note hover display",
-    hint: "Display the note for a token when it's hovered",
+    name: 'Settings.TokenNoteHoverEnabled.Name',
+    hint: 'Settings.TokenNoteHoverEnabled.Hint',
     scope: "client",
     type: Boolean,
     default: true,
@@ -138,8 +138,8 @@ function registerSettings() {
   });
 
   game.settings.register(MODULE_NAME, "darkMode", {
-    name: "Dark Mode",
-    hint: "Show with light text on a dark background",
+    name: 'Settings.TokenNoteHoverDarkMode.Name',
+    hint: 'Settings.TokenNoteHoverDarkMode.Hint',
     scope: "client",
     type: Boolean,
     default: true,
@@ -147,8 +147,8 @@ function registerSettings() {
   });
 
   game.settings.register(MODULE_NAME, "fontSize", {
-    name: "Text size override",
-    hint: "Override the base text size for the token entry display. Example: 1.5rem.",
+    name: 'Settings.TokenNoteHoverFontSize.Name',
+    hint: 'Settings.TokenNoteHoverFontSize.Hint',
     scope: "client",
     type: String,
     default: "",
@@ -156,8 +156,8 @@ function registerSettings() {
   });
 
   game.settings.register(MODULE_NAME, "maxWidth", {
-    name: "Maximum Width",
-    hint: "The maximum width the entry display can grow to before it'll force wrapping.",
+    name: 'Settings.TokenNoteHoverMaxWidth.Name',
+    hint: 'Settings.TokenNoteHoverMaxWidth.Hint',
     scope: "client",
     type: Number,
     default: 800,
@@ -171,20 +171,20 @@ Hooks.on("init", () => {
 
 Hooks.on("renderHeadsUpDisplay", (_app, html) => {
   html.append(`<template id="${ELEMENT_ID}"></template>`)
-  canvas.hud.tokenNoteHoverDisplay = new TokenNoteHoverDisplay()
+  canvas.hud.tokenNoteHover = new TokenNoteHover()
 });
 
 Hooks.on("hoverToken", (token, hovered) => {
   if (game.settings.get(MODULE_NAME, "enabled")) {
     if (!hovered) {
-      return canvas.hud.tokenNoteHoverDisplay.clear();
+      return canvas.hud.tokenNoteHover.clear();
     }
 
     // If the note is hovered by the mouse cursor (not via alt/option)
     if (hovered) {
-      canvas.hud.tokenNoteHoverDisplay.bind(token);
+      canvas.hud.tokenNoteHover.bind(token);
     } else {
-      canvas.hud.tokenNoteHoverDisplay.clear();
+      canvas.hud.tokenNoteHover.clear();
     }
   }
 });
