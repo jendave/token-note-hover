@@ -1,5 +1,13 @@
+
 const MODULE_NAME = "token-note-hover";
 const ELEMENT_ID = "token-note-hover";
+
+export const i18n = (key) => {
+  return game.i18n.localize(key)?.trim();
+};
+export const i18nFormat = (key, data = {}) => {
+  return game.i18n.format(key, data)?.trim();
+};
 
 class TokenNoteHover extends BasePlaceableHUD {
   constructor(note, options) {
@@ -129,8 +137,8 @@ class TokenNoteHover extends BasePlaceableHUD {
 function registerSettings() {
   console.log(MODULE_NAME + " | Initializing token-note-hover");
   game.settings.register(MODULE_NAME, "enabled", {
-    name: "Settings.TokenNoteHoverEnabled.Name",
-    hint: "Settings.TokenNoteHoverEnabled.Hint",
+    name: game.i18n.localize("token-note-hover.Settings.Enabled.Name"),
+    hint: game.i18n.localize("token-note-hover.Settings.Enabled.Hint"),
     scope: "client",
     type: Boolean,
     default: true,
@@ -138,8 +146,8 @@ function registerSettings() {
   });
 
   game.settings.register(MODULE_NAME, "darkMode", {
-    name: "Settings.TokenNoteHoverDarkMode.Name",
-    hint: "Settings.TokenNoteHoverDarkMode.Hint",
+    name: game.i18n.localize("token-note-hover.Settings.DarkMode.Name"),
+    hint: game.i18n.localize("token-note-hover.Settings.DarkMode.Hint"),
     scope: "client",
     type: Boolean,
     default: true,
@@ -147,8 +155,8 @@ function registerSettings() {
   });
 
   game.settings.register(MODULE_NAME, "fontSize", {
-    name: "Settings.TokenNoteHoverFontSize.Name",
-    hint: "Settings.TokenNoteHoverFontSize.Hint",
+    name: game.i18n.localize("token-note-hover.Settings.FontSize.Name"),
+    hint: game.i18n.localize("token-note-hover.Settings.FontSize.Hint"),
     scope: "client",
     type: String,
     default: "",
@@ -156,8 +164,8 @@ function registerSettings() {
   });
 
   game.settings.register(MODULE_NAME, "maxWidth", {
-    name: "Settings.TokenNoteHoverMaxWidth.Name",
-    hint: "Settings.TokenNoteHoverMaxWidth.Hint",
+    name: game.i18n.localize("token-note-hover.Settings.MaxWidth.Name"),
+    hint: game.i18n.localize("token-note-hover.Settings.MaxWidth.Hint"),
     scope: "client",
     type: Number,
     default: 800,
