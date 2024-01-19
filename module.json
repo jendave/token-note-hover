@@ -18,6 +18,13 @@
       "url": "https://gitlab.com/friendlylambda/map-note-hover-display"
     }
   ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    }
+  ],
   "esmodules": ["./esmodules/token-note-hover.js"],
   "manifest": "#{MANIFEST}#",
   "url": "#{URL}#",
