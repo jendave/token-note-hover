@@ -135,7 +135,8 @@ function registerSettings() {
     type: Boolean,
     default: true,
     config: true,
-  })
+  });
+
   game.settings.register(MODULE_NAME, "darkMode", {
     name: "Dark Mode",
     hint: "Show with light text on a dark background",
@@ -143,7 +144,8 @@ function registerSettings() {
     type: Boolean,
     default: true,
     config: true,
-  })
+  });
+
   game.settings.register(MODULE_NAME, "fontSize", {
     name: "Text size override",
     hint: "Override the base text size for the token entry display. Example: 1.5rem.",
@@ -151,7 +153,8 @@ function registerSettings() {
     type: String,
     default: "",
     config: true,
-  })
+  });
+
   game.settings.register(MODULE_NAME, "maxWidth", {
     name: "Maximum Width",
     hint: "The maximum width the entry display can grow to before it'll force wrapping.",
@@ -159,25 +162,29 @@ function registerSettings() {
     type: Number,
     default: 800,
     config: true,
-  })
+  });
 }
 
 Hooks.on("init", () => {
   registerSettings()
-})
+});
 
 Hooks.on("renderHeadsUpDisplay", (_app, html) => {
   html.append(`<template id="${ELEMENT_ID}"></template>`)
   canvas.hud.tokenNoteHoverDisplay = new TokenNoteHoverDisplay()
-})
+});
 
 Hooks.on("hoverToken", (token, hovered) => {
   if (game.settings.get(MODULE_NAME, "enabled")) {
+    if (!hovered) {
+      return canvas.hud.tokenNoteHoverDisplay.clear();
+    }
+
     // If the note is hovered by the mouse cursor (not via alt/option)
     if (hovered) {
-      canvas.hud.tokenNoteHoverDisplay.bind(token)
+      canvas.hud.tokenNoteHoverDisplay.bind(token);
     } else {
-      canvas.hud.tokenNoteHoverDisplay.clear()
+      canvas.hud.tokenNoteHoverDisplay.clear();
     }
   }
-})
+});
