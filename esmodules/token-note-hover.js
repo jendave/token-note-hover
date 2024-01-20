@@ -1,4 +1,3 @@
-
 const MODULE_NAME = "token-note-hover";
 const ELEMENT_ID = "token-note-hover";
 
