@@ -2,19 +2,19 @@
   "token-note-hover": {
     "Settings": {
       "Enabled": {
-        "Name": "Token Note Hover Enabled",
+        "Name": "Hover Enabled",
         "Hint": "Show the token note on hover."
       },
       "DarkMode": {
-        "Name": "Token Note Dark Mode",
+        "Name": "Dark Mode",
         "Hint": "Show note with light text on a dark background."
       },
       "FontSize": {
-        "Name": "Token Note Text Size Override",
+        "Name": "Text Size Override",
         "Hint": "Override the base text size for the token entry display. Example: 1.5rem."
       },
       "MaxWidth": {
-        "Name": "Token Note Maximum Width",
+        "Name": "Maximum Width",
         "Hint": "The maximum width in px the note display can grow to before it will force wrapping."
       }
     }
