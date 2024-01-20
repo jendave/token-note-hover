@@ -18,16 +18,6 @@
       "url": "https://gitlab.com/friendlylambda/map-note-hover-display"
     }
   ],
-  "esmodules": [
-    "./esmodules/token-note-hover.js"
-  ],
-  "manifest": "#{MANIFEST}#",
-  "url": "#{URL}#",
-  "download": "#{DOWNLOAD}#",
-  "license": "https://raw.githubusercontent.com/jendave/token-note-hover/main/LICENSE",
-  "changelog": "https://raw.githubusercontent.com/jendave/token-note-hover/main/CHANGELOG.md",
-  "readme": "https://raw.githubusercontent.com/jendave/token-note-hover/main/README.md",
-  "bugs": "https://github.com/jendave/token-note-hover/issues",
   "languages": [
     {
       "lang": "en",
@@ -35,6 +25,14 @@
       "path": "languages/en.json"
     }
   ],
+  "esmodules": ["./esmodules/token-note-hover.js"],
+  "manifest": "#{MANIFEST}#",
+  "url": "#{URL}#",
+  "download": "#{DOWNLOAD}#",
+  "license": "https://raw.githubusercontent.com/jendave/token-note-hover/main/LICENSE",
+  "changelog": "https://raw.githubusercontent.com/jendave/token-note-hover/main/CHANGELOG.md",
+  "readme": "https://raw.githubusercontent.com/jendave/token-note-hover/main/README.md",
+  "bugs": "https://github.com/jendave/token-note-hover/issues",
   "relationships": {
     "systems": [
       {

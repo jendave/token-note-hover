@@ -1,21 +1,21 @@
 {
   "token-note-hover": {
     "Settings": {
-      "TokenNoteHoverEnabled": {
+      "Enabled": {
         "Name": "Token Note Hover Enabled",
         "Hint": "Show the token note on hover."
       },
-      "TokenNoteHoverDarkMode": {
+      "DarkMode": {
         "Name": "Token Note Dark Mode",
         "Hint": "Show note with light text on a dark background."
       },
-      "TokenNoteHoverFontSize": {
+      "FontSize": {
         "Name": "Token Note Text Size Override",
         "Hint": "Override the base text size for the token entry display. Example: 1.5rem."
       },
-      "TokenNoteHoverMaxWidth": {
+      "MaxWidth": {
         "Name": "Token Note Maximum Width",
-        "Hint": "The maximum width in px the entry display can grow to before it will force wrapping."
+        "Hint": "The maximum width in px the note display can grow to before it will force wrapping."
       }
     }
   }
