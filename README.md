@@ -8,11 +8,11 @@
 # Features and Notes
 The `Token Note Hover` module displays the note of a hovered-over token.
 
+*The module currently only supports Ironsworn and Ironsworn: Starforged.*
+
 It provides some basic customization options in the settings, such as a light theme and a dark theme.
 
 All settings, including `enable module` are client-side only so each player must enable the features they need.
-
-The module currently only supports Ironsworn and Ironsworn: Starforged.
 
 # Contact
 * [Ironsworn/Starforged Discord Server - FoundryVTT Channel](https://discord.com/channels/437120373436186625/867434336201605160)
