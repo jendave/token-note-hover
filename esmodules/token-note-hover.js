@@ -58,7 +58,7 @@ class TokenNoteHover extends BasePlaceableHUD {
           break;
         case "foe":
           tempContent = await TextEditor.enrichHTML(
-            Array.from(entry.data.items.values()).map((c) => c.system.description),
+            Array.from(entry.items.values()).map((c) => c.system.description),
             {
               secrets: entryIsOwner,
               documents: true,
