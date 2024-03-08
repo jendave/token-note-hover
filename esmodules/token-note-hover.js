@@ -17,7 +17,7 @@ class TokenNoteHover extends BasePlaceableHUD {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       id: ELEMENT_ID,
-      classes: super.defaultOptions.classes,
+      classes: [...super.defaultOptions.classes, ELEMENT_ID],
       minimizable: false,
       resizable: false,
       template: "modules/token-note-hover/templates/template.html",
@@ -33,9 +33,9 @@ class TokenNoteHover extends BasePlaceableHUD {
     if (entry) {
       entryIsOwner = entry.isOwner ?? true;
 
-      switch (entry.data.type) {
+      switch (entry.type) {
         case "starship":
-          tempContent = await TextEditor.enrichHTML(entry.data.data.notes, {
+          tempContent = await TextEditor.enrichHTML(entry.system.notes, {
             secrets: entryIsOwner,
             documents: true,
             async: true,
@@ -43,13 +43,13 @@ class TokenNoteHover extends BasePlaceableHUD {
           break;
         case "character":
           if (entry.sheet?.constructor.name === "IronswornCharacterSheetV2") {
-            tempContent = await TextEditor.enrichHTML(entry.data.system.biography, {
+            tempContent = await TextEditor.enrichHTML(entry.system.biography, {
               secrets: entryIsOwner,
               documents: true,
               async: true,
             });
           } else if (entry.sheet?.constructor.name === "StarforgedCharacterSheet") {
-            tempContent = await TextEditor.enrichHTML(entry.data.data.notes, {
+            tempContent = await TextEditor.enrichHTML(entry.system.notes, {
               secrets: entryIsOwner,
               documents: true,
               async: true,
@@ -67,21 +67,21 @@ class TokenNoteHover extends BasePlaceableHUD {
           );
           break;
         case "shared":
-          tempContent = await TextEditor.enrichHTML(entry.data.system.biography, {
+          tempContent = await TextEditor.enrichHTML(entry.system.biography, {
             secrets: entryIsOwner,
             documents: true,
             async: true,
           });
           break;
         case "site":
-          tempContent = await TextEditor.enrichHTML(entry.data.system.description, {
+          tempContent = await TextEditor.enrichHTML(entry.system.description, {
             secrets: entryIsOwner,
             documents: true,
             async: true,
           });
           break;
         case "location":
-          tempContent = await TextEditor.enrichHTML(entry.data.data.description, {
+          tempContent = await TextEditor.enrichHTML(entry.system.description, {
             secrets: entryIsOwner,
             documents: true,
             async: true,
@@ -89,7 +89,7 @@ class TokenNoteHover extends BasePlaceableHUD {
           break;
       }
       const content = tempContent;
-      data.title = entry.data.name;
+      data.title = entry.name;
       data.body = content;
 
       return data;
