@@ -26,31 +26,31 @@ class TokenNoteHover extends BasePlaceableHUD {
 
   async getData() {
     const data = super.getData();
-    const entry = this.object.actor;
+    const actor = this.object.actor;
 
     let tempContent = "";
-    let entryIsOwner = true;
-    if (entry) {
-      entryIsOwner = entry.isOwner ?? true;
+    let actorIsOwner = true;
+    if (actor) {
+      actorIsOwner = actor.isOwner ?? true;
 
-      switch (entry.type) {
+      switch (actor.type) {
         case "starship":
-          tempContent = await TextEditor.enrichHTML(entry.system.notes, {
-            secrets: entryIsOwner,
+          tempContent = await TextEditor.enrichHTML(actor.system.notes, {
+            secrets: actorIsOwner,
             documents: true,
             async: true,
           });
           break;
         case "character":
-          if (entry.sheet?.constructor.name === "IronswornCharacterSheetV2") {
-            tempContent = await TextEditor.enrichHTML(entry.system.biography, {
-              secrets: entryIsOwner,
+          if (actor.sheet?.constructor.name === "IronswornCharacterSheetV2") {
+            tempContent = await TextEditor.enrichHTML(actor.system.biography, {
+              secrets: actorIsOwner,
               documents: true,
               async: true,
             });
-          } else if (entry.sheet?.constructor.name === "StarforgedCharacterSheet") {
-            tempContent = await TextEditor.enrichHTML(entry.system.notes, {
-              secrets: entryIsOwner,
+          } else if (actor.sheet?.constructor.name === "StarforgedCharacterSheet") {
+            tempContent = await TextEditor.enrichHTML(actor.system.notes, {
+              secrets: actorIsOwner,
               documents: true,
               async: true,
             });
@@ -58,38 +58,38 @@ class TokenNoteHover extends BasePlaceableHUD {
           break;
         case "foe":
           tempContent = await TextEditor.enrichHTML(
-            Array.from(entry.items.values()).map((c) => c.system.description),
+            Array.from(actor.items.values()).map((c) => c.system.description),
             {
-              secrets: entryIsOwner,
+              secrets: actorIsOwner,
               documents: true,
               async: true,
             }
           );
           break;
         case "shared":
-          tempContent = await TextEditor.enrichHTML(entry.system.biography, {
-            secrets: entryIsOwner,
+          tempContent = await TextEditor.enrichHTML(actor.system.biography, {
+            secrets: actorIsOwner,
             documents: true,
             async: true,
           });
           break;
         case "site":
-          tempContent = await TextEditor.enrichHTML(entry.system.description, {
-            secrets: entryIsOwner,
+          tempContent = await TextEditor.enrichHTML(actor.system.description, {
+            secrets: actorIsOwner,
             documents: true,
             async: true,
           });
           break;
         case "location":
-          tempContent = await TextEditor.enrichHTML(entry.system.description, {
-            secrets: entryIsOwner,
+          tempContent = await TextEditor.enrichHTML(actor.system.description, {
+            secrets: actorIsOwner,
             documents: true,
             async: true,
           });
           break;
       }
       const content = tempContent;
-      data.title = entry.name;
+      data.title = actor.name;
       data.body = content;
 
       return data;
@@ -104,9 +104,12 @@ class TokenNoteHover extends BasePlaceableHUD {
       const tokenNoteXPosition = this.object.x;
       const tokenNoteYPosition = this.object.y;
       const viewportWidth = visualViewport.width;
-      const tokenNoteIconWidth = this.object.width;
-      const tokenNoteIconHeight = this.object.height;
+      const tokenNoteIconWidth = this.object.w; // this.object.width;
+      const tokenNoteIconHeight = this.object.h;
       const orientation = (this.object.getGlobalPosition()?.x ?? 0) < viewportWidth / 2 ? "right" : "left";
+      console.log("orientation: " + orientation)
+      console.log("tokenNoteXPosition: " + tokenNoteXPosition)
+      console.log("tokenNoteIconWidth: " + tokenNoteIconWidth)
 
       this.element.css({
         background: darkMode ? `url("./ui/denim075.png") repeat` : "white",
@@ -117,11 +120,11 @@ class TokenNoteHover extends BasePlaceableHUD {
         width: "auto",
         "max-width": `${game.settings.get(MODULE_NAME, "maxWidth")}px`,
         height: "auto",
-        top: tokenNoteYPosition, // - tokenNoteIconHeight, // / 2,
+        top: tokenNoteYPosition - (tokenNoteIconHeight / 2),
         left:
           orientation === "right"
-            ? tokenNoteXPosition + 2.5 * tokenNoteIconWidth
-            : tokenNoteXPosition - tokenNoteIconWidth,
+            ? tokenNoteXPosition + (1.25 * tokenNoteIconWidth)
+            : tokenNoteXPosition - (0.5 * tokenNoteIconWidth),
         transform: orientation === "right" ? "" : "translateX(-100%)",
         "overflow-wrap": "break-word",
         "text-align": "left",
