@@ -96,18 +96,7 @@ class TokenNoteHover extends BasePlaceableHUD {
     }
   }
 
-  static autoScaleNotes(canvas) {
-    if (canvas.hud.tokenNoteHover.object) {
-      //for (let token of canvas.hud.tokenNoteHover) {
-      //console.log("autoScaleNotes: " + TokenNoteHover._calculateAutoScale(canvas.scene.dimensions.size, canvas.stage.scale.x));
-      // canvas.hud.tokenNoteHover.setPosition({width: 100, scale: (TokenNoteHover._calculateAutoScale(canvas.scene.dimensions.size, canvas.stage.scale.x))});
-      // canvas.hud.tokenNoteHover.element.css({scale: (TokenNoteHover._calculateAutoScale(canvas.scene.dimensions.size, canvas.stage.scale.x))});
-      //  console.log("after: " + TokenNoteHover._calculateAutoScale(canvas.scene.dimensions.size, canvas.stage.scale.x));
-      // }
-    }
-  }
-
-  static _calculateAutoScale(sceneDimensionSize, zoomStage) {
+  calculateScale(sceneDimensionSize, zoomStage) {
     // Taken from Easy Ruler Scale, a mod by Kandashi
     // https://github.com/kandashi/easy-ruler-scale
     const gs = sceneDimensionSize / 100;
@@ -126,15 +115,7 @@ class TokenNoteHover extends BasePlaceableHUD {
       const tokenNoteIconWidth = this.object.w;
       const tokenNoteIconHeight = this.object.h;
       const orientation = (this.object.getGlobalPosition()?.x ?? 0) < viewportWidth / 2 ? "right" : "left";
-      // console.log("orientation: " + orientation)
-      // console.log("canvas.scene.dimensions.size: " + canvas.scene.dimensions.size)
-      // console.log("canvas.stage.scale.x: " + canvas.stage.scale.x)
-      // console.log("visualViewport.width: " + visualViewport.width)
-      // console.log("tokenNoteXPosition: " + tokenNoteXPosition)
-      // console.log("tokenNoteIconWidth: " + tokenNoteIconWidth)
-      // console.log("centre.scale:" + canvas.scene._viewPosition.scale);
-      let scaling = TokenNoteHover._calculateAutoScale(canvas.scene.dimensions.size, canvas.stage.scale.x) / 2.8;
-      //console.log("scaling: " + scaling);
+      let scaling = this.calculateScale(canvas.scene.dimensions.size, canvas.stage.scale.x) / 2.8;
       this.element.css({
         background: darkMode ? `url("./ui/denim075.png") repeat` : "white",
         border: darkMode ? "1px solid var(--color-border-dark)" : "1px solid var(--color-border-light-primary)",
@@ -234,13 +215,8 @@ Hooks.on("hoverToken", (token, hovered) => {
 
 Hooks.once("canvasReady", () => {
   Hooks.on("canvasPan", (canvas) => {
-    if (game.settings.get(MODULE_NAME, "enabled")) {
-      if (game.settings.get(MODULE_NAME, "zoomLock")) {
-        if (game.scenes.get(canvas.scene.id).isView) {
-          //TokenNoteHover.autoScaleNotes(canvas);
-          canvas.hud.tokenNoteHover.setPosition();
-        }
-      }
+    if (game.settings.get(MODULE_NAME, "enabled") && game.settings.get(MODULE_NAME, "zoomLock") && game.scenes.get(canvas.scene.id).isView) {
+      canvas.hud.tokenNoteHover.setPosition();
     }
   });
 });
