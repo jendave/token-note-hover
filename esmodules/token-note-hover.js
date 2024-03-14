@@ -96,6 +96,25 @@ class TokenNoteHover extends BasePlaceableHUD {
     }
   }
 
+  static autoScaleNotes(canvas) {
+    if (canvas.hud.tokenNoteHover.object) {
+      //for (let token of canvas.hud.tokenNoteHover) {
+      //console.log("autoScaleNotes: " + TokenNoteHover._calculateAutoScale(canvas.scene.dimensions.size, canvas.stage.scale.x));
+      // canvas.hud.tokenNoteHover.setPosition({width: 100, scale: (TokenNoteHover._calculateAutoScale(canvas.scene.dimensions.size, canvas.stage.scale.x))});
+      // canvas.hud.tokenNoteHover.element.css({scale: (TokenNoteHover._calculateAutoScale(canvas.scene.dimensions.size, canvas.stage.scale.x))});
+      //  console.log("after: " + TokenNoteHover._calculateAutoScale(canvas.scene.dimensions.size, canvas.stage.scale.x));
+      // }
+    }
+  }
+
+  static _calculateAutoScale(sceneDimensionSize, zoomStage) {
+    // Taken from Easy Ruler Scale, a mod by Kandashi
+    // https://github.com/kandashi/easy-ruler-scale
+    const gs = sceneDimensionSize / 100;
+    const zs = 1 / zoomStage;
+    return Math.max(gs * zs, 0.8);
+  }
+
   setPosition() {
     const fontSize = game.settings.get(MODULE_NAME, "fontSize") || canvas.grid.size / 5 + "px";
     const darkMode = game.settings.get(MODULE_NAME, "darkMode");
@@ -104,13 +123,18 @@ class TokenNoteHover extends BasePlaceableHUD {
       const tokenNoteXPosition = this.object.x;
       const tokenNoteYPosition = this.object.y;
       const viewportWidth = visualViewport.width;
-      const tokenNoteIconWidth = this.object.w; // this.object.width;
+      const tokenNoteIconWidth = this.object.w;
       const tokenNoteIconHeight = this.object.h;
       const orientation = (this.object.getGlobalPosition()?.x ?? 0) < viewportWidth / 2 ? "right" : "left";
-      console.log("orientation: " + orientation)
-      console.log("tokenNoteXPosition: " + tokenNoteXPosition)
-      console.log("tokenNoteIconWidth: " + tokenNoteIconWidth)
-
+      // console.log("orientation: " + orientation)
+      // console.log("canvas.scene.dimensions.size: " + canvas.scene.dimensions.size)
+      // console.log("canvas.stage.scale.x: " + canvas.stage.scale.x)
+      // console.log("visualViewport.width: " + visualViewport.width)
+      // console.log("tokenNoteXPosition: " + tokenNoteXPosition)
+      // console.log("tokenNoteIconWidth: " + tokenNoteIconWidth)
+      // console.log("centre.scale:" + canvas.scene._viewPosition.scale);
+      let scaling = TokenNoteHover._calculateAutoScale(canvas.scene.dimensions.size, canvas.stage.scale.x) / 2.8;
+      //console.log("scaling: " + scaling);
       this.element.css({
         background: darkMode ? `url("./ui/denim075.png") repeat` : "white",
         border: darkMode ? "1px solid var(--color-border-dark)" : "1px solid var(--color-border-light-primary)",
@@ -131,8 +155,10 @@ class TokenNoteHover extends BasePlaceableHUD {
         "font-size": fontSize,
         color: darkMode ? "var(--color-text-light-highlight)" : "var(--color-text-dark-primary)",
         "pointer-events": "none",
+        scale: String(scaling) + " " + String(scaling)
       });
     }
+
   }
 }
 
@@ -173,6 +199,15 @@ function registerSettings() {
     default: 800,
     config: true,
   });
+
+  game.settings.register(MODULE_NAME, "zoomLock", {
+    name: game.i18n.localize("token-note-hover.Settings.ZoomLock.Name"),
+    hint: game.i18n.localize("token-note-hover.Settings.ZoomLock.Hint"),
+    scope: "client",
+    type: Boolean,
+    default: true,
+    config: true,
+  });
 }
 
 Hooks.on("init", () => {
@@ -185,16 +220,27 @@ Hooks.on("renderHeadsUpDisplay", (_app, html) => {
 });
 
 Hooks.on("hoverToken", (token, hovered) => {
-  if (game.settings.get(MODULE_NAME, "enabled")) {
-    if (!hovered) {
-      return canvas.hud.tokenNoteHover.clear();
-    }
-
-    // If the note is hovered by the mouse cursor (not via alt/option)
-    if (hovered) {
-      canvas.hud.tokenNoteHover.bind(token);
-    } else {
-      canvas.hud.tokenNoteHover.clear();
-    }
+  if (!hovered) {
+    return canvas.hud.tokenNoteHover.clear();
   }
+
+  // If the note is hovered by the mouse cursor (not via alt/option)
+  if (hovered) {
+    canvas.hud.tokenNoteHover.bind(token);
+  } else {
+    canvas.hud.tokenNoteHover.clear();
+  }
+});
+
+Hooks.once("canvasReady", () => {
+  Hooks.on("canvasPan", (canvas) => {
+    if (game.settings.get(MODULE_NAME, "enabled")) {
+      if (game.settings.get(MODULE_NAME, "zoomLock")) {
+        if (game.scenes.get(canvas.scene.id).isView) {
+          //TokenNoteHover.autoScaleNotes(canvas);
+          canvas.hud.tokenNoteHover.setPosition();
+        }
+      }
+    }
+  });
 });

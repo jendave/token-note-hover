@@ -33,7 +33,7 @@ https://github.com/jendave/token-note-hover/releases/latest/download/module.json
 # Credits
 Module by David Hudson and licensed for use under the [MIT license](https://opensource.org/license/mit/).
 
-This project is based on [Map Note Hover Display](https://gitlab.com/friendlylambda/map-note-hover-display) by [Friendly Lambda](https://gitlab.com/friendlylambda).
+This project is based on [Map Note Hover Display](https://gitlab.com/friendlylambda/map-note-hover-display) by [Friendly Lambda](https://gitlab.com/friendlylambda) and [Pin Cushion](https://github.com/p4535992/foundryvtt-pin-cushion) by [4535992](https://github.com/p4535992).
 
 # FoundryVTT Modules and Other Resources
 Please check out my other modules and resources for Ironsworn and Ironsworn: Starforged
