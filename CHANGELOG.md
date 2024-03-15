@@ -1,6 +1,6 @@
 # Changelog
 
-### [1.0.1](https://github.com/jendave/token-note-hover/commits/main) (2024-03-15)
+### [1.0.1](https://github.com/jendave/token-note-hover/commits/main) (2024-03-14)
 
 * Minor update.
   * Fixed deprecated warnings for method calls. 
