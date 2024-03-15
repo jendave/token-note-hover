@@ -104,12 +104,9 @@ class TokenNoteHover extends BasePlaceableHUD {
       const tokenNoteXPosition = this.object.x;
       const tokenNoteYPosition = this.object.y;
       const viewportWidth = visualViewport.width;
-      const tokenNoteIconWidth = this.object.w; // this.object.width;
+      const tokenNoteIconWidth = this.object.w;
       const tokenNoteIconHeight = this.object.h;
       const orientation = (this.object.getGlobalPosition()?.x ?? 0) < viewportWidth / 2 ? "right" : "left";
-      console.log("orientation: " + orientation)
-      console.log("tokenNoteXPosition: " + tokenNoteXPosition)
-      console.log("tokenNoteIconWidth: " + tokenNoteIconWidth)
 
       this.element.css({
         background: darkMode ? `url("./ui/denim075.png") repeat` : "white",
