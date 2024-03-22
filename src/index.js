@@ -181,6 +181,7 @@ Hooks.on('renderHeadsUpDisplay', (_app, html) => {
   canvas.hud.tokenNoteHover = new TokenNoteHover();
 });
 
+// eslint-disable-next-line consistent-return
 Hooks.on('hoverToken', (token, hovered) => {
   if (game.settings.get(MODULE_NAME, 'enabled')) {
     if (!hovered) {
