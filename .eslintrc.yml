@@ -1,0 +1,10 @@
+env:
+  browser: true
+  es2021: true
+extends:
+  - 'airbnb-base'
+  - '@typhonjs-fvtt/eslint-config-foundry.js'
+parserOptions:
+  ecmaVersion: latest
+  sourceType: module
+rules: {}
