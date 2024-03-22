@@ -1,5 +1,9 @@
 # Changelog
 
+### [1.0.2](https://github.com/jendave/token-note-hover/commits/main) (2024-03-22)
+
+* Updated development and build process. Using vite.
+
 ### [1.0.1](https://github.com/jendave/token-note-hover/commits/main) (2024-03-14)
 
 * Minor update.

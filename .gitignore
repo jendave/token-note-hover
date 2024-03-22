@@ -1,3 +1,12 @@
 # MacOS extraneous files
-.DS_Store
 temp/
+.idea
+.DS_Store
+.vite-cache/
+.vscode/**/*
+!.vscode/extensions.json
+dist/
+node_modules/
+/index.js
+/index.js.map
+/style.css
