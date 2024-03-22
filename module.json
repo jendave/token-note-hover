@@ -25,7 +25,9 @@
       "path": "languages/en.json"
     }
   ],
-  "esmodules": ["./esmodules/token-note-hover.js"],
+  "esmodules": [
+    "index.js"
+  ],
   "manifest": "#{MANIFEST}#",
   "url": "#{URL}#",
   "download": "#{DOWNLOAD}#",
