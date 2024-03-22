@@ -11,3 +11,5 @@ else
 # Get all hooks from source code
 # /Applications/Foundry Virtual Tabletop.app/Contents/Resources/app
 grep -rinoE 'Hooks.call(All)?\([^()]*\)'
+
+npm init @eslint/config
