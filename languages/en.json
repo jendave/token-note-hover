@@ -16,6 +16,10 @@
       "MaxWidth": {
         "Name": "Maximum Width",
         "Hint": "The maximum width in px the token note display can grow to before it will force wrapping."
+      },
+      "DisplayDelay": {
+        "Name": "Display Delay",
+        "Hint": "How long before the token note display appears (in milliseconds)."
       }
     }
   }
