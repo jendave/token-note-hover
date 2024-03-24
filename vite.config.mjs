@@ -14,11 +14,11 @@ import {
 const s_PACKAGE_ID = 'modules/token-note-hover';
 
 // A short additional string to add to Svelte CSS hash values to make yours unique. This reduces the amount of
-// duplicated framework CSS overlap between many TRL packages enabled on Foundry VTT at the same time. 'tse' is chosen
-// by shortening 'template-svelte-esm'.
-const s_SVELTE_HASH_ID = 'tse';
+// duplicated framework CSS overlap between many TRL packages enabled on Foundry VTT at the same time. 'tnh' is chosen
+// by shortening 'token-note-hover'.
+const s_SVELTE_HASH_ID = 'tnh';
 
-const s_COMPRESS = false;  // Set to true to compress the module bundle.
+const s_COMPRESS = false; // Set to true to compress the module bundle.
 const s_SOURCEMAPS = true; // Generate sourcemaps for the bundle (recommended).
 
 // Used in bundling particularly during development. If you npm-link packages to your project add them here.

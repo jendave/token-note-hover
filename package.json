@@ -1,12 +1,11 @@
 {
+    "name": "token-note-hover",
+    "version": "1.0.0",
     "description": "The `Token Note Hover` module displays the note of a hovered-over token.",
     "license": "MIT",
     "private": true,
     "type": "module",
     "author": "David Hudson <jendave.hudson@gmail.com> (https://github.com/jendave)",
-    "contributors": [
-        "David Hudson <jendave.hudson@gmail.com> (https://github.com/jendave)"
-    ],
     "imports": {
         "#runtime/*": "@typhonjs-fvtt/runtime/*",
         "#standard/*": "@typhonjs-fvtt/svelte-standard/*"
@@ -14,6 +13,7 @@
     "dependencies": {
         "@typhonjs-fvtt/runtime": "0.1.2",
         "@typhonjs-fvtt/svelte-standard": "0.1.0",
+        "jquery-powertip": "^1.3.2",
         "svelte": "^4.2.0"
     },
     "devDependencies": {
@@ -22,6 +22,7 @@
         "eslint": "^8.57.0",
         "eslint-config-airbnb-base": "^15.0.0",
         "eslint-plugin-import": "^2.29.1",
+        "jquery": "^3.6.4",
         "svelte-preprocess": "^5",
         "vite": "^4.4.0"
     },

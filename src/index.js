@@ -1,9 +1,6 @@
 const MODULE_NAME = 'token-note-hover';
 const ELEMENT_ID = 'token-note-hover';
 
-export const i18n = (key) => game.i18n.localize(key)?.trim();
-export const i18nFormat = (key, data = {}) => game.i18n.format(key, data)?.trim();
-
 class TokenNoteHover extends BasePlaceableHUD {
   constructor(note, options) {
     super(note, options);
@@ -170,6 +167,17 @@ function registerSettings() {
     default: 800,
     config: true,
   });
+
+  game.settings.register(MODULE_NAME, 'displayDelay', {
+    name: game.i18n.localize('token-note-hover.Settings.DisplayDelay.Name'),
+    hint: game.i18n.localize('token-note-hover.Settings.DisplayDelay.Hint'),
+    scope: 'client',
+    type: Number,
+    default: 100,
+    config: true,
+    onChange: (s) => { },
+    range: { min: 0, max: 3000, step: 100 },
+  });
 }
 
 Hooks.on('init', () => {
@@ -183,6 +191,8 @@ Hooks.on('renderHeadsUpDisplay', (_app, html) => {
 
 // eslint-disable-next-line consistent-return
 Hooks.on('hoverToken', (token, hovered) => {
+  const displayDelay = game.settings.get(MODULE_NAME, 'displayDelay');
+
   if (game.settings.get(MODULE_NAME, 'enabled')) {
     if (!hovered) {
       return canvas.hud.tokenNoteHover.clear();
@@ -190,7 +200,9 @@ Hooks.on('hoverToken', (token, hovered) => {
 
     // If the note is hovered by the mouse cursor (not via alt/option)
     if (hovered) {
-      canvas.hud.tokenNoteHover.bind(token);
+      canvas.hud.tokenNoteHover.hoverTimer = setTimeout(() => {
+        canvas.hud.tokenNoteHover.bind(token);
+      }, displayDelay);
     } else {
       canvas.hud.tokenNoteHover.clear();
     }
