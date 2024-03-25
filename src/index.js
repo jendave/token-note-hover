@@ -1,5 +1,5 @@
-const MODULE_NAME = 'token-note-hover';
-const ELEMENT_ID = 'token-note-hover';
+import CONSTANTS from './constants';
+import registerSettings from './settings';
 
 class TokenNoteHover extends BasePlaceableHUD {
   constructor(note, options) {
@@ -9,8 +9,8 @@ class TokenNoteHover extends BasePlaceableHUD {
 
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      id: ELEMENT_ID,
-      classes: [...super.defaultOptions.classes, ELEMENT_ID],
+      id: CONSTANTS.ELEMENT_ID,
+      classes: [...super.defaultOptions.classes, CONSTANTS.ELEMENT_ID],
       minimizable: false,
       resizable: false,
       template: 'modules/token-note-hover/templates/template.html',
@@ -93,8 +93,8 @@ class TokenNoteHover extends BasePlaceableHUD {
   }
 
   setPosition() {
-    const fontSize = game.settings.get(MODULE_NAME, 'fontSize') || `${canvas.grid.size / 5}px`;
-    const darkMode = game.settings.get(MODULE_NAME, 'darkMode');
+    const fontSize = game.settings.get(CONSTANTS.MODULE_NAME, 'fontSize') || `${canvas.grid.size / 5}px`;
+    const darkMode = game.settings.get(CONSTANTS.MODULE_NAME, 'darkMode');
 
     if (this.object) {
       const tokenNoteXPosition = this.object.x;
@@ -111,7 +111,7 @@ class TokenNoteHover extends BasePlaceableHUD {
         'box-shadow': '0 0 20px var(--color-shadow-dark)',
         padding: '10px',
         width: 'auto',
-        'max-width': `${game.settings.get(MODULE_NAME, 'maxWidth')}px`,
+        'max-width': `${game.settings.get(CONSTANTS.MODULE_NAME, 'maxWidth')}px`,
         height: 'auto',
         top: tokenNoteYPosition - (tokenNoteIconHeight / 2),
         left:
@@ -129,71 +129,20 @@ class TokenNoteHover extends BasePlaceableHUD {
   }
 }
 
-function registerSettings() {
-  // eslint-disable-next-line no-console
-  console.log(`${MODULE_NAME} | Initializing token-note-hover`);
-  game.settings.register(MODULE_NAME, 'enabled', {
-    name: game.i18n.localize('token-note-hover.Settings.Enabled.Name'),
-    hint: game.i18n.localize('token-note-hover.Settings.Enabled.Hint'),
-    scope: 'client',
-    type: Boolean,
-    default: true,
-    config: true,
-  });
-
-  game.settings.register(MODULE_NAME, 'darkMode', {
-    name: game.i18n.localize('token-note-hover.Settings.DarkMode.Name'),
-    hint: game.i18n.localize('token-note-hover.Settings.DarkMode.Hint'),
-    scope: 'client',
-    type: Boolean,
-    default: true,
-    config: true,
-  });
-
-  game.settings.register(MODULE_NAME, 'fontSize', {
-    name: game.i18n.localize('token-note-hover.Settings.FontSize.Name'),
-    hint: game.i18n.localize('token-note-hover.Settings.FontSize.Hint'),
-    scope: 'client',
-    type: String,
-    default: '',
-    config: true,
-  });
-
-  game.settings.register(MODULE_NAME, 'maxWidth', {
-    name: game.i18n.localize('token-note-hover.Settings.MaxWidth.Name'),
-    hint: game.i18n.localize('token-note-hover.Settings.MaxWidth.Hint'),
-    scope: 'client',
-    type: Number,
-    default: 800,
-    config: true,
-  });
-
-  game.settings.register(MODULE_NAME, 'displayDelay', {
-    name: game.i18n.localize('token-note-hover.Settings.DisplayDelay.Name'),
-    hint: game.i18n.localize('token-note-hover.Settings.DisplayDelay.Hint'),
-    scope: 'client',
-    type: Number,
-    default: 100,
-    config: true,
-    onChange: (s) => { },
-    range: { min: 0, max: 3000, step: 100 },
-  });
-}
-
 Hooks.on('init', () => {
   registerSettings();
 });
 
 Hooks.on('renderHeadsUpDisplay', (_app, html) => {
-  html.append(`<template id="${ELEMENT_ID}"></template>`);
+  html.append(`<template id="${CONSTANTS.ELEMENT_ID}"></template>`);
   canvas.hud.tokenNoteHover = new TokenNoteHover();
 });
 
 // eslint-disable-next-line consistent-return
 Hooks.on('hoverToken', (token, hovered) => {
-  const displayDelay = game.settings.get(MODULE_NAME, 'displayDelay');
+  const displayDelay = game.settings.get(CONSTANTS.MODULE_NAME, 'displayDelay');
 
-  if (game.settings.get(MODULE_NAME, 'enabled')) {
+  if (game.settings.get(CONSTANTS.MODULE_NAME, 'enabled')) {
     if (!hovered) {
       return canvas.hud.tokenNoteHover.clear();
     }
