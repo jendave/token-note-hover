@@ -100,7 +100,7 @@ export default () =>
                // This is reasonable to do as the framework styles in TRL compiled across `n` different packages will
                // be the same. Slightly modifying the hash ensures that your package has uniquely scoped styles for all
                // TRL components and makes it easier to review styles in the browser debugger.
-               cssHash: ({ hash, css }) => `svelte-${s_SVELTE_HASH_ID}-${hash(css)}`
+               // cssHash: ({ hash, css }) => `svelte-${s_SVELTE_HASH_ID}-${hash(css)}`
             },
             preprocess: preprocess()
          }),
