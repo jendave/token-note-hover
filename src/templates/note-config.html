@@ -1,0 +1,358 @@
+<fieldset>
+    <legend>{{localize "token-note-hover-pin.SubtitleGeneral"}}</legend>
+    <div class="form-group">
+        <label
+            for="flags.token-note-hover-pin.pinIsTransparent">
+            {{ localize "token-note-hover-pin.PinIsTransparent"}}
+        </label>
+        <div class="form-fields">
+            <input
+                type="checkbox"
+                name="flags.token-note-hover-pin.pinIsTransparent"
+                data-dtype="Boolean" {{checked pinIsTransparent}}>
+            </input>
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label
+            for="flags.token-note-hover-pin.showOnlyToGM">
+            {{ localize "token-note-hover-pin.ShowOnlyToGM"}}
+        </label>
+        <div class="form-fields">
+            <input
+                type="checkbox"
+                name="flags.token-note-hover-pin.showOnlyToGM"
+                data-dtype="Boolean" {{checked showOnlyToGM}}>
+            </input>
+        </div>
+    </div>
+    {{#if enableBackgroundlessPins}}
+    <hr>
+    <div class="form-group">
+        <label
+            for="flags.token-note-hover-pin.hasBackground">
+            {{ localize "token-note-hover-pin.HasBackground"}}
+        </label>
+        <div class="form-fields">
+            <input
+                type="checkbox"
+                name="flags.token-note-hover-pin.hasBackground"
+                data-dtype="Boolean" {{checked hasBackground}}>
+            </input>
+        </div>
+    </div>
+    {{else}}
+    <hr>
+    <div class="form-group">
+        <p>{{ localize "token-note-hover-pin.WarningBackgroundlessPins"}}</p>
+    </div>
+    {{/if}}
+    <hr>
+    <div class="form-group">
+        <label
+            for="flags.token-note-hover-pin.ratio">
+            {{ localize "token-note-hover-pin.HasBackgroundRatio"}}
+        </label>
+        <div class="form-fields">
+            {{numberInput ratio name="flags.token-note-hover-pin.ratio" step=0.1 min=1 max=10}}
+        <!--
+        <input
+            type="text"
+            name="flags.token-note-hover-pin.ratio"
+            data-dtype="Number"
+            value="{{ratio}}" >
+        </input>
+        -->
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label
+            for="flags.token-note-hover-pin.numberWsSuffixOnNameplate">
+            {{ localize "token-note-hover-pin.NumberWsSuffixOnNameplateN"}}
+        </label>
+        <div class="form-fields">
+            {{numberInput numberWsSuffixOnNameplate name="flags.token-note-hover-pin.numberWsSuffixOnNameplate"}}
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label
+            for="flags.token-note-hover-pin.textAlwaysVisible">
+            {{ localize "token-note-hover-pin.TextAlwaysVisible"}}
+        </label>
+        <div class="form-fields">
+            <input type="checkbox"
+                name="flags.token-note-hover-pin.textAlwaysVisible"
+                data-dtype="Boolean" {{checked textAlwaysVisible}}>
+            </input>
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label
+            for="flags.token-note-hover-pin.hideLabel">
+            {{ localize "token-note-hover-pin.HideLabel"}}
+        </label>
+        <div class="form-fields">
+            <input
+                type="checkbox"
+                name="flags.token-note-hover-pin.hideLabel"
+                data-dtype="Boolean" {{checked hideLabel}} >
+            </input>
+        </div>
+    </div>
+    <!--
+    <hr>
+    <fieldset>
+        <legend>{{localize "token-note-hover-pin.SubtitleNoteGM"}}</legend>
+        {{#if enableNoteGM}}
+
+        {{else}}
+        <div class="form-group">
+            <p>{{ localize "token-note-hover-pin.WarningNoteGM"}}</p>
+        </div>
+        {{/if}}
+    </fieldset>
+    <hr>
+    -->
+</fieldset>
+<hr>
+<fieldset>
+    <legend>{{localize "token-note-hover-pin.SubtitleTooltip"}}</legend>
+    <div class="form-group">
+        <label
+            for="flags.token-note-hover-pin.doNotShowJournalPreview">
+            {{localize "token-note-hover-pin.DoNotShowJournalPreview"}}
+        </label>
+        <div class="form-fields">
+            <input
+                type="checkbox"
+                name="flags.token-note-hover-pin.doNotShowJournalPreview"
+                data-dtype="Boolean" {{checked doNotShowJournalPreview}}>
+            </input>
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label
+            for="flags.token-note-hover-pin.previewAsTextSnippet">
+            {{localize "token-note-hover-pin.PreviewAsTextSnippet" }}
+        </label>
+        <div class="form-fields">
+            <input
+                type="checkbox"
+                name="flags.token-note-hover-pin.previewAsTextSnippet"
+                data-dtype="Boolean" {{checked previewAsTextSnippet}}>
+            </input>
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label
+            for="flags.token-note-hover-pin.tooltipCustomDescription">
+            {{localize "token-note-hover-pin.TooltipCustomDescription" }}
+        </label>
+        <div class="form-fields">
+          <textarea name="flags.token-note-hover-pin.tooltipCustomDescription">{{tooltipCustomDescription}}</textarea>
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label
+            for="flags.token-note-hover-pin.tooltipShowDescription">
+            {{localize "token-note-hover-pin.TooltipShowDescription" }}
+        </label>
+        <div class="form-fields">
+            <input
+                type="checkbox"
+                name="flags.token-note-hover-pin.tooltipShowDescription"
+                data-dtype="Boolean" {{checked tooltipShowDescription}}>
+            </input>
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label
+            for="flags.token-note-hover-pin.tooltipShowTitle">
+            {{localize "token-note-hover-pin.TooltipShowTitle" }}
+        </label>
+        <div class="form-fields">
+            <input
+                type="checkbox"
+                name="flags.token-note-hover-pin.tooltipShowTitle"
+                data-dtype="Boolean" {{checked tooltipShowTitle}}>
+            </input>
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label
+            for="flags.token-note-hover-pin.tooltipPlacement">
+            {{localize "token-note-hover-pin.Tooltip.Placement.title" }}
+        </label>
+        <div class="form-fields">
+            {{{tooltipPlacementHtml}}}
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label
+            for="flags.token-note-hover-pin.tooltipColor">
+            {{localize "token-note-hover-pin.Tooltip.Color.title"}}
+        </label>
+        <div class="form-fields">
+            {{{tooltipColorHtml}}}
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label
+            for="flags.token-note-hover-pin.tooltipForceRemove">
+            {{localize "token-note-hover-pin.Tooltip.ForceRemove.title"}}
+        </label>
+        <div class="form-fields">
+            <input
+                type="checkbox"
+                name="flags.token-note-hover-pin.tooltipForceRemove"
+                data-dtype="Boolean" {{checked tooltipForceRemove }} />
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label
+            for="flags.token-note-hover-pin.tooltipSmartPlacement">
+            {{localize "token-note-hover-pin.Tooltip.SmartPlacement.title"}}
+        </label>
+        <div class="form-fields">
+            <input
+                type="checkbox"
+                name="flags.token-note-hover-pin.tooltipSmartPlacement"
+                data-dtype="Boolean" {{checked tooltipSmartPlacement}} />
+        </div>
+    </div>
+    <!--
+    <hr>
+    <div class="form-group">
+        <label
+            for="flags.token-note-hover-pin.tooltipFollowMouse">
+            {{localize "token-note-hover-pin.Tooltip.TooltipFollowMouset.title"}}
+        </label>
+        <div class="form-fields">
+            <input
+                type="checkbox"
+                name="flags.token-note-hover-pin.tooltipFollowMouse"
+                data-dtype="Boolean" {{checked tooltipFollowMouse}} />
+        </div>
+    </div>
+    -->
+    <hr>
+    <div class="form-group">
+        <label
+            for="flags.token-note-hover-pin.showImage">
+            {{ localize "token-note-hover-pin.ShowImage" }}
+        </label>
+        <div class="form-fields">
+            <input
+                type="checkbox"
+                name="flags.token-note-hover-pin.showImage"
+                data-dtype="Boolean" {{checked showImage}}>
+            </input>
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label
+            for="flags.token-note-hover-pin.showImageExplicitSource"
+            >{{ localize "token-note-hover-pin.ShowImageExplicitSource"}}
+        </label>
+        <div class="form-fields">
+            <img class="token-note-hover-pin-explicit-icon" src="{{showImageExplicitSource}}" />
+            <input
+                type="text"
+                name="flags.token-note-hover-pin.showImageExplicitSource"
+                title="{{localize "token-note-hover-pin.ShowImageExplicitSource"}}"
+                class="icon-path"
+                value="{{showImageExplicitSource}}"
+                placeholder="/icons/example.svg"
+                data-dtype="String"
+                {{#if noUploadFile}} readonly="true" {{/if}}
+                >
+            </input>
+            {{#if yesUploadFile}}
+                {{filePicker type="image" target="flags.token-note-hover-pin.showImageExplicitSource"}}
+            {{/if}}
+        </div>
+    </div>
+</fieldset>
+<hr>
+<fieldset>
+    <legend>{{localize "token-note-hover-pin.SubtitlePlayerIconAutoOverride"}}</legend>
+    {{#if enablePlayerIcon}}
+    <!-- Button to Enable overrides -->
+    <div class="form-group">
+        <label> {{ localize "token-note-hover-pin.UsePlayerIcon"}}</label>
+        <div class="form-fields">
+            <input
+                type="checkbox"
+                name="flags.token-note-hover-pin.PlayerIconState"
+                data-dtype="Boolean" {{checked playerIconState}} >
+            </input>
+        </div>
+        <p class="notes">{{ localize "token-note-hover-pin.PlayerIconHint"}}</p>
+    </div>
+    <!-- Player Icon -->
+    <hr>
+    <div class="form-group">
+        <label>{{ localize "token-note-hover-pin.PlayerIconPath"}}</label>
+        <div class="form-fields">
+            <img class="token-note-hover-pin-journal-icon" src="{{playerIconPath}}" />
+            <input type="text"
+                name="flags.token-note-hover-pin.PlayerIconPath"
+                title="Icon Path"
+                class="icon-path"
+                value="{{playerIconPath}}"
+                data-dtype="String" >
+            </input>
+            {{#if yesUploadFile}}
+                {{filePicker type="image" target="flags.token-note-hover-pin.PlayerIconPath"}}
+            {{/if}}
+        </div>
+    </div>
+    {{else}}
+    <div class="form-group">
+        <p>{{ localize "token-note-hover-pin.WarningPlayerIconAutoOverride"}}</p>
+    </div>
+    {{/if}}
+</fieldset>
+<hr>
+<fieldset>
+    <legend>{{localize "token-note-hover-pin.SubtitleRevealedNotes"}}</legend>
+    {{#if enableNoteTintColorLink}}
+        <p>{{{ localize "token-note-hover-pin.InfoRevealedNotes"}}}</p>
+        <div class='form-group'>
+            <label>{{ localize "token-note-hover-pin.RevealedToPlayer"}}</label>
+            <div class='form-fields'>
+                <input
+                    type='checkbox'
+                    name='flags.token-note-hover-pin.pinIsRevealed' {{checked pinIsRevealed}}>
+                </input>
+            </div>
+        </div>
+        <hr>
+        <div class='form-group'>
+            <label>{{ localize "token-note-hover-pin.UseRevealState"}}</label>
+            <div class='form-fields'>
+                <input
+                    type='checkbox'
+                    name='flags.token-note-hover-pin.usePinIsRevealed' {{checked usePinIsRevealed}}>
+                </input>
+            </div>
+        </div>
+    {{else}}
+    <div class="form-group">
+        <p>{{ localize "token-note-hover-pin.WarningRevealedNotes"}}</p>
+    </div>
+    {{/if}}
+</fieldset>

@@ -1,0 +1,51 @@
+{
+  "id": "token-note-hover",
+  "title": "Token Note Hover",
+  "description": "The `Token Note Hover` module displays the note of a hovered-over token.",
+  "version": "#{VERSION}#",
+  "compatibility": {
+    "minimum": 11,
+    "verified": 11
+  },
+  "authors": [
+    {
+      "name": "David Y. Hudson",
+      "discord": "jendave",
+      "url": "https://jendave.itch.io/"
+    },
+    {
+      "name": "FriendlyLambda",
+      "url": "https://gitlab.com/friendlylambda/map-note-hover-display"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    }
+  ],
+  "esmodules": [
+    "index.js"
+  ],
+  "manifest": "#{MANIFEST}#",
+  "url": "#{URL}#",
+  "download": "#{DOWNLOAD}#",
+  "license": "https://raw.githubusercontent.com/jendave/token-note-hover/main/LICENSE",
+  "changelog": "https://raw.githubusercontent.com/jendave/token-note-hover/main/CHANGELOG.md",
+  "readme": "https://raw.githubusercontent.com/jendave/token-note-hover/main/README.md",
+  "bugs": "https://github.com/jendave/token-note-hover/issues",
+  "relationships": {
+    "systems": [
+      {
+        "id": "foundry-ironsworn",
+        "type": "system",
+        "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "1.22.7",
+          "verified": "1.22"
+        }
+      }
+    ]
+  }
+}

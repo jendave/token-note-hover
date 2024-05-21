@@ -1,0 +1,129 @@
+#powerTip .token-note-hover-hud-container {
+  overflow-y: scroll;
+  max-height: 500px;
+}
+
+.token-note-hover-hud,
+.token-note-hover-hud > img,
+.token-note-hover-hud-v2,
+.token-note-hover-hud-v2 > img {
+  border: none;
+}
+
+/*
+.token-note-hover-hud,
+.token-note-hover-hud-v2 {
+	position: fixed;
+	background: rgba(0, 0, 0, 0.6);
+	transform-origin: top left;
+}
+*/
+
+/*
+.token-note-hover-hud #container {
+  border: 1px solid black;
+}
+*/
+
+/*
+.token-note-hover-hud #container {
+  background-color: rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  overflow-y: scroll;
+  padding: 2px;
+  border: 1px solid black;
+  width: fit-content;
+}
+
+.token-note-hover-hud #content {
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.token-note-hover-hud img {
+  object-fit: scale-down;
+  max-height: 250px;
+}
+
+*/
+/* About App */
+/* ABOUT */
+/*
+#token-note-hover-about img {
+	border: none;
+}
+
+#token-note-hover-about .logo {
+	width: 600px;
+}
+
+#token-note-hover-about .version {
+	flex-grow: 0;
+}
+
+#token-note-hover-about div.patrons {
+	width: 100%;
+}
+
+#token-note-hover-about .patrons ol {
+	height: 175px;
+	border: 1px inset white;
+	list-style: none;
+	overflow: hidden scroll;
+	text-align: center;
+	padding: 2px;
+}
+
+#token-note-hover-about .patrons li:nth-child(odd) {
+	background: rgba(0, 0, 0, 0.2);
+}
+
+#token-note-hover-about .patrons li {
+	font-size: x-large;
+}
+
+#token-note-hover-about footer div {
+	justify-content: center;
+	text-align: center;
+}
+*/
+#token-note-hover-about .death-save {
+  flex: 0 0 120px;
+}
+
+#token-note-hover-about .heart {
+  color: tomato;
+}
+
+#token-note-hover-about .patreon img {
+  flex: 0 0 100px;
+}
+
+/* Journal Thumbnail */
+
+#journal .token-note-hover-thumbnail {
+  margin: 0;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  max-width: 32px;
+  max-height: 32px;
+}
+
+#journal .directory-item.document {
+  align-items: center;
+}
+
+.token-note-hover-explicit-icon,
+.token-note-hover-page-icon,
+.token-note-hover-journal-icon {
+  object-fit: initial;
+  height: 50px;
+  /* width: 30px;
+  height: 30px; */
+  border-radius: 4px;
+  border: 2px solid #000000;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2px;
+  flex: 0 0 30px;
+}

@@ -1,0 +1,150 @@
+{
+    "id": "token-note-hover",
+    "title": "Token Note Hover",
+    "description": "Adds additional functionality on Journal Note/Scene Note and Journal directory",
+    "version": "#{VERSION}#",
+    "authors": [
+        {
+            "name": "David Y. Hudson",
+            "discord": "jendave",
+            "url": "https://jendave.itch.io/",
+            "github": "jendave"
+        },
+        {
+            "name": "FriendlyLambda",
+            "url": "https://gitlab.com/friendlylambda/map-note-hover-display"
+        },
+        {
+            "name": "p4535992",
+            "url": "https://github.com/p4535992",
+            "discord": "",
+            "twitter": "",
+            "patreon": "p4535992",
+            "github": "p4535992",
+            "ko-fi": "",
+            "reddit": "",
+            "email": ""
+        }
+    ],
+    "type": "module",
+    "socket": true,
+    "includes": [
+        "./assets/**",
+        "./lang/**",
+        "./languages/**",
+        "./scripts/**",
+        "./styles/**",
+        "./templates/**",
+        "./module.json",
+        "./README.md",
+        "./icons/**",
+        "./packs/**"
+    ],
+    "media": [
+        {
+            "type": "screenshot",
+            "url": "https://github.com/p4535992/media/raw/master/foundryvtt-token-note-hover-pin/create_pin.png"
+        },
+        {
+            "type": "screenshot",
+            "url": "https://github.com/p4535992/media/raw/master/foundryvtt-token-note-hover-pin/note-config.png"
+        },
+        {
+            "type": "screenshot",
+            "url": "https://github.com/p4535992/media/raw/master/foundryvtt-token-note-hover-pin/journal-preview.png"
+        }
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "languages/en.json"
+        }
+    ],
+    "scripts": ["scripts/libs/jquery.powertip.min.js"],
+    "esmodules": ["module.js"],
+    "styles": [
+        "styles/token-note-hover.css",
+        "styles/jquery.powertip.css",
+        "styles/jquery.powertip-blue.css",
+        "styles/jquery.powertip-dark.css",
+        "styles/jquery.powertip-default.css",
+        "styles/jquery.powertip-green.css",
+        "styles/jquery.powertip-light.css",
+        "styles/jquery.powertip-orange.css",
+        "styles/jquery.powertip-purple.css",
+        "styles/jquery.powertip-red.css",
+        "styles/jquery.powertip-yellow.css"
+    ],
+    "compatibility": {
+        "minimum": 11,
+        "verified": 11
+    },
+    "manifest": "#{MANIFEST}#",
+    "url": "#{URL}#",
+    "download": "#{DOWNLOAD}#",
+    "license": "https://raw.githubusercontent.com/jendave/token-note-hover/main/LICENSE",
+    "changelog": "https://raw.githubusercontent.com/jendave/token-note-hover/main/CHANGELOG.md",
+    "readme": "https://raw.githubusercontent.com/jendave/token-note-hover/main/README.md",
+    "bugs": "https://github.com/jendave/token-note-hover/issues",
+    "allowBugReporter": true,
+    "relationships": {
+        "systems": [],
+        "requires": [
+            {
+                "id": "lib-wrapper",
+                "type": "module",
+                "manifest": "https://github.com/ruipin/fvtt-lib-wrapper/releases/latest/download/module.json",
+                "compatibility": {}
+            },
+            {
+                "id": "socketlib",
+                "type": "module",
+                "manifest": "https://raw.githubusercontent.com/manuelVo/foundryvtt-socketlib/develop/module.json",
+                "compatibility": {}
+            }
+        ],
+        "conflicts": [
+            {
+                "id": "backgroundless-pins",
+                "reason": "Redundancy of features you can disable 'FVTT Backgroundless Pins' module if you want, BUT IS NOT MANDATORY"
+            },
+            {
+                "id": "journal-thumbnail",
+                "reason": "Redundancy of features you can disable 'Thumbnails for Journal Entries' module if you want, BUT IS NOT MANDATORY"
+            },
+            {
+                "id": "gmtext-in-notes",
+                "reason": "Redundancy of features you can disable 'GM-only tooltips for Notes' module if you want, BUT IS NOT MANDATORY"
+            },
+            {
+                "id": "revealed-notes-manager",
+                "reason": "Redundancy of features you can disable 'Revealed Notes Manager' module if you want, BUT IS NOT MANDATORY"
+            },
+            {
+                "id": "journal-sidebar-images",
+                "description": "Redundancy of features you can disable 'Journal Sidebar Images' module if you want, BUT IS NOT MANDATORY"
+            },
+            {
+                "id": "one-click-note-creation",
+                "reason": "Redundancy of features you can disable 'One click note creation' module if you want, BUT IS NOT MANDATORY"
+            },
+            {
+                "id": "jal",
+                "reason": "Redundancy of features you can disable 'Journal Anchor Links' module if you want, BUT IS NOT MANDATORY"
+            },
+            {
+                "id": "disguise-unreachable-links",
+                "reason": "Redundancy of features you can disable 'Disguise Unreachable Links' module if you want, BUT IS NOT MANDATORY"
+            },
+            {
+                "id": "journal-directory-pages",
+                "reason": "Redundancy of features you can disable 'Journal Directory Pages' module if you want, BUT IS NOT MANDATORY"
+            },
+            {
+                "id": "player-pin-defaults",
+                "reason": "Redundancy of features you can disable 'Player Pin Defaults' module if you want, BUT IS NOT MANDATORY"
+            }
+        ]
+    }
+}
