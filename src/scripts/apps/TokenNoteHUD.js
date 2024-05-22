@@ -74,7 +74,7 @@ export class PinCushionHUD extends BasePlaceableHUD {
     const actor = note.actor;
 
     const dataTmp = await PinCushionPixiHelpers._manageContentHtmlFromNote(note);
-    // data = mergeObject(data, dataTmp);
+    data = mergeObject(data, dataTmp);
 
     let tempContent = "";
     let actorIsOwner = true;
@@ -150,6 +150,7 @@ export class PinCushionHUD extends BasePlaceableHUD {
 
       this.contentTooltip = await TextEditor.enrichHTML(`
             <div id="container" class="token-note-hover-hud-container" style="font-size:${data.fontSize}px; max-width:${data.maxWidth}px">
+                <h3>${data.title}</h3>
                 ${data.body}
             </div>`);
 
