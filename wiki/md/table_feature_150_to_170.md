@@ -22,11 +22,11 @@ Apart from the new features, the real big difference is the use of the [jquery-p
 
 ### [1.6.10]
 
-- Bug fix (again) [[BUG] Entry Icon gets overwritten by the Journal Note Image](https://github.com/p4535992/token-note-hover-pin/issues/10)
+- Bug fix (again) [[BUG] Entry Icon gets overwritten by the Journal Note Image](https://github.com/p4535992/token-note-hover/issues/10)
 
 ### [1.6.9]
 
-- Bug fix  [[BUG] Entry Icon gets overwritten by the Journal Note Image](https://github.com/p4535992/token-note-hover-pin/issues/10)
+- Bug fix  [[BUG] Entry Icon gets overwritten by the Journal Note Image](https://github.com/p4535992/token-note-hover/issues/10)
 
 ### [1.6.8]
 
@@ -92,7 +92,7 @@ Apart from the new features, the real big difference is the use of the [jquery-p
 
 ### [1.5.15]
 
-- Bug fix https://github.com/p4535992/token-note-hover-pin/issues/7
+- Bug fix https://github.com/p4535992/token-note-hover/issues/7
 
 ### [1.5.14]
 
@@ -100,7 +100,7 @@ Apart from the new features, the real big difference is the use of the [jquery-p
 
 ### [1.5.13]
 
-- Add check for "FILES_BROWSE" permission for the file picker for this request [Icon Selector Replacement Options](https://github.com/p4535992/token-note-hover-pin/issues/6)
+- Add check for "FILES_BROWSE" permission for the file picker for this request [Icon Selector Replacement Options](https://github.com/p4535992/token-note-hover/issues/6)
 
 ### [1.5.12]
 
@@ -115,12 +115,12 @@ Apart from the new features, the real big difference is the use of the [jquery-p
 
 ### [1.5.10]
 
-- Add PR [Foundry 9 Update Compatibility](https://github.com/p4535992/token-note-hover-pin/pull/4) from [PenguinMancer](https://github.com/PenguinMancer) ty to @PenguinMancer
+- Add PR [Foundry 9 Update Compatibility](https://github.com/p4535992/token-note-hover/pull/4) from [PenguinMancer](https://github.com/PenguinMancer) ty to @PenguinMancer
 
 ### [1.5.9]
 
-- Bug fix [Fix a null ref for when there was a pin on the map that didn't have an entry](https://github.com/death-save/token-note-hover-pin/pull/78/files)
-- Add feature [[FEATURE] Hide Label or Title Text](https://github.com/death-save/token-note-hover-pin/issues/79) add a new option 'Hide Label' to the note configuration dialog
+- Bug fix [Fix a null ref for when there was a pin on the map that didn't have an entry](https://github.com/death-save/token-note-hover/pull/78/files)
+- Add feature [[FEATURE] Hide Label or Title Text](https://github.com/death-save/token-note-hover/issues/79) add a new option 'Hide Label' to the note configuration dialog
 - Clean up:Remove poi of interest template
 - Clean up:Remove poi of interest css
 
@@ -140,10 +140,10 @@ Apart from the new features, the real big difference is the use of the [jquery-p
 
 ### [1.5.5]
 
-- Add feature[Add the ability to set a default folder for Pin Cushion JournalEntries](https://github.com/death-save/token-note-hover-pin/issues/74)
-- Already patched [[Suggestion] Different icon for players when shared with them](https://github.com/death-save/token-note-hover-pin/issues/59)
-- Already patched [[FEATURE] Backgroundless pins](https://github.com/death-save/token-note-hover-pin/issues/55)
-- Add feature [Show image instead of text in preview](https://github.com/death-save/token-note-hover-pin/issues/31)
+- Add feature[Add the ability to set a default folder for Pin Cushion JournalEntries](https://github.com/death-save/token-note-hover/issues/74)
+- Already patched [[Suggestion] Different icon for players when shared with them](https://github.com/death-save/token-note-hover/issues/59)
+- Already patched [[FEATURE] Backgroundless pins](https://github.com/death-save/token-note-hover/issues/55)
+- Add feature [Show image instead of text in preview](https://github.com/death-save/token-note-hover/issues/31)
 
 
 ### [1.5.4]
@@ -167,5 +167,5 @@ Apart from the new features, the real big difference is the use of the [jquery-p
 - Add updated version of the module [FVTT-Backgroundless-Pins](https://github.com/schultzcole/FVTT-Backgroundless-Pins) integrated for avoid conflict (and because the module is not touched for 10 months)
 - Add the setting to automatically updated by default the note image with the journal image if present
 - Add updated version of the module [foundryvtt-journal-thumbnail](https://github.com/J-Guenther/foundryvtt-journal-thumbnail) integrated for avoid conflict (and because the module is not touched for 10 months)
-- Add module setting created notes for player-only icons enabled based on this pull request [Player journal icons](https://github.com/death-save/token-note-hover-pin/pull/65).
+- Add module setting created notes for player-only icons enabled based on this pull request [Player journal icons](https://github.com/death-save/token-note-hover/pull/65).
 

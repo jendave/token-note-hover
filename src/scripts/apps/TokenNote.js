@@ -51,11 +51,11 @@ export class PinCushion {
       content: `
             <div class="form-group">
               <label>
-                <p class="notes">${Logger.i18n("token-note-hover-pin.Name")}</p>
+                <p class="notes">${Logger.i18n("token-note-hover.Name")}</p>
               </label>
               <input name="name" type="text"/>
               <label>
-                <p class="notes">${Logger.i18n("token-note-hover-pin.DefaultPermission")}</p>
+                <p class="notes">${Logger.i18n("token-note-hover.DefaultPermission")}</p>
               </label>
               <select id="cushion-permission" style="width: 100%;">
                 <option value="0"
@@ -76,23 +76,23 @@ export class PinCushion {
                 </option>
               </select>
               <label>
-                <p class="notes">${Logger.i18n("token-note-hover-pin.Folder")}</p>
+                <p class="notes">${Logger.i18n("token-note-hover.Folder")}</p>
               </label>
               <select id="cushion-folder" style="width: 100%;">
                 <option
                   value="none"
                   ${defaultFolder === "none" ? "selected" : ""}>
-                    ${Logger.i18n("token-note-hover-pin.None")}
+                    ${Logger.i18n("token-note-hover.None")}
                 </option>
                 <option value="perUser" ${defaultFolder === "perUser" ? "selected" : ""}>
-                  ${Logger.i18n("token-note-hover-pin.PerUser")} <i>(${game.user.name})</i>
+                  ${Logger.i18n("token-note-hover.PerUser")} <i>(${game.user.name})</i>
                 </option>
                 <option
                   value="specificFolder"
                   ${defaultFolder === "specificFolder" ? "selected" : ""}>
-                    ${Logger.i18n("token-note-hover-pin.PerSpecificFolder")} <i>(${specificFolderName})</i>
+                    ${Logger.i18n("token-note-hover.PerSpecificFolder")} <i>(${specificFolderName})</i>
                 </option>
-                <option disabled>──${Logger.i18n("token-note-hover-pin.ExistingFolders")}──</option>
+                <option disabled>──${Logger.i18n("token-note-hover.ExistingFolders")}──</option>
                 ${folders}
               </select>
             </div>
@@ -194,7 +194,7 @@ export class PinCushion {
     const input = html.find("input[name='name']");
 
     if (!input[0].value) {
-      Logger.warn(Logger.i18n("token-note-hover-pin.MissingPinName"), true);
+      Logger.warn(Logger.i18n("token-note-hover.MissingPinName"), true);
       return;
     }
     // Permissions the Journal Entry will be created with
@@ -306,8 +306,8 @@ export class PinCushion {
       // Ask for folder creation confirmation in a dialog
       const createFolders = await new Promise((resolve, reject) => {
         new Dialog({
-          title: Logger.i18n("token-note-hover-pin.CreateMissingFoldersT"),
-          content: Logger.i18n("token-note-hover-pin.CreateMissingFoldersC"),
+          title: Logger.i18n("token-note-hover.CreateMissingFoldersT"),
+          content: Logger.i18n("token-note-hover.CreateMissingFoldersC"),
           buttons: {
             yes: {
               label: `<i class="fas fa-check"></i> ${Logger.i18n("Yes")}`,
@@ -346,7 +346,7 @@ export class PinCushion {
       if (iconCustomSelector?.length > 0) {
         iconCustomSelector.val(currentIconSelector);
         iconCustomSelector.on("change", function () {
-          const p = iconCustomSelector.parent().find(".token-note-hover-pin-journal-icon");
+          const p = iconCustomSelector.parent().find(".token-note-hover-journal-icon");
           const valueIconSelector = html.find("select[name='icon.selected']")?.val();
           if (valueIconSelector) {
             p[0].src = valueIconSelector;
@@ -361,7 +361,7 @@ export class PinCushion {
         }
         if (iconSelector?.length > 0) {
           iconSelector.on("change", function () {
-            const p = iconCustomSelector.parent().find(".token-note-hover-pin-journal-icon");
+            const p = iconCustomSelector.parent().find(".token-note-hover-journal-icon");
             const valueIconSelector = html.find("select[name='icon.selected']")?.val();
             if (valueIconSelector) {
               p[0].src = valueIconSelector;
@@ -373,18 +373,18 @@ export class PinCushion {
           if (valueIconSelector) {
             iconCustomSelector
               .parent()
-              .prepend(`<img class="token-note-hover-pin-journal-icon" src="${valueIconSelector}" />`);
+              .prepend(`<img class="token-note-hover-journal-icon" src="${valueIconSelector}" />`);
           } else {
             // https://gitlab.com/tiwato/journal_icon_numbers/-/issues/33
             iconCustomSelector.prop("disabled", false);
             iconCustomSelector
               .parent()
-              .prepend(`<img class="token-note-hover-pin-journal-icon" src="${currentIconSelector}" />`);
+              .prepend(`<img class="token-note-hover-journal-icon" src="${currentIconSelector}" />`);
           }
         } else {
           iconCustomSelector
             .parent()
-            .prepend(`<img class="token-note-hover-pin-journal-icon" src="${currentIconSelector}" />`);
+            .prepend(`<img class="token-note-hover-journal-icon" src="${currentIconSelector}" />`);
         }
       }
       // TODO BETTER MANAGEMENT
@@ -397,7 +397,7 @@ export class PinCushion {
 
         if (pageSelector?.length > 0) {
           pageSelector.on("change", function () {
-            const p = pageCustomSelector.parent().find(".token-note-hover-pin-page-icon");
+            const p = pageCustomSelector.parent().find(".token-note-hover-page-icon");
 
             // Pageid
             const valuepageSelector = html.find("select[name='pageId']")?.val();
@@ -415,18 +415,18 @@ export class PinCushion {
           const valuepageSelector = html.find("select[name='pageId']")?.val();
           const pageiimage = retrieveFirstImageFromJournalId(valuejournalSelector, valuepageSelector, true);
           if (pageiimage) {
-            pageCustomSelector.parent().prepend(`<img class="token-note-hover-pin-page-icon" src="${pageiimage}" />`);
+            pageCustomSelector.parent().prepend(`<img class="token-note-hover-page-icon" src="${pageiimage}" />`);
           } else {
             // https://gitlab.com/tiwato/journal_icon_numbers/-/issues/33
             // pageCustomSelector.prop("disabled", false);
             pageCustomSelector
               .parent()
-              .prepend(`<img class="token-note-hover-pin-page-icon" src="${currentpageSelector}" />`);
+              .prepend(`<img class="token-note-hover-page-icon" src="${currentpageSelector}" />`);
           }
         } else {
           pageCustomSelector
             .parent()
-            .prepend(`<img class="token-note-hover-pin-page-icon" src="${currentpageSelector}" />`);
+            .prepend(`<img class="token-note-hover-page-icon" src="${currentpageSelector}" />`);
         }
       }
     }
@@ -439,7 +439,7 @@ export class PinCushion {
     if (!gmtext) gmtext = "";
     let gm_text_h = $(
       `<div class="form-group">
-        <label for="${gmNoteFlagRef}">${Logger.i18n("token-note-hover-pin.GMLabel")}</label>
+        <label for="${gmNoteFlagRef}">${Logger.i18n("token-note-hover.GMLabel")}</label>
         <div class="form-fields">
           <textarea
             name="${gmNoteFlagRef}">${gmtext.trim() ?? ""}</textarea>
@@ -450,7 +450,7 @@ export class PinCushion {
     if (!initial_text) initial_text = "";
     let initial_text_h = $(
       `<div class="form-group">
-        <label for="text">${Logger.i18n("token-note-hover-pin.PlayerLabel")}</label>
+        <label for="text">${Logger.i18n("token-note-hover.PlayerLabel")}</label>
         <div class="form-fields">
           <textarea name="text"
             placeholder="${noteData.entry?.name ?? ""}">${initial_text.trim() ?? ""}</textarea>
@@ -559,7 +559,8 @@ export class PinCushion {
     // Replace the testUserPermission test of Note#isVisible
     const access = this.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.PIN_IS_REVEALED);
     // Standard version of Note#isVisible
-    if (access === false || !canvas.effects.visibility.tokenVision || this.document.global) {
+    if (access === false || this.document.global) {
+      //|| !canvas.effects.visibility.tokenVision
       return access;
     }
     const point = { x: this.document.x, y: this.document.y };
@@ -771,8 +772,8 @@ export class PinCushion {
       }
 
       // TODO need to centre text of the nameplate ??
-      // https://github.com/p4535992/foundryvtt-token-note-hover-pin/issues/66
-      // https://github.com/p4535992/foundryvtt-token-note-hover-pin/issues/52
+      // https://github.com/p4535992/foundryvtt-token-note-hover/issues/66
+      // https://github.com/p4535992/foundryvtt-token-note-hover/issues/52
     }
     // PATCH MODULE autoIconFlags
     if (noteInternal.document?.flags?.autoIconFlags) {
@@ -990,19 +991,19 @@ export class PinCushion {
         if (journalEntryImage.endsWith(".pdf")) {
           // thumbnail = $(
           // 	`
-          // 	<object data="${journalEntryImage}" type="application/pdf" class="token-note-hover-pin-thumbnail sidebar-image journal-entry-image">
-          // 		<embed class="token-note-hover-pin-thumbnail sidebar-image journal-entry-image" src="${journalEntryImage}" type="application/pdf">
+          // 	<object data="${journalEntryImage}" type="application/pdf" class="token-note-hover-thumbnail sidebar-image journal-entry-image">
+          // 		<embed class="token-note-hover-thumbnail sidebar-image journal-entry-image" src="${journalEntryImage}" type="application/pdf">
           // 			<p>This browser does not support PDFs. Please download the PDF to view it: <a href="${journalEntryImage}">Download PDF</a>.</p>
           // 		</embed>
           // 	</object>
           // 	`
           // );
           thumbnail = $(
-            `<img class="token-note-hover-pin-thumbnail sidebar-image journal-entry-image" src="${CONSTANTS.PATH_PDF_THUMBNAIL}" title="${j.name}" alt='Journal Entry Thumbnail'>`
+            `<img class="token-note-hover-thumbnail sidebar-image journal-entry-image" src="${CONSTANTS.PATH_PDF_THUMBNAIL}" title="${j.name}" alt='Journal Entry Thumbnail'>`
           );
         } else {
           thumbnail = $(
-            `<img class="token-note-hover-pin-thumbnail sidebar-image journal-entry-image" src="${journalEntryImage}" title="${j.name}" alt='Journal Entry Thumbnail'>`
+            `<img class="token-note-hover-thumbnail sidebar-image journal-entry-image" src="${journalEntryImage}" title="${j.name}" alt='Journal Entry Thumbnail'>`
           );
         }
         switch (game.settings.get(CONSTANTS.MODULE_ID, "journalThumbnailPosition")) {

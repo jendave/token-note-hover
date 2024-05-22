@@ -3,16 +3,16 @@ import CONSTANTS from "./constants.js";
 
 export const registerSettings = function () {
   game.settings.registerMenu(CONSTANTS.MODULE_ID, "resetAllSettings", {
-    name: `token-note-hover-pin.SETTINGS.reset.name`,
-    hint: `token-note-hover-pin.SETTINGS.reset.hint`,
+    name: `token-note-hover.SETTINGS.reset.name`,
+    hint: `token-note-hover.SETTINGS.reset.hint`,
     icon: "fas fa-coins",
     type: ResetSettingsDialog,
     restricted: true,
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "forceToShowNotes", {
-    name: `token-note-hover-pin.SETTINGS.forceToShowNotesN`,
-    hint: `token-note-hover-pin.SETTINGS.forceToShowNotesH`,
+    name: `token-note-hover.SETTINGS.forceToShowNotesN`,
+    hint: `token-note-hover.SETTINGS.forceToShowNotesH`,
     scope: "world",
     config: true,
     default: true,
@@ -20,8 +20,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "previewMaxLength", {
-    name: `token-note-hover-pin.SETTINGS.PreviewMaxLengthN`,
-    hint: `token-note-hover-pin.SETTINGS.PreviewMaxLengthH`,
+    name: `token-note-hover.SETTINGS.PreviewMaxLengthN`,
+    hint: `token-note-hover.SETTINGS.PreviewMaxLengthH`,
     scope: "world",
     type: Number,
     default: 500,
@@ -30,24 +30,24 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "previewDelay", {
-    name: `token-note-hover-pin.SETTINGS.PreviewDelayN`,
-    hint: `token-note-hover-pin.SETTINGS.PreviewDelayH`,
+    name: `token-note-hover.SETTINGS.PreviewDelayN`,
+    hint: `token-note-hover.SETTINGS.PreviewDelayH`,
     scope: "world",
     type: Number,
     default: 500,
     config: true,
     onChange: (s) => {},
     //@ts-ignore
-    range: { min: 100, max: 3000, step: 100 }, // bug https://github.com/p4535992/foundryvtt-token-note-hover-pin/issues/18
+    range: { min: 100, max: 3000, step: 100 }, // bug https://github.com/p4535992/foundryvtt-token-note-hover/issues/18
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "defaultJournalPermission", {
-    name: `token-note-hover-pin.SETTINGS.DefaultJournalPermissionN`,
-    hint: `token-note-hover-pin.SETTINGS.DefaultJournalPermissionH`,
+    name: `token-note-hover.SETTINGS.DefaultJournalPermissionN`,
+    hint: `token-note-hover.SETTINGS.DefaultJournalPermissionH`,
     scope: "world",
     type: Number,
     choices: Object.entries(CONST.DOCUMENT_PERMISSION_LEVELS).reduce((acc, [perm, key]) => {
-      acc[key] = `token-note-hover-pin.SETTINGS.DefaultJournalPermission.PERMISSION.${perm}`;
+      acc[key] = `token-note-hover.SETTINGS.DefaultJournalPermission.PERMISSION.${perm}`;
       return acc;
     }, {}),
     default: 0,
@@ -56,14 +56,14 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "defaultJournalFolder", {
-    name: `token-note-hover-pin.SETTINGS.DefaultJournalFolderN`,
-    hint: `token-note-hover-pin.SETTINGS.DefaultJournalFolderH`,
+    name: `token-note-hover.SETTINGS.DefaultJournalFolderN`,
+    hint: `token-note-hover.SETTINGS.DefaultJournalFolderH`,
     scope: "world",
     type: String,
     choices: {
-      none: `token-note-hover-pin.None`,
-      perUser: `token-note-hover-pin.PerUser`,
-      specificFolder: `token-note-hover-pin.PerSpecificFolder`,
+      none: `token-note-hover.None`,
+      perUser: `token-note-hover.PerUser`,
+      specificFolder: `token-note-hover.PerSpecificFolder`,
     },
     default: "none",
     config: true,
@@ -76,8 +76,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "defaultNoteImageOnCreate", {
-    name: `token-note-hover-pin.SETTINGS.defaultNoteImageOnCreateN`,
-    hint: `token-note-hover-pin.SETTINGS.defaultNoteImageOnCreateH`,
+    name: `token-note-hover.SETTINGS.defaultNoteImageOnCreateN`,
+    hint: `token-note-hover.SETTINGS.defaultNoteImageOnCreateH`,
     scope: "world",
     type: String,
     default: "",
@@ -86,8 +86,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "specificFolder", {
-    name: `token-note-hover-pin.SETTINGS.SpecificFolderN`,
-    hint: `token-note-hover-pin.SETTINGS.SpecificFolderH`,
+    name: `token-note-hover.SETTINGS.SpecificFolderN`,
+    hint: `token-note-hover.SETTINGS.SpecificFolderH`,
     scope: "world",
     type: String,
     choices: () => {
@@ -107,8 +107,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "enableBackgroundlessPins", {
-    name: `token-note-hover-pin.SETTINGS.EnableBackgroundlessPinsN`,
-    hint: `token-note-hover-pin.SETTINGS.EnableBackgroundlessPinsH`,
+    name: `token-note-hover.SETTINGS.EnableBackgroundlessPinsN`,
+    hint: `token-note-hover.SETTINGS.EnableBackgroundlessPinsH`,
     scope: "world",
     type: Boolean,
     default: true,
@@ -116,8 +116,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "showJournalImageByDefault", {
-    name: `token-note-hover-pin.SETTINGS.ShowJournalImageByDefaultN`,
-    hint: `token-note-hover-pin.SETTINGS.ShowJournalImageByDefaultH`,
+    name: `token-note-hover.SETTINGS.ShowJournalImageByDefaultN`,
+    hint: `token-note-hover.SETTINGS.ShowJournalImageByDefaultH`,
     scope: "world",
     type: Boolean,
     default: true,
@@ -125,8 +125,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "enableTooltipByDefault", {
-    name: `token-note-hover-pin.SETTINGS.enableTooltipByDefaultN`,
-    hint: `token-note-hover-pin.SETTINGS.enableTooltipByDefaultH`,
+    name: `token-note-hover.SETTINGS.enableTooltipByDefaultN`,
+    hint: `token-note-hover.SETTINGS.enableTooltipByDefaultH`,
     scope: "world",
     type: Boolean,
     default: false,
@@ -134,8 +134,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "enableAutoScaleNamePlatesNote", {
-    name: `token-note-hover-pin.SETTINGS.enableAutoScaleNamePlatesNoteN`,
-    hint: `token-note-hover-pin.SETTINGS.enableAutoScaleNamePlatesNoteH`,
+    name: `token-note-hover.SETTINGS.enableAutoScaleNamePlatesNoteN`,
+    hint: `token-note-hover.SETTINGS.enableAutoScaleNamePlatesNoteH`,
     scope: "world",
     type: Boolean,
     default: false,
@@ -143,8 +143,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "enableDragNoteOnTokenLayerIfGM", {
-    name: `token-note-hover-pin.SETTINGS.enableDragNoteOnTokenLayerIfGMN`,
-    hint: `token-note-hover-pin.SETTINGS.enableDragNoteOnTokenLayerIfGMH`,
+    name: `token-note-hover.SETTINGS.enableDragNoteOnTokenLayerIfGMN`,
+    hint: `token-note-hover.SETTINGS.enableDragNoteOnTokenLayerIfGMH`,
     scope: "world",
     type: Boolean,
     default: true,
@@ -152,8 +152,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "playerIconAutoOverride", {
-    name: `token-note-hover-pin.SETTINGS.PlayerIconAutoOverrideN`,
-    hint: `token-note-hover-pin.SETTINGS.PlayerIconAutoOverrideH`,
+    name: `token-note-hover.SETTINGS.PlayerIconAutoOverrideN`,
+    hint: `token-note-hover.SETTINGS.PlayerIconAutoOverrideH`,
     scope: "world",
     config: true,
     default: false,
@@ -161,8 +161,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "playerIconPathDefault", {
-    name: `token-note-hover-pin.SETTINGS.PlayerIconPathDefaultN`,
-    hint: `token-note-hover-pin.SETTINGS.PlayerIconPathDefaultH`,
+    name: `token-note-hover.SETTINGS.PlayerIconPathDefaultN`,
+    hint: `token-note-hover.SETTINGS.PlayerIconPathDefaultH`,
     scope: "world",
     config: true,
     default: "icons/svg/book.svg",
@@ -171,8 +171,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "noteGM", {
-    name: `token-note-hover-pin.SETTINGS.noteGMN`,
-    hint: `token-note-hover-pin.SETTINGS.noteGMH`,
+    name: `token-note-hover.SETTINGS.noteGMN`,
+    hint: `token-note-hover.SETTINGS.noteGMH`,
     scope: "world",
     config: true,
     default: false,
@@ -180,8 +180,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "revealedNotes", {
-    name: `token-note-hover-pin.SETTINGS.revealedNotesN`,
-    hint: `token-note-hover-pin.SETTINGS.revealedNotesH`,
+    name: `token-note-hover.SETTINGS.revealedNotesN`,
+    hint: `token-note-hover.SETTINGS.revealedNotesH`,
     scope: "world",
     config: true,
     default: false,
@@ -189,8 +189,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "revealedNotesTintColorLink", {
-    name: `token-note-hover-pin.SETTINGS.revealedNotesTintColorLinkN`,
-    hint: `token-note-hover-pin.SETTINGS.revealedNotesTintColorLinkH`,
+    name: `token-note-hover.SETTINGS.revealedNotesTintColorLinkN`,
+    hint: `token-note-hover.SETTINGS.revealedNotesTintColorLinkH`,
     scope: "world",
     type: String,
     default: "#7CFC00",
@@ -204,8 +204,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "revealedNotesTintColorNotLink", {
-    name: `token-note-hover-pin.SETTINGS.revealedNotesTintColorNotLinkN`,
-    hint: `token-note-hover-pin.SETTINGS.revealedNotesTintColorNotLinkH`,
+    name: `token-note-hover.SETTINGS.revealedNotesTintColorNotLinkN`,
+    hint: `token-note-hover.SETTINGS.revealedNotesTintColorNotLinkH`,
     scope: "world",
     type: String,
     default: "#c000c0",
@@ -219,8 +219,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "revealedNotesTintColorRevealed", {
-    name: `token-note-hover-pin.SETTINGS.revealedNotesTintColorRevealedN`,
-    hint: `token-note-hover-pin.SETTINGS.revealedNotesTintColorRevealedH`,
+    name: `token-note-hover.SETTINGS.revealedNotesTintColorRevealedN`,
+    hint: `token-note-hover.SETTINGS.revealedNotesTintColorRevealedH`,
     scope: "world",
     type: String,
     default: "#ffff00",
@@ -229,8 +229,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "revealedNotesTintColorNotRevealed", {
-    name: `token-note-hover-pin.SETTINGS.revealedNotesTintColorNotRevealedN`,
-    hint: `token-note-hover-pin.SETTINGS.revealedNotesTintColorNotRevealedH`,
+    name: `token-note-hover.SETTINGS.revealedNotesTintColorNotRevealedN`,
+    hint: `token-note-hover.SETTINGS.revealedNotesTintColorNotRevealedH`,
     scope: "world",
     type: String,
     default: "#ff0000",
@@ -239,8 +239,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "enableJournalThumbnailForGMs", {
-    name: `token-note-hover-pin.SETTINGS.enableJournalThumbnailForGMsN`,
-    hint: `token-note-hover-pin.SETTINGS.enableJournalThumbnailForGMsH`,
+    name: `token-note-hover.SETTINGS.enableJournalThumbnailForGMsN`,
+    hint: `token-note-hover.SETTINGS.enableJournalThumbnailForGMsH`,
     scope: "world",
     type: Boolean,
     default: true,
@@ -249,8 +249,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "enableJournalThumbnailForPlayers", {
-    name: `token-note-hover-pin.SETTINGS.enableJournalThumbnailForPlayersN`,
-    hint: `token-note-hover-pin.SETTINGS.enableJournalThumbnailForPlayersH`,
+    name: `token-note-hover.SETTINGS.enableJournalThumbnailForPlayersN`,
+    hint: `token-note-hover.SETTINGS.enableJournalThumbnailForPlayersH`,
     scope: "world",
     type: Boolean,
     default: true,
@@ -259,8 +259,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "journalThumbnailPosition", {
-    name: `token-note-hover-pin.SETTINGS.journalThumbnailPositionN`,
-    hint: `token-note-hover-pin.SETTINGS.journalThumbnailPositionH`,
+    name: `token-note-hover.SETTINGS.journalThumbnailPositionN`,
+    hint: `token-note-hover.SETTINGS.journalThumbnailPositionH`,
     scope: "world",
     config: true,
     default: "right",
@@ -273,8 +273,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "fontSize", {
-    name: `token-note-hover-pin.SETTINGS.fontSizeN`,
-    hint: `token-note-hover-pin.SETTINGS.fontSizeH`,
+    name: `token-note-hover.SETTINGS.fontSizeN`,
+    hint: `token-note-hover.SETTINGS.fontSizeH`,
     scope: "client",
     type: String,
     default: "",
@@ -282,8 +282,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "maxWidth", {
-    name: `token-note-hover-pin.SETTINGS.maxWidthN`,
-    hint: `token-note-hover-pin.SETTINGS.maxWidthH`,
+    name: `token-note-hover.SETTINGS.maxWidthN`,
+    hint: `token-note-hover.SETTINGS.maxWidthH`,
     scope: "client",
     type: Number,
     default: 800,
@@ -291,8 +291,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "tooltipUseMousePositionForCoordinates", {
-    name: `token-note-hover-pin.SETTINGS.tooltipUseMousePositionForCoordinatesN`,
-    hint: `token-note-hover-pin.SETTINGS.tooltipUseMousePositionForCoordinatesH`,
+    name: `token-note-hover.SETTINGS.tooltipUseMousePositionForCoordinatesN`,
+    hint: `token-note-hover.SETTINGS.tooltipUseMousePositionForCoordinatesH`,
     scope: "world",
     config: true,
     default: true,
@@ -301,8 +301,8 @@ export const registerSettings = function () {
 
   // DEPRECATED ON V11
   //   game.settings.register(CONSTANTS.MODULE_ID, "oneClickNoteCreation", {
-  //     name: `token-note-hover-pin.SETTINGS.oneClickNoteCreationN`,
-  //     hint: `token-note-hover-pin.SETTINGS.oneClickNoteCreationH`,
+  //     name: `token-note-hover.SETTINGS.oneClickNoteCreationN`,
+  //     hint: `token-note-hover.SETTINGS.oneClickNoteCreationH`,
   //     scope: "world",
   //     config: true,
   //     default: false,
@@ -310,8 +310,8 @@ export const registerSettings = function () {
   //   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "enableJournalAnchorLink", {
-    name: `token-note-hover-pin.SETTINGS.enableJournalAnchorLinkN`,
-    hint: `token-note-hover-pin.SETTINGS.enableJournalAnchorLinkH`,
+    name: `token-note-hover.SETTINGS.enableJournalAnchorLinkN`,
+    hint: `token-note-hover.SETTINGS.enableJournalAnchorLinkH`,
     scope: "world",
     config: true,
     default: true,
@@ -319,8 +319,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "enableJournalDirectoryPages", {
-    name: `token-note-hover-pin.SETTINGS.enableJournalDirectoryPagesN`,
-    hint: `token-note-hover-pin.SETTINGS.enableJournalDirectoryPagesH`,
+    name: `token-note-hover.SETTINGS.enableJournalDirectoryPagesN`,
+    hint: `token-note-hover.SETTINGS.enableJournalDirectoryPagesH`,
     scope: "world",
     config: true,
     default: false,
@@ -332,8 +332,8 @@ export const registerSettings = function () {
   // =============================================
 
   game.settings.register(CONSTANTS.MODULE_ID, "playerPinDefaultsEnabled", {
-    name: `token-note-hover-pin.SETTINGS.playerPinDefaults.enableN`,
-    hint: `token-note-hover-pin.SETTINGS.playerPinDefaults.enableH`,
+    name: `token-note-hover.SETTINGS.playerPinDefaults.enableN`,
+    hint: `token-note-hover.SETTINGS.playerPinDefaults.enableH`,
     scope: "world",
     config: true,
     default: false,
@@ -341,8 +341,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "playerPinDefaultsGlobal", {
-    name: `token-note-hover-pin.SETTINGS.playerPinDefaults.globalN`,
-    hint: `token-note-hover-pin.SETTINGS.playerPinDefaults.globalH`,
+    name: `token-note-hover.SETTINGS.playerPinDefaults.globalN`,
+    hint: `token-note-hover.SETTINGS.playerPinDefaults.globalH`,
     scope: "world",
     config: true,
     type: Boolean,
@@ -350,8 +350,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "playerPinDefaultsPinImage", {
-    name: `token-note-hover-pin.SETTINGS.playerPinDefaults.pinImageN`,
-    hint: `token-note-hover-pin.SETTINGS.playerPinDefaults.pinImageH`,
+    name: `token-note-hover.SETTINGS.playerPinDefaults.pinImageN`,
+    hint: `token-note-hover.SETTINGS.playerPinDefaults.pinImageH`,
     scope: "world",
     config: true,
     type: String,
@@ -360,8 +360,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "playerPinDefaultsPlayerColorImage", {
-    name: `token-note-hover-pin.SETTINGS.playerPinDefaults.playerColorImageN`,
-    hint: `token-note-hover-pin.SETTINGS.playerPinDefaults.playerColorImageH`,
+    name: `token-note-hover.SETTINGS.playerPinDefaults.playerColorImageN`,
+    hint: `token-note-hover.SETTINGS.playerPinDefaults.playerColorImageH`,
     scope: "world",
     config: true,
     type: Boolean,
@@ -369,8 +369,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "playerPinDefaultsPlayerToken", {
-    name: `token-note-hover-pin.SETTINGS.playerPinDefaults.playerTokenN`,
-    hint: `token-note-hover-pin.SETTINGS.playerPinDefaults.playerTokenH`,
+    name: `token-note-hover.SETTINGS.playerPinDefaults.playerTokenN`,
+    hint: `token-note-hover.SETTINGS.playerPinDefaults.playerTokenH`,
     scope: "world",
     config: true,
     type: Boolean,
@@ -378,8 +378,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "playerPinDefaultsImageSize", {
-    name: `token-note-hover-pin.SETTINGS.playerPinDefaults.imageSizeN`,
-    hint: `token-note-hover-pin.SETTINGS.playerPinDefaults.imageSizeH`,
+    name: `token-note-hover.SETTINGS.playerPinDefaults.imageSizeN`,
+    hint: `token-note-hover.SETTINGS.playerPinDefaults.imageSizeH`,
     scope: "world",
     config: true,
     type: Number,
@@ -387,8 +387,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "playerPinDefaultsFontSize", {
-    name: `token-note-hover-pin.SETTINGS.playerPinDefaults.fontSizeN`,
-    hint: `token-note-hover-pin.SETTINGS.playerPinDefaults.fontSizeH`,
+    name: `token-note-hover.SETTINGS.playerPinDefaults.fontSizeN`,
+    hint: `token-note-hover.SETTINGS.playerPinDefaults.fontSizeH`,
     scope: "world",
     config: true,
     type: Number,
@@ -396,8 +396,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "playerPinDefaultsAnchorPoint", {
-    name: `token-note-hover-pin.SETTINGS.playerPinDefaults.anchorPointN`,
-    hint: `token-note-hover-pin.SETTINGS.playerPinDefaults.anchorPointH`,
+    name: `token-note-hover.SETTINGS.playerPinDefaults.anchorPointN`,
+    hint: `token-note-hover.SETTINGS.playerPinDefaults.anchorPointH`,
     scope: "world",
     config: true,
     type: Number,
@@ -412,8 +412,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "playerPinDefaultsAddPlayerName", {
-    name: `token-note-hover-pin.SETTINGS.playerPinDefaults.addPlayerNameN`,
-    hint: `token-note-hover-pin.SETTINGS.playerPinDefaults.addPlayerNameH`,
+    name: `token-note-hover.SETTINGS.playerPinDefaults.addPlayerNameN`,
+    hint: `token-note-hover.SETTINGS.playerPinDefaults.addPlayerNameH`,
     scope: "world",
     config: true,
     type: Boolean,
@@ -421,8 +421,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "playerPinDefaultsPlayerColorText", {
-    name: `token-note-hover-pin.SETTINGS.playerPinDefaults.playerColorTextN`,
-    hint: `token-note-hover-pin.SETTINGS.playerPinDefaults.playerColorTextH`,
+    name: `token-note-hover.SETTINGS.playerPinDefaults.playerColorTextN`,
+    hint: `token-note-hover.SETTINGS.playerPinDefaults.playerColorTextH`,
     scope: "world",
     config: true,
     type: Boolean,
@@ -430,8 +430,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "debug", {
-    name: `token-note-hover-pin.SETTINGS.debugN`,
-    hint: `token-note-hover-pin.SETTINGS.debugH`,
+    name: `token-note-hover.SETTINGS.debugN`,
+    hint: `token-note-hover.SETTINGS.debugH`,
     scope: "world",
     config: true,
     type: Boolean,

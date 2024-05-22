@@ -322,118 +322,118 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
 
   const tooltipPlacementHtml = `
 		<select
-		id="token-note-hover-pin-tooltip-placement"
+		id="token-note-hover-tooltip-placement"
 		style="width: 100%;"
 		name="flags.${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.TOOLTIP_PLACEMENT}">
 		<option
 			value="nw-alt"
 			${tooltipPlacement === "nw-alt" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Placement.choices.north-west-alt")}
+			${Logger.i18n("token-note-hover.Tooltip.Placement.choices.north-west-alt")}
 		</option>
 		<option
 			value="nw"
 			${tooltipPlacement === "nw" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Placement.choices.north-west")}
+			${Logger.i18n("token-note-hover.Tooltip.Placement.choices.north-west")}
 		</option>
 		<option
 			value="n"
 			${tooltipPlacement === "n" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Placement.choices.north")}
+			${Logger.i18n("token-note-hover.Tooltip.Placement.choices.north")}
 			</option>
 		<option
 			value="ne"
 			${tooltipPlacement === "ne" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Placement.choices.north-east")}
+			${Logger.i18n("token-note-hover.Tooltip.Placement.choices.north-east")}
 			</option>
 		<option
 			value="ne-alt"
 			${tooltipPlacement === "ne-alt" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Placement.choices.north-east-alt")}
+			${Logger.i18n("token-note-hover.Tooltip.Placement.choices.north-east-alt")}
 			</option>
 		<option
 			value="w"
 			${tooltipPlacement === "w" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Placement.choices.west")}
+			${Logger.i18n("token-note-hover.Tooltip.Placement.choices.west")}
 			</option>
 		<option
 			value="e"
 			${tooltipPlacement === "e" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Placement.choices.east")}
+			${Logger.i18n("token-note-hover.Tooltip.Placement.choices.east")}
 			</option>
 		<option
 			value="sw-alt"
 			${tooltipPlacement === "sw-alt" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Placement.choices.south-west-alt")}
+			${Logger.i18n("token-note-hover.Tooltip.Placement.choices.south-west-alt")}
 			</option>
 		<option
 			value="sw"
 			${tooltipPlacement === "sw" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Placement.choices.south-west")}
+			${Logger.i18n("token-note-hover.Tooltip.Placement.choices.south-west")}
 		</option>
 		<option
 			value="s"
 			${tooltipPlacement === "s" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Placement.choices.south")}
+			${Logger.i18n("token-note-hover.Tooltip.Placement.choices.south")}
 		</option>
 		<option
 			value="se"
 			${tooltipPlacement === "se" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Placement.choices.south-east")}
+			${Logger.i18n("token-note-hover.Tooltip.Placement.choices.south-east")}
 		</option>
 		<option
 			value="se-alt"
 			${tooltipPlacement === "se-alt" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Placement.choices.south-east-alt")}
+			${Logger.i18n("token-note-hover.Tooltip.Placement.choices.south-east-alt")}
 		</option>
 		</select>
 	`;
   const tooltipColorHtml = `
 	<select
-		id="token-note-hover-pin-tooltip-color"
+		id="token-note-hover-tooltip-color"
 		style="width: 100%;"
 		name="flags.${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.TOOLTIP_COLOR}">
 		<option
 		value="" ${tooltipColor === "" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Color.choices.default")}
+			${Logger.i18n("token-note-hover.Tooltip.Color.choices.default")}
 		</option>
 		<option
 		value="blue"
 		${tooltipColor === "blue" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Color.choices.blue")}
+			${Logger.i18n("token-note-hover.Tooltip.Color.choices.blue")}
 		</option>
 		<option
 		value="dark"
 		${tooltipColor === "dark" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Color.choices.dark")}
+			${Logger.i18n("token-note-hover.Tooltip.Color.choices.dark")}
 		</option>
 		<option
 		value="green"
 		${tooltipColor === "green" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Color.choices.green")}
+			${Logger.i18n("token-note-hover.Tooltip.Color.choices.green")}
 		</option>
 		<option
 		value="light"
 		${tooltipColor === "light" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Color.choices.light")}
+			${Logger.i18n("token-note-hover.Tooltip.Color.choices.light")}
 		</option>
 		<option
 		value="orange"
 		${tooltipColor === "orange" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Color.choices.orange")}
+			${Logger.i18n("token-note-hover.Tooltip.Color.choices.orange")}
 		</option>
 		<option value="purple"
 		${tooltipColor === "purple" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Color.choices.purple")}
+			${Logger.i18n("token-note-hover.Tooltip.Color.choices.purple")}
 		</option>
 		<option
 		value="red"
 		${tooltipColor === "red" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Color.choices.red")}
+			${Logger.i18n("token-note-hover.Tooltip.Color.choices.red")}
 		</option>
 		<option
 		value="yellow"
 		${tooltipColor === "yellow" ? "selected" : ""}>
-			${Logger.i18n("token-note-hover-pin.Tooltip.Color.choices.yellow")}
+			${Logger.i18n("token-note-hover.Tooltip.Color.choices.yellow")}
 		</option>
 	</select>
 	`;
@@ -555,22 +555,19 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
       );
   }
 
-  $('button[data-target="flags.token-note-hover-pin.showImageExplicitSource"]', html).on(
+  $('button[data-target="flags.token-note-hover.showImageExplicitSource"]', html).on(
     "click",
     app._activateFilePicker.bind(app)
   );
 
-  $('button[data-target="flags.token-note-hover-pin.PlayerIconPath"]', html).on(
-    "click",
-    app._activateFilePicker.bind(app)
-  );
+  $('button[data-target="flags.token-note-hover.PlayerIconPath"]', html).on("click", app._activateFilePicker.bind(app));
 
   const iconCustomSelectorExplicit = html.find(
     `input[name='flags.${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.SHOW_IMAGE_EXPLICIT_SOURCE}']`
   );
   if (iconCustomSelectorExplicit?.length > 0) {
     iconCustomSelectorExplicit.on("change", function () {
-      const p = iconCustomSelectorExplicit.parent().find(".token-note-hover-pin-explicit-icon");
+      const p = iconCustomSelectorExplicit.parent().find(".token-note-hover-explicit-icon");
       p[0].src = this.value;
     });
   }
@@ -580,7 +577,7 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
   );
   if (iconCustomPlayerIconPath?.length > 0) {
     iconCustomPlayerIconPath.on("change", function () {
-      const p = iconCustomPlayerIconPath.parent().find(".token-note-hover-pin-journal-icon");
+      const p = iconCustomPlayerIconPath.parent().find(".token-note-hover-journal-icon");
       p[0].src = this.value;
     });
   }
@@ -588,7 +585,7 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
   const iconCustomPageIcon = html.find(`select[name='pageId']`);
   if (iconCustomPageIcon?.length > 0) {
     iconCustomPageIcon.on("change", function () {
-      const p = iconCustomPageIcon.parent().find(".token-note-hover-pin-page-icon");
+      const p = iconCustomPageIcon.parent().find(".token-note-hover-page-icon");
       const pageId = this.value;
       if (html.find(`select[name='entryId']`).length > 0) {
         const entryId = html.find(`select[name='entryId']`)[0].value;
@@ -616,7 +613,7 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
  */
 Hooks.on("renderHeadsUpDisplay", (app, html, data) => {
   // VERSION 1 TOOLTIP
-  html.append(`<template id="token-note-hover-pin-hud"></template>`);
+  html.append(`<template id="token-note-hover-hud"></template>`);
   canvas.hud.pinCushion = new PinCushionHUD();
 });
 

@@ -16,7 +16,7 @@ export default class PinCushionAboutApp extends FormApplication {
    */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      id: "token-note-hover-pin-about",
+      id: "token-note-hover-about",
       title: `About ${CONSTANTS.MODULE_TITLE}`,
       template: `${CONSTANTS.PATH}/templates/about.hbs`,
       popOut: true,

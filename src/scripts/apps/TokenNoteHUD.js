@@ -5,7 +5,7 @@ import {
   retrieveFirstImageFromJournalId,
   retrieveFirstTextFromJournalId,
 } from "../lib/lib.js";
-import { PinCushionPixiHelpers } from "../pixi/token-note-hover-pin-pixi-helpers.js";
+import { PinCushionPixiHelpers } from "../pixi/token-note-hover-pixi-helpers.js";
 import { PinCushion } from "./TokenNote.js";
 
 /**
@@ -24,11 +24,11 @@ export class PinCushionHUD extends BasePlaceableHUD {
    */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      id: "token-note-hover-pin-hud",
-      classes: [...super.defaultOptions.classes, "token-note-hover-pin-hud"],
+      id: "token-note-hover-hud",
+      classes: [...super.defaultOptions.classes, "token-note-hover-hud"],
       minimizable: false,
       resizable: false,
-      template: "modules/token-note-hover-pin/templates/journal-preview.html",
+      template: "modules/token-note-hover/templates/journal-preview.html",
     });
   }
 
@@ -44,7 +44,7 @@ export class PinCushionHUD extends BasePlaceableHUD {
     // data = mergeObject(data, dataTmp);
 
     // this.contentTooltip = await TextEditor.enrichHTML(`
-    //   <div id="container" class="token-note-hover-pin-hud-container" style="font-size:${data.fontSize}px; max-width:${data.maxWidth}px">
+    //   <div id="container" class="token-note-hover-hud-container" style="font-size:${data.fontSize}px; max-width:${data.maxWidth}px">
     //       ${data.contentTooltip}
     //   </div>`);
     // this.fontSize = data.fontSize;
@@ -60,7 +60,7 @@ export class PinCushionHUD extends BasePlaceableHUD {
     // data = mergeObject(data, dataTmp);
 
     // this.contentTooltip = await TextEditor.enrichHTML(`
-    //           <div id="container" class="token-note-hover-pin-hud-container" style="font-size:${data.fontSize}px; max-width:${data.maxWidth}px">
+    //           <div id="container" class="token-note-hover-hud-container" style="font-size:${data.fontSize}px; max-width:${data.maxWidth}px">
     //               ${data.contentTooltip}
     //           </div>`);
     // this.fontSize = data.fontSize;
@@ -74,7 +74,7 @@ export class PinCushionHUD extends BasePlaceableHUD {
     const actor = note.actor;
 
     const dataTmp = await PinCushionPixiHelpers._manageContentHtmlFromNote(note);
-    data = mergeObject(data, dataTmp);
+    // data = mergeObject(data, dataTmp);
 
     let tempContent = "";
     let actorIsOwner = true;
@@ -149,7 +149,7 @@ export class PinCushionHUD extends BasePlaceableHUD {
       this.maxWidth = data.maxWidth;
 
       this.contentTooltip = await TextEditor.enrichHTML(`
-            <div id="container" class="token-note-hover-pin-hud-container" style="font-size:${data.fontSize}px; max-width:${data.maxWidth}px">
+            <div id="container" class="token-note-hover-hud-container" style="font-size:${data.fontSize}px; max-width:${data.maxWidth}px">
                 ${data.body}
             </div>`);
 
@@ -273,8 +273,8 @@ export class PinCushionHUD extends BasePlaceableHUD {
     elementToTooltip.css(position);
 
     const tooltipPopupClass = tooltipColor
-      ? "token-note-hover-pin-hud-tooltip-" + tooltipColor
-      : "token-note-hover-pin-hud-tooltip-default";
+      ? "token-note-hover-hud-tooltip-" + tooltipColor
+      : "token-note-hover-hud-tooltip-default";
 
     const tooltipTipContent = $(this.contentTooltip);
 

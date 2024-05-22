@@ -1,7 +1,7 @@
 {
     "id": "token-note-hover",
     "title": "Token Note Hover",
-    "description": "Adds additional functionality on Journal Note/Scene Note and Journal directory",
+    "description": "Displays the note of a hovered-over token.",
     "version": "#{VERSION}#",
     "authors": [
         {
@@ -43,15 +43,15 @@
     "media": [
         {
             "type": "screenshot",
-            "url": "https://github.com/p4535992/media/raw/master/foundryvtt-token-note-hover-pin/create_pin.png"
+            "url": "https://github.com/p4535992/media/raw/master/foundryvtt-token-note-hover/create_pin.png"
         },
         {
             "type": "screenshot",
-            "url": "https://github.com/p4535992/media/raw/master/foundryvtt-token-note-hover-pin/note-config.png"
+            "url": "https://github.com/p4535992/media/raw/master/foundryvtt-token-note-hover/note-config.png"
         },
         {
             "type": "screenshot",
-            "url": "https://github.com/p4535992/media/raw/master/foundryvtt-token-note-hover-pin/journal-preview.png"
+            "url": "https://github.com/p4535992/media/raw/master/foundryvtt-token-note-hover/journal-preview.png"
         }
     ],
     "languages": [
