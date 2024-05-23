@@ -147,12 +147,12 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
   if (tmp === "icons/svg/book.svg" && noteData.document.texture.src) {
     tmp = stripQueryStringAndHashFromPath(noteData.document.texture.src);
   }
-  const pinCushionIcon = foundry.utils.getProperty(
+  const tokenNoteHoverIcon = foundry.utils.getProperty(
     app.object.flags,
     `${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.CUSHION_ICON}`
   );
-  if (pinCushionIcon) {
-    tmp = stripQueryStringAndHashFromPath(pinCushionIcon);
+  if (tokenNoteHoverIcon) {
+    tmp = stripQueryStringAndHashFromPath(tokenNoteHoverIcon);
   }
 
   TokenNoteHover._replaceIconSelector(app, html, noteData, tmp);
@@ -477,7 +477,7 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
   // ====================================
   const enableBackgroundlessPins = game.settings.get(CONSTANTS.MODULE_ID, "enableBackgroundlessPins");
 
-  let pinCushionData = foundry.utils.mergeObject(
+  let tokenNoteHoverData = foundry.utils.mergeObject(
     {
       yesUploadFile: game.user.can("FILES_BROWSE"),
       noUploadFile: !game.user.can("FILES_BROWSE"),
@@ -522,7 +522,7 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
     app.object.flags[CONSTANTS.MODULE_ID] || {}
   );
   // eslint-disable-next-line no-undef
-  let noteHtml = await renderTemplate(`modules/${CONSTANTS.MODULE_ID}/templates/note-config.html`, pinCushionData);
+  let noteHtml = await renderTemplate(`modules/${CONSTANTS.MODULE_ID}/templates/note-config.html`, tokenNoteHoverData);
 
   if ($(".sheet-tabs", html).length) {
     $(".sheet-tabs", html).append(
@@ -623,7 +623,7 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
 Hooks.on("renderHeadsUpDisplay", (app, html, data) => {
   // VERSION 1 TOOLTIP
   html.append(`<template id="token-note-hover-hud"></template>`);
-  canvas.hud.pinCushion = new TokenNoteHoverHUD();
+  canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
 });
 
 /**
@@ -656,25 +656,25 @@ Hooks.on("hoverToken", (note, hovered) => {
   // VERSION 1 TOOLTIP
 
   if (!hovered) {
-    clearTimeout(API.pinCushion.hoverTimer);
+    clearTimeout(API.tokenNoteHover.hoverTimer);
     if (tooltipForceRemove) {
       $("#powerTip").remove();
     }
-    return canvas.hud.pinCushion.clear();
+    return canvas.hud.tokenNoteHover.clear();
   }
 
   // If the note is hovered by the mouse cursor (not via alt/option)
   if (hovered) {
     // TODO && note.mouseInteractionManager.state === 1
-    API.pinCushion.hoverTimer = setTimeout(function () {
-      canvas.hud.pinCushion.bind(note);
+    API.tokenNoteHover.hoverTimer = setTimeout(function () {
+      canvas.hud.tokenNoteHover.bind(note);
     }, previewDelay);
     return;
   } else {
     // THis code should be never reached
     if (!hovered) {
-      clearTimeout(API.pinCushion.hoverTimer);
-      return canvas.hud.pinCushion.clear();
+      clearTimeout(API.tokenNoteHover.hoverTimer);
+      return canvas.hud.tokenNoteHover.clear();
     }
   }
 });

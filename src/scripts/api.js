@@ -2,7 +2,7 @@ import { TokenNoteHover } from "./apps/TokenNote.js";
 import Logger from "./lib/Logger.js";
 
 const API = {
-  pinCushion: new TokenNoteHover(),
+  tokenNoteHover: new TokenNoteHover(),
 
   /**
    * Request an action to be executed with GM privileges.

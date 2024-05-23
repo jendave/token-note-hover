@@ -226,7 +226,7 @@ export class TokenNoteHover {
         // Since only the ID is required, instantiating a Folder from the data is not necessary
         // folder = (await TokenNoteHover.requestEvent({ action: "createFolder" }))?._id;
         // TODO for some reason this will give me a error
-        // folder = (await pinCushionSocket.executeAsGM('requestEvent', { action: "createFolder" }))?._id;
+        // folder = (await tokenNoteHoverSocket.executeAsGM('requestEvent', { action: "createFolder" }))?._id;
       }
     } else if (selectedFolder === "specificFolder") {
       const settingSpecificFolder = game.settings.get(CONSTANTS.MODULE_ID, "specificFolder");
@@ -680,7 +680,7 @@ export class TokenNoteHover {
       clientY: event.data.global.y,
     };
 
-    API.pinCushion._createDialog(data);
+    API.tokenNoteHover._createDialog(data);
   }
 
   static _drawControlIconInternal(noteInternal) {
