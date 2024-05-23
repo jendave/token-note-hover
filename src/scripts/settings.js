@@ -1,4 +1,4 @@
-import { PinCushion } from "./apps/TokenNote.js";
+import { TokenNoteHover } from "./apps/TokenNote.js";
 import CONSTANTS from "./constants.js";
 
 export const registerSettings = function () {
@@ -70,7 +70,7 @@ export const registerSettings = function () {
     onChange: (s) => {
       // Only run check for folder creation for the main GM
       if (s === "perUser" && game.user === game.users.find((u) => u.isGM && u.active)) {
-        PinCushion._createFolders();
+        TokenNoteHover._createFolders();
       }
     },
   });

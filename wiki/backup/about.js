@@ -1,11 +1,11 @@
-import { PinCushion } from "../../src/scripts/apps/PinCushion.js";
+import { TokenNoteHover } from "../../src/scripts/apps/TokenNoteHover.js";
 import CONSTANTS from "../../src/scripts/constants.js";
 
 /**
  * About this module FormApp
  * @extends FormApplication
  */
-export default class PinCushionAboutApp extends FormApplication {
+export default class TokenNoteHoverAboutApp extends FormApplication {
   constructor(options = {}) {
     super(options);
   }

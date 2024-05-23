@@ -8,7 +8,7 @@ import { BackgroundlessControlIcon } from "./BackgroundlessControlIcon.js";
  * A class for managing additional Map Pin functionality
  * @author Evan Clarke (errational#2007)
  */
-export class PinCushion {
+export class TokenNoteHover {
   constructor() {
     // Storage for requests sent over a socket, pending GM execution
     this._requests = {};
@@ -115,7 +115,9 @@ export class PinCushion {
     if (enableAutoScaleNamePlatesNote) {
       if (canvas.notes) {
         for (let note of canvas.notes.placeables) {
-          note.tooltip.scale.set(PinCushion._calculateAutoScale(canvas.scene.dimensions.size, canvas.stage.scale.x));
+          note.tooltip.scale.set(
+            TokenNoteHover._calculateAutoScale(canvas.scene.dimensions.size, canvas.stage.scale.x)
+          );
         }
       }
     }
@@ -163,8 +165,8 @@ export class PinCushion {
    */
   _createDialog(data) {
     new Dialog({
-      title: PinCushion.DIALOG.title,
-      content: PinCushion.DIALOG.content,
+      title: TokenNoteHover.DIALOG.title,
+      content: TokenNoteHover.DIALOG.content,
       buttons: {
         save: {
           label: "Save",
@@ -218,17 +220,17 @@ export class PinCushion {
     if (selectedFolder === "none") {
       folder = undefined;
     } else if (selectedFolder === "perUser") {
-      folder = PinCushion.getFolder(game.user.name, selectedFolder);
+      folder = TokenNoteHover.getFolder(game.user.name, selectedFolder);
       if (!game.user.isGM && folder === undefined) {
         // Request folder creation when perUser is set and the entry is created by a user
         // Since only the ID is required, instantiating a Folder from the data is not necessary
-        // folder = (await PinCushion.requestEvent({ action: "createFolder" }))?._id;
+        // folder = (await TokenNoteHover.requestEvent({ action: "createFolder" }))?._id;
         // TODO for some reason this will give me a error
         // folder = (await pinCushionSocket.executeAsGM('requestEvent', { action: "createFolder" }))?._id;
       }
     } else if (selectedFolder === "specificFolder") {
       const settingSpecificFolder = game.settings.get(CONSTANTS.MODULE_ID, "specificFolder");
-      folder = PinCushion.getFolder(game.user.name, selectedFolder, settingSpecificFolder);
+      folder = TokenNoteHover.getFolder(game.user.name, selectedFolder, settingSpecificFolder);
     } else {
       folder = selectedFolder; // Folder is already given as ID
     }
@@ -248,7 +250,7 @@ export class PinCushion {
     entryData.uuid = "JournalEntry." + entry.id;
     entryData.type = "JournalEntry";
 
-    if (canvas.activeLayer.name !== PinCushion.NOTESLAYER) {
+    if (canvas.activeLayer.name !== TokenNoteHover.NOTESLAYER) {
       await canvas.notes.activate();
     }
 
@@ -295,7 +297,7 @@ export class PinCushion {
     // Collect missing folders
     const setting = game.settings.get(CONSTANTS.MODULE_ID, "defaultJournalFolder");
     const missingFolders = game.users
-      .filter((u) => !u.isGM && PinCushion.getFolder(u.name, setting) === undefined)
+      .filter((u) => !u.isGM && TokenNoteHover.getFolder(u.name, setting) === undefined)
       .map((user) => ({
         name: user.name,
         type: "JournalEntry",
@@ -665,7 +667,7 @@ export class PinCushion {
     // Warn user when notes can be created, but journal entries cannot
     if (!game.user.can("JOURNAL_CREATE")) {
       Logger.warn(
-        game.i18n.format("PinCushion.AllowPlayerNotes", {
+        game.i18n.format("TokenNoteHover.AllowPlayerNotes", {
           permission: Logger.i18n("PERMISSION.JournalCreate"),
         }),
         true
@@ -795,7 +797,7 @@ export class PinCushion {
   static _noteConfigGetData(wrapped, ...args) {
     let noteData = wrapped(...args);
     if (game.settings.get(CONSTANTS.MODULE_ID, "playerPinDefaultsEnabled")) {
-      noteData = PinCushion.pinPlayerDefaultsGetData(noteData);
+      noteData = TokenNoteHover.pinPlayerDefaultsGetData(noteData);
     }
     return noteData;
   }
@@ -803,7 +805,7 @@ export class PinCushion {
   static _noteConfigGetSubmitData(wrapped, ...args) {
     let data = wrapped(...args);
     if (game.settings.get(CONSTANTS.MODULE_ID, "playerPinDefaultsEnabled")) {
-      data = PinCushion.pinPlayerDefaultsGetSubmitData(data);
+      data = TokenNoteHover.pinPlayerDefaultsGetSubmitData(data);
     }
     return data;
   }
@@ -835,7 +837,7 @@ export class PinCushion {
     }
     Logger.log(noteData);
     // Apply the defaults
-    const defaults = PinCushion._getPinDefaults();
+    const defaults = TokenNoteHover._getPinDefaults();
     noteData = foundry.utils.mergeObject(noteData, defaults);
 
     return noteData;
@@ -945,7 +947,7 @@ export class PinCushion {
    * @param {*} event
    */
   static _drawControlIcon(...args) {
-    const res = PinCushion._drawControlIconInternal(this);
+    const res = TokenNoteHover._drawControlIconInternal(this);
     if (res === undefined) {
       // return wrapped(...args);
     } else {

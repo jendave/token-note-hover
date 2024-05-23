@@ -1,8 +1,8 @@
-import { PinCushion } from "./apps/TokenNote.js";
+import { TokenNoteHover } from "./apps/TokenNote.js";
 import Logger from "./lib/Logger.js";
 
 const API = {
-  pinCushion: new PinCushion(),
+  pinCushion: new TokenNoteHover(),
 
   /**
    * Request an action to be executed with GM privileges.
@@ -50,7 +50,7 @@ const API = {
   },
 
   async setNoteRevealed(notedata, visible) {
-    PinCushion.setNoteRevealed(notedata, visible);
+    TokenNoteHover.setNoteRevealed(notedata, visible);
   },
 };
 export default API;

@@ -5,15 +5,15 @@ import {
   retrieveFirstImageFromJournalId,
   retrieveFirstTextFromJournalId,
 } from "../lib/lib.js";
-import { PinCushionPixiHelpers } from "../pixi/token-note-hover-pixi-helpers.js";
-import { PinCushion } from "./TokenNote.js";
+import { TokenNoteHoverPixiHelpers } from "../pixi/token-note-hover-pixi-helpers.js";
+import { TokenNoteHover } from "./TokenNote.js";
 
 /**
- * @class PinCushionHUD
+ * @class TokenNoteHoverHUD
  *
  * A HUD extension that shows the Note preview
  */
-export class PinCushionHUD extends BasePlaceableHUD {
+export class TokenNoteHoverHUD extends BasePlaceableHUD {
   constructor(note, options) {
     super(note, options);
     this.data = note;
@@ -40,7 +40,7 @@ export class PinCushionHUD extends BasePlaceableHUD {
     // let data = super.getData();
     // const note = this.object;
 
-    // const dataTmp = await PinCushionPixiHelpers._manageContentHtmlFromNote(note);
+    // const dataTmp = await TokenNoteHoverPixiHelpers._manageContentHtmlFromNote(note);
     // data = mergeObject(data, dataTmp);
 
     // this.contentTooltip = await TextEditor.enrichHTML(`
@@ -56,7 +56,7 @@ export class PinCushionHUD extends BasePlaceableHUD {
     // let data = super.getData();
     // const actor = this.object;
 
-    // const dataTmp = await PinCushionPixiHelpers._manageContentHtmlFromNote(actor);
+    // const dataTmp = await TokenNoteHoverPixiHelpers._manageContentHtmlFromNote(actor);
     // data = mergeObject(data, dataTmp);
 
     // this.contentTooltip = await TextEditor.enrichHTML(`
@@ -73,7 +73,7 @@ export class PinCushionHUD extends BasePlaceableHUD {
     const note = this.object;
     const actor = note.actor;
 
-    const dataTmp = await PinCushionPixiHelpers._manageContentHtmlFromNote(note);
+    const dataTmp = await TokenNoteHoverPixiHelpers._manageContentHtmlFromNote(note);
     data = mergeObject(data, dataTmp);
 
     let tempContent = "";

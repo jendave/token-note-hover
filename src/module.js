@@ -6,8 +6,8 @@ import CONSTANTS from "./scripts/constants.js";
 import { stripQueryStringAndHashFromPath, retrieveFirstImageFromJournalId } from "./scripts/lib/lib.js";
 import { registerSettings } from "./scripts/settings.js";
 import { registerSocket } from "./scripts/socket.js";
-import { PinCushionHUD } from "./scripts/apps/TokenNoteHUD.js";
-import { PinCushion } from "./scripts/apps/TokenNote.js";
+import { TokenNoteHoverHUD } from "./scripts/apps/TokenNoteHUD.js";
+import { TokenNoteHover } from "./scripts/apps/TokenNote.js";
 import Logger from "./scripts/lib/Logger.js";
 
 /* -------------------------------------------------------------------------- */
@@ -20,26 +20,35 @@ import Logger from "./scripts/lib/Logger.js";
 Hooks.once("init", function () {
   Logger.log(" init " + CONSTANTS.MODULE_ID);
   // TODO TO REMOVE
-  globalThis.PinCushion = PinCushion;
+  globalThis.TokenNoteHover = TokenNoteHover;
   registerSettings();
 
   Hooks.once("socketlib.ready", registerSocket);
 
-  libWrapper.register(CONSTANTS.MODULE_ID, "NotesLayer.prototype._onClickLeft2", PinCushion._onDoubleClick, "OVERRIDE");
+  libWrapper.register(
+    CONSTANTS.MODULE_ID,
+    "NotesLayer.prototype._onClickLeft2",
+    TokenNoteHover._onDoubleClick,
+    "OVERRIDE"
+  );
 
   const enablePlayerIconAutoOverride = game.settings.get(CONSTANTS.MODULE_ID, "playerIconAutoOverride");
   if (enablePlayerIconAutoOverride) {
     libWrapper.register(
       CONSTANTS.MODULE_ID,
       "NoteDocument.prototype.prepareData",
-      PinCushion._onPrepareNoteData,
+      TokenNoteHover._onPrepareNoteData,
       "WRAPPER"
     );
   }
 
-  libWrapper.register(CONSTANTS.MODULE_ID, "NoteConfig.prototype.getData", PinCushion._noteConfigGetData);
+  libWrapper.register(CONSTANTS.MODULE_ID, "NoteConfig.prototype.getData", TokenNoteHover._noteConfigGetData);
 
-  libWrapper.register(CONSTANTS.MODULE_ID, "NoteConfig.prototype._getSubmitData", PinCushion._noteConfigGetSubmitData);
+  libWrapper.register(
+    CONSTANTS.MODULE_ID,
+    "NoteConfig.prototype._getSubmitData",
+    TokenNoteHover._noteConfigGetSubmitData
+  );
 });
 /* ------------------------------------ */
 /* Setup module							*/
@@ -58,7 +67,7 @@ Hooks.once("setup", function () {
     Hooks.once("canvasReady", () => {
       Hooks.on("canvasPan", (c) => {
         if (game.scenes.get(c.scene.id).isView) {
-          PinCushion.autoScaleNotes(c);
+          TokenNoteHover.autoScaleNotes(c);
         }
       });
     });
@@ -146,14 +155,14 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
     tmp = stripQueryStringAndHashFromPath(pinCushionIcon);
   }
 
-  PinCushion._replaceIconSelector(app, html, noteData, tmp);
+  TokenNoteHover._replaceIconSelector(app, html, noteData, tmp);
   // Causes a bug when attempting to place an journal entry onto the canvas in Foundry 9.
   // await app.object.setFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.CUSHION_ICON, tmp);
   foundry.utils.setProperty(app.object.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.CUSHION_ICON, tmp);
 
   const enableNoteGM = game.settings.get(CONSTANTS.MODULE_ID, "noteGM");
   if (enableNoteGM) {
-    PinCushion._addNoteGM(app, html, noteData);
+    TokenNoteHover._addNoteGM(app, html, noteData);
   }
 
   const enableJournalAnchorLink = game.settings.get(CONSTANTS.MODULE_ID, "enableJournalAnchorLink");
@@ -614,7 +623,7 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
 Hooks.on("renderHeadsUpDisplay", (app, html, data) => {
   // VERSION 1 TOOLTIP
   html.append(`<template id="token-note-hover-hud"></template>`);
-  canvas.hud.pinCushion = new PinCushionHUD();
+  canvas.hud.pinCushion = new TokenNoteHoverHUD();
 });
 
 /**
@@ -674,50 +683,60 @@ Hooks.on("hoverToken", (note, hovered) => {
  * Hook on render Journal Directory
  */
 Hooks.on("renderJournalDirectory", (app, html, data) => {
-  PinCushion._addJournalThumbnail(app, html, data);
-  PinCushion._addJournalDirectoryPages(app, html, data);
+  TokenNoteHover._addJournalThumbnail(app, html, data);
+  TokenNoteHover._addJournalDirectoryPages(app, html, data);
 });
 
 Hooks.on("deleteJournalEntryPage", () => {
-  PinCushion._deleteJournalDirectoryPagesEntry();
+  TokenNoteHover._deleteJournalDirectoryPagesEntry();
 });
 
 Hooks.on("createJournalEntryPage", () => {
-  PinCushion._createJournalDirectoryPagesEntry();
+  TokenNoteHover._createJournalDirectoryPagesEntry();
 });
 
 Hooks.on("renderJournalSheet", (app, html, data) => {
-  PinCushion._renderJournalThumbnail(app, html);
+  TokenNoteHover._renderJournalThumbnail(app, html);
 });
 
 Hooks.once("canvasInit", () => {
   // This module is only required for GMs (game.user accessible from 'ready' event but not 'init' event)
   if (game.user.isGM && game.settings.get(CONSTANTS.MODULE_ID, "noteGM")) {
     if (foundry.utils.isNewerVersion("12", game.version)) {
-      libWrapper.register(CONSTANTS.MODULE_ID, "Note.prototype.text", PinCushion._textWithNoteGM, libWrapper.MIXED);
+      libWrapper.register(CONSTANTS.MODULE_ID, "Note.prototype.text", TokenNoteHover._textWithNoteGM, libWrapper.MIXED);
     } else {
       libWrapper.register(
         CONSTANTS.MODULE_ID,
         "NoteDocument.prototype.label",
-        PinCushion._labelWithNoteGM,
+        TokenNoteHover._labelWithNoteGM,
         libWrapper.MIXED
       );
     }
   } else {
-    libWrapper.register(CONSTANTS.MODULE_ID, "Note.prototype._drawTooltip", PinCushion._addDrawTooltip2, "MIXED");
+    libWrapper.register(CONSTANTS.MODULE_ID, "Note.prototype._drawTooltip", TokenNoteHover._addDrawTooltip2, "MIXED");
   }
 
-  libWrapper.register(CONSTANTS.MODULE_ID, "Note.prototype._applyRenderFlags", PinCushion._applyRenderFlags, "MIXED");
+  libWrapper.register(
+    CONSTANTS.MODULE_ID,
+    "Note.prototype._applyRenderFlags",
+    TokenNoteHover._applyRenderFlags,
+    "MIXED"
+  );
 
-  libWrapper.register(CONSTANTS.MODULE_ID, "Note.prototype.refresh", PinCushion._noteRefresh, "WRAPPER");
+  libWrapper.register(CONSTANTS.MODULE_ID, "Note.prototype.refresh", TokenNoteHover._noteRefresh, "WRAPPER");
 
-  libWrapper.register(CONSTANTS.MODULE_ID, "Note.prototype._onUpdate", PinCushion._noteUpdate, "WRAPPER");
+  libWrapper.register(CONSTANTS.MODULE_ID, "Note.prototype._onUpdate", TokenNoteHover._noteUpdate, "WRAPPER");
 
-  libWrapper.register(CONSTANTS.MODULE_ID, "Note.prototype.isVisible", PinCushion._isVisible, "MIXED");
+  libWrapper.register(CONSTANTS.MODULE_ID, "Note.prototype.isVisible", TokenNoteHover._isVisible, "MIXED");
 
-  libWrapper.register(CONSTANTS.MODULE_ID, "Note.prototype._drawControlIcon", PinCushion._drawControlIcon, "OVERRIDE");
+  libWrapper.register(
+    CONSTANTS.MODULE_ID,
+    "Note.prototype._drawControlIcon",
+    TokenNoteHover._drawControlIcon,
+    "OVERRIDE"
+  );
 
-  libWrapper.register(CONSTANTS.MODULE_ID, "Note.prototype._canControl", PinCushion._canControl, "MIXED");
+  libWrapper.register(CONSTANTS.MODULE_ID, "Note.prototype._canControl", TokenNoteHover._canControl, "MIXED");
 });
 
 Hooks.on("renderSettingsConfig", (app, html, data) => {

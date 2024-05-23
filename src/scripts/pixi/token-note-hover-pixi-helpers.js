@@ -3,14 +3,14 @@ import Logger from "../lib/Logger";
 import { retrieveFirstImageFromJournalId, retrieveFirstTextFromJournalId } from "../lib/lib";
 import { ElementWrapper } from "./token-note-hover-pixi-element-wrapper";
 
-export class PinCushionPixiHelpers {
+export class TokenNoteHoverPixiHelpers {
   static async drawTooltipPixi(note) {
     const journal = note.entry;
     let journalType = "";
     let pageType = "";
     if (journal) {
-      journalType = PinCushionPixiHelpers._retrieveJournalTypeFromJournal(journal);
-      pageType = PinCushionPixiHelpers._retrievePageTypeFromJournal(journal);
+      journalType = TokenNoteHoverPixiHelpers._retrieveJournalTypeFromJournal(journal);
+      pageType = TokenNoteHoverPixiHelpers._retrievePageTypeFromJournal(journal);
     }
     Logger.debug(`Journal type: ${journalType}`);
     Logger.debug(`Journal Page type: ${pageType}`);
@@ -22,7 +22,7 @@ export class PinCushionPixiHelpers {
     }
 
     // Create Element
-    const wrappedEl = await PinCushionPixiHelpers.wrapElement(note);
+    const wrappedEl = await TokenNoteHoverPixiHelpers.wrapElement(note);
 
     // Add child and return
     return (note.tooltip = note.addChild(wrappedEl));
@@ -52,7 +52,7 @@ export class PinCushionPixiHelpers {
   }
 
   static async wrapElement(note) {
-    const data = await PinCushionPixiHelpers._manageContentHtmlFromNote(note);
+    const data = await TokenNoteHoverPixiHelpers._manageContentHtmlFromNote(note);
     const contentHTML = await TextEditor.enrichHTML(data.contentTooltip);
 
     const fontSize = data.fontSize;
