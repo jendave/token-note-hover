@@ -1,12 +1,7 @@
 import CONSTANTS from "../constants.js";
-import {
-  isPlacementVertical,
-  isRealNumber,
-  retrieveFirstImageFromJournalId,
-  retrieveFirstTextFromJournalId,
-} from "../lib/lib.js";
+import { isPlacementVertical, isRealNumber } from "../lib/lib.js";
 import { TokenNoteHoverPixiHelpers } from "../pixi/token-note-hover-pixi-helpers.js";
-import { TokenNoteHover } from "./TokenNote.js";
+import { TokenNoteHover } from "./TokenNoteHover.js";
 
 /**
  * @class TokenNoteHoverHUD

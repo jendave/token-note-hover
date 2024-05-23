@@ -6,8 +6,8 @@ import CONSTANTS from "./scripts/constants.js";
 import { stripQueryStringAndHashFromPath, retrieveFirstImageFromJournalId } from "./scripts/lib/lib.js";
 import { registerSettings } from "./scripts/settings.js";
 import { registerSocket } from "./scripts/socket.js";
-import { TokenNoteHoverHUD } from "./scripts/apps/TokenNoteHUD.js";
-import { TokenNoteHover } from "./scripts/apps/TokenNote.js";
+import { TokenNoteHoverHUD } from "./scripts/apps/TokenNoteHoverHUD.js";
+import { TokenNoteHover } from "./scripts/apps/TokenNoteHover.js";
 import Logger from "./scripts/lib/Logger.js";
 
 /* -------------------------------------------------------------------------- */

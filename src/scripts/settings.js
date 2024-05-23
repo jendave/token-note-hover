@@ -1,4 +1,4 @@
-import { TokenNoteHover } from "./apps/TokenNote.js";
+import { TokenNoteHover } from "./apps/TokenNoteHover.js";
 import CONSTANTS from "./constants.js";
 
 export const registerSettings = function () {

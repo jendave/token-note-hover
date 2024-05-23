@@ -6,14 +6,6 @@ import { ElementWrapper } from "./token-note-hover-pixi-element-wrapper";
 export class TokenNoteHoverPixiHelpers {
   static async drawTooltipPixi(note) {
     const journal = note.entry;
-    let journalType = "";
-    let pageType = "";
-    if (journal) {
-      journalType = TokenNoteHoverPixiHelpers._retrieveJournalTypeFromJournal(journal);
-      pageType = TokenNoteHoverPixiHelpers._retrievePageTypeFromJournal(journal);
-    }
-    Logger.debug(`Journal type: ${journalType}`);
-    Logger.debug(`Journal Page type: ${pageType}`);
 
     // Destroy any prior text
     if (note.tooltip) {
@@ -26,29 +18,6 @@ export class TokenNoteHoverPixiHelpers {
 
     // Add child and return
     return (note.tooltip = note.addChild(wrappedEl));
-  }
-
-  static _retrievePageTypeFromJournal(journal) {
-    let pageType = "";
-    if (journal?.pages?.contents?.length > 0) {
-      const journalPage0 = journal?.pages.contents[0];
-      if (getProperty(journalPage0, `flags.monks-enhanced-journal.type`)) {
-        pageType = getProperty(journalPage0, `flags.monks-enhanced-journal.type`);
-      } else {
-        pageType = journalPage0.type;
-      }
-    }
-    return pageType;
-  }
-
-  static _retrieveJournalTypeFromJournal(journal) {
-    let journalType = "";
-    if (getProperty(journal, `flags.monks-enhanced-journal.pagetype`)) {
-      journalType = getProperty(journal, `flags.monks-enhanced-journal.pagetype`);
-    } else {
-      journalType = journal.type;
-    }
-    return journalType;
   }
 
   static async wrapElement(note) {

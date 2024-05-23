@@ -1,4 +1,4 @@
-import { TokenNoteHover } from "./apps/TokenNote.js";
+import { TokenNoteHover } from "./apps/TokenNoteHover.js";
 import Logger from "./lib/Logger.js";
 
 const API = {
