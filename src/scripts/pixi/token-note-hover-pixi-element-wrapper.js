@@ -25,19 +25,19 @@ export class ElementWrapper extends PIXI.DisplayObject {
     this._contentHTML = contentHTML;
 
     this.container = container;
-    container.style.position = "absolute";
-    container.style.left = "0px";
-    container.style.top = "0px";
+    container.style.position = 'absolute';
+    container.style.left = '0px';
+    container.style.top = '0px';
     document.body.append(container);
-    this._repositionHook = Hooks.on("canvasPan", () => this.updateTarget());
+    this._repositionHook = Hooks.on('canvasPan', () => this.updateTarget());
 
     this.prevID = -1;
     this._anchorX = 0;
     this._anchorY = 0;
 
-    this.container.addEventListener("mouseover", () => {
+    this.container.addEventListener('mouseover', () => {
       this.visible = true;
-      this.container.addEventListener("mouseleave", () => (this.visible = false));
+      this.container.addEventListener('mouseleave', () => (this.visible = false));
     });
   }
 
@@ -80,7 +80,7 @@ export class ElementWrapper extends PIXI.DisplayObject {
    */
   destroy() {
     this.container.remove();
-    Hooks.off("canvasPan", this._repositionHook);
+    Hooks.off('canvasPan', this._repositionHook);
     this.container = null;
     this.prevID = null;
 
@@ -159,16 +159,16 @@ export class ElementWrapper extends PIXI.DisplayObject {
     if (!this.container) {
       return;
     }
-    this.container.style.opacity = value ? "1" : "0";
+    this.container.style.opacity = value ? '1' : '0';
     if (value === false) {
       this._fadeoutTimeout = setTimeout(() => {
-        this.container.style.display = "none";
+        this.container.style.display = 'none';
       }, 50);
     } else {
-      this.container.innerHTML = "";
+      this.container.innerHTML = '';
       this.container.innerHTML = this._contentHTML;
 
-      this.container.style.display = "";
+      this.container.style.display = '';
       clearTimeout(this._fadeoutTimeout);
     }
   }
@@ -177,7 +177,7 @@ export class ElementWrapper extends PIXI.DisplayObject {
     if (!this.container) {
       return false;
     }
-    return this.container.style.opacity !== "0";
+    return this.container.style.opacity !== '0';
   }
 }
 

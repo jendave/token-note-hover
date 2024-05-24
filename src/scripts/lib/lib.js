@@ -3,7 +3,7 @@
 // =============================
 
 export function isRealNumber(inNumber) {
-  return !isNaN(inNumber) && typeof inNumber === "number" && isFinite(inNumber);
+  return !isNaN(inNumber) && typeof inNumber === 'number' && isFinite(inNumber);
 }
 
 export function wait(ms) {
@@ -12,7 +12,7 @@ export function wait(ms) {
 
 export function isPlacementVertical(tooltipPlacement) {
   // n, e, s, w, nw, ne, sw, se, nw-alt, ne-alt, sw-alt
-  const arr = ["n", "s", "nw", "ne", "sw", "se", "nw-alt", "ne-alt", "sw-alt"];
+  const arr = ['n', 's', 'nw', 'ne', 'sw', 'se', 'nw-alt', 'ne-alt', 'sw-alt'];
   if (arr.includes(tooltipPlacement)) {
     return true;
   }
@@ -24,18 +24,18 @@ export function stripQueryStringAndHashFromPath(url) {
   if (!myUrl) {
     return myUrl;
   }
-  if (myUrl.includes("?")) {
-    myUrl = myUrl.split("?")[0];
+  if (myUrl.includes('?')) {
+    myUrl = myUrl.split('?')[0];
   }
-  if (myUrl.includes("#")) {
-    myUrl = myUrl.split("#")[0];
+  if (myUrl.includes('#')) {
+    myUrl = myUrl.split('#')[0];
   }
   return myUrl;
 }
 
 export function isAlt() {
   // check if Alt and only Alt is being pressed during the drop event.
-  const alts = new Set(["Alt", "AltLeft"]);
+  const alts = new Set(['Alt', 'AltLeft']);
   return game.keyboard?.downKeys.size === 1 && game.keyboard.downKeys.intersects(alts);
 }
 
@@ -55,7 +55,7 @@ export function retrieveFirstImageFromJournalId(id, pageId, noDefault) {
     if (pageId) {
       const pageSelected = sortedArray.find((page) => page.id === pageId);
       if (pageSelected) {
-        if (pageSelected.type === "image" && pageSelected.src) {
+        if (pageSelected.type === 'image' && pageSelected.src) {
           firstImage = stripQueryStringAndHashFromPath(pageSelected.src);
         }
         // this should manage all MJE type
@@ -67,10 +67,10 @@ export function retrieveFirstImageFromJournalId(id, pageId, noDefault) {
     // const shouldCheckForDefault = !noDefault && pageId?.length > 0;
     if (!noDefault && !firstImage) {
       for (const pageEntry of sortedArray) {
-        if (pageEntry.type === "image" && pageEntry.src) {
+        if (pageEntry.type === 'image' && pageEntry.src) {
           firstImage = stripQueryStringAndHashFromPath(pageEntry.src);
           break;
-        } else if (pageEntry.src && pageEntry.type === "pdf") {
+        } else if (pageEntry.src && pageEntry.type === 'pdf') {
           firstImage = stripQueryStringAndHashFromPath(pageEntry.src);
           break;
         }
@@ -97,7 +97,7 @@ export function retrieveFirstTextFromJournalId(id, pageId, noDefault) {
     if (pageId) {
       const pageSelected = sortedArray.find((page) => page.id === pageId);
       if (pageSelected) {
-        if (pageSelected.type === "text" && pageSelected.text?.content) {
+        if (pageSelected.type === 'text' && pageSelected.text?.content) {
           firstText = pageSelected.text?.content;
         }
         // this should manage all MJE type
@@ -108,7 +108,7 @@ export function retrieveFirstTextFromJournalId(id, pageId, noDefault) {
     }
     if (!noDefault && !firstText) {
       for (const journalEntry of sortedArray) {
-        if (journalEntry.type === "text" && journalEntry.text?.content) {
+        if (journalEntry.type === 'text' && journalEntry.text?.content) {
           firstText = journalEntry.text?.content;
           break;
         }

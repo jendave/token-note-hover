@@ -1,6 +1,6 @@
-import CONSTANTS from "../constants";
-import { isPlacementVertical } from "../lib/lib";
-import { TokenNoteHoverPixiHelpers } from "../pixi/token-note-hover-pixi-helpers";
+import CONSTANTS from '../constants';
+import { isPlacementVertical } from '../lib/lib';
+import { TokenNoteHoverPixiHelpers } from '../pixi/token-note-hover-pixi-helpers';
 
 /**
  * @class TokenNoteHoverHUD
@@ -18,11 +18,11 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
    */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      id: "token-note-hover-hud",
-      classes: [...super.defaultOptions.classes, "token-note-hover-hud"],
+      id: 'token-note-hover-hud',
+      classes: [...super.defaultOptions.classes, 'token-note-hover-hud'],
       minimizable: false,
       resizable: false,
-      template: "modules/token-note-hover/templates/journal-preview.html",
+      template: 'modules/token-note-hover/templates/journal-preview.html',
     });
   }
 
@@ -70,27 +70,27 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
     const dataTmp = await TokenNoteHoverPixiHelpers._manageContentHtmlFromNote(note);
     data = mergeObject(data, dataTmp);
 
-    let tempContent = "";
+    let tempContent = '';
     let actorIsOwner = true;
     if (actor) {
       actorIsOwner = actor.isOwner ?? true;
 
       switch (actor.type) {
-        case "starship":
+        case 'starship':
           tempContent = await TextEditor.enrichHTML(actor.system.notes, {
             secrets: actorIsOwner,
             documents: true,
             async: true,
           });
           break;
-        case "character":
-          if (actor.sheet?.constructor.name === "IronswornCharacterSheetV2") {
+        case 'character':
+          if (actor.sheet?.constructor.name === 'IronswornCharacterSheetV2') {
             tempContent = await TextEditor.enrichHTML(actor.system.biography, {
               secrets: actorIsOwner,
               documents: true,
               async: true,
             });
-          } else if (actor.sheet?.constructor.name === "StarforgedCharacterSheet") {
+          } else if (actor.sheet?.constructor.name === 'StarforgedCharacterSheet') {
             tempContent = await TextEditor.enrichHTML(actor.system.notes, {
               secrets: actorIsOwner,
               documents: true,
@@ -98,31 +98,31 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
             });
           }
           break;
-        case "foe":
+        case 'foe':
           tempContent = await TextEditor.enrichHTML(
             Array.from(actor.items.values()).map((c) => c.system.description),
             {
               secrets: actorIsOwner,
               documents: true,
               async: true,
-            }
+            },
           );
           break;
-        case "shared":
+        case 'shared':
           tempContent = await TextEditor.enrichHTML(actor.system.biography, {
             secrets: actorIsOwner,
             documents: true,
             async: true,
           });
           break;
-        case "site":
+        case 'site':
           tempContent = await TextEditor.enrichHTML(actor.system.description, {
             secrets: actorIsOwner,
             documents: true,
             async: true,
           });
           break;
-        case "location":
+        case 'location':
           tempContent = await TextEditor.enrichHTML(actor.system.description, {
             secrets: actorIsOwner,
             documents: true,
@@ -162,28 +162,25 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
     const { fontSize } = this;
     const { maxWidth } = this;
 
-    const tooltipPlacement =
-      getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_PLACEMENT) ?? "e";
+    const tooltipPlacement = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_PLACEMENT) ?? 'e';
 
-    const tooltipSmartPlacement =
-      getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_SMART_PLACEMENT) ?? false;
+    const tooltipSmartPlacement = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_SMART_PLACEMENT) ?? false;
 
-    const tooltipFollowMouse =
-      getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_FOLLOW_MOUSE) ?? false;
+    const tooltipFollowMouse = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_FOLLOW_MOUSE) ?? false;
 
     const isVertical = isPlacementVertical(tooltipPlacement);
 
-    let orientation = "";
-    if (tooltipPlacement.includes("e")) {
-      orientation = "right";
+    let orientation = '';
+    if (tooltipPlacement.includes('e')) {
+      orientation = 'right';
     } else {
-      orientation = "left";
+      orientation = 'left';
     }
 
     // WITH TOOLTIP
     let x = 0;
     let y = 0;
-    if (game.settings.get(CONSTANTS.MODULE_ID, "tooltipUseMousePositionForCoordinates")) {
+    if (game.settings.get(CONSTANTS.MODULE_ID, 'tooltipUseMousePositionForCoordinates')) {
       const positionMouse = canvas.mousePosition;
       x = positionMouse.x;
       y = positionMouse.y;
@@ -203,8 +200,8 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
       width: `${width}px`,
       left: `${left}px`,
       top: `${top}px`,
-      "font-size": `${fontSize}px`,
-      "max-width": `${maxWidth}px`,
+      'font-size': `${fontSize}px`,
+      'max-width': `${maxWidth}px`,
     };
     this.element.css(position);
   }
@@ -217,26 +214,22 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
       elementToTooltip = $(elementToTooltip);
     }
 
-    const fontSize = game.settings.get(CONSTANTS.MODULE_ID, "fontSize") || canvas.grid.size / 5;
-    const maxWidth = game.settings.get(CONSTANTS.MODULE_ID, "maxWidth");
+    const fontSize = game.settings.get(CONSTANTS.MODULE_ID, 'fontSize') || canvas.grid.size / 5;
+    const maxWidth = game.settings.get(CONSTANTS.MODULE_ID, 'maxWidth');
 
-    const tooltipPlacement =
-      getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_PLACEMENT) ?? "e";
+    const tooltipPlacement = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_PLACEMENT) ?? 'e';
 
-    const tooltipSmartPlacement =
-      getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_SMART_PLACEMENT) ?? false;
+    const tooltipSmartPlacement = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_SMART_PLACEMENT) ?? false;
 
-    const tooltipFollowMouse =
-      getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_FOLLOW_MOUSE) ?? false;
+    const tooltipFollowMouse = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_FOLLOW_MOUSE) ?? false;
 
-    const tooltipColor =
-      getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_COLOR) ?? "";
+    const tooltipColor = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_COLOR) ?? '';
 
-    let orientation = "";
-    if (tooltipPlacement.includes("e")) {
-      orientation = "right";
+    let orientation = '';
+    if (tooltipPlacement.includes('e')) {
+      orientation = 'right';
     } else {
-      orientation = "left";
+      orientation = 'left';
     }
 
     const isVertical = isPlacementVertical(tooltipPlacement);
@@ -244,7 +237,7 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
     // WITH TOOLTIP
     let x = 0;
     let y = 0;
-    if (game.settings.get(CONSTANTS.MODULE_ID, "tooltipUseMousePositionForCoordinates")) {
+    if (game.settings.get(CONSTANTS.MODULE_ID, 'tooltipUseMousePositionForCoordinates')) {
       const positionMouse = canvas.mousePosition;
       x = positionMouse.x;
       y = positionMouse.y;
@@ -269,11 +262,11 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
 
     const tooltipPopupClass = tooltipColor
       ? `token-note-hover-hud-tooltip-${tooltipColor}`
-      : "token-note-hover-hud-tooltip-default";
+      : 'token-note-hover-hud-tooltip-default';
 
     const tooltipTipContent = $(this.contentTooltip);
 
-    elementToTooltip.data("powertipjq", tooltipTipContent);
+    elementToTooltip.data('powertipjq', tooltipTipContent);
     elementToTooltip.powerTip({
       // 	(default: 'powerTip') HTML id attribute for the tooltip div.
       // popupId: popupId, // e.g. default 'powerTip'
