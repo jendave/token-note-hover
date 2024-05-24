@@ -71,76 +71,76 @@ export class TokenNoteHover {
 
   /* --------------------------------- Methods -------------------------------- */
 
-  /**
-   * Creates and renders a dialog for name entry
-   * @param {*} data
-   * break callbacks out into separate methods
-   */
-  _createDialog(data) {
-    new Dialog({
-      title: TokenNoteHover.DIALOG.title,
-      content: TokenNoteHover.DIALOG.content,
-      buttons: {
-        save: {
-          label: "Save",
-          icon: `<i class="fas fa-check"></i>`,
-          callback: (html) => {
-            return this.createNoteFromCanvas(html, data);
-          },
-        },
-        cancel: {
-          label: "Cancel",
-          icon: `<i class="fas fa-times"></i>`,
-          callback: (e) => {
-            // Maybe do something in the future
-          },
-        },
-      },
-      default: "save",
-    }).render(true);
-  }
+  // /**
+  //  * Creates and renders a dialog for name entry
+  //  * @param {*} data
+  //  * break callbacks out into separate methods
+  //  */
+  // _createDialog(data) {
+  //   new Dialog({
+  //     title: TokenNoteHover.DIALOG.title,
+  //     content: TokenNoteHover.DIALOG.content,
+  //     buttons: {
+  //       save: {
+  //         label: "Save",
+  //         icon: `<i class="fas fa-check"></i>`,
+  //         callback: (html) => {
+  //           return this.createNoteFromCanvas(html, data);
+  //         },
+  //       },
+  //       cancel: {
+  //         label: "Cancel",
+  //         icon: `<i class="fas fa-times"></i>`,
+  //         callback: (e) => {
+  //           // Maybe do something in the future
+  //         },
+  //       },
+  //     },
+  //     default: "save",
+  //   }).render(true);
+  // }
 
-  /**
-   * Checks for missing Journal Entry folders and creates them
-   *
-   * @static
-   * @private
-   * @returns {void}
-   */
-  static async _createFolders() {
-    // Collect missing folders
-    const missingFolders = game.users
-      .filter((u) => !u.isGM && TokenNoteHover.getFolder(u.name, setting) === undefined)
-      .map((user) => ({
-        name: user.name,
-        type: "JournalEntry",
-        parent: null,
-        sorting: "a",
-      }));
-    if (missingFolders.length) {
-      // Ask for folder creation confirmation in a dialog
-      const createFolders = await new Promise((resolve, reject) => {
-        new Dialog({
-          title: Logger.i18n("token-note-hover.CreateMissingFoldersT"),
-          content: Logger.i18n("token-note-hover.CreateMissingFoldersC"),
-          buttons: {
-            yes: {
-              label: `<i class="fas fa-check"></i> ${Logger.i18n("Yes")}`,
-              callback: () => resolve(true),
-            },
-            no: {
-              label: `<i class="fas fa-times"></i> ${Logger.i18n("No")}`,
-              callback: () => reject(),
-            },
-          },
-          default: "yes",
-          close: () => reject(),
-        }).render(true);
-      }).catch((_) => {});
-      // Create folders
-      if (createFolders) await Folder.create(missingFolders);
-    }
-  }
+  // /**
+  //  * Checks for missing Journal Entry folders and creates them
+  //  *
+  //  * @static
+  //  * @private
+  //  * @returns {void}
+  //  */
+  // static async _createFolders() {
+  //   // Collect missing folders
+  //   const missingFolders = game.users
+  //     .filter((u) => !u.isGM && TokenNoteHover.getFolder(u.name, setting) === undefined)
+  //     .map((user) => ({
+  //       name: user.name,
+  //       type: "JournalEntry",
+  //       parent: null,
+  //       sorting: "a",
+  //     }));
+  //   if (missingFolders.length) {
+  //     // Ask for folder creation confirmation in a dialog
+  //     const createFolders = await new Promise((resolve, reject) => {
+  //       new Dialog({
+  //         title: Logger.i18n("token-note-hover.CreateMissingFoldersT"),
+  //         content: Logger.i18n("token-note-hover.CreateMissingFoldersC"),
+  //         buttons: {
+  //           yes: {
+  //             label: `<i class="fas fa-check"></i> ${Logger.i18n("Yes")}`,
+  //             callback: () => resolve(true),
+  //           },
+  //           no: {
+  //             label: `<i class="fas fa-times"></i> ${Logger.i18n("No")}`,
+  //             callback: () => reject(),
+  //           },
+  //         },
+  //         default: "yes",
+  //         close: () => reject(),
+  //       }).render(true);
+  //     }).catch((_) => {});
+  //     // Create folders
+  //     if (createFolders) await Folder.create(missingFolders);
+  //   }
+  // }
 
   /**
    * Replaces icon selector in Notes Config form with filepicker
@@ -465,140 +465,140 @@ export class TokenNoteHover {
 
   /* -------------------------------- Listeners ------------------------------- */
 
-  /**
-   * Handles doubleclicks
-   * @param {*} event
-   */
-  static _onDoubleClick(event) {
-    if (canvas.activeLayer._hover) {
-      return;
-    }
+  // /**
+  //  * Handles doubleclicks
+  //  * @param {*} event
+  //  */
+  // static _onDoubleClick(event) {
+  //   if (canvas.activeLayer._hover) {
+  //     return;
+  //   }
 
-    // Silently return when note creation permissions are missing
-    if (!game.user.can("NOTE_CREATE")) return;
+  //   // Silently return when note creation permissions are missing
+  //   if (!game.user.can("NOTE_CREATE")) return;
 
-    // Warn user when notes can be created, but journal entries cannot
-    if (!game.user.can("JOURNAL_CREATE")) {
-      Logger.warn(
-        game.i18n.format("TokenNoteHover.AllowPlayerNotes", {
-          permission: Logger.i18n("PERMISSION.JournalCreate"),
-        }),
-        true
-      );
-      return;
-    }
+  //   // Warn user when notes can be created, but journal entries cannot
+  //   if (!game.user.can("JOURNAL_CREATE")) {
+  //     Logger.warn(
+  //       game.i18n.format("TokenNoteHover.AllowPlayerNotes", {
+  //         permission: Logger.i18n("PERMISSION.JournalCreate"),
+  //       }),
+  //       true
+  //     );
+  //     return;
+  //   }
 
-    const data = {
-      clientX: event.data.global.x,
-      clientY: event.data.global.y,
-    };
+  //   const data = {
+  //     clientX: event.data.global.x,
+  //     clientY: event.data.global.y,
+  //   };
 
-    API.tokenNoteHover._createDialog(data);
-  }
+  //   API.tokenNoteHover._createDialog(data);
+  // }
 
-  static _drawControlIconInternal(noteInternal) {
-    // Wraps the default Note#_drawControlIcon so that we can override the stored icon tint based
-    // on whether the link is accessible for the current player (or not). This is only done for links which
-    // are using the "revealed" flag.
-    const revealedNotes = game.settings.get(CONSTANTS.MODULE_ID, "revealedNotes");
-    if (revealedNotes) {
-      if (game.user.isGM) {
-        // Replacement for Note#_drawControlIcon for GMs, to show which pins are revealed.
-        const is_revealed = noteInternal.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.PIN_IS_REVEALED);
-        if (is_revealed != undefined) {
-          const colour = game.settings.get(
-            CONSTANTS.MODULE_ID,
-            is_revealed ? "revealedNotesTintColorRevealed" : "revealedNotesTintColorNotRevealed"
-          );
-          if (colour?.length > 0) {
-            // Temporarily set the icon tint
-            const saved = noteInternal.document.texture.tint;
-            noteInternal.document.texture.tint = colour;
-            // const result = wrapped(...args);
-            noteInternal.document.texture.tint = saved;
-            // return result;
-          }
-        }
-      } else {
-        // if (!noteInternal.document.getFlag(MODULE_ID, USE_PIN_REVEALED)) return wrapped(...args);
-        const use_reveal = noteInternal.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.USE_PIN_REVEALED);
-        if (use_reveal === undefined || !use_reveal) {
-          // return wrapped(...args);
-        } else {
-          const value = noteInternal.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.USE_PIN_REVEALED);
-          if (value !== undefined) {
-            const is_linked = noteInternal.entry?.testUserPermission(
-              game.user,
-              CONST.DOCUMENT_OWNERSHIP_LEVELS.LIMITED
-            );
-            const colour = game.settings.get(
-              CONSTANTS.MODULE_ID,
-              is_linked ? "revealedNotesTintColorLink" : "revealedNotesTintColorNotLink"
-            );
-            if (colour?.length > 0) {
-              // Temporarily set the icon tint
-              const saved = noteInternal.document.texture.tint;
-              noteInternal.document.texture.tint = colour;
-              // const result = wrapped(...args);
-              noteInternal.document.texture.tint = saved;
-              // return result;
-            }
-          }
-        }
-      }
-    }
+  // static _drawControlIconInternal(noteInternal) {
+  //   // Wraps the default Note#_drawControlIcon so that we can override the stored icon tint based
+  //   // on whether the link is accessible for the current player (or not). This is only done for links which
+  //   // are using the "revealed" flag.
+  //   const revealedNotes = game.settings.get(CONSTANTS.MODULE_ID, "revealedNotes");
+  //   if (revealedNotes) {
+  //     if (game.user.isGM) {
+  //       // Replacement for Note#_drawControlIcon for GMs, to show which pins are revealed.
+  //       const is_revealed = noteInternal.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.PIN_IS_REVEALED);
+  //       if (is_revealed != undefined) {
+  //         const colour = game.settings.get(
+  //           CONSTANTS.MODULE_ID,
+  //           is_revealed ? "revealedNotesTintColorRevealed" : "revealedNotesTintColorNotRevealed"
+  //         );
+  //         if (colour?.length > 0) {
+  //           // Temporarily set the icon tint
+  //           const saved = noteInternal.document.texture.tint;
+  //           noteInternal.document.texture.tint = colour;
+  //           // const result = wrapped(...args);
+  //           noteInternal.document.texture.tint = saved;
+  //           // return result;
+  //         }
+  //       }
+  //     } else {
+  //       // if (!noteInternal.document.getFlag(MODULE_ID, USE_PIN_REVEALED)) return wrapped(...args);
+  //       const use_reveal = noteInternal.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.USE_PIN_REVEALED);
+  //       if (use_reveal === undefined || !use_reveal) {
+  //         // return wrapped(...args);
+  //       } else {
+  //         const value = noteInternal.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.USE_PIN_REVEALED);
+  //         if (value !== undefined) {
+  //           const is_linked = noteInternal.entry?.testUserPermission(
+  //             game.user,
+  //             CONST.DOCUMENT_OWNERSHIP_LEVELS.LIMITED
+  //           );
+  //           const colour = game.settings.get(
+  //             CONSTANTS.MODULE_ID,
+  //             is_linked ? "revealedNotesTintColorLink" : "revealedNotesTintColorNotLink"
+  //           );
+  //           if (colour?.length > 0) {
+  //             // Temporarily set the icon tint
+  //             const saved = noteInternal.document.texture.tint;
+  //             noteInternal.document.texture.tint = colour;
+  //             // const result = wrapped(...args);
+  //             noteInternal.document.texture.tint = saved;
+  //             // return result;
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
 
-    let tint = noteInternal.document.texture.tint ? Color.from(noteInternal.document.texture.tint) : null;
-    let currentIcon = noteInternal.document.texture.src;
-    const pinIsTransparent = noteInternal.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.PIN_IS_TRANSPARENT);
-    if (String(pinIsTransparent) === "true") {
-      currentIcon = CONSTANTS.PATH_TRANSPARENT;
-    }
+  //   let tint = noteInternal.document.texture.tint ? Color.from(noteInternal.document.texture.tint) : null;
+  //   let currentIcon = noteInternal.document.texture.src;
+  //   const pinIsTransparent = noteInternal.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.PIN_IS_TRANSPARENT);
+  //   if (String(pinIsTransparent) === "true") {
+  //     currentIcon = CONSTANTS.PATH_TRANSPARENT;
+  //   }
 
-    let iconData = {
-      texture: stripQueryStringAndHashFromPath(currentIcon),
-      size: noteInternal.size,
-      tint: tint,
-    };
-    let icon;
-    // this is note
-    if (noteInternal.document && noteInternal.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.HAS_BACKGROUND)) {
-      icon = new ControlIcon(iconData);
-      icon.x -= noteInternal.size / 2;
-      icon.y -= noteInternal.size / 2;
-    } else {
-      icon = new ControlIcon(iconData);
-      icon.x -= noteInternal.size / 2;
-      icon.y -= noteInternal.size / 2;
-    }
-    const ratio_width = isRealNumber(noteInternal.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.RATIO_WIDTH))
-      ? noteInternal.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.RATIO_WIDTH)
-      : 1;
-    if (ratio_width != 1) {
-      if (noteInternal.document) {
-        icon.width = icon.width * ratio_width; // TODO not sure about this
-      }
+  //   let iconData = {
+  //     texture: stripQueryStringAndHashFromPath(currentIcon),
+  //     size: noteInternal.size,
+  //     tint: tint,
+  //   };
+  //   let icon;
+  //   // this is note
+  //   if (noteInternal.document && noteInternal.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.HAS_BACKGROUND)) {
+  //     icon = new ControlIcon(iconData);
+  //     icon.x -= noteInternal.size / 2;
+  //     icon.y -= noteInternal.size / 2;
+  //   } else {
+  //     icon = new ControlIcon(iconData);
+  //     icon.x -= noteInternal.size / 2;
+  //     icon.y -= noteInternal.size / 2;
+  //   }
+  //   const ratio_width = isRealNumber(noteInternal.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.RATIO_WIDTH))
+  //     ? noteInternal.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.RATIO_WIDTH)
+  //     : 1;
+  //   if (ratio_width != 1) {
+  //     if (noteInternal.document) {
+  //       icon.width = icon.width * ratio_width; // TODO not sure about this
+  //     }
 
-      // TODO need to centre text of the nameplate ??
-      // https://github.com/p4535992/foundryvtt-token-note-hover/issues/66
-      // https://github.com/p4535992/foundryvtt-token-note-hover/issues/52
-    }
-    // PATCH MODULE autoIconFlags
-    if (noteInternal.document?.flags?.autoIconFlags) {
-      const flagsAutomaticJournalIconNumbers = {
-        autoIcon: noteInternal.document?.flags.autoIconFlags.autoIcon,
-        iconType: noteInternal.document?.flags.autoIconFlags.iconType,
-        iconText: noteInternal.document?.flags.autoIconFlags.iconText,
-        foreColor: noteInternal.document?.flags.autoIconFlags.foreColor,
-        backColor: noteInternal.document?.flags.autoIconFlags.backColor,
-        fontFamily: noteInternal.document?.flags.autoIconFlags.fontFamily,
-      };
-      if (flagsAutomaticJournalIconNumbers.fontFamily) {
-        noteInternal.document.fontFamily = flagsAutomaticJournalIconNumbers.fontFamily;
-      }
-    }
-    return icon;
-  }
+  //     // TODO need to centre text of the nameplate ??
+  //     // https://github.com/p4535992/foundryvtt-token-note-hover/issues/66
+  //     // https://github.com/p4535992/foundryvtt-token-note-hover/issues/52
+  //   }
+  //   // PATCH MODULE autoIconFlags
+  //   if (noteInternal.document?.flags?.autoIconFlags) {
+  //     const flagsAutomaticJournalIconNumbers = {
+  //       autoIcon: noteInternal.document?.flags.autoIconFlags.autoIcon,
+  //       iconType: noteInternal.document?.flags.autoIconFlags.iconType,
+  //       iconText: noteInternal.document?.flags.autoIconFlags.iconText,
+  //       foreColor: noteInternal.document?.flags.autoIconFlags.foreColor,
+  //       backColor: noteInternal.document?.flags.autoIconFlags.backColor,
+  //       fontFamily: noteInternal.document?.flags.autoIconFlags.fontFamily,
+  //     };
+  //     if (flagsAutomaticJournalIconNumbers.fontFamily) {
+  //       noteInternal.document.fontFamily = flagsAutomaticJournalIconNumbers.fontFamily;
+  //     }
+  //   }
+  //   return icon;
+  // }
 
   static _noteConfigGetData(wrapped, ...args) {
     let noteData = wrapped(...args);
@@ -912,26 +912,26 @@ export class TokenNoteHover {
     }
   }
 
-  /**
-   * Note.prototype._onClickLeft and Note.prototype._onClickRight seem to work only on the NoteLayer
-   * @href https://github.com/foundryvtt/foundryvtt/issues/8770
-   * @param {*} wrapped
-   * @param  {...any} args
-   * @returns
-   */
-  static _canControl(wrapped, ...args) {
-    if (canvas.activeLayer instanceof TokenLayer) {
-      Logger.info(`Applied can control override`);
-      const [user, event] = args;
-      if (this.isPreview) {
-        return false;
-      }
-      const enableDragNoteOnTokenLayerIfGM = game.settings.get(CONSTANTS.MODULE_ID, "enableDragNoteOnTokenLayerIfGM");
-      if (enableDragNoteOnTokenLayerIfGM && game.user.isGM) {
-        return true;
-      }
-    }
-    let result = wrapped(...args);
-    return result;
-  }
+  //   /**
+  //    * Note.prototype._onClickLeft and Note.prototype._onClickRight seem to work only on the NoteLayer
+  //    * @href https://github.com/foundryvtt/foundryvtt/issues/8770
+  //    * @param {*} wrapped
+  //    * @param  {...any} args
+  //    * @returns
+  //    */
+  //   static _canControl(wrapped, ...args) {
+  //     if (canvas.activeLayer instanceof TokenLayer) {
+  //       Logger.info(`Applied can control override`);
+  //       const [user, event] = args;
+  //       if (this.isPreview) {
+  //         return false;
+  //       }
+  //       const enableDragNoteOnTokenLayerIfGM = game.settings.get(CONSTANTS.MODULE_ID, "enableDragNoteOnTokenLayerIfGM");
+  //       if (enableDragNoteOnTokenLayerIfGM && game.user.isGM) {
+  //         return true;
+  //       }
+  //     }
+  //     let result = wrapped(...args);
+  //     return result;
+  //   }
 }

@@ -25,12 +25,12 @@ Hooks.once("init", function () {
 
   Hooks.once("socketlib.ready", registerSocket);
 
-  libWrapper.register(
-    CONSTANTS.MODULE_ID,
-    "NotesLayer.prototype._onClickLeft2",
-    TokenNoteHover._onDoubleClick,
-    "OVERRIDE"
-  );
+  // libWrapper.register(
+  //   CONSTANTS.MODULE_ID,
+  //   "NotesLayer.prototype._onClickLeft2",
+  //   TokenNoteHover._onDoubleClick,
+  //   "OVERRIDE"
+  // );
 
   const enablePlayerIconAutoOverride = game.settings.get(CONSTANTS.MODULE_ID, "playerIconAutoOverride");
   if (enablePlayerIconAutoOverride) {
@@ -724,14 +724,14 @@ Hooks.once("canvasInit", () => {
 
   libWrapper.register(CONSTANTS.MODULE_ID, "Note.prototype.isVisible", TokenNoteHover._isVisible, "MIXED");
 
-  libWrapper.register(
-    CONSTANTS.MODULE_ID,
-    "Note.prototype._drawControlIcon",
-    TokenNoteHover._drawControlIcon,
-    "OVERRIDE"
-  );
+  // libWrapper.register(
+  //   CONSTANTS.MODULE_ID,
+  //   "Note.prototype._drawControlIcon",
+  //   TokenNoteHover._drawControlIcon,
+  //   "OVERRIDE"
+  // );
 
-  libWrapper.register(CONSTANTS.MODULE_ID, "Note.prototype._canControl", TokenNoteHover._canControl, "MIXED");
+  // libWrapper.register(CONSTANTS.MODULE_ID, "Note.prototype._canControl", TokenNoteHover._canControl, "MIXED");
 });
 
 Hooks.on("renderSettingsConfig", (app, html, data) => {
