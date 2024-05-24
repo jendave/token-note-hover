@@ -523,12 +523,12 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
     $(".sheet-tabs", html).append(
       $("<a>")
         .addClass("item")
-        .attr("data-tab", "pincushion")
-        .html('<i class="fas fa-map-marker-plus"></i> Pin Cushion (GM Only)')
+        .attr("data-tab", "tokennotehover")
+        .html('<i class="fas fa-map-marker-plus"></i> Token Note Hover (GM Only)')
     );
     $("<div>")
       .addClass("tab action-sheet")
-      .attr("data-tab", "pincushion")
+      .attr("data-tab", "tokennotehover")
       .html(noteHtml)
       .insertAfter($(".tab:last", html));
   } else {
@@ -542,7 +542,7 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
     });
 
     $(root)
-      .prepend($("<div>").addClass("tab action-sheet").attr("data-tab", "pincushion").html(noteHtml))
+      .prepend($("<div>").addClass("tab action-sheet").attr("data-tab", "tokennotehover").html(noteHtml))
       .prepend(basictab)
       .prepend(
         $("<nav>")
@@ -553,8 +553,8 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
           .append(
             $("<a>")
               .addClass("item")
-              .attr("data-tab", "pincushion")
-              .html('<i class="fas fa-map-marker-plus"></i> Pin Cushion (GM Only)')
+              .attr("data-tab", "tokennotehover")
+              .html('<i class="fas fa-map-marker-plus"></i> Token Note Hover (GM Only)')
           )
       );
   }

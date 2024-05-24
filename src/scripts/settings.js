@@ -1,4 +1,3 @@
-import { TokenNoteHover } from "./apps/TokenNoteHover.js";
 import CONSTANTS from "./constants.js";
 
 export const registerSettings = function () {
@@ -40,15 +39,6 @@ export const registerSettings = function () {
     //@ts-ignore
     range: { min: 100, max: 3000, step: 100 },
   });
-
-  // game.settings.register(CONSTANTS.MODULE_ID, "enableBackgroundlessPins", {
-  //   name: `token-note-hover.SETTINGS.EnableBackgroundlessPinsN`,
-  //   hint: `token-note-hover.SETTINGS.EnableBackgroundlessPinsH`,
-  //   scope: "world",
-  //   type: Boolean,
-  //   default: true,
-  //   config: true,
-  // });
 
   game.settings.register(CONSTANTS.MODULE_ID, "showJournalImageByDefault", {
     name: `token-note-hover.SETTINGS.ShowJournalImageByDefaultN`,
@@ -233,16 +223,6 @@ export const registerSettings = function () {
     default: true,
     type: Boolean,
   });
-
-  // DEPRECATED ON V11
-  //   game.settings.register(CONSTANTS.MODULE_ID, "oneClickNoteCreation", {
-  //     name: `token-note-hover.SETTINGS.oneClickNoteCreationN`,
-  //     hint: `token-note-hover.SETTINGS.oneClickNoteCreationH`,
-  //     scope: "world",
-  //     config: true,
-  //     default: false,
-  //     type: Boolean,
-  //   });
 
   game.settings.register(CONSTANTS.MODULE_ID, "enableJournalAnchorLink", {
     name: `token-note-hover.SETTINGS.enableJournalAnchorLinkN`,

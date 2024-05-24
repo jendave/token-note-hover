@@ -1,7 +1,7 @@
 {
     "token-note-hover": {
-        "SETTINGS.AboutAppN": "About Pin Cushion",
-        "SETTINGS.AboutAppH": "Displays additional info about Pin Cushion",
+        "SETTINGS.AboutAppN": "About Token Note Hover",
+        "SETTINGS.AboutAppH": "Displays additional info about Token Note Hover",
         "SETTINGS.ShowJournalPreviewN": "Show Journal Preview",
         "SETTINGS.ShowJournalPreviewH": "Shows a Journal preview when hovering over a map pin",
         "SETTINGS.PreviewTypeN": "Journal Preview Type",
@@ -11,10 +11,8 @@
         "SETTINGS.PreviewDelayN": "Preview Delay",
         "SETTINGS.PreviewDelayH": "How long before preview appears (in milliseconds)",
 
-        "SETTINGS.EnableBackgroundlessPinsN": "Enable feature Backgroundless Pins",
-        "SETTINGS.EnableBackgroundlessPinsH": "If enabled this setting will let you with a additional checkbox 'Has Background ?' on the note configuration panel remove or not the background box from map notes. WARNING: If you disable this module setting you simply have all your notes with background (the standard way), but the flags on the notes are not delete, so you can re-enable this when you want. YOU NEED TO REFRESH THE PAGE FOR APPLY THE SETTING.",
         "SETTINGS.ShowJournalImageByDefaultN": "Show by default the icon image of the journal on the map note.",
-        "SETTINGS.ShowJournalImageByDefaultH": "If a image is set on the journal by default is the first image set from Pin Cushion",
+        "SETTINGS.ShowJournalImageByDefaultH": "If a image is set on the journal by default is the first image set from Token Note Hover",
         "SETTINGS.PlayerIconAutoOverrideN": "Enable Player-Only Icons by default",
         "SETTINGS.PlayerIconAutoOverrideH": "Newly created notes will have player-only icons enabled automatically.",
         "SETTINGS.PlayerIconPathDefaultN": "Default Note Icon for Players (not GM)",
@@ -68,9 +66,6 @@
         "SETTINGS.dialogs.resetsettings.content": "Are you sure you want to reset all of the module settings to the current system's defaults? <strong>THIS CANNOT BE UNDONE!</strong>",
         "SETTINGS.dialogs.resetsettings.confirm": "Reset Module Settings",
         "SETTINGS.dialogs.resetsettings.cancel": "Cancel",
-
-        "SETTINGS.oneClickNoteCreationN": "One click note creation",
-        "SETTINGS.oneClickNoteCreationH": "THIS FEATURE IS NOT REQUIRED FOR FOUNDRY V10 SINCE IT IS NOW PART OF THE CORE FUNCTIONALITY. Create Notes directly on the Notes Layer with a simple left click without having a connected journal entry. NOTE: You need to reload the canvas.",
 
         "SETTINGS.enableJournalAnchorLinkN": "Enable Journal Anchor Links Feature",
         "SETTINGS.enableJournalAnchorLinkH": "If you have the module 'Journal Anchor Links' activate and enabled you don't need this and the feature is automatically disabled for avoid conflict. This is a embedded integration of the module 'Journal Anchor Links'. Since Foundry VTT V10, journal entry anchor links are finally supported in the core software. However, weirdly enough it doesn't support anchor links in scene notes. This module fixes that. This feature provides Journals with much awaited page anchors, similar to how HTML supports it.",
