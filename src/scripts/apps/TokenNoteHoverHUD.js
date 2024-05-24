@@ -1,7 +1,6 @@
-import CONSTANTS from "../constants.js";
-import { isPlacementVertical, isRealNumber } from "../lib/lib.js";
-import { TokenNoteHoverPixiHelpers } from "../pixi/token-note-hover-pixi-helpers.js";
-import { TokenNoteHover } from "./TokenNoteHover.js";
+import CONSTANTS from "../constants";
+import { isPlacementVertical } from "../lib/lib";
+import { TokenNoteHoverPixiHelpers } from "../pixi/token-note-hover-pixi-helpers";
 
 /**
  * @class TokenNoteHoverHUD
@@ -66,7 +65,7 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
     // Token Note Hover
     let data = super.getData();
     const note = this.object;
-    const actor = note.actor;
+    const { actor } = note;
 
     const dataTmp = await TokenNoteHoverPixiHelpers._manageContentHtmlFromNote(note);
     data = mergeObject(data, dataTmp);
@@ -134,7 +133,7 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
           tempContent = null;
       }
 
-      //data.contentTooltip = tempContent;
+      // data.contentTooltip = tempContent;
       const content = tempContent;
 
       data.title = actor.name;
@@ -160,8 +159,8 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
     if (!this.object) {
       return;
     }
-    const fontSize = this.fontSize;
-    const maxWidth = this.maxWidth;
+    const { fontSize } = this;
+    const { maxWidth } = this;
 
     const tooltipPlacement =
       getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_PLACEMENT) ?? "e";
@@ -195,17 +194,17 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
 
     const width = this.object.w;
     const height = this.object.h;
-    let left = x - width / 2;
+    const left = x - width / 2;
 
     const top = y - height / 2;
 
     const position = {
-      height: height + "px",
-      width: width + "px",
-      left: left + "px",
-      top: top + "px",
-      "font-size": fontSize + "px",
-      "max-width": maxWidth + "px",
+      height: `${height}px`,
+      width: `${width}px`,
+      left: `${left}px`,
+      top: `${top}px`,
+      "font-size": `${fontSize}px`,
+      "max-width": `${maxWidth}px`,
     };
     this.element.css(position);
   }
@@ -256,20 +255,20 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
 
     const width = this.object.w;
     const height = this.object.h;
-    let left = x - width / 2;
+    const left = x - width / 2;
 
     const top = y - height / 2;
 
     const position = {
-      height: height + "px",
-      width: width + "px",
-      left: left + "px",
-      top: top + "px",
+      height: `${height}px`,
+      width: `${width}px`,
+      left: `${left}px`,
+      top: `${top}px`,
     };
     elementToTooltip.css(position);
 
     const tooltipPopupClass = tooltipColor
-      ? "token-note-hover-hud-tooltip-" + tooltipColor
+      ? `token-note-hover-hud-tooltip-${tooltipColor}`
       : "token-note-hover-hud-tooltip-default";
 
     const tooltipTipContent = $(this.contentTooltip);

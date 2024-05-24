@@ -1,5 +1,5 @@
-import { TokenNoteHover } from "./apps/TokenNoteHover.js";
-import Logger from "./lib/Logger.js";
+import { TokenNoteHover } from "./apps/TokenNoteHover";
+import Logger from "./lib/Logger";
 
 const API = {
   tokenNoteHover: new TokenNoteHover(),
@@ -22,7 +22,7 @@ const API = {
     //   return;
     // }
     if (!Object.keys(message)?.includes("action")) {
-      Logger.warn(`Message doesn't contain the 'action'`);
+      Logger.warn("Message doesn't contain the 'action'");
       return;
     }
     const id = `${game.user.id}_${Date.now()}_${randomID()}`;

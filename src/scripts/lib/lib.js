@@ -15,9 +15,8 @@ export function isPlacementVertical(tooltipPlacement) {
   const arr = ["n", "s", "nw", "ne", "sw", "se", "nw-alt", "ne-alt", "sw-alt"];
   if (arr.includes(tooltipPlacement)) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 
 export function stripQueryStringAndHashFromPath(url) {
@@ -42,7 +41,7 @@ export function isAlt() {
 
 export function retrieveFirstImageFromJournalId(id, pageId, noDefault) {
   const journalEntry = game.journal.get(id);
-  let firstImage = undefined;
+  let firstImage;
   if (!journalEntry) {
     return firstImage;
   }
@@ -88,7 +87,7 @@ export function retrieveFirstImageFromJournalId(id, pageId, noDefault) {
 
 export function retrieveFirstTextFromJournalId(id, pageId, noDefault) {
   const journalEntry = game.journal.get(id);
-  let firstText = undefined;
+  let firstText;
   if (!journalEntry) {
     return firstText;
   }

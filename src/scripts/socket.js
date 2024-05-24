@@ -1,6 +1,6 @@
-import CONSTANTS from "./constants.js";
-import API from "./api.js";
-import Logger from "./lib/Logger.js";
+import CONSTANTS from "./constants";
+import API from "./api";
+import Logger from "./lib/Logger";
 
 export let tokenNoteHoverSocket;
 export function registerSocket() {

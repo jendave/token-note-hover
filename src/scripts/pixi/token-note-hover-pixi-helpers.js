@@ -24,8 +24,8 @@ export class TokenNoteHoverPixiHelpers {
     const data = await TokenNoteHoverPixiHelpers._manageContentHtmlFromNote(note);
     const contentHTML = await TextEditor.enrichHTML(data.contentTooltip);
 
-    const fontSize = data.fontSize;
-    const maxWidth = data.maxWidth;
+    const { fontSize } = data;
+    const { maxWidth } = data;
 
     const container = $(
       `<aside class="token-note-hover-hud-container" 
@@ -43,10 +43,10 @@ export class TokenNoteHoverPixiHelpers {
 
   static async _manageContentHtmlFromNote(note) {
     const data = deepClone(note);
-    const entry = note.entry;
+    const { entry } = note;
     let entryName = data.text;
     let entryIsOwner = true;
-    let entryId = undefined;
+    let entryId;
     let entryIcon = data.texture?.src;
     let entryContent = data.text;
     if (entry) {
@@ -76,7 +76,7 @@ export class TokenNoteHoverPixiHelpers {
 
     let content;
     if (showImage) {
-      const imgToShow = showImageExplicitSource ? showImageExplicitSource : entryIcon;
+      const imgToShow = showImageExplicitSource || entryIcon;
       if (imgToShow && imgToShow.length > 0) {
         content = await TextEditor.enrichHTML(`<img class='image' src='${imgToShow}' alt=''></img>`, {
           secrets: entryIsOwner,
@@ -90,45 +90,42 @@ export class TokenNoteHoverPixiHelpers {
           async: true,
         });
       }
+    } else if (!entry && tooltipCustomDescription) {
+      const previewMaxLength = game.settings.get(CONSTANTS.MODULE_ID, "previewMaxLength");
+      const textContent = tooltipCustomDescription;
+      content = textContent.length > previewMaxLength ? `${textContent.substr(0, previewMaxLength)} ...` : textContent;
     } else {
-      if (!entry && tooltipCustomDescription) {
+      const previewTypeAsText = getProperty(
+        note.document.flags[CONSTANTS.MODULE_ID],
+        CONSTANTS.FLAGS.PREVIEW_AS_TEXT_SNIPPET
+      );
+      let firstContent = entryContent ?? "";
+      // START Support for 'Journal Anchor Links' JAL
+      if (note.document.entryId) {
+        firstContent = firstContent.replaceAll(
+          "@UUID[.",
+          `@UUID[JournalEntry.${note.document.entryId}.JournalEntryPage.`
+        );
+        firstContent = firstContent.replaceAll('data-uuid=".', 'data-uuid="JournalEntry."');
+      }
+      // END Support for 'Journal Anchor Links' JAL
+      if (!previewTypeAsText) {
+        content = await TextEditor.enrichHTML(firstContent, {
+          secrets: entryIsOwner,
+          documents: true,
+          async: true,
+        });
+      } else {
         const previewMaxLength = game.settings.get(CONSTANTS.MODULE_ID, "previewMaxLength");
-        const textContent = tooltipCustomDescription;
+        const textContent = $(firstContent).text();
         content =
           textContent.length > previewMaxLength ? `${textContent.substr(0, previewMaxLength)} ...` : textContent;
-      } else {
-        const previewTypeAsText = getProperty(
-          note.document.flags[CONSTANTS.MODULE_ID],
-          CONSTANTS.FLAGS.PREVIEW_AS_TEXT_SNIPPET
-        );
-        let firstContent = entryContent ?? "";
-        // START Support for 'Journal Anchor Links' JAL
-        if (note.document.entryId) {
-          firstContent = firstContent.replaceAll(
-            "@UUID[.",
-            "@UUID[JournalEntry." + note.document.entryId + ".JournalEntryPage."
-          );
-          firstContent = firstContent.replaceAll(`data-uuid=".`, `data-uuid="JournalEntry."`);
-        }
-        // END Support for 'Journal Anchor Links' JAL
-        if (!previewTypeAsText) {
-          content = await TextEditor.enrichHTML(firstContent, {
-            secrets: entryIsOwner,
-            documents: true,
-            async: true,
-          });
-        } else {
-          const previewMaxLength = game.settings.get(CONSTANTS.MODULE_ID, "previewMaxLength");
-          const textContent = $(firstContent).text();
-          content =
-            textContent.length > previewMaxLength ? `${textContent.substr(0, previewMaxLength)} ...` : textContent;
-        }
       }
     }
 
     // START Support for 'Journal Anchor Links'
     if (note.document.entryId) {
-      content = content.replaceAll("@UUID[.", "@UUID[JournalEntry." + note.document.entryId + ".JournalEntryPage.");
+      content = content.replaceAll("@UUID[.", `@UUID[JournalEntry.${note.document.entryId}.JournalEntryPage.`);
     }
     // END Support for 'Journal Anchor Links'
 
@@ -140,7 +137,7 @@ export class TokenNoteHoverPixiHelpers {
       titleTooltip = data.text;
     }
 
-    let bodyPlaceHolder = `<img class='image' src='${CONSTANTS.PATH_TRANSPARENT}' alt=''></img>`;
+    const bodyPlaceHolder = `<img class='image' src='${CONSTANTS.PATH_TRANSPARENT}' alt=''></img>`;
 
     data.tooltipId = note.id;
     data.title = titleTooltip;
@@ -163,11 +160,11 @@ export class TokenNoteHoverPixiHelpers {
       CONSTANTS.FLAGS.TOOLTIP_SHOW_DESCRIPTION
     );
 
-    const isTooltipShowTitle = String(isTooltipShowTitleS) === "true" ? true : false;
-    const isTooltipShowDescription = String(isTooltipShowDescriptionS) === "true" ? true : false;
+    const isTooltipShowTitle = String(isTooltipShowTitleS) === "true";
+    const isTooltipShowDescription = String(isTooltipShowDescriptionS) === "true";
     data.contentTooltip = `
-              ${isTooltipShowTitle ? `<div id="header"><h3>${titleTooltip}</h3></div><hr/>` : ``}
-              ${isTooltipShowDescription ? `<div id="content">${content} </div>` : ``}
+              ${isTooltipShowTitle ? `<div id="header"><h3>${titleTooltip}</h3></div><hr/>` : ""}
+              ${isTooltipShowDescription ? `<div id="content">${content} </div>` : ""}
           `;
     return data;
   }

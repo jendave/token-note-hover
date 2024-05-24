@@ -1,14 +1,14 @@
 /* ------------------------------------ */
 /* Other Hooks							*/
 /* ------------------------------------ */
-import API from "./scripts/api.js";
-import CONSTANTS from "./scripts/constants.js";
-import { stripQueryStringAndHashFromPath, retrieveFirstImageFromJournalId } from "./scripts/lib/lib.js";
-import { registerSettings } from "./scripts/settings.js";
-import { registerSocket } from "./scripts/socket.js";
-import { TokenNoteHoverHUD } from "./scripts/apps/TokenNoteHoverHUD.js";
-import { TokenNoteHover } from "./scripts/apps/TokenNoteHover.js";
-import Logger from "./scripts/lib/Logger.js";
+import API from "./scripts/api";
+import CONSTANTS from "./scripts/constants";
+import { stripQueryStringAndHashFromPath, retrieveFirstImageFromJournalId } from "./scripts/lib/lib";
+import { registerSettings } from "./scripts/settings";
+import { registerSocket } from "./scripts/socket";
+import { TokenNoteHoverHUD } from "./scripts/apps/TokenNoteHoverHUD";
+import { TokenNoteHover } from "./scripts/apps/TokenNoteHover";
+import Logger from "./scripts/lib/Logger";
 
 /* -------------------------------------------------------------------------- */
 /*                                    Hooks                                   */
@@ -17,8 +17,8 @@ import Logger from "./scripts/lib/Logger.js";
 /* ------------------------------------ */
 /* Initialize module					*/
 /* ------------------------------------ */
-Hooks.once("init", function () {
-  Logger.log(" init " + CONSTANTS.MODULE_ID);
+Hooks.once("init", () => {
+  Logger.log(` init ${CONSTANTS.MODULE_ID}`);
   // TODO TO REMOVE
   globalThis.TokenNoteHover = TokenNoteHover;
   registerSettings();
@@ -53,7 +53,7 @@ Hooks.once("init", function () {
 /* ------------------------------------ */
 /* Setup module							*/
 /* ------------------------------------ */
-Hooks.once("setup", function () {
+Hooks.once("setup", () => {
   game.modules.get(CONSTANTS.MODULE_ID).api = API;
 
   const forceToShowNotes = game.settings.get(CONSTANTS.MODULE_ID, "forceToShowNotes");
@@ -78,7 +78,7 @@ Hooks.once("setup", function () {
 /* When ready							*/
 /* ------------------------------------ */
 
-Hooks.once("ready", function () {
+Hooks.once("ready", () => {
   if (!game.modules.get("lib-wrapper")?.active && game.user?.isGM) {
     let word = "install and activate";
     if (game.modules.get("lib-wrapper")) word = "activate";
@@ -105,7 +105,7 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
     // setProperty(app.object.flags[CONSTANTS.MODULE_ID], {});
     app.object.flags[CONSTANTS.MODULE_ID] = {};
   }
-  let entity = app.object.flags[CONSTANTS.MODULE_ID] || {};
+  const entity = app.object.flags[CONSTANTS.MODULE_ID] || {};
 
   // TODO THIS CODE CAN B DONE MUCH BETTER...
   const showJournalImageByDefault = game.settings.get(CONSTANTS.MODULE_ID, "showJournalImageByDefault");
@@ -127,7 +127,7 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
     }
   }
 
-  let tmp = undefined;
+  let tmp;
   if (noteData.icon.custom) {
     tmp = stripQueryStringAndHashFromPath(noteData.icon.custom);
   } else if (app.object.texture.src) {
@@ -173,10 +173,10 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
       }
       return options;
     }
-    let anchorData = foundry.utils.getProperty(noteData.document.flags, `anchor`); // noteData.document.flags.anchor;
-    let pageData = noteData.document.page;
+    const anchorData = foundry.utils.getProperty(noteData.document.flags, "anchor"); // noteData.document.flags.anchor;
+    const pageData = noteData.document.page;
 
-    let select = $(`
+    const select = $(`
 		<div class='form-group'>
 			<label>${Logger.i18n(`${CONSTANTS.MODULE_ID}.PageSection`)}</label>
 			<div class='form-fields'>
@@ -196,9 +196,9 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
       const journal = game.journal.get(newjournalid);
       const newpage = journal?.pages.get(newpageid);
       Logger.log(`selected page changed to ${newpageid}`);
-      Logger.log("new options =" + getOptions(newpage, anchorData?.slug));
-      app.form.elements[`flags.anchor.slug`].innerHTML = getOptions(newpage, anchorData?.slug);
-      Logger.log("new innerHtml" + app.form.elements[`flags.anchor.slug`].innerHTML);
+      Logger.log(`new options =${getOptions(newpage, anchorData?.slug)}`);
+      app.form.elements["flags.anchor.slug"].innerHTML = getOptions(newpage, anchorData?.slug);
+      Logger.log(`new innerHtml${app.form.elements["flags.anchor.slug"].innerHTML}`);
     }
     html.find("select[name='entryId']").change(_updateSectionList);
     pageid.change(_updateSectionList);
@@ -206,7 +206,7 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
 
   // Force a recalculation of the height (for the additional field)
   if (!app._minimized) {
-    let pos = app.position;
+    const pos = app.position;
     pos.height = "auto";
     app.setPosition(pos);
   }
@@ -253,8 +253,8 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
   const enablePlayerIcon = game.settings.get(CONSTANTS.MODULE_ID, "playerIconAutoOverride");
   // Adds fields to set player-only note icons
   // Get default values set by GM
-  const defaultState = game.settings.get(CONSTANTS.MODULE_ID, "playerIconAutoOverride") ?? ``;
-  const defaultPath = game.settings.get(CONSTANTS.MODULE_ID, "playerIconPathDefault") ?? ``;
+  const defaultState = game.settings.get(CONSTANTS.MODULE_ID, "playerIconAutoOverride") ?? "";
+  const defaultPath = game.settings.get(CONSTANTS.MODULE_ID, "playerIconPathDefault") ?? "";
 
   const playerIconState =
     foundry.utils.getProperty(noteData, `document.flags.${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.PLAYER_ICON_STATE}`) ??
@@ -268,11 +268,11 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
   // revealedNotes
   // ====================================
   const enableNoteTintColorLink = game.settings.get(CONSTANTS.MODULE_ID, "revealedNotes");
-  let pinIsRevealed =
+  const pinIsRevealed =
     foundry.utils.getProperty(noteData, `document.flags.${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.PIN_IS_REVEALED}`) ??
     true;
   // Check box for REVEALED state
-  let usePinIsRevealed =
+  const usePinIsRevealed =
     foundry.utils.getProperty(noteData, `document.flags.${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.USE_PIN_REVEALED}`) ??
     false;
 
@@ -472,52 +472,55 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
   // ====================================
   const enableBackgroundlessPins = game.settings.get(CONSTANTS.MODULE_ID, "enableBackgroundlessPins");
 
-  let tokenNoteHoverData = foundry.utils.mergeObject(
+  const tokenNoteHoverData = foundry.utils.mergeObject(
     {
       yesUploadFile: game.user.can("FILES_BROWSE"),
       noUploadFile: !game.user.can("FILES_BROWSE"),
-      showImageExplicitSource: showImageExplicitSource,
+      showImageExplicitSource,
 
-      showImage: showImage,
-      pinIsTransparent: pinIsTransparent,
-      showOnlyToGM: showOnlyToGM,
-      hasBackground: hasBackground,
-      ratio: ratio,
-      textAlwaysVisible: textAlwaysVisible,
-      hideLabel: hideLabel,
-      numberWsSuffixOnNameplate: numberWsSuffixOnNameplate,
+      showImage,
+      pinIsTransparent,
+      showOnlyToGM,
+      hasBackground,
+      ratio,
+      textAlwaysVisible,
+      hideLabel,
+      numberWsSuffixOnNameplate,
 
-      enablePlayerIcon: enablePlayerIcon,
-      playerIconState: playerIconState,
-      playerIconPath: playerIconPath,
+      enablePlayerIcon,
+      playerIconState,
+      playerIconPath,
 
-      enableNoteTintColorLink: enableNoteTintColorLink,
-      pinIsRevealed: pinIsRevealed,
-      usePinIsRevealed: usePinIsRevealed,
+      enableNoteTintColorLink,
+      pinIsRevealed,
+      usePinIsRevealed,
 
-      previewAsTextSnippet: previewAsTextSnippet,
-      doNotShowJournalPreview: doNotShowJournalPreview,
+      previewAsTextSnippet,
+      doNotShowJournalPreview,
 
-      tooltipPlacement: tooltipPlacement,
-      tooltipColor: tooltipColor,
-      tooltipForceRemove: tooltipForceRemove,
-      tooltipSmartPlacement: tooltipSmartPlacement,
-      tooltipFollowMouse: tooltipFollowMouse,
+      tooltipPlacement,
+      tooltipColor,
+      tooltipForceRemove,
+      tooltipSmartPlacement,
+      tooltipFollowMouse,
 
-      enableBackgroundlessPins: enableBackgroundlessPins,
-      enableNoteGM: enableNoteGM,
+      enableBackgroundlessPins,
+      enableNoteGM,
 
-      tooltipColorHtml: tooltipColorHtml,
-      tooltipPlacementHtml: tooltipPlacementHtml,
+      tooltipColorHtml,
+      tooltipPlacementHtml,
 
-      tooltipCustomDescription: tooltipCustomDescription,
-      tooltipShowDescription: tooltipShowDescription,
-      tooltipShowTitle: tooltipShowTitle,
+      tooltipCustomDescription,
+      tooltipShowDescription,
+      tooltipShowTitle,
     },
     app.object.flags[CONSTANTS.MODULE_ID] || {}
   );
   // eslint-disable-next-line no-undef
-  let noteHtml = await renderTemplate(`modules/${CONSTANTS.MODULE_ID}/templates/note-config.html`, tokenNoteHoverData);
+  const noteHtml = await renderTemplate(
+    `modules/${CONSTANTS.MODULE_ID}/templates/note-config.html`,
+    tokenNoteHoverData
+  );
 
   if ($(".sheet-tabs", html).length) {
     $(".sheet-tabs", html).append(
@@ -536,7 +539,7 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
     if (root.length === 0) {
       root = html;
     }
-    let basictab = $("<div>").addClass("tab").attr("data-tab", "basic");
+    const basictab = $("<div>").addClass("tab").attr("data-tab", "basic");
     $("> *:not(button):not(footer)", root).each(function () {
       basictab.append(this);
     });
@@ -586,13 +589,13 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
     });
   }
 
-  const iconCustomPageIcon = html.find(`select[name='pageId']`);
+  const iconCustomPageIcon = html.find("select[name='pageId']");
   if (iconCustomPageIcon?.length > 0) {
     iconCustomPageIcon.on("change", function () {
       const p = iconCustomPageIcon.parent().find(".token-note-hover-page-icon");
       const pageId = this.value;
-      if (html.find(`select[name='entryId']`).length > 0) {
-        const entryId = html.find(`select[name='entryId']`)[0].value;
+      if (html.find("select[name='entryId']").length > 0) {
+        const entryId = html.find("select[name='entryId']")[0].value;
         const firstImageFromPage = retrieveFirstImageFromJournalId(entryId, pageId, true);
         if (firstImageFromPage) {
           p[0].src = firstImageFromPage;
@@ -617,7 +620,7 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
  */
 Hooks.on("renderHeadsUpDisplay", (app, html, data) => {
   // VERSION 1 TOOLTIP
-  html.append(`<template id="token-note-hover-hud"></template>`);
+  html.append('<template id="token-note-hover-hud"></template>');
   canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
 });
 
@@ -646,7 +649,7 @@ Hooks.on("hoverToken", (note, hovered) => {
   if (tooltipForceRemoveS !== "true" && tooltipForceRemoveS !== "false") {
     tooltipForceRemoveS = "false";
   }
-  const tooltipForceRemove = String(tooltipForceRemoveS) === "true" ? true : false;
+  const tooltipForceRemove = String(tooltipForceRemoveS) === "true";
 
   // VERSION 1 TOOLTIP
 
@@ -661,10 +664,9 @@ Hooks.on("hoverToken", (note, hovered) => {
   // If the note is hovered by the mouse cursor (not via alt/option)
   if (hovered) {
     // TODO && note.mouseInteractionManager.state === 1
-    API.tokenNoteHover.hoverTimer = setTimeout(function () {
+    API.tokenNoteHover.hoverTimer = setTimeout(() => {
       canvas.hud.tokenNoteHover.bind(note);
     }, previewDelay);
-    return;
   } else {
     // THis code should be never reached
     if (!hovered) {
@@ -736,7 +738,8 @@ Hooks.once("canvasInit", () => {
 
 Hooks.on("renderSettingsConfig", (app, html, data) => {
   // Add colour pickers to the Configure Game Settings: Module Settings menu
-  let name, colour;
+  let name;
+  let colour;
   name = `${CONSTANTS.MODULE_ID}.revealedNotesTintColorLink`;
   colour = game.settings.get(CONSTANTS.MODULE_ID, "revealedNotesTintColorLink");
   $("<input>")
@@ -791,7 +794,7 @@ Hooks.on("dropCanvasData", (canvas, data) => {
 Hooks.on("activateNote", (note, options) => {
   const enableJournalAnchorLink = game.settings.get(CONSTANTS.MODULE_ID, "enableJournalAnchorLink");
   if (enableJournalAnchorLink && !game.modules.get("jal")?.active) {
-    let anchorData = foundry.utils.getProperty(note, `document.flags.anchor.slug`);
+    const anchorData = foundry.utils.getProperty(note, "document.flags.anchor.slug");
     options.anchor = anchorData?.slug;
   }
 });

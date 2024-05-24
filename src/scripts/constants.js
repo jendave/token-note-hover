@@ -1,9 +1,9 @@
 const CONSTANTS = {
   MODULE_ID: "token-note-hover",
-  PATH: `modules/token-note-hover/`,
+  PATH: "modules/token-note-hover/",
   MODULE_TITLE: "Token Note Hover",
-  PATH_TRANSPARENT: `modules/token-note-hover/assets/transparent.png`,
-  PATH_PDF_THUMBNAIL: `modules/token-note-hover/assets/file-pdf-solid.svg`,
+  PATH_TRANSPARENT: "modules/token-note-hover/assets/transparent.png",
+  PATH_PDF_THUMBNAIL: "modules/token-note-hover/assets/file-pdf-solid.svg",
   FLAGS: {
     USE_PIN_REVEALED: "usePinIsRevealed",
     PIN_IS_REVEALED: "pinIsRevealed",

@@ -1,7 +1,6 @@
-import API from "../api.js";
-import CONSTANTS from "../constants.js";
-import { isAlt, isRealNumber, retrieveFirstImageFromJournalId, stripQueryStringAndHashFromPath } from "../lib/lib.js";
-import Logger from "../lib/Logger.js";
+import CONSTANTS from "../constants";
+import { isAlt, isRealNumber, retrieveFirstImageFromJournalId, stripQueryStringAndHashFromPath } from "../lib/lib";
+import Logger from "../lib/Logger";
 
 /**
  * A class for managing additional Map Pin functionality
@@ -27,7 +26,7 @@ export class TokenNoteHover {
     const enableAutoScaleNamePlatesNote = game.settings.get(CONSTANTS.MODULE_ID, "enableAutoScaleNamePlatesNote");
     if (enableAutoScaleNamePlatesNote) {
       if (canvas.notes) {
-        for (let note of canvas.notes.placeables) {
+        for (const note of canvas.notes.placeables) {
           note.tooltip.scale.set(
             TokenNoteHover._calculateAutoScale(canvas.scene.dimensions.size, canvas.stage.scale.x)
           );
@@ -175,7 +174,7 @@ export class TokenNoteHover {
           iconSelector?.val("").change();
         }
         if (iconSelector?.length > 0) {
-          iconSelector.on("change", function () {
+          iconSelector.on("change", () => {
             const p = iconCustomSelector.parent().find(".token-note-hover-journal-icon");
             const valueIconSelector = html.find("select[name='icon.selected']")?.val();
             if (valueIconSelector) {
@@ -211,7 +210,7 @@ export class TokenNoteHover {
         const pageSelector = html.find("select[name='pageId']");
 
         if (pageSelector?.length > 0) {
-          pageSelector.on("change", function () {
+          pageSelector.on("change", () => {
             const p = pageCustomSelector.parent().find(".token-note-hover-page-icon");
 
             // Pageid
@@ -248,11 +247,11 @@ export class TokenNoteHover {
   }
 
   static _addNoteGM(app, html, noteData) {
-    let gmNoteFlagRef = `flags.${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.PIN_GM_TEXT}`;
+    const gmNoteFlagRef = `flags.${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.PIN_GM_TEXT}`;
     // Input for GM Label
     let gmtext = noteData.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.PIN_GM_TEXT);
     if (!gmtext) gmtext = "";
-    let gm_text_h = $(
+    const gm_text_h = $(
       `<div class="form-group">
         <label for="${gmNoteFlagRef}">${Logger.i18n("token-note-hover.GMLabel")}</label>
         <div class="form-fields">
@@ -263,7 +262,7 @@ export class TokenNoteHover {
     );
     let initial_text = noteData.document.text ?? noteData.entry?.name;
     if (!initial_text) initial_text = "";
-    let initial_text_h = $(
+    const initial_text_h = $(
       `<div class="form-group">
         <label for="text">${Logger.i18n("token-note-hover.PlayerLabel")}</label>
         <div class="form-fields">
@@ -323,19 +322,17 @@ export class TokenNoteHover {
       ? this.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.RATIO_WIDTH)
       : 1;
 
-    let result = wrapped(...args);
+    const result = wrapped(...args);
     if (hideLabel) {
       result.text = "";
-    } else {
-      if (numberWsSuffixOnNameplate > 0) {
-        result.text = result.text + " ".repeat(numberWsSuffixOnNameplate);
-      } else if (numberWsSuffixOnNameplate < 0) {
-        result.text = " ".repeat(numberWsSuffixOnNameplate * -1) + result.text;
-      }
+    } else if (numberWsSuffixOnNameplate > 0) {
+      result.text += " ".repeat(numberWsSuffixOnNameplate);
+    } else if (numberWsSuffixOnNameplate < 0) {
+      result.text = " ".repeat(numberWsSuffixOnNameplate * -1) + result.text;
     }
     if (ratio_width != 1) {
-      let x = result.x;
-      let left = x + ratio_width * (this.size / 2) - 16;
+      const { x } = result;
+      const left = x + ratio_width * (this.size / 2) - 16;
       result.x = left;
     }
     return result;
@@ -349,7 +346,7 @@ export class TokenNoteHover {
    * @return [Note]    This Note
    */
   static _isVisible(wrapped, ...args) {
-    let result = wrapped(...args);
+    const result = wrapped(...args);
     const showOnlyToGM = this.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.SHOW_ONLY_TO_GM) ?? false;
     if (String(showOnlyToGM) === "true") {
       if (!game.user.isGM) {
@@ -375,7 +372,7 @@ export class TokenNoteHover {
     const access = this.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.PIN_IS_REVEALED);
     // Standard version of Note#isVisible
     if (access === false || this.document.global) {
-      //|| !canvas.effects.visibility.tokenVision
+      // || !canvas.effects.visibility.tokenVision
       return access;
     }
     const point = { x: this.document.x, y: this.document.y };
@@ -394,23 +391,22 @@ export class TokenNoteHover {
     const [data, options, userId] = args;
     if (revealedNotes) {
       // Foundry V11: Note#_onUpdate needs to set refreshText render flag
-      let result = wrapped(data, options, userId);
+      const result = wrapped(data, options, userId);
       if (this.renderFlags && data?.flags?.[CONSTANTS.MODULE_ID]) {
         // Ensure everything is redrawn - since icon colour might change, not just visibility
         this.renderFlags.set({ redraw: true });
       }
       return result;
-    } else {
-      if (this.renderFlags && data?.flags?.[CONSTANTS.MODULE_ID]) {
-        // Ensure everything is redrawn - since icon colour might change, not just visibility
-        this.renderFlags.set({ redraw: true });
-      }
-      return wrapped(...args);
     }
+    if (this.renderFlags && data?.flags?.[CONSTANTS.MODULE_ID]) {
+      // Ensure everything is redrawn - since icon colour might change, not just visibility
+      this.renderFlags.set({ redraw: true });
+    }
+    return wrapped(...args);
   }
 
   static _applyRenderFlags(wrapped, ...args) {
-    let result = wrapped(...args);
+    const result = wrapped(...args);
     const hideLabel = this.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.HIDE_LABEL) ?? false;
     const numberWsSuffixOnNameplate =
       this.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.NUMBER_WS_SUFFIX_ON_NAMEPLATE) ?? 0;
@@ -418,7 +414,8 @@ export class TokenNoteHover {
     if (hideLabel) {
       this.tooltip.visible = false;
     } else {
-      let textAlwaysVisible = this.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.TEXT_ALWAYS_VISIBLE) ?? false;
+      const textAlwaysVisible =
+        this.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.TEXT_ALWAYS_VISIBLE) ?? false;
       if (textAlwaysVisible === true) {
         this.tooltip.visible = true;
       }
@@ -435,9 +432,9 @@ export class TokenNoteHover {
    * @returns {Note}    This Note
    */
   static _noteRefresh(wrapped, ...args) {
-    let result = wrapped(...args);
+    const result = wrapped(...args);
 
-    let textAlwaysVisible = this.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.TEXT_ALWAYS_VISIBLE) ?? false;
+    const textAlwaysVisible = this.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.TEXT_ALWAYS_VISIBLE) ?? false;
 
     if (textAlwaysVisible === true) {
       // Keep tooltip always visible
@@ -447,9 +444,9 @@ export class TokenNoteHover {
       this.tooltip.visible = true;
     }
 
-    let text = this.children[1]; // 0 is the ControlIcon, 1 is the PreciseText
+    const text = this.children[1]; // 0 is the ControlIcon, 1 is the PreciseText
     // Text is created bevor this point. So we can modify it here.
-    let ratio = this.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.RATIO_WIDTH);
+    const ratio = this.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.RATIO_WIDTH);
     if (ratio && text?.x) {
       text.x = (this.size * (ratio - 1)) / 2; // correct shifting for the new scale.
     }
@@ -824,7 +821,7 @@ export class TokenNoteHover {
             break;
           }
           default: {
-            Logger.warn(`Must set 'right' or 'left' for sidebar thumbnail image`);
+            Logger.warn("Must set 'right' or 'left' for sidebar thumbnail image");
           }
         }
       });
@@ -834,7 +831,7 @@ export class TokenNoteHover {
   static _deleteJournalDirectoryPagesEntry() {
     if (game.settings.get(CONSTANTS.MODULE_ID, "enableJournalDirectoryPages")) {
       ui.sidebar.tabs.journal.render(true);
-      for (let window of [...Object.values(ui.windows)].filter((w) => w.title == "Journal Directory")) {
+      for (const window of [...Object.values(ui.windows)].filter((w) => w.title == "Journal Directory")) {
         window.render(true);
       }
     }
@@ -843,7 +840,7 @@ export class TokenNoteHover {
   static _createJournalDirectoryPagesEntry() {
     if (game.settings.get(CONSTANTS.MODULE_ID, "enableJournalDirectoryPages")) {
       ui.sidebar.tabs.journal.render(true);
-      for (let window of [...Object.values(ui.windows)].filter((w) => w.title == "Journal Directory")) {
+      for (const window of [...Object.values(ui.windows)].filter((w) => w.title == "Journal Directory")) {
         window.render(true);
       }
     }
@@ -851,12 +848,12 @@ export class TokenNoteHover {
 
   static _addJournalDirectoryPages(app, html, options) {
     if (game.settings.get(CONSTANTS.MODULE_ID, "enableJournalDirectoryPages")) {
-      for (let j of app.documents) {
+      for (const j of app.documents) {
         if (!j.pages.size) continue;
-        let $li = html.find(`li[data-document-id="${j.id}"]`);
+        const $li = html.find(`li[data-document-id="${j.id}"]`);
         $li.css({ flex: "unset", display: "block" });
-        let $button = $(
-          `<a class="toggle" style="width:50px; float: right; text-align: right; padding-right: .5em;"><i class="fa-solid fa-caret-down"></i></a>`
+        const $button = $(
+          '<a class="toggle" style="width:50px; float: right; text-align: right; padding-right: .5em;"><i class="fa-solid fa-caret-down"></i></a>'
         ).click(function (e) {
           e.stopPropagation();
           $(this).parent().parent().find("ol").toggle();
@@ -865,11 +862,9 @@ export class TokenNoteHover {
             : $(this).html('<i class="fa-solid fa-caret-up"></i>');
         });
         $li.find("h4").append($button).css({ "flex-basis": "100%", overflow: "ellipsis" });
-        let $ol = $(`<ol class="journal-pages" style="width:100%; margin-left: 1em;" start="0"></ol>`);
+        const $ol = $('<ol class="journal-pages" style="width:100%; margin-left: 1em;" start="0"></ol>');
         $ol.hide();
-        for (let p of j.pages.contents.sort((a, b) => {
-          return a.sort - b.sort;
-        }))
+        for (const p of j.pages.contents.sort((a, b) => a.sort - b.sort))
           $ol.append($(`<li class="journal-page" data-page-uuid="${p.uuid}"><a>${p.name}</a></li>`));
         $li.append($ol);
       }
@@ -877,14 +872,14 @@ export class TokenNoteHover {
         .find("li.journal-page > a")
         .click(function (e) {
           e.stopPropagation();
-          let page = fromUuidSync($(this).parent().data().pageUuid);
+          const page = fromUuidSync($(this).parent().data().pageUuid);
           if (!page) return;
           page.parent.sheet.render(true, { pageId: page.id, focus: true });
         })
         .contextmenu(function (e) {
           e.stopPropagation();
           e.preventDefault();
-          let page = fromUuidSync($(this).parent().data().pageUuid);
+          const page = fromUuidSync($(this).parent().data().pageUuid);
           if (!page) return;
           page.sheet.render(true);
         });

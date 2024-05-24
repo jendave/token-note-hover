@@ -49,7 +49,7 @@ export class ElementWrapper extends PIXI.DisplayObject {
   updateTarget() {
     if (this.visible === false) return;
     const matrix = this.worldTransform;
-    const bounds = this.bounds;
+    const { bounds } = this;
     this.toGlobal(new PIXI.Point(0, 0));
     const rightSide = matrix.tx < canvas.screenDimensions[0] / 2;
     const paddingX = (rightSide ? 1 : -1) * (bounds.width / 2 + 30);
