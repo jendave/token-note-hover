@@ -17,8 +17,6 @@
         "SETTINGS.PlayerIconAutoOverrideH": "Newly created notes will have player-only icons enabled automatically.",
         "SETTINGS.PlayerIconPathDefaultN": "Default Note Icon for Players (not GM)",
         "SETTINGS.PlayerIconPathDefaultH": "The default icon used for player-only (not GM) icons",
-        "SETTINGS.noteGMN": "GM Label",
-        "SETTINGS.noteGMH": "Add the ability for Note tooltips to be configured so that GMs see different text to Players. So secret information can be displayed to GMs whilst players see the 'public' information about the Note.",
         "SETTINGS.revealedNotesN": "Enable revealed state on scene Notes.",
         "SETTINGS.revealedNotesH": "When enabled, then the 'revealed' state will be used to determine if the Note is visible to players. (The default Foundry VTT behavior is for Notes to be visible to players only if the linked document is accessible by the player.)",
         "SETTINGS.revealedNotesTintColorN": "[Only if setting 'Enable revealed state on scene Notes.' is enabled] Set the tint color of the Note revealed state on scene Notes.",
@@ -51,9 +49,6 @@
 
         "SETTINGS.forceToShowNotesN": "Force to show notes",
         "SETTINGS.forceToShowNotesH": "Automatically flag journal notes to show on the map without having to have your players turn it on themselves.",
-
-        "SETTINGS.enableTooltipByDefaultN": "Enable Tooltip By Default",
-        "SETTINGS.enableTooltipByDefaultH": "When creating notes on the canvas enable the tooltip feature by default. This setting does not change existing notes, all previous notes already created will need manual editing.",
 
         "SETTINGS.reset.name": "Reset settings to default",
         "SETTINGS.reset.label": "Reset Settings To Default",
@@ -157,9 +152,7 @@
         "RevealedToPlayer": "Revealed to Players",
         "UseRevealState": "Use Reveal State",
         "HideLabel": "Hide Label",
-        "DoNotShowJournalPreview": "Do not show Journal Preview",
         "PreviewAsTextSnippet": "Show the preview as text snippet",
-        "GMLabel": "GM Label",
         "PlayerLabel": "Player Label",
         "AboveFog": "Show Map Pins Above Fog",
         "PinIsTransparent": "Pin is transparent ?",
