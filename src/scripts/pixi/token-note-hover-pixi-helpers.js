@@ -1,7 +1,7 @@
-import CONSTANTS from "../constants";
-import Logger from "../lib/Logger";
-import { retrieveFirstImageFromJournalId, retrieveFirstTextFromJournalId } from "../lib/lib";
-import { ElementWrapper } from "./token-note-hover-pixi-element-wrapper";
+import CONSTANTS from '../constants';
+import Logger from '../lib/Logger';
+import { retrieveFirstImageFromJournalId, retrieveFirstTextFromJournalId } from '../lib/lib';
+import { ElementWrapper } from './token-note-hover-pixi-element-wrapper';
 
 export class TokenNoteHoverPixiHelpers {
   static async drawTooltipPixi(note) {
@@ -30,7 +30,7 @@ export class TokenNoteHoverPixiHelpers {
     const container = $(
       `<aside class="token-note-hover-hud-container" 
                 style="font-size:${fontSize}px; max-width:${maxWidth}px; opacity: 0; display: none;">
-            </aside>`
+            </aside>`,
     )[0];
 
     // create wrapped element
@@ -67,11 +67,11 @@ export class TokenNoteHoverPixiHelpers {
     const showImage = getProperty(note.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.SHOW_IMAGE);
     const showImageExplicitSource = getProperty(
       note.document.flags[CONSTANTS.MODULE_ID],
-      CONSTANTS.FLAGS.SHOW_IMAGE_EXPLICIT_SOURCE
+      CONSTANTS.FLAGS.SHOW_IMAGE_EXPLICIT_SOURCE,
     );
     const tooltipCustomDescription = getProperty(
       note.document.flags[CONSTANTS.MODULE_ID],
-      CONSTANTS.FLAGS.TOOLTIP_CUSTOM_DESCRIPTION
+      CONSTANTS.FLAGS.TOOLTIP_CUSTOM_DESCRIPTION,
     );
 
     let content;
@@ -91,20 +91,20 @@ export class TokenNoteHoverPixiHelpers {
         });
       }
     } else if (!entry && tooltipCustomDescription) {
-      const previewMaxLength = game.settings.get(CONSTANTS.MODULE_ID, "previewMaxLength");
+      const previewMaxLength = game.settings.get(CONSTANTS.MODULE_ID, 'previewMaxLength');
       const textContent = tooltipCustomDescription;
       content = textContent.length > previewMaxLength ? `${textContent.substr(0, previewMaxLength)} ...` : textContent;
     } else {
       const previewTypeAsText = getProperty(
         note.document.flags[CONSTANTS.MODULE_ID],
-        CONSTANTS.FLAGS.PREVIEW_AS_TEXT_SNIPPET
+        CONSTANTS.FLAGS.PREVIEW_AS_TEXT_SNIPPET,
       );
-      let firstContent = entryContent ?? "";
+      let firstContent = entryContent ?? '';
       // START Support for 'Journal Anchor Links' JAL
       if (note.document.entryId) {
         firstContent = firstContent.replaceAll(
-          "@UUID[.",
-          `@UUID[JournalEntry.${note.document.entryId}.JournalEntryPage.`
+          '@UUID[.',
+          `@UUID[JournalEntry.${note.document.entryId}.JournalEntryPage.`,
         );
         firstContent = firstContent.replaceAll('data-uuid=".', 'data-uuid="JournalEntry."');
       }
@@ -116,16 +116,15 @@ export class TokenNoteHoverPixiHelpers {
           async: true,
         });
       } else {
-        const previewMaxLength = game.settings.get(CONSTANTS.MODULE_ID, "previewMaxLength");
+        const previewMaxLength = game.settings.get(CONSTANTS.MODULE_ID, 'previewMaxLength');
         const textContent = $(firstContent).text();
-        content =
-          textContent.length > previewMaxLength ? `${textContent.substr(0, previewMaxLength)} ...` : textContent;
+        content = textContent.length > previewMaxLength ? `${textContent.substr(0, previewMaxLength)} ...` : textContent;
       }
     }
 
     // START Support for 'Journal Anchor Links'
     if (note.document.entryId) {
-      content = content.replaceAll("@UUID[.", `@UUID[JournalEntry.${note.document.entryId}.JournalEntryPage.`);
+      content = content.replaceAll('@UUID[.', `@UUID[JournalEntry.${note.document.entryId}.JournalEntryPage.`);
     }
     // END Support for 'Journal Anchor Links'
 
@@ -141,8 +140,8 @@ export class TokenNoteHoverPixiHelpers {
     data.title = titleTooltip;
     data.body = bodyPlaceHolder;
 
-    const fontSize = game.settings.get(CONSTANTS.MODULE_ID, "fontSize") || canvas.grid.size / 5;
-    const maxWidth = game.settings.get(CONSTANTS.MODULE_ID, "maxWidth") || 400;
+    const fontSize = game.settings.get(CONSTANTS.MODULE_ID, 'fontSize') || canvas.grid.size / 5;
+    const maxWidth = game.settings.get(CONSTANTS.MODULE_ID, 'maxWidth') || 400;
 
     data.titleTooltip = titleTooltip;
     data.content = content;
@@ -151,18 +150,18 @@ export class TokenNoteHoverPixiHelpers {
 
     const isTooltipShowTitleS = getProperty(
       note.document.flags[CONSTANTS.MODULE_ID],
-      CONSTANTS.FLAGS.TOOLTIP_SHOW_TITLE
+      CONSTANTS.FLAGS.TOOLTIP_SHOW_TITLE,
     );
     const isTooltipShowDescriptionS = getProperty(
       note.document.flags[CONSTANTS.MODULE_ID],
-      CONSTANTS.FLAGS.TOOLTIP_SHOW_DESCRIPTION
+      CONSTANTS.FLAGS.TOOLTIP_SHOW_DESCRIPTION,
     );
 
-    const isTooltipShowTitle = String(isTooltipShowTitleS) === "true";
-    const isTooltipShowDescription = String(isTooltipShowDescriptionS) === "true";
+    const isTooltipShowTitle = String(isTooltipShowTitleS) === 'true';
+    const isTooltipShowDescription = String(isTooltipShowDescriptionS) === 'true';
     data.contentTooltip = `
-              ${isTooltipShowTitle ? `<div id="header"><h3>${titleTooltip}</h3></div><hr/>` : ""}
-              ${isTooltipShowDescription ? `<div id="content">${content} </div>` : ""}
+              ${isTooltipShowTitle ? `<div id="header"><h3>${titleTooltip}</h3></div><hr/>` : ''}
+              ${isTooltipShowDescription ? `<div id="content">${content} </div>` : ''}
           `;
     return data;
   }
