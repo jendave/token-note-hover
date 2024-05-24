@@ -2,7 +2,6 @@ import API from "../api.js";
 import CONSTANTS from "../constants.js";
 import { isAlt, isRealNumber, retrieveFirstImageFromJournalId, stripQueryStringAndHashFromPath } from "../lib/lib.js";
 import Logger from "../lib/Logger.js";
-import { BackgroundlessControlIcon } from "./BackgroundlessControlIcon.js";
 
 /**
  * A class for managing additional Map Pin functionality
@@ -568,16 +567,9 @@ export class TokenNoteHover {
       icon.x -= noteInternal.size / 2;
       icon.y -= noteInternal.size / 2;
     } else {
-      const enableBackgroundlessPins = game.settings.get(CONSTANTS.MODULE_ID, "enableBackgroundlessPins");
-      if (enableBackgroundlessPins) {
-        icon = new BackgroundlessControlIcon(iconData);
-        icon.x -= noteInternal.size / 2;
-        icon.y -= noteInternal.size / 2;
-      } else {
-        icon = new ControlIcon(iconData);
-        icon.x -= noteInternal.size / 2;
-        icon.y -= noteInternal.size / 2;
-      }
+      icon = new ControlIcon(iconData);
+      icon.x -= noteInternal.size / 2;
+      icon.y -= noteInternal.size / 2;
     }
     const ratio_width = isRealNumber(noteInternal.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.RATIO_WIDTH))
       ? noteInternal.document.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.RATIO_WIDTH)
