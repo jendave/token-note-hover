@@ -1,5 +1,4 @@
 import CONSTANTS from '../constants';
-import Logger from '../lib/Logger';
 import { retrieveFirstImageFromJournalId, retrieveFirstTextFromJournalId } from '../lib/lib';
 import { ElementWrapper } from './token-note-hover-pixi-element-wrapper';
 
