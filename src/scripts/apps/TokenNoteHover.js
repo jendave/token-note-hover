@@ -16,92 +16,6 @@ export class TokenNoteHover {
 
   /* -------------------------------- Constants ------------------------------- */
 
-  static get DIALOG() {
-    const defaultPermission = game.settings.get(CONSTANTS.MODULE_ID, "defaultJournalPermission");
-    let defaultPermissionName = "NONE";
-    if (String(defaultPermission) === "0") {
-      defaultPermissionName = "NONE";
-    }
-    if (String(defaultPermission) === "1") {
-      defaultPermissionName = "LIMITED";
-    }
-    if (String(defaultPermission) === "2") {
-      defaultPermissionName = "OBSERVER";
-    }
-    if (String(defaultPermission) === "3") {
-      defaultPermissionName = "OWNER";
-    }
-    // none, perUser, specificFolder
-    const defaultFolder = game.settings.get(CONSTANTS.MODULE_ID, "defaultJournalFolder");
-
-    const specificFolder = game.settings.get(CONSTANTS.MODULE_ID, "specificFolder");
-    const specificFolderObj =
-      game.journal.directory.folders.find((f) => f.name === specificFolder || f.id === specificFolder) ??
-      game.journal.directory.folders[Number(specificFolder)] ??
-      undefined;
-    const specificFolderName = specificFolderObj ? specificFolderObj.name : "";
-
-    const folders = game.journal.directory.folders
-      .sort((a, b) => a.name.localeCompare(b.name))
-      .filter((folder) => folder.displayed)
-      .map((folder) => `<option value="${folder.id}">${folder.name}</option>`)
-      .join("\n");
-
-    return {
-      content: `
-            <div class="form-group">
-              <label>
-                <p class="notes">${Logger.i18n("token-note-hover.Name")}</p>
-              </label>
-              <input name="name" type="text"/>
-              <label>
-                <p class="notes">${Logger.i18n("token-note-hover.DefaultPermission")}</p>
-              </label>
-              <select id="cushion-permission" style="width: 100%;">
-                <option value="0"
-                  ${String(defaultPermission) === "0" ? "selected" : ""}>
-                  ${Logger.i18n("PERMISSION.NONE")}${String(defaultPermission) === "0" ? " <i>(default)</i>" : ""}
-                </option>
-                <option value="1"
-                  ${String(defaultPermission) === "1" ? "selected" : ""}>
-                  ${Logger.i18n("PERMISSION.LIMITED")}${String(defaultPermission) === "1" ? " <i>(default)</i>" : ""}
-                </option>
-                <option value="2"
-                  ${String(defaultPermission) === "2" ? "selected" : ""}>
-                  ${Logger.i18n("PERMISSION.OBSERVER")}${String(defaultPermission) === "2" ? " <i>(default)</i>" : ""}
-                </option>
-                <option value="3"
-                  ${String(defaultPermission) === "3" ? "selected" : ""}>
-                  ${Logger.i18n("PERMISSION.OWNER")}${String(defaultPermission) === "3" ? " <i>(default)</i>" : ""}
-                </option>
-              </select>
-              <label>
-                <p class="notes">${Logger.i18n("token-note-hover.Folder")}</p>
-              </label>
-              <select id="cushion-folder" style="width: 100%;">
-                <option
-                  value="none"
-                  ${defaultFolder === "none" ? "selected" : ""}>
-                    ${Logger.i18n("token-note-hover.None")}
-                </option>
-                <option value="perUser" ${defaultFolder === "perUser" ? "selected" : ""}>
-                  ${Logger.i18n("token-note-hover.PerUser")} <i>(${game.user.name})</i>
-                </option>
-                <option
-                  value="specificFolder"
-                  ${defaultFolder === "specificFolder" ? "selected" : ""}>
-                    ${Logger.i18n("token-note-hover.PerSpecificFolder")} <i>(${specificFolderName})</i>
-                </option>
-                <option disabled>──${Logger.i18n("token-note-hover.ExistingFolders")}──</option>
-                ${folders}
-              </select>
-            </div>
-            </br>
-            `,
-      title: "Create a Map Pin",
-    };
-  }
-
   static get NOTESLAYER() {
     return "NotesLayer";
   }
@@ -188,105 +102,6 @@ export class TokenNoteHover {
   }
 
   /**
-   * Creates a Note from the Pin Cushion dialog
-   * @param {*} html
-   * @param {*} eventData
-   */
-  async createNoteFromCanvas(html, eventData) {
-    const input = html.find("input[name='name']");
-
-    if (!input[0].value) {
-      Logger.warn(Logger.i18n("token-note-hover.MissingPinName"), true);
-      return;
-    }
-    // Permissions the Journal Entry will be created with
-    const permission = {
-      [game.userId]: CONST.DOCUMENT_PERMISSION_LEVELS.OWNER,
-      default: parseInt($("#cushion-permission").val()) ?? 0,
-    };
-
-    const defaultJournalPermission = game.settings.get(CONSTANTS.MODULE_ID, "defaultJournalPermission");
-    if (
-      isRealNumber(defaultJournalPermission) &&
-      (!isRealNumber(permission.default) || permission.default === 0) &&
-      defaultJournalPermission >= 0
-    ) {
-      permission.default = defaultJournalPermission;
-    }
-
-    // Get folder ID for Journal Entry
-    let folder;
-    const selectedFolder = $("#cushion-folder").val();
-    if (selectedFolder === "none") {
-      folder = undefined;
-    } else if (selectedFolder === "perUser") {
-      folder = TokenNoteHover.getFolder(game.user.name, selectedFolder);
-      if (!game.user.isGM && folder === undefined) {
-        // Request folder creation when perUser is set and the entry is created by a user
-        // Since only the ID is required, instantiating a Folder from the data is not necessary
-        // folder = (await TokenNoteHover.requestEvent({ action: "createFolder" }))?._id;
-        // TODO for some reason this will give me a error
-        // folder = (await tokenNoteHoverSocket.executeAsGM('requestEvent', { action: "createFolder" }))?._id;
-      }
-    } else if (selectedFolder === "specificFolder") {
-      const settingSpecificFolder = game.settings.get(CONSTANTS.MODULE_ID, "specificFolder");
-      folder = TokenNoteHover.getFolder(game.user.name, selectedFolder, settingSpecificFolder);
-    } else {
-      folder = selectedFolder; // Folder is already given as ID
-    }
-    const entry = await JournalEntry.create({
-      name: `${input[0].value}`,
-      ownership: permission,
-      ...(folder && { folder }),
-    });
-
-    if (!entry) {
-      return;
-    }
-
-    // offsely add fields required by Foundry's drop handling
-    const entryData = entry.toJSON();
-    entryData.id = entry.id;
-    entryData.uuid = "JournalEntry." + entry.id;
-    entryData.type = "JournalEntry";
-
-    if (canvas.activeLayer.name !== TokenNoteHover.NOTESLAYER) {
-      await canvas.notes.activate();
-    }
-
-    await canvas.activeLayer._onDropData(eventData, entryData);
-  }
-
-  /**
-   * Gets the JournalEntry Folder ID to be used for JournalEntry creations, if any.
-   *
-   * @static
-   * @param {string} name - The player name to check folders against, defaults to current user's name
-   * @param {string} setting - The module setting set for journal default
-   * @param {string} folderName - The explicit name of the folder
-   * @returns {string|undefined} The folder's ID, or undefined if there is no target folder
-   */
-  static getFolder(name, setting, folderName) {
-    name = name ?? game.user.name;
-    switch (setting) {
-      // No target folder set
-      case "none":
-        return undefined;
-      // Target folder should match the user's name
-      case "perUser":
-        return game.journal.directory.folders.find((f) => f.name === name)?.id ?? undefined;
-      case "specificFolder":
-        return (
-          game.journal.directory.folders.find((f) => f.name === folderName || f.id === folderName)?.id ??
-          game.journal.directory.folders[Number(folderName)]?.id ??
-          undefined
-        );
-      default:
-        return name;
-    }
-  }
-
-  /**
    * Checks for missing Journal Entry folders and creates them
    *
    * @static
@@ -295,7 +110,6 @@ export class TokenNoteHover {
    */
   static async _createFolders() {
     // Collect missing folders
-    const setting = game.settings.get(CONSTANTS.MODULE_ID, "defaultJournalFolder");
     const missingFolders = game.users
       .filter((u) => !u.isGM && TokenNoteHover.getFolder(u.name, setting) === undefined)
       .map((user) => ({

@@ -38,82 +38,17 @@ export const registerSettings = function () {
     config: true,
     onChange: (s) => {},
     //@ts-ignore
-    range: { min: 100, max: 3000, step: 100 }, // bug https://github.com/p4535992/foundryvtt-token-note-hover/issues/18
+    range: { min: 100, max: 3000, step: 100 },
   });
 
-  game.settings.register(CONSTANTS.MODULE_ID, "defaultJournalPermission", {
-    name: `token-note-hover.SETTINGS.DefaultJournalPermissionN`,
-    hint: `token-note-hover.SETTINGS.DefaultJournalPermissionH`,
-    scope: "world",
-    type: Number,
-    choices: Object.entries(CONST.DOCUMENT_PERMISSION_LEVELS).reduce((acc, [perm, key]) => {
-      acc[key] = `token-note-hover.SETTINGS.DefaultJournalPermission.PERMISSION.${perm}`;
-      return acc;
-    }, {}),
-    default: 0,
-    config: true,
-    onChange: (s) => {},
-  });
-
-  game.settings.register(CONSTANTS.MODULE_ID, "defaultJournalFolder", {
-    name: `token-note-hover.SETTINGS.DefaultJournalFolderN`,
-    hint: `token-note-hover.SETTINGS.DefaultJournalFolderH`,
-    scope: "world",
-    type: String,
-    choices: {
-      none: `token-note-hover.None`,
-      perUser: `token-note-hover.PerUser`,
-      specificFolder: `token-note-hover.PerSpecificFolder`,
-    },
-    default: "none",
-    config: true,
-    onChange: (s) => {
-      // Only run check for folder creation for the main GM
-      if (s === "perUser" && game.user === game.users.find((u) => u.isGM && u.active)) {
-        TokenNoteHover._createFolders();
-      }
-    },
-  });
-
-  game.settings.register(CONSTANTS.MODULE_ID, "defaultNoteImageOnCreate", {
-    name: `token-note-hover.SETTINGS.defaultNoteImageOnCreateN`,
-    hint: `token-note-hover.SETTINGS.defaultNoteImageOnCreateH`,
-    scope: "world",
-    type: String,
-    default: "",
-    config: true,
-    filePicker: true,
-  });
-
-  game.settings.register(CONSTANTS.MODULE_ID, "specificFolder", {
-    name: `token-note-hover.SETTINGS.SpecificFolderN`,
-    hint: `token-note-hover.SETTINGS.SpecificFolderH`,
-    scope: "world",
-    type: String,
-    choices: () => {
-      const folders = game.journal.directory.folders.sort((a, b) => a.name.localeCompare(b.name));
-      const arrObj = {};
-      arrObj[""] = "Select a journal folder";
-      Object.entries(folders).reduce((folder, [k, v]) => {
-        folder[v.id] = v.name;
-        arrObj[v.id] = v.name;
-        return folder;
-      }, {});
-      return arrObj;
-    },
-    default: 0,
-    config: true,
-    onChange: (s) => {},
-  });
-
-  game.settings.register(CONSTANTS.MODULE_ID, "enableBackgroundlessPins", {
-    name: `token-note-hover.SETTINGS.EnableBackgroundlessPinsN`,
-    hint: `token-note-hover.SETTINGS.EnableBackgroundlessPinsH`,
-    scope: "world",
-    type: Boolean,
-    default: true,
-    config: true,
-  });
+  // game.settings.register(CONSTANTS.MODULE_ID, "enableBackgroundlessPins", {
+  //   name: `token-note-hover.SETTINGS.EnableBackgroundlessPinsN`,
+  //   hint: `token-note-hover.SETTINGS.EnableBackgroundlessPinsH`,
+  //   scope: "world",
+  //   type: Boolean,
+  //   default: true,
+  //   config: true,
+  // });
 
   game.settings.register(CONSTANTS.MODULE_ID, "showJournalImageByDefault", {
     name: `token-note-hover.SETTINGS.ShowJournalImageByDefaultN`,

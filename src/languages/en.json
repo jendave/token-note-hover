@@ -10,19 +10,6 @@
         "SETTINGS.PreviewMaxLengthH": "**TEXT PREVIEW ONLY** How many characters should the text preview show?",
         "SETTINGS.PreviewDelayN": "Preview Delay",
         "SETTINGS.PreviewDelayH": "How long before preview appears (in milliseconds)",
-        "SETTINGS.DefaultJournalPermissionN": "Default Journal Entry Permission",
-        "SETTINGS.DefaultJournalPermissionH": "The default permission journal entries will be created with",
-        "SETTINGS.DefaultJournalPermission.PERMISSION.NONE": "NONE",
-        "SETTINGS.DefaultJournalPermission.PERMISSION.LIMITED": "LIMITED",
-        "SETTINGS.DefaultJournalPermission.PERMISSION.OBSERVER": "OBSERVER",
-        "SETTINGS.DefaultJournalPermission.PERMISSION.OWNER": "OWNER",
-        "SETTINGS.DefaultJournalPermission.PERMISSION.INHERIT": "INHERIT",
-
-        "SETTINGS.DefaultJournalFolderN": "Default Journal Entry Folder",
-        "SETTINGS.DefaultJournalFolderH": "The default folder journal entries will be created in when creating Map Pins with a double-click",
-
-        "SETTINGS.defaultNoteImageOnCreateN": "Default image icon for on creation of a note",
-        "SETTINGS.defaultNoteImageOnCreateH": "Set the path to a image to use as default icon during the creation of the note on the canvas.",
 
         "SETTINGS.EnableBackgroundlessPinsN": "Enable feature Backgroundless Pins",
         "SETTINGS.EnableBackgroundlessPinsH": "If enabled this setting will let you with a additional checkbox 'Has Background ?' on the note configuration panel remove or not the background box from map notes. WARNING: If you disable this module setting you simply have all your notes with background (the standard way), but the flags on the notes are not delete, so you can re-enable this when you want. YOU NEED TO REFRESH THE PAGE FOR APPLY THE SETTING.",
@@ -49,8 +36,6 @@
         "SETTINGS.revealedNotesTintColorNotRevealedN": "[Only if setting 'Enable revealed state on scene Notes.' is enabled] Not-revealed Icon Tint",
         "SETTINGS.revealedNotesTintColorNotRevealedH": "For GMs, the RGB value to be used to tint scene Notes if they have not been revealed to players (if left blank then the tint, if any, will remain unchanged)",
 
-        "SETTINGS.SpecificFolderN": "Select Specific Folder",
-        "SETTINGS.SpecificFolderH": "Make sense only with the module setting 'Default Journal Entry Folder' set with value 'Specific folder'",
         "SETTINGS.enableJournalThumbnailForGMsN": "Enable Sidebar Journal Images for GM Users",
         "SETTINGS.enableJournalThumbnailForGMsH": " ",
         "SETTINGS.enableJournalThumbnailForPlayersN": "Enable Sidebar Journal Images for Player Users",
@@ -159,9 +144,6 @@
         "Tooltip.FollowMouse.title": "Tooltip activate Follow Mouse feature",
 
         "Name": "Name:",
-        "None": "None",
-        "PerUser": "User",
-        "PerSpecificFolder": "Specific folder",
         "Folder": "Journal Entry Folder:",
         "ExistingFolders": "Existing Folders",
         "DefaultPermission": "Default Permission (for all players):",

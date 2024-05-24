@@ -127,8 +127,6 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
     }
   }
 
-  const defaultNoteImageOnCreate = game.settings.get(CONSTANTS.MODULE_ID, "defaultNoteImageOnCreate");
-
   let tmp = undefined;
   if (noteData.icon.custom) {
     tmp = stripQueryStringAndHashFromPath(noteData.icon.custom);
@@ -140,9 +138,6 @@ Hooks.on("renderNoteConfig", async (app, html, noteData) => {
   // TODO find a better method for the double check
   if (tmp === "icons/svg/book.svg" && noteData.icon.custom) {
     tmp = stripQueryStringAndHashFromPath(noteData.icon.custom);
-  }
-  if (tmp === "icons/svg/book.svg" && defaultNoteImageOnCreate) {
-    tmp = stripQueryStringAndHashFromPath(defaultNoteImageOnCreate);
   }
   if (tmp === "icons/svg/book.svg" && noteData.document.texture.src) {
     tmp = stripQueryStringAndHashFromPath(noteData.document.texture.src);
