@@ -635,7 +635,7 @@ Hooks.on("hoverToken", (note, hovered) => {
   // if (doNotShowJournalPreviewS !== "true" && doNotShowJournalPreviewS !== "false") {
   //     doNotShowJournalPreviewS = "true";
   // }
-  //const doNotShowJournalPreview = String(doNotShowJournalPreviewS) === "true" ? true : false;
+  // const doNotShowJournalPreview = String(doNotShowJournalPreviewS) === "true" ? true : false;
   // if (doNotShowJournalPreview) {
   //     return;
   // }
