@@ -502,7 +502,7 @@ Hooks.on('renderNoteConfig', async (app, html, noteData) => {
   );
   // eslint-disable-next-line no-undef
   const noteHtml = await renderTemplate(
-    `modules/${CONSTANTS.MODULE_ID}/templates/note-config.html`,
+    `modules/${CONSTANTS.MODULE_ID}/templates/token-note-config.html`,
     tokenNoteHoverData,
   );
 
@@ -603,8 +603,7 @@ Hooks.on('renderNoteConfig', async (app, html, noteData) => {
  * Hook on render HUD
  */
 Hooks.on('renderHeadsUpDisplay', (app, html, data) => {
-  // VERSION 1 TOOLTIP
-  html.append('<template id="token-note-hover-hud"></template>');
+  html.append('<template id="token-note-hover"></template>');
   canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
 });
 

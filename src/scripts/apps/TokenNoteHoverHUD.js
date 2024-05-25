@@ -18,11 +18,11 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
    */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      id: 'token-note-hover-hud',
-      classes: [...super.defaultOptions.classes, 'token-note-hover-hud'],
+      id: CONSTANTS.ELEMENT_ID,
+      classes: [...super.defaultOptions.classes, CONSTANTS.ELEMENT_ID],
       minimizable: false,
       resizable: false,
-      template: 'modules/token-note-hover/templates/journal-preview.html',
+      template: 'modules/token-note-hover/templates/token-note-preview.html',
     });
   }
 
@@ -223,7 +223,7 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
 
     const tooltipFollowMouse = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_FOLLOW_MOUSE) ?? false;
 
-    const tooltipColor = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipColor');
+    const tooltipColor = ''; //game.settings.get(CONSTANTS.MODULE_ID, 'tooltipColor');
 
     let orientation = '';
     if (tooltipPlacement.includes('e')) {
