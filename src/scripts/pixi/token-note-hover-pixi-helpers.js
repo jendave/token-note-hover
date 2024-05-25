@@ -89,10 +89,6 @@ export class TokenNoteHoverPixiHelpers {
           async: true,
         });
       }
-    } else if (!entry && tooltipCustomDescription) {
-      const previewMaxLength = game.settings.get(CONSTANTS.MODULE_ID, 'previewMaxLength');
-      const textContent = tooltipCustomDescription;
-      content = textContent.length > previewMaxLength ? `${textContent.substr(0, previewMaxLength)} ...` : textContent;
     } else {
       const previewTypeAsText = getProperty(
         note.document.flags[CONSTANTS.MODULE_ID],
@@ -114,10 +110,6 @@ export class TokenNoteHoverPixiHelpers {
           documents: true,
           async: true,
         });
-      } else {
-        const previewMaxLength = game.settings.get(CONSTANTS.MODULE_ID, 'previewMaxLength');
-        const textContent = $(firstContent).text();
-        content = textContent.length > previewMaxLength ? `${textContent.substr(0, previewMaxLength)} ...` : textContent;
       }
     }
 

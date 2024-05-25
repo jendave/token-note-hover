@@ -18,16 +18,6 @@ export const registerSettings = function () {
     type: Boolean,
   });
 
-  game.settings.register(CONSTANTS.MODULE_ID, 'previewMaxLength', {
-    name: 'token-note-hover.SETTINGS.PreviewMaxLengthN',
-    hint: 'token-note-hover.SETTINGS.PreviewMaxLengthH',
-    scope: 'world',
-    type: Number,
-    default: 500,
-    config: true,
-    onChange: (s) => {},
-  });
-
   game.settings.register(CONSTANTS.MODULE_ID, 'previewDelay', {
     name: 'token-note-hover.SETTINGS.PreviewDelayN',
     hint: 'token-note-hover.SETTINGS.PreviewDelayH',
@@ -35,7 +25,7 @@ export const registerSettings = function () {
     type: Number,
     default: 500,
     config: true,
-    onChange: (s) => {},
+    onChange: (s) => { },
     // @ts-ignore
     range: { min: 100, max: 3000, step: 100 },
   });
@@ -49,14 +39,25 @@ export const registerSettings = function () {
     config: true,
   });
 
-  // game.settings.register(CONSTANTS.MODULE_ID, 'enableTooltipByDefault', {
-  //   name: 'token-note-hover.SETTINGS.enableTooltipByDefaultN',
-  //   hint: 'token-note-hover.SETTINGS.enableTooltipByDefaultH',
-  //   scope: 'world',
-  //   type: Boolean,
-  //   default: false,
-  //   config: true,
-  // });
+  game.settings.register(CONSTANTS.MODULE_ID, 'tooltipColor', {
+    name: 'token-note-hover.SETTINGS.Tooltip.Color.title',
+    hint: '',
+    scope: 'world',
+    config: true,
+    type: String,
+    default: 'Default',
+    choices: {
+      'default': 'Default',
+      'blue': 'Blue',
+      'dark': 'Dark',
+      'green': 'Green',
+      'light': 'Light',
+      'orange': 'Orange',
+      'purple': 'Purple',
+      'red': 'Red',
+      'yellow': 'Yellow',
+    },
+  });
 
   game.settings.register(CONSTANTS.MODULE_ID, 'enableAutoScaleNamePlatesNote', {
     name: 'token-note-hover.SETTINGS.enableAutoScaleNamePlatesNoteN',

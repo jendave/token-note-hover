@@ -223,7 +223,7 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
 
     const tooltipFollowMouse = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_FOLLOW_MOUSE) ?? false;
 
-    const tooltipColor = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_COLOR) ?? '';
+    const tooltipColor = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipColor');
 
     let orientation = '';
     if (tooltipPlacement.includes('e')) {

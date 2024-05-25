@@ -167,9 +167,8 @@ Hooks.on('renderNoteConfig', async (app, html, noteData) => {
       let options = '<option></option>';
       for (const key in page?.toc) {
         const section = page.toc[key];
-        options += `<option value="${section.slug}"${section.slug === current ? ' selected' : ''}>${
-          section.text
-        }</option>`;
+        options += `<option value="${section.slug}"${section.slug === current ? ' selected' : ''}>${section.text
+          }</option>`;
       }
       return options;
     }
@@ -255,7 +254,7 @@ Hooks.on('renderNoteConfig', async (app, html, noteData) => {
     ?? defaultState;
   const playerIconPath = stripQueryStringAndHashFromPath(
     foundry.utils.getProperty(noteData, `document.flags.${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.PLAYER_ICON_PATH}`)
-      ?? defaultPath,
+    ?? defaultPath,
   );
 
   // ====================================
@@ -683,20 +682,7 @@ Hooks.on('renderJournalSheet', (app, html, data) => {
 
 Hooks.once('canvasInit', () => {
   // This module is only required for GMs (game.user accessible from 'ready' event but not 'init' event)
-  if (game.user.isGM && game.settings.get(CONSTANTS.MODULE_ID, 'noteGM')) {
-    if (foundry.utils.isNewerVersion('12', game.version)) {
-      libWrapper.register(CONSTANTS.MODULE_ID, 'Note.prototype.text', TokenNoteHover._textWithNoteGM, libWrapper.MIXED);
-    } else {
-      libWrapper.register(
-        CONSTANTS.MODULE_ID,
-        'NoteDocument.prototype.label',
-        TokenNoteHover._labelWithNoteGM,
-        libWrapper.MIXED,
-      );
-    }
-  } else {
-    libWrapper.register(CONSTANTS.MODULE_ID, 'Note.prototype._drawTooltip', TokenNoteHover._addDrawTooltip2, 'MIXED');
-  }
+  libWrapper.register(CONSTANTS.MODULE_ID, 'Note.prototype._drawTooltip', TokenNoteHover._addDrawTooltip2, 'MIXED');
 
   libWrapper.register(
     CONSTANTS.MODULE_ID,

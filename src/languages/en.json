@@ -6,8 +6,6 @@
         "SETTINGS.ShowJournalPreviewH": "Shows a Journal preview when hovering over a map pin",
         "SETTINGS.PreviewTypeN": "Journal Preview Type",
         "SETTINGS.PreviewTypeH": "The type of Journal preview to show (HTML or Text snippet)",
-        "SETTINGS.PreviewMaxLengthN": "Preview Maximum Length",
-        "SETTINGS.PreviewMaxLengthH": "**TEXT PREVIEW ONLY** How many characters should the text preview show?",
         "SETTINGS.PreviewDelayN": "Preview Delay",
         "SETTINGS.PreviewDelayH": "How long before preview appears (in milliseconds)",
 
@@ -100,6 +98,8 @@
         "SETTINGS.playerPinDefaults.addPlayerNameH": "When on, the format of the pin label is \"<pinlabel> /n <name of character>\" on two lines.",
         "SETTINGS.playerPinDefaults.playerColorTextN": "Player Pin Defaults: Player Color as Text Color",
         "SETTINGS.playerPinDefaults.playerColorTextH": "When on, the player's color is used to tint the text color",
+
+        "SETTINGS.Tooltip.Color.title": "Tooltip Color",
 
         "NumberWsSuffixOnNameplateN": "Trick Setting: Enter the number of white spaces to be added as suffix (or prefix with negative number) in the nameplate of the note for a better center alignment",
         "NumberWsSuffixOnNameplateH": "Temporary tooltip text alignment trick with width ratio != 1. Basically I would have to rewrite quite a bit of code, to apply the same logic as the tiles on the notes...something the foundryvtt team should do . As a temporary trick we add a number of whitespace as a suffix to better 'center' the text on the note.",
