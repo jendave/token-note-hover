@@ -18,9 +18,6 @@ const API = {
     }
     const [message] = inAttributes; // e.g. { action: "createFolder" }
     // A request has to define what action should be executed by the GM
-    // if (!'action' in message) {
-    //   return;
-    // }
     if (!Object.keys(message)?.includes('action')) {
       Logger.warn("Message doesn't contain the 'action'");
       return;

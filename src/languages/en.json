@@ -5,6 +5,11 @@
         "Name": "Hover Enabled",
         "Hint": "Show the token note on hover."
       },
+      "tooltipSmartPlacement": {
+        "Name": "tooltipSmartPlacement",
+        "Hint": "tooltipSmartPlacement."
+      },
+      
       "ShowJournalPreviewN": "Show Journal Preview",
       "ShowJournalPreviewH": "Shows a Journal preview when hovering over a map pin",
       "PreviewTypeN": "Journal Preview Type",

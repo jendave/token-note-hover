@@ -30,38 +30,6 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
    * Get data for template
    */
   async getData() {
-    // Original
-    // let data = super.getData();
-    // const note = this.object;
-
-    // const dataTmp = await TokenNoteHoverPixiHelpers._manageContentHtmlFromNote(note);
-    // data = mergeObject(data, dataTmp);
-
-    // this.contentTooltip = await TextEditor.enrichHTML(`
-    //   <div id="container" class="token-note-hover-hud-container" style="font-size:${data.fontSize}px; max-width:${data.maxWidth}px">
-    //       ${data.contentTooltip}
-    //   </div>`);
-    // this.fontSize = data.fontSize;
-    // this.maxWidth = data.maxWidth;
-
-    // return data;
-
-    // Temp
-    // let data = super.getData();
-    // const actor = this.object;
-
-    // const dataTmp = await TokenNoteHoverPixiHelpers._manageContentHtmlFromNote(actor);
-    // data = mergeObject(data, dataTmp);
-
-    // this.contentTooltip = await TextEditor.enrichHTML(`
-    //           <div id="container" class="token-note-hover-hud-container" style="font-size:${data.fontSize}px; max-width:${data.maxWidth}px">
-    //               ${data.contentTooltip}
-    //           </div>`);
-    // this.fontSize = data.fontSize;
-    // this.maxWidth = data.maxWidth;
-
-    // return data;
-
     // Token Note Hover
     let data = super.getData();
     const note = this.object;
@@ -132,8 +100,7 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
         default:
           tempContent = null;
       }
-
-      // data.contentTooltip = tempContent;
+      
       const content = tempContent;
 
       data.title = actor.name;
@@ -165,8 +132,6 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
     const tooltipPlacement = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_PLACEMENT) ?? 'e';
 
     const tooltipSmartPlacement = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_SMART_PLACEMENT) ?? false;
-
-    const tooltipFollowMouse = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_FOLLOW_MOUSE) ?? false;
 
     const isVertical = isPlacementVertical(tooltipPlacement);
 
@@ -219,11 +184,9 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
 
     const tooltipPlacement = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_PLACEMENT) ?? 'e';
 
-    const tooltipSmartPlacement = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_SMART_PLACEMENT) ?? false;
+    const tooltipSmartPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipSmartPlacement');
 
-    const tooltipFollowMouse = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_FOLLOW_MOUSE) ?? false;
-
-    const tooltipColor = ''; //game.settings.get(CONSTANTS.MODULE_ID, 'tooltipColor');
+    const tooltipColor = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipColor');
 
     let orientation = '';
     if (tooltipPlacement.includes('e')) {

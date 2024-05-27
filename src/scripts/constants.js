@@ -18,7 +18,6 @@ const CONSTANTS = {
     SHOW_IMAGE: 'showImage',
     SHOW_IMAGE_EXPLICIT_SOURCE: 'showImageExplicitSource',
     HIDE_LABEL: 'hideLabel',
-    // DO_NOT_SHOW_JOURNAL_PREVIEW: "doNotShowJournalPreview",
     TOOLTIP_PLACEMENT: 'tooltipPlacement',
     TOOLTIP_COLOR: 'tooltipColor',
     TOOLTIP_FORCE_REMOVE: 'tooltipForceRemove',

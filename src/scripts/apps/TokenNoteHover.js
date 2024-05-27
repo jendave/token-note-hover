@@ -24,27 +24,6 @@ export class TokenNoteHover {
     return 16;
   }
 
-  // static autoScaleNotes(canvas) {
-  //   const enableAutoScaleNamePlatesNote = game.settings.get(CONSTANTS.MODULE_ID, 'enableAutoScaleNamePlatesNote');
-  //   if (enableAutoScaleNamePlatesNote) {
-  //     if (canvas.notes) {
-  //       for (const note of canvas.notes.placeables) {
-  //         note.tooltip.scale.set(
-  //           TokenNoteHover._calculateAutoScale(canvas.scene.dimensions.size, canvas.stage.scale.x),
-  //         );
-  //       }
-  //     }
-  //   }
-  // }
-
-  // static _calculateAutoScale(sceneDimensionSize, zoomStage) {
-  //   // Taken from Easy Ruler Scale, a mod by Kandashi
-  //   // https://github.com/kandashi/easy-ruler-scale
-  //   const gs = sceneDimensionSize / 100;
-  //   const zs = 1 / zoomStage;
-  //   return Math.max(gs * zs, 0.8);
-  // }
-
   /**
    * Render a file-picker button linked to an <input> field
    * @param {string} [type]       The type of FilePicker instance to display
@@ -538,21 +517,21 @@ export class TokenNoteHover {
   //   return icon;
   // }
 
-  static _noteConfigGetData(wrapped, ...args) {
-    let noteData = wrapped(...args);
-    if (game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsEnabled')) {
-      noteData = TokenNoteHover.pinPlayerDefaultsGetData(noteData);
-    }
-    return noteData;
-  }
+  // static _noteConfigGetData(wrapped, ...args) {
+  //   let noteData = wrapped(...args);
+  //   if (game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsEnabled')) {
+  //     noteData = TokenNoteHover.pinPlayerDefaultsGetData(noteData);
+  //   }
+  //   return noteData;
+  // }
 
-  static _noteConfigGetSubmitData(wrapped, ...args) {
-    let data = wrapped(...args);
-    if (game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsEnabled')) {
-      data = TokenNoteHover.pinPlayerDefaultsGetSubmitData(data);
-    }
-    return data;
-  }
+  // static _noteConfigGetSubmitData(wrapped, ...args) {
+  //   let data = wrapped(...args);
+  //   if (game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsEnabled')) {
+  //     data = TokenNoteHover.pinPlayerDefaultsGetSubmitData(data);
+  //   }
+  //   return data;
+  // }
 
   /*
   getData wrapper.
