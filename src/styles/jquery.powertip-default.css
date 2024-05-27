@@ -11,7 +11,7 @@
   border-color: #333;
   border-color: rgba(0, 0, 0, 0.8);
   border-radius: 6px;
-  color: #fff;
+  color: #fff; /*'var(--color-text-light-highlight)' */
   display: none;
   padding: 10px;
   position: absolute;

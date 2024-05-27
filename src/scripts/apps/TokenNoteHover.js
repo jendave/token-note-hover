@@ -24,26 +24,26 @@ export class TokenNoteHover {
     return 16;
   }
 
-  static autoScaleNotes(canvas) {
-    const enableAutoScaleNamePlatesNote = game.settings.get(CONSTANTS.MODULE_ID, 'enableAutoScaleNamePlatesNote');
-    if (enableAutoScaleNamePlatesNote) {
-      if (canvas.notes) {
-        for (const note of canvas.notes.placeables) {
-          note.tooltip.scale.set(
-            TokenNoteHover._calculateAutoScale(canvas.scene.dimensions.size, canvas.stage.scale.x),
-          );
-        }
-      }
-    }
-  }
+  // static autoScaleNotes(canvas) {
+  //   const enableAutoScaleNamePlatesNote = game.settings.get(CONSTANTS.MODULE_ID, 'enableAutoScaleNamePlatesNote');
+  //   if (enableAutoScaleNamePlatesNote) {
+  //     if (canvas.notes) {
+  //       for (const note of canvas.notes.placeables) {
+  //         note.tooltip.scale.set(
+  //           TokenNoteHover._calculateAutoScale(canvas.scene.dimensions.size, canvas.stage.scale.x),
+  //         );
+  //       }
+  //     }
+  //   }
+  // }
 
-  static _calculateAutoScale(sceneDimensionSize, zoomStage) {
-    // Taken from Easy Ruler Scale, a mod by Kandashi
-    // https://github.com/kandashi/easy-ruler-scale
-    const gs = sceneDimensionSize / 100;
-    const zs = 1 / zoomStage;
-    return Math.max(gs * zs, 0.8);
-  }
+  // static _calculateAutoScale(sceneDimensionSize, zoomStage) {
+  //   // Taken from Easy Ruler Scale, a mod by Kandashi
+  //   // https://github.com/kandashi/easy-ruler-scale
+  //   const gs = sceneDimensionSize / 100;
+  //   const zs = 1 / zoomStage;
+  //   return Math.max(gs * zs, 0.8);
+  // }
 
   /**
    * Render a file-picker button linked to an <input> field
@@ -319,7 +319,7 @@ export class TokenNoteHover {
       return access;
     }
     const point = { x: this.document.x, y: this.document.y };
-    const tolerance = this.document.iconSize / 4;
+    const tolerance = 10; // this.document.iconSize / 4;
     return canvas.effects.visibility.testVisibility(point, { tolerance, object: this });
   }
 
@@ -330,7 +330,7 @@ export class TokenNoteHover {
    * @returns
    */
   static _noteUpdate(wrapped, ...args) {
-    const revealedNotes = game.settings.get(CONSTANTS.MODULE_ID, 'revealedNotes');
+    const revealedNotes = false; game.settings.get(CONSTANTS.MODULE_ID, 'revealedNotes');
     const [data, options, userId] = args;
     if (revealedNotes) {
       // Foundry V11: Note#_onUpdate needs to set refreshText render flag
@@ -599,25 +599,25 @@ export class TokenNoteHover {
       return data;
     }
     // Append name
-    if (game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsAddPlayerName')) {
-      const characterName = foundry.utils.getProperty(
-        this.document,
-        `flags.${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.PLAYER_PIN_DEFAULTS_CHARACTER_NAME}`,
-      )
-        || game.user.character?.name
-        || game.user.name;
-      foundry.utils.setProperty(
-        data,
-        `flags.${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.PLAYER_PIN_DEFAULTS_ORIGINAL_TEXT}`,
-        data.text,
-      );
-      foundry.utils.setProperty(
-        data,
-        `flags.${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.PLAYER_PIN_DEFAULTS_CHARACTER_NAME}`,
-        characterName,
-      );
-      data.text += `\n${characterName}`;
-    }
+    // if (game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsAddPlayerName')) {
+    //   const characterName = foundry.utils.getProperty(
+    //     this.document,
+    //     `flags.${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.PLAYER_PIN_DEFAULTS_CHARACTER_NAME}`,
+    //   )
+    //     || game.user.character?.name
+    //     || game.user.name;
+    //   foundry.utils.setProperty(
+    //     data,
+    //     `flags.${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.PLAYER_PIN_DEFAULTS_ORIGINAL_TEXT}`,
+    //     data.text,
+    //   );
+    //   foundry.utils.setProperty(
+    //     data,
+    //     `flags.${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.PLAYER_PIN_DEFAULTS_CHARACTER_NAME}`,
+    //     characterName,
+    //   );
+    //   data.text += `\n${characterName}`;
+    // }
 
     // Set flags
     const isDefaulted = foundry.utils.getProperty(
@@ -644,28 +644,28 @@ export class TokenNoteHover {
     const tokenImg = game.user.character.prototypeToken?.texture.src;
 
     // Icon (token or default)
-    const usePlayerToken = game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsPlayerToken') && tokenImg?.length > 0;
-    const defaultImage = game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsPinImage');
-    let customIcon = null;
-    if (usePlayerToken) {
-      customIcon = tokenImg;
-    } else if (defaultImage?.length > 0) {
-      customIcon = defaultImage;
-    }
+   // const usePlayerToken = game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsPlayerToken') && tokenImg?.length > 0;
+   // const defaultImage = game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsPinImage');
+    // let customIcon = null;
+    // if (usePlayerToken) {
+    //   customIcon = tokenImg;
+    // } //else if (defaultImage?.length > 0) {
+    //   //customIcon = defaultImage;
+    // }
     // Tint
-    const usePlayerColorTint = game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsPlayerColorImage');
-    let tintIcon = null;
-    if (usePlayerColorTint && !usePlayerToken) {
-      tintIcon = playerColor;
-    }
+   // const usePlayerColorTint = game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsPlayerColorImage');
+   // let tintIcon = null;
+    // if (usePlayerColorTint && !usePlayerToken) {
+    //   tintIcon = playerColor;
+   //  }
     // Returned object
     let defaults = {
       data: {
         global: game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsGlobal'),
-        iconSize: game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsImageSize'),
+      //  iconSize: game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsImageSize'),
         textAnchor: game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsAnchorPoint'),
-        textColor: game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsPlayerColorText') ? playerColor : null,
-        fontSize: game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsFontSize'),
+       // textColor: game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsPlayerColorText') ? playerColor : null,
+       // fontSize: game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsFontSize'),
         texture: {
           tint: tintIcon,
         },
@@ -713,118 +713,118 @@ export class TokenNoteHover {
     }
   }
 
-  static _renderJournalThumbnail(app, html) {
-    game.journal.render();
-  }
+  // static _renderJournalThumbnail(app, html) {
+  //   game.journal.render();
+  // }
 
-  static _addJournalThumbnail(app, html, data) {
-    if (
-      (game.user.isGM && game.settings.get(CONSTANTS.MODULE_ID, 'enableJournalThumbnailForGMs'))
-      || (!game.user.isGM && game.settings.get(CONSTANTS.MODULE_ID, 'enableJournalThumbnailForPlayers'))
-    ) {
-      app.documents.forEach((j) => {
-        const htmlEntry = html.find(`.directory-item.document[data-document-id="${j.id}"]`);
-        if (htmlEntry.length !== 1) {
-          return;
-        }
-        const journalEntryImage = retrieveFirstImageFromJournalId(j.id, undefined, false);
-        if (!journalEntryImage) {
-          return;
-        }
-        let thumbnail = null;
-        if (journalEntryImage.endsWith('.pdf')) {
-          // thumbnail = $(
-          // 	`
-          // 	<object data="${journalEntryImage}" type="application/pdf" class="token-note-hover-thumbnail sidebar-image journal-entry-image">
-          // 		<embed class="token-note-hover-thumbnail sidebar-image journal-entry-image" src="${journalEntryImage}" type="application/pdf">
-          // 			<p>This browser does not support PDFs. Please download the PDF to view it: <a href="${journalEntryImage}">Download PDF</a>.</p>
-          // 		</embed>
-          // 	</object>
-          // 	`
-          // );
-          thumbnail = $(
-            `<img class="token-note-hover-thumbnail sidebar-image journal-entry-image" src="${CONSTANTS.PATH_PDF_THUMBNAIL}" title="${j.name}" alt='Journal Entry Thumbnail'>`,
-          );
-        } else {
-          thumbnail = $(
-            `<img class="token-note-hover-thumbnail sidebar-image journal-entry-image" src="${journalEntryImage}" title="${j.name}" alt='Journal Entry Thumbnail'>`,
-          );
-        }
-        switch (game.settings.get(CONSTANTS.MODULE_ID, 'journalThumbnailPosition')) {
-          case 'right': {
-            htmlEntry.append(thumbnail);
-            break;
-          }
-          case 'left': {
-            htmlEntry.prepend(thumbnail);
-            break;
-          }
-          default: {
-            Logger.warn("Must set 'right' or 'left' for sidebar thumbnail image");
-          }
-        }
-      });
-    }
-  }
+  // static _addJournalThumbnail(app, html, data) {
+  //   if (
+  //   1==0 //  (game.user.isGM && game.settings.get(CONSTANTS.MODULE_ID, 'enableJournalThumbnailForGMs'))
+  //     //|| (!game.user.isGM && game.settings.get(CONSTANTS.MODULE_ID, 'enableJournalThumbnailForPlayers'))
+  //   ) {
+  //     app.documents.forEach((j) => {
+  //       const htmlEntry = html.find(`.directory-item.document[data-document-id="${j.id}"]`);
+  //       if (htmlEntry.length !== 1) {
+  //         return;
+  //       }
+  //       const journalEntryImage = retrieveFirstImageFromJournalId(j.id, undefined, false);
+  //       if (!journalEntryImage) {
+  //         return;
+  //       }
+  //       let thumbnail = null;
+  //       if (journalEntryImage.endsWith('.pdf')) {
+  //         // thumbnail = $(
+  //         // 	`
+  //         // 	<object data="${journalEntryImage}" type="application/pdf" class="token-note-hover-thumbnail sidebar-image journal-entry-image">
+  //         // 		<embed class="token-note-hover-thumbnail sidebar-image journal-entry-image" src="${journalEntryImage}" type="application/pdf">
+  //         // 			<p>This browser does not support PDFs. Please download the PDF to view it: <a href="${journalEntryImage}">Download PDF</a>.</p>
+  //         // 		</embed>
+  //         // 	</object>
+  //         // 	`
+  //         // );
+  //         thumbnail = $(
+  //           `<img class="token-note-hover-thumbnail sidebar-image journal-entry-image" src="${CONSTANTS.PATH_PDF_THUMBNAIL}" title="${j.name}" alt='Journal Entry Thumbnail'>`,
+  //         );
+  //       } else {
+  //         thumbnail = $(
+  //           `<img class="token-note-hover-thumbnail sidebar-image journal-entry-image" src="${journalEntryImage}" title="${j.name}" alt='Journal Entry Thumbnail'>`,
+  //         );
+  //       }
+  //       switch (game.settings.get(CONSTANTS.MODULE_ID, 'journalThumbnailPosition')) {
+  //         case 'right': {
+  //           htmlEntry.append(thumbnail);
+  //           break;
+  //         }
+  //         case 'left': {
+  //           htmlEntry.prepend(thumbnail);
+  //           break;
+  //         }
+  //         default: {
+  //           Logger.warn("Must set 'right' or 'left' for sidebar thumbnail image");
+  //         }
+  //       }
+  //     });
+  //   }
+  // }
 
-  static _deleteJournalDirectoryPagesEntry() {
-    if (game.settings.get(CONSTANTS.MODULE_ID, 'enableJournalDirectoryPages')) {
-      ui.sidebar.tabs.journal.render(true);
-      for (const window of [...Object.values(ui.windows)].filter((w) => w.title == 'Journal Directory')) {
-        window.render(true);
-      }
-    }
-  }
+  // static _deleteJournalDirectoryPagesEntry() {
+  //   // if (game.settings.get(CONSTANTS.MODULE_ID, 'enableJournalDirectoryPages')) {
+  //   //   ui.sidebar.tabs.journal.render(true);
+  //   //   for (const window of [...Object.values(ui.windows)].filter((w) => w.title == 'Journal Directory')) {
+  //   //     window.render(true);
+  //   //   }
+  //   // }
+  // }
 
-  static _createJournalDirectoryPagesEntry() {
-    if (game.settings.get(CONSTANTS.MODULE_ID, 'enableJournalDirectoryPages')) {
-      ui.sidebar.tabs.journal.render(true);
-      for (const window of [...Object.values(ui.windows)].filter((w) => w.title == 'Journal Directory')) {
-        window.render(true);
-      }
-    }
-  }
+  // static _createJournalDirectoryPagesEntry() {
+  //   // if (game.settings.get(CONSTANTS.MODULE_ID, 'enableJournalDirectoryPages')) {
+  //   //   ui.sidebar.tabs.journal.render(true);
+  //   //   for (const window of [...Object.values(ui.windows)].filter((w) => w.title == 'Journal Directory')) {
+  //   //     window.render(true);
+  //   //   }
+  //   // }
+  // }
 
-  static _addJournalDirectoryPages(app, html, options) {
-    if (game.settings.get(CONSTANTS.MODULE_ID, 'enableJournalDirectoryPages')) {
-      for (const j of app.documents) {
-        if (!j.pages.size) continue;
-        const $li = html.find(`li[data-document-id="${j.id}"]`);
-        $li.css({ flex: 'unset', display: 'block' });
-        const $button = $(
-          '<a class="toggle" style="width:50px; float: right; text-align: right; padding-right: .5em;"><i class="fa-solid fa-caret-down"></i></a>',
-        ).click(function (e) {
-          e.stopPropagation();
-          $(this).parent().parent().find('ol')
-            .toggle();
-          $(this).parent().parent().find('ol')
-            .is(':hidden')
-            ? $(this).html('<i class="fa-solid fa-caret-down"></i>')
-            : $(this).html('<i class="fa-solid fa-caret-up"></i>');
-        });
-        $li.find('h4').append($button).css({ 'flex-basis': '100%', overflow: 'ellipsis' });
-        const $ol = $('<ol class="journal-pages" style="width:100%; margin-left: 1em;" start="0"></ol>');
-        $ol.hide();
-        for (const p of j.pages.contents.sort((a, b) => a.sort - b.sort)) $ol.append($(`<li class="journal-page" data-page-uuid="${p.uuid}"><a>${p.name}</a></li>`));
-        $li.append($ol);
-      }
-      $(html)
-        .find('li.journal-page > a')
-        .click(function (e) {
-          e.stopPropagation();
-          const page = fromUuidSync($(this).parent().data().pageUuid);
-          if (!page) return;
-          page.parent.sheet.render(true, { pageId: page.id, focus: true });
-        })
-        .contextmenu(function (e) {
-          e.stopPropagation();
-          e.preventDefault();
-          const page = fromUuidSync($(this).parent().data().pageUuid);
-          if (!page) return;
-          page.sheet.render(true);
-        });
-    }
-  }
+  // static _addJournalDirectoryPages(app, html, options) {
+  //   // if (game.settings.get(CONSTANTS.MODULE_ID, 'enableJournalDirectoryPages')) {
+  //   //   for (const j of app.documents) {
+  //   //     if (!j.pages.size) continue;
+  //   //     const $li = html.find(`li[data-document-id="${j.id}"]`);
+  //   //     $li.css({ flex: 'unset', display: 'block' });
+  //   //     const $button = $(
+  //   //       '<a class="toggle" style="width:50px; float: right; text-align: right; padding-right: .5em;"><i class="fa-solid fa-caret-down"></i></a>',
+  //   //     ).click(function (e) {
+  //   //       e.stopPropagation();
+  //   //       $(this).parent().parent().find('ol')
+  //   //         .toggle();
+  //   //       $(this).parent().parent().find('ol')
+  //   //         .is(':hidden')
+  //   //         ? $(this).html('<i class="fa-solid fa-caret-down"></i>')
+  //   //         : $(this).html('<i class="fa-solid fa-caret-up"></i>');
+  //   //     });
+  //   //     $li.find('h4').append($button).css({ 'flex-basis': '100%', overflow: 'ellipsis' });
+  //   //     const $ol = $('<ol class="journal-pages" style="width:100%; margin-left: 1em;" start="0"></ol>');
+  //   //     $ol.hide();
+  //   //     for (const p of j.pages.contents.sort((a, b) => a.sort - b.sort)) $ol.append($(`<li class="journal-page" data-page-uuid="${p.uuid}"><a>${p.name}</a></li>`));
+  //   //     $li.append($ol);
+  //   //   }
+  //   //   $(html)
+  //   //     .find('li.journal-page > a')
+  //   //     .click(function (e) {
+  //   //       e.stopPropagation();
+  //   //       const page = fromUuidSync($(this).parent().data().pageUuid);
+  //   //       if (!page) return;
+  //   //       page.parent.sheet.render(true, { pageId: page.id, focus: true });
+  //   //     })
+  //   //     .contextmenu(function (e) {
+  //   //       e.stopPropagation();
+  //   //       e.preventDefault();
+  //   //       const page = fromUuidSync($(this).parent().data().pageUuid);
+  //   //       if (!page) return;
+  //   //       page.sheet.render(true);
+  //   //     });
+  //   // }
+  // }
 
   /**
    * Sets whether this Note is revealed (visible) to players; overriding the default FoundryVTT rules.
@@ -834,7 +834,7 @@ export class TokenNoteHover {
    * @param {Boolean}  [visible]  pass in true if the Note should be revealed to players
    */
   static setNoteRevealed(notedata, visible) {
-    const revealedNotes = game.settings.get(CONSTANTS.MODULE_ID, 'revealedNotes');
+    const revealedNotes = false; // game.settings.get(CONSTANTS.MODULE_ID, 'revealedNotes');
     if (revealedNotes) {
       visible = getProperty(notedata, `flags.${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.PIN_IS_REVEALED}`);
       if (visible) {

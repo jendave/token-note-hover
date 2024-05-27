@@ -4,7 +4,7 @@
 import API from './scripts/api';
 import CONSTANTS from './scripts/constants';
 import { stripQueryStringAndHashFromPath, retrieveFirstImageFromJournalId } from './scripts/lib/lib';
-import { registerSettings } from './scripts/settings';
+import registerSettings from './scripts/settings';
 import { registerSocket } from './scripts/socket';
 import { TokenNoteHoverHUD } from './scripts/apps/TokenNoteHoverHUD';
 import { TokenNoteHover } from './scripts/apps/TokenNoteHover';
@@ -32,15 +32,15 @@ Hooks.once('init', () => {
   //   "OVERRIDE"
   // );
 
-  const enablePlayerIconAutoOverride = game.settings.get(CONSTANTS.MODULE_ID, 'playerIconAutoOverride');
-  if (enablePlayerIconAutoOverride) {
-    libWrapper.register(
-      CONSTANTS.MODULE_ID,
-      'NoteDocument.prototype.prepareData',
-      TokenNoteHover._onPrepareNoteData,
-      'WRAPPER',
-    );
-  }
+  // const enablePlayerIconAutoOverride = game.settings.get(CONSTANTS.MODULE_ID, 'playerIconAutoOverride');
+  // if (enablePlayerIconAutoOverride) {
+  //   libWrapper.register(
+  //     CONSTANTS.MODULE_ID,
+  //     'NoteDocument.prototype.prepareData',
+  //     TokenNoteHover._onPrepareNoteData,
+  //     'WRAPPER',
+  //   );
+  // }
 
   libWrapper.register(CONSTANTS.MODULE_ID, 'NoteConfig.prototype.getData', TokenNoteHover._noteConfigGetData);
 
@@ -108,24 +108,24 @@ Hooks.on('renderNoteConfig', async (app, html, noteData) => {
   const entity = app.object.flags[CONSTANTS.MODULE_ID] || {};
 
   // TODO THIS CODE CAN B DONE MUCH BETTER...
-  const showJournalImageByDefault = game.settings.get(CONSTANTS.MODULE_ID, 'showJournalImageByDefault');
+ // const showJournalImageByDefault = game.settings.get(CONSTANTS.MODULE_ID, 'showJournalImageByDefault');
 
-  if (
-    showJournalImageByDefault
-    && noteData.document.entryId
-    && !app.object.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.CUSHION_ICON)
-  ) {
-    // Journal id
-    const journal = game.journal.get(noteData.document.entryId);
-    if (journal) {
-      const journalEntryImage = retrieveFirstImageFromJournalId(journal.id, app.object?.pageId, false);
-      if (journalEntryImage) {
-        foundry.utils.setProperty(noteData.document.texture, 'src', stripQueryStringAndHashFromPath(journalEntryImage));
-      }
-    } else {
-      Logger.warn(`The journal with id '${noteData.document.entryId}' do not exists anymore`);
-    }
-  }
+  // if (
+  //   showJournalImageByDefault
+  //   && noteData.document.entryId
+  //   && !app.object.getFlag(CONSTANTS.MODULE_ID, CONSTANTS.FLAGS.CUSHION_ICON)
+  // ) {
+  //   // Journal id
+  //   const journal = game.journal.get(noteData.document.entryId);
+  //   if (journal) {
+  //     const journalEntryImage = retrieveFirstImageFromJournalId(journal.id, app.object?.pageId, false);
+  //     if (journalEntryImage) {
+  //       foundry.utils.setProperty(noteData.document.texture, 'src', stripQueryStringAndHashFromPath(journalEntryImage));
+  //     }
+  //   } else {
+  //     Logger.warn(`The journal with id '${noteData.document.entryId}' do not exists anymore`);
+  //   }
+  // }
 
   let tmp;
   if (noteData.icon.custom) {
@@ -160,48 +160,48 @@ Hooks.on('renderNoteConfig', async (app, html, noteData) => {
     TokenNoteHover._addNoteGM(app, html, noteData);
   }
 
-  const enableJournalAnchorLink = game.settings.get(CONSTANTS.MODULE_ID, 'enableJournalAnchorLink');
-  if (enableJournalAnchorLink && !game.modules.get('jal')?.active) {
-    // eslint-disable-next-line no-inner-declarations
-    function getOptions(page, current) {
-      let options = '<option></option>';
-      for (const key in page?.toc) {
-        const section = page.toc[key];
-        options += `<option value="${section.slug}"${section.slug === current ? ' selected' : ''}>${section.text
-          }</option>`;
-      }
-      return options;
-    }
-    const anchorData = foundry.utils.getProperty(noteData.document.flags, 'anchor'); // noteData.document.flags.anchor;
-    const pageData = noteData.document.page;
+ // const enableJournalAnchorLink = game.settings.get(CONSTANTS.MODULE_ID, 'enableJournalAnchorLink');
+  // if (enableJournalAnchorLink && !game.modules.get('jal')?.active) {
+  //   // eslint-disable-next-line no-inner-declarations
+  //   function getOptions(page, current) {
+  //     let options = '<option></option>';
+  //     for (const key in page?.toc) {
+  //       const section = page.toc[key];
+  //       options += `<option value="${section.slug}"${section.slug === current ? ' selected' : ''}>${section.text
+  //         }</option>`;
+  //     }
+  //     return options;
+  //   }
+  //   const anchorData = foundry.utils.getProperty(noteData.document.flags, 'anchor'); // noteData.document.flags.anchor;
+  //   const pageData = noteData.document.page;
 
-    const select = $(`
-		<div class='form-group'>
-			<label>${Logger.i18n(`${CONSTANTS.MODULE_ID}.PageSection`)}</label>
-			<div class='form-fields'>
-				<select name="flags.anchor.slug">
-					${getOptions(pageData, anchorData?.slug)}
-				</select>
-			</div>
-		</div>`);
-    const pageid = html.find("select[name='pageId']");
-    pageid.parent().parent().after(select);
+  //   const select = $(`
+	// 	<div class='form-group'>
+	// 		<label>${Logger.i18n(`${CONSTANTS.MODULE_ID}.PageSection`)}</label>
+	// 		<div class='form-fields'>
+	// 			<select name="flags.anchor.slug">
+	// 				${getOptions(pageData, anchorData?.slug)}
+	// 			</select>
+	// 		</div>
+	// 	</div>`);
+  //   const pageid = html.find("select[name='pageId']");
+  //   pageid.parent().parent().after(select);
 
-    // on change of page or journal entry
-    // eslint-disable-next-line no-inner-declarations
-    function _updateSectionList() {
-      const newjournalid = app.form.elements.entryId?.value;
-      const newpageid = app.form.elements.pageId?.value;
-      const journal = game.journal.get(newjournalid);
-      const newpage = journal?.pages.get(newpageid);
-      Logger.log(`selected page changed to ${newpageid}`);
-      Logger.log(`new options =${getOptions(newpage, anchorData?.slug)}`);
-      app.form.elements['flags.anchor.slug'].innerHTML = getOptions(newpage, anchorData?.slug);
-      Logger.log(`new innerHtml${app.form.elements['flags.anchor.slug'].innerHTML}`);
-    }
-    html.find("select[name='entryId']").change(_updateSectionList);
-    pageid.change(_updateSectionList);
-  }
+  //   // on change of page or journal entry
+  //   // eslint-disable-next-line no-inner-declarations
+  //   function _updateSectionList() {
+  //     const newjournalid = app.form.elements.entryId?.value;
+  //     const newpageid = app.form.elements.pageId?.value;
+  //     const journal = game.journal.get(newjournalid);
+  //     const newpage = journal?.pages.get(newpageid);
+  //     Logger.log(`selected page changed to ${newpageid}`);
+  //     Logger.log(`new options =${getOptions(newpage, anchorData?.slug)}`);
+  //     app.form.elements['flags.anchor.slug'].innerHTML = getOptions(newpage, anchorData?.slug);
+  //     Logger.log(`new innerHtml${app.form.elements['flags.anchor.slug'].innerHTML}`);
+  //   }
+  //   html.find("select[name='entryId']").change(_updateSectionList);
+  //   pageid.change(_updateSectionList);
+  // }
 
   // Force a recalculation of the height (for the additional field)
   if (!app._minimized) {
@@ -244,11 +244,11 @@ Hooks.on('renderNoteConfig', async (app, html, noteData) => {
   // ====================================
   // enablePlayerIcon
   // ====================================
-  const enablePlayerIcon = game.settings.get(CONSTANTS.MODULE_ID, 'playerIconAutoOverride');
+// const enablePlayerIcon = game.settings.get(CONSTANTS.MODULE_ID, 'playerIconAutoOverride');
   // Adds fields to set player-only note icons
   // Get default values set by GM
-  const defaultState = game.settings.get(CONSTANTS.MODULE_ID, 'playerIconAutoOverride') ?? '';
-  const defaultPath = game.settings.get(CONSTANTS.MODULE_ID, 'playerIconPathDefault') ?? '';
+  const defaultState = ''; // game.settings.get(CONSTANTS.MODULE_ID, 'playerIconAutoOverride') ?? '';
+  const defaultPath = ''; // game.settings.get(CONSTANTS.MODULE_ID, 'playerIconPathDefault') ?? '';
 
   const playerIconState = foundry.utils.getProperty(noteData, `document.flags.${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.PLAYER_ICON_STATE}`)
     ?? defaultState;
@@ -260,7 +260,7 @@ Hooks.on('renderNoteConfig', async (app, html, noteData) => {
   // ====================================
   // revealedNotes
   // ====================================
-  const enableNoteTintColorLink = game.settings.get(CONSTANTS.MODULE_ID, 'revealedNotes');
+//  const enableNoteTintColorLink = game.settings.get(CONSTANTS.MODULE_ID, 'revealedNotes');
   const pinIsRevealed = foundry.utils.getProperty(noteData, `document.flags.${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.PIN_IS_REVEALED}`)
     ?? true;
   // Check box for REVEALED state
@@ -471,7 +471,6 @@ Hooks.on('renderNoteConfig', async (app, html, noteData) => {
       hideLabel,
       numberWsSuffixOnNameplate,
 
-      enablePlayerIcon,
       playerIconState,
       playerIconPath,
 
@@ -708,43 +707,44 @@ Hooks.once('canvasInit', () => {
 
 Hooks.on('renderSettingsConfig', (app, html, data) => {
   // Add colour pickers to the Configure Game Settings: Module Settings menu
-  let name;
-  let colour;
-  name = `${CONSTANTS.MODULE_ID}.revealedNotesTintColorLink`;
-  colour = game.settings.get(CONSTANTS.MODULE_ID, 'revealedNotesTintColorLink');
-  $('<input>')
-    .attr('type', 'color')
-    .attr('data-edit', name)
-    .val(colour)
-    .insertAfter($(`input[name="${name}"]`, html).addClass('color'));
+  // let name;
+  // let colour;
+  // name = `${CONSTANTS.MODULE_ID}.revealedNotesTintColorLink`;
+  // colour = game.settings.get(CONSTANTS.MODULE_ID, 'revealedNotesTintColorLink');
+  // $('<input>')
+  //   .attr('type', 'color')
+  //   .attr('data-edit', name)
+  //   .val(colour)
+  //   .insertAfter($(`input[name="${name}"]`, html).addClass('color'));
 
-  name = `${CONSTANTS.MODULE_ID}.revealedNotesTintColorNotLink`;
-  colour = game.settings.get(CONSTANTS.MODULE_ID, 'revealedNotesTintColorNotLink');
-  $('<input>')
-    .attr('type', 'color')
-    .attr('data-edit', name)
-    .val(colour)
-    .insertAfter($(`input[name="${name}"]`, html).addClass('color'));
+  // name = `${CONSTANTS.MODULE_ID}.revealedNotesTintColorNotLink`;
+  // colour = game.settings.get(CONSTANTS.MODULE_ID, 'revealedNotesTintColorNotLink');
+  // $('<input>')
+  //   .attr('type', 'color')
+  //   .attr('data-edit', name)
+  //   .val(colour)
+  //   .insertAfter($(`input[name="${name}"]`, html).addClass('color'));
 
-  name = `${CONSTANTS.MODULE_ID}.revealedNotesTintColorRevealed`;
-  colour = game.settings.get(CONSTANTS.MODULE_ID, 'revealedNotesTintColorRevealed');
-  $('<input>')
-    .attr('type', 'color')
-    .attr('data-edit', name)
-    .val(colour)
-    .insertAfter($(`input[name="${name}"]`, html).addClass('color'));
+  // name = `${CONSTANTS.MODULE_ID}.revealedNotesTintColorRevealed`;
+  // colour = game.settings.get(CONSTANTS.MODULE_ID, 'revealedNotesTintColorRevealed');
+  // $('<input>')
+  //   .attr('type', 'color')
+  //   .attr('data-edit', name)
+  //   .val(colour)
+  //   .insertAfter($(`input[name="${name}"]`, html).addClass('color'));
 
-  name = `${CONSTANTS.MODULE_ID}.revealedNotesTintColorNotRevealed`;
-  colour = game.settings.get(CONSTANTS.MODULE_ID, 'revealedNotesTintColorNotRevealed');
-  $('<input>')
-    .attr('type', 'color')
-    .attr('data-edit', name)
-    .val(colour)
-    .insertAfter($(`input[name="${name}"]`, html).addClass('color'));
+  // name = `${CONSTANTS.MODULE_ID}.revealedNotesTintColorNotRevealed`;
+  // colour = game.settings.get(CONSTANTS.MODULE_ID, 'revealedNotesTintColorNotRevealed');
+  // $('<input>')
+  //   .attr('type', 'color')
+  //   .attr('data-edit', name)
+  //   .val(colour)
+  //   .insertAfter($(`input[name="${name}"]`, html).addClass('color'));
 });
 
 // This runs only on canvas drop and after the renderNoteConfig hook above.
-// It ensures that we have fill the html of the NoteConfig window with the correct data on first drop.
+// It ensures that we have fill the html of the NoteConfig
+// window with the correct data on first drop.
 Hooks.on('dropCanvasData', (canvas, data) => {
   const enableJournalAnchorLink = game.settings.get(CONSTANTS.MODULE_ID, 'enableJournalAnchorLink');
   if (enableJournalAnchorLink && !game.modules.get('jal')?.active) {
@@ -762,9 +762,9 @@ Hooks.on('dropCanvasData', (canvas, data) => {
 
 // Why doesn't this just exist in core foundry?
 Hooks.on('activateNote', (note, options) => {
-  const enableJournalAnchorLink = game.settings.get(CONSTANTS.MODULE_ID, 'enableJournalAnchorLink');
-  if (enableJournalAnchorLink && !game.modules.get('jal')?.active) {
-    const anchorData = foundry.utils.getProperty(note, 'document.flags.anchor.slug');
-    options.anchor = anchorData?.slug;
-  }
+  // const enableJournalAnchorLink = game.settings.get(CONSTANTS.MODULE_ID, 'enableJournalAnchorLink');
+  // if (enableJournalAnchorLink && !game.modules.get('jal')?.active) {
+  //   const anchorData = foundry.utils.getProperty(note, 'document.flags.anchor.slug');
+  //   options.anchor = anchorData?.slug;
+  // }
 });
