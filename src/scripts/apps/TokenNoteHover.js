@@ -8,7 +8,7 @@ import Logger from '../lib/Logger';
  * A class for managing additional Map Pin functionality
  * @author Evan Clarke (errational#2007)
  */
-export class TokenNoteHover {
+export default class TokenNoteHover {
   constructor() {
     // Storage for requests sent over a socket, pending GM execution
     this._requests = {};

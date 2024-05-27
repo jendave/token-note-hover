@@ -1,13 +1,12 @@
 import CONSTANTS from '../constants';
-import { isPlacementVertical } from '../lib/lib';
-import { TokenNoteHoverPixiHelpers } from '../pixi/token-note-hover-pixi-helpers';
+import TokenNoteHoverPixiHelpers from '../pixi/token-note-hover-pixi-helpers';
 
 /**
  * @class TokenNoteHoverHUD
  *
  * A HUD extension that shows the Note preview
  */
-export class TokenNoteHoverHUD extends BasePlaceableHUD {
+export default class TokenNoteHoverHUD extends BasePlaceableHUD {
   constructor(note, options) {
     super(note, options);
     this.data = note;
@@ -100,7 +99,7 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
         default:
           tempContent = null;
       }
-      
+
       const content = tempContent;
 
       data.title = actor.name;
@@ -132,8 +131,6 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
     const tooltipPlacement = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_PLACEMENT) ?? 'e';
 
     const tooltipSmartPlacement = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_SMART_PLACEMENT) ?? false;
-
-    const isVertical = isPlacementVertical(tooltipPlacement);
 
     let orientation = '';
     if (tooltipPlacement.includes('e')) {
@@ -195,8 +192,6 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
       orientation = 'left';
     }
 
-    const isVertical = isPlacementVertical(tooltipPlacement);
-
     // WITH TOOLTIP
     let x = 0;
     let y = 0;
@@ -231,7 +226,7 @@ export class TokenNoteHoverHUD extends BasePlaceableHUD {
 
     elementToTooltip.data('powertipjq', tooltipTipContent);
     elementToTooltip.powerTip({
-      // 	(default: 'powerTip') HTML id attribute for the tooltip div.
+      // (default: 'powerTip') HTML id attribute for the tooltip div.
       // popupId: popupId, // e.g. default 'powerTip'
 
       // (default: 'n') Placement location of the tooltip relative to the element it is open for.
