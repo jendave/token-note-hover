@@ -1,15 +1,35 @@
 {
   "token-note-hover": {
-    "SETTINGS": {
+    "Settings": {
       "Enabled": {
         "Name": "Hover Enabled",
-        "Hint": "Show the token note on hover."
+        "Hint": "Show the note when the token is hovered over."
+      },      
+      "ActorPermissionsRequired": {
+        "Name": "Actor Permissions Required",
+        "Hint": "Actor permissions required to view the token notes."
       },
       "tooltipSmartPlacement": {
-        "Name": "tooltipSmartPlacement",
-        "Hint": "tooltipSmartPlacement."
+        "Name": "'Smartplacement' of token note",
+        "Hint": "Token notes will be have their placements changed to stay inside the browser viewport."
       },
-      
+      "DarkMode": {
+        "Name": "Dark Mode",
+        "Hint": "Show the token note with light text on a dark background."
+      },
+      "FontSize": {
+        "Name": "Text Size Override",
+        "Hint": "Override the base text size for the token note display. Example: 1.5rem."
+      },
+      "MaxWidth": {
+        "Name": "Maximum Width",
+        "Hint": "The maximum width in px the token note display can grow to before it will force wrapping."
+      },
+      "DisplayDelay": {
+        "Name": "Display Delay",
+        "Hint": "How long before the token note display appears (in milliseconds)."
+      },
+
       "ShowJournalPreviewN": "Show Journal Preview",
       "ShowJournalPreviewH": "Shows a Journal preview when hovering over a map pin",
       "PreviewTypeN": "Journal Preview Type",

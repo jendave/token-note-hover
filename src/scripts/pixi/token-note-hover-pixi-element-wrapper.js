@@ -9,7 +9,7 @@
  * @class ElementWrapper
  * @extends {PIXI.DisplayObject}
  */
-export class ElementWrapper extends PIXI.DisplayObject {
+export default class ElementWrapper extends PIXI.DisplayObject {
   /**
    * Creates an instance of ElementWrapper.
    *

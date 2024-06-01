@@ -1,6 +1,6 @@
 import CONSTANTS from '../constants';
 import { retrieveFirstImageFromJournalId, retrieveFirstTextFromJournalId } from '../lib/lib';
-import { ElementWrapper } from './token-note-hover-pixi-element-wrapper';
+import ElementWrapper from './token-note-hover-pixi-element-wrapper';
 
 export default class TokenNoteHoverPixiHelpers {
   static async drawTooltipPixi(note) {

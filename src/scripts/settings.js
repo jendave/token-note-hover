@@ -1,31 +1,34 @@
 import CONSTANTS from './constants';
 
-function reload() {
-  window.location.reload();
-}
-
 export default function registerSettings() {
   game.settings.register(CONSTANTS.MODULE_ID, 'enabled', {
-    name: game.i18n.localize(`${CONSTANTS.MODULE_ID}.SETTINGS.Enabled.Name`),
-    hint: game.i18n.localize(`${CONSTANTS.MODULE_ID}.SETTINGS.Enabled.Hint`),
+    name: `${CONSTANTS.MODULE_ID}.Settings.Enabled.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.Enabled.Hint`,
     scope: 'client',
     type: Boolean,
     default: true,
     config: true,
   });
 
-  // game.settings.register(CONSTANTS.MODULE_ID, 'forceToShowNotes', {
-  //   name: `${CONSTANTS.MODULE_ID}.SETTINGS.forceToShowNotesN`,
-  //   hint: `${CONSTANTS.MODULE_ID}.SETTINGS.forceToShowNotesH`,
-  //   scope: 'world',
-  //   config: true,
-  //   default: true,
-  //   type: Boolean,
-  // });
+  game.settings.register(CONSTANTS.MODULE_ID, 'actorPermissionsRequired', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.ActorPermissionsRequired.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.ActorPermissionsRequired.Hint`,
+    scope: 'world',
+    type: Number,
+    default: '0',
+    config: true,
+    restricted: true,
+    choices: {
+      0: 'None',
+      1: 'Limited',
+      2: 'Observer',
+      3: 'Owner',
+    },
+  });
 
   game.settings.register(CONSTANTS.MODULE_ID, 'tooltipSmartPlacement', {
-    name: game.i18n.localize(`${CONSTANTS.MODULE_ID}.SETTINGS.tooltipSmartPlacement.Name`),
-    hint: game.i18n.localize(`${CONSTANTS.MODULE_ID}.SETTINGS.tooltipSmartPlacement.Hint`),
+    name: `${CONSTANTS.MODULE_ID}.Settings.tooltipSmartPlacement.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.tooltipSmartPlacement.Hint`,
     scope: 'client',
     type: Boolean,
     default: true,
@@ -33,8 +36,8 @@ export default function registerSettings() {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, 'previewDelay', {
-    name: `${CONSTANTS.MODULE_ID}.SETTINGS.PreviewDelayN`,
-    hint: `${CONSTANTS.MODULE_ID}.SETTINGS.PreviewDelayH`,
+    name: `${CONSTANTS.MODULE_ID}.Settings.PreviewDelayN`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.PreviewDelayH`,
     scope: 'world',
     type: Number,
     default: 500,
@@ -45,7 +48,7 @@ export default function registerSettings() {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, 'tooltipColor', {
-    name: `${CONSTANTS.MODULE_ID}.SETTINGS.Tooltip.Color.title`,
+    name: `${CONSTANTS.MODULE_ID}.Settings.Tooltip.Color.title`,
     hint: '',
     scope: 'world',
     config: true,
@@ -65,8 +68,8 @@ export default function registerSettings() {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, 'fontSize', {
-    name: `${CONSTANTS.MODULE_ID}.SETTINGS.fontSizeN`,
-    hint: `${CONSTANTS.MODULE_ID}.SETTINGS.fontSizeH`,
+    name: `${CONSTANTS.MODULE_ID}.Settings.fontSizeN`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.fontSizeH`,
     scope: 'client',
     type: String,
     default: '',
@@ -74,8 +77,8 @@ export default function registerSettings() {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, 'maxWidth', {
-    name: `${CONSTANTS.MODULE_ID}.SETTINGS.maxWidthN`,
-    hint: `${CONSTANTS.MODULE_ID}.SETTINGS.maxWidthH`,
+    name: `${CONSTANTS.MODULE_ID}.Settings.maxWidthN`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.maxWidthH`,
     scope: 'client',
     type: Number,
     default: 800,
@@ -83,8 +86,8 @@ export default function registerSettings() {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, 'tooltipUseMousePositionForCoordinates', {
-    name: `${CONSTANTS.MODULE_ID}.SETTINGS.tooltipUseMousePositionForCoordinatesN`,
-    hint: `${CONSTANTS.MODULE_ID}.SETTINGS.tooltipUseMousePositionForCoordinatesH`,
+    name: `${CONSTANTS.MODULE_ID}.Settings.tooltipUseMousePositionForCoordinatesN`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.tooltipUseMousePositionForCoordinatesH`,
     scope: 'world',
     config: true,
     default: true,
@@ -96,8 +99,8 @@ export default function registerSettings() {
   // =============================================
 
   game.settings.register(CONSTANTS.MODULE_ID, 'playerPinDefaultsGlobal', {
-    name: `${CONSTANTS.MODULE_ID}.SETTINGS.playerPinDefaults.globalN`,
-    hint: `${CONSTANTS.MODULE_ID}.SETTINGS.playerPinDefaults.globalH`,
+    name: `${CONSTANTS.MODULE_ID}.Settings.playerPinDefaults.globalN`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.playerPinDefaults.globalH`,
     scope: 'world',
     config: true,
     type: Boolean,
@@ -105,8 +108,8 @@ export default function registerSettings() {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, 'playerPinDefaultsAnchorPoint', {
-    name: `${CONSTANTS.MODULE_ID}.SETTINGS.playerPinDefaults.anchorPointN`,
-    hint: `${CONSTANTS.MODULE_ID}.SETTINGS.playerPinDefaults.anchorPointH`,
+    name: `${CONSTANTS.MODULE_ID}.Settings.playerPinDefaults.anchorPointN`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.playerPinDefaults.anchorPointH`,
     scope: 'world',
     config: true,
     type: Number,
@@ -121,8 +124,8 @@ export default function registerSettings() {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, 'debug', {
-    name: `${CONSTANTS.MODULE_ID}.SETTINGS.debugN`,
-    hint: `${CONSTANTS.MODULE_ID}.SETTINGS.debugH`,
+    name: `${CONSTANTS.MODULE_ID}.Settings.debugN`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.debugH`,
     scope: 'world',
     config: true,
     type: Boolean,
