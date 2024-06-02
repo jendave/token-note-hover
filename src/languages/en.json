@@ -62,7 +62,7 @@
       "journalThumbnailPositionH": "Whether the thumbnail is left of the journal entry title or right",
 
       "fontSizeN": "Text size override",
-      "fontSizeH": "Override the base text size for the journal entry display. Example: 1.5rem.",
+      "fontSizeH": "Override the base text size for the note entry display. Example: 1.5rem.",
       "maxWidthN": "Maximum Width",
       "maxWidthH": "The maximum width the entry display can grow to before it'll force wrapping.",
 
@@ -121,36 +121,38 @@
       "playerPinDefaults.playerColorTextN": "Player Pin Defaults: Player Color as Text Color",
       "playerPinDefaults.playerColorTextH": "When on, the player's color is used to tint the text color",
 
-      "Tooltip.Color.title": "Tooltip Color"
+      "Tooltip.Color.title": "Tooltip Color",
+      "Tooltip.Color.choices.default": "Default",
+      "Tooltip.Color.choices.blue": "Blue",
+      "Tooltip.Color.choices.dark": "Dark",
+      "Tooltip.Color.choices.green": "Green",
+      "Tooltip.Color.choices.light": "Light",
+      "Tooltip.Color.choices.orange": "Orange",
+      "Tooltip.Color.choices.purple": "Purple",
+      "Tooltip.Color.choices.red": "Red",
+      "Tooltip.Color.choices.yellow": "Yellow",
+
+      "Tooltip.Placement.title": "Tooltip Placement",
+      "Tooltip.Placement.choices.north-west-alt": "North West Alt",
+      "Tooltip.Placement.choices.north-west": "North West",
+      "Tooltip.Placement.choices.north": "North",
+      "Tooltip.Placement.choices.north-east": "North East",
+      "Tooltip.Placement.choices.north-east-alt": "North East Alt",
+      "Tooltip.Placement.choices.west": "West",
+      "Tooltip.Placement.choices.east": "East",
+      "Tooltip.Placement.choices.south-west-alt": "South West Alt",
+      "Tooltip.Placement.choices.south-west": "South West",
+      "Tooltip.Placement.choices.south": "South",
+      "Tooltip.Placement.choices.south-east": "South East",
+      "Tooltip.Placement.choices.south-east-alt": "South East Alt"
     },
 
     "NumberWsSuffixOnNameplateN": "Trick Setting: Enter the number of white spaces to be added as suffix (or prefix with negative number) in the nameplate of the note for a better center alignment",
     "NumberWsSuffixOnNameplateH": "Temporary tooltip text alignment trick with width ratio != 1. Basically I would have to rewrite quite a bit of code, to apply the same logic as the tiles on the notes...something the foundryvtt team should do . As a temporary trick we add a number of whitespace as a suffix to better 'center' the text on the note.",
 
-    "Tooltip.Placement.title": "Tooltip Placement",
-    "Tooltip.Placement.choices.north-west-alt": "North West Alt",
-    "Tooltip.Placement.choices.north-west": "North West",
-    "Tooltip.Placement.choices.north": "North",
-    "Tooltip.Placement.choices.north-east": "North East",
-    "Tooltip.Placement.choices.north-east-alt": "North East Alt",
-    "Tooltip.Placement.choices.west": "West",
-    "Tooltip.Placement.choices.east": "East",
-    "Tooltip.Placement.choices.south-west-alt": "South West Alt",
-    "Tooltip.Placement.choices.south-west": "South West",
-    "Tooltip.Placement.choices.south": "South",
-    "Tooltip.Placement.choices.south-east": "South East",
-    "Tooltip.Placement.choices.south-east-alt": "South East Alt",
 
-    "Tooltip.Color.title": "Tooltip Color",
-    "Tooltip.Color.choices.default": "Default",
-    "Tooltip.Color.choices.blue": "Blue",
-    "Tooltip.Color.choices.dark": "Dark",
-    "Tooltip.Color.choices.green": "Green",
-    "Tooltip.Color.choices.light": "Light",
-    "Tooltip.Color.choices.orange": "Orange",
-    "Tooltip.Color.choices.purple": "Purple",
-    "Tooltip.Color.choices.red": "Red",
-    "Tooltip.Color.choices.yellow": "Yellow",
+
+
 
     "Tooltip.ForceRemove.title": "Tooltip Force remove when not on hover. Note: do not use this if you need a interactive note.",
     "Tooltip.SmartPlacement.title": "Tooltip activate 'Smartplacement' feature",

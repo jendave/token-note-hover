@@ -128,16 +128,16 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     const { fontSize } = this;
     const { maxWidth } = this;
 
-    const tooltipPlacement = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_PLACEMENT) ?? 'e';
+    const tooltipPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipPlacement') ?? 'e';
 
-    const tooltipSmartPlacement = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_SMART_PLACEMENT) ?? false;
+    const tooltipSmartPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipSmartPlacement') ?? false;
 
-    let orientation = '';
-    if (tooltipPlacement.includes('e')) {
-      orientation = 'right';
-    } else {
-      orientation = 'left';
-    }
+    // let orientation = '';
+    // if (tooltipPlacement.includes('e')) {
+    //   orientation = 'right';
+    // } else {
+    //   orientation = 'left';
+    // }
 
     // WITH TOOLTIP
     let x = 0;
@@ -153,9 +153,71 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
 
     const width = this.object.w;
     const height = this.object.h;
-    const left = x - width / 2;
+    let left = x; // - width / 2;
+    let top = y; // - height / 2;
 
-    const top = y - height / 2;
+    let positionOffsetLeft = 0;
+    let positionOffsetTop = 0;
+
+    switch (game.settings.get(CONSTANTS.MODULE_ID, 'tooltipPlacement')) {
+      case 'nw-alt':
+        positionOffsetLeft = -(0.5 * width);
+        positionOffsetTop = -(0.5 * height);
+        break;
+      case 'nw':
+        positionOffsetLeft = -(0.5 * width);
+        positionOffsetTop = -(0.5 * height);
+        break;
+      case 'n':
+        positionOffsetLeft = -(width);
+        positionOffsetTop = -(0.5 * height);
+        break;
+      case 'ne':
+        positionOffsetLeft = -(1.5 * width);
+        positionOffsetTop = -(0.5 * height);
+        break;
+      case 'ne-alt':
+        positionOffsetLeft = -(1.5 * width);
+        positionOffsetTop = -(0.5 * height);
+        break;
+      case 'w':
+        positionOffsetLeft = -(0.5 * width);
+        positionOffsetTop = -(height);
+        break;
+      case 'e':
+        positionOffsetLeft = -(1.5 * width);
+        positionOffsetTop = -(height);
+        break;
+      case 'sw-alt':
+        positionOffsetLeft = -(0.5 * width);
+        positionOffsetTop = -(height);
+        break;
+      case 'sw':
+        positionOffsetLeft = -(0.5 * width);
+        positionOffsetTop = -(height);
+        break;
+      case 's':
+        positionOffsetLeft = -(width);
+        positionOffsetTop = -(height);
+        break;
+      case 'se':
+        positionOffsetLeft = -(1.5 * width);
+        positionOffsetTop = -(height);
+        break;
+      case 'se-alt':
+        positionOffsetLeft = -(1.5 * width);
+        positionOffsetTop = -(height);
+        break;
+      default:
+        positionOffsetLeft = 0;
+        positionOffsetTop = 0;
+    }
+
+    left += positionOffsetLeft;
+    top += positionOffsetTop;
+
+    console.log('top Final', top);
+    console.log('left Final', left);
 
     const position = {
       height: `${height}px`,
@@ -179,18 +241,18 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     const fontSize = game.settings.get(CONSTANTS.MODULE_ID, 'fontSize') || canvas.grid.size / 5;
     const maxWidth = game.settings.get(CONSTANTS.MODULE_ID, 'maxWidth');
 
-    const tooltipPlacement = getProperty(this.object.document.flags[CONSTANTS.MODULE_ID], CONSTANTS.FLAGS.TOOLTIP_PLACEMENT) ?? 'e';
+    const tooltipPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipPlacement') ?? 'e';
 
     const tooltipSmartPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipSmartPlacement');
 
     const tooltipColor = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipColor');
 
-    let orientation = '';
-    if (tooltipPlacement.includes('e')) {
-      orientation = 'right';
-    } else {
-      orientation = 'left';
-    }
+    // let orientation = '';
+    // if (tooltipPlacement.includes('e')) {
+    //   orientation = 'right';
+    // } else {
+    //   orientation = 'left';
+    // }
 
     // WITH TOOLTIP
     let x = 0;
@@ -206,9 +268,78 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
 
     const width = this.object.w;
     const height = this.object.h;
-    const left = x - width / 2;
+    let left = x;
+    let top = y;
 
-    const top = y - height / 2;
+    console.log('x', x);
+    console.log('y', y);
+    console.log('top', top);
+    console.log('left', left);
+    console.log('width', width);
+    console.log('height', height);
+
+    let positionOffsetLeft = 0;
+    let positionOffsetTop = 0;
+
+    switch (game.settings.get(CONSTANTS.MODULE_ID, 'tooltipPlacement')) {
+      case 'nw-alt':
+        positionOffsetLeft = -(0.5 * width);
+        positionOffsetTop = -(0.5 * height);
+        break;
+      case 'nw':
+        positionOffsetLeft = -(0.5 * width);
+        positionOffsetTop = -(0.5 * height);
+        break;
+      case 'n':
+        positionOffsetLeft = -(width);
+        positionOffsetTop = -(0.5 * height);
+        break;
+      case 'ne':
+        positionOffsetLeft = -(1.5 * width);
+        positionOffsetTop = -(0.5 * height);
+        break;
+      case 'ne-alt':
+        positionOffsetLeft = -(1.5 * width);
+        positionOffsetTop = -(0.5 * height);
+        break;
+      case 'w':
+        positionOffsetLeft = -(0.5 * width);
+        positionOffsetTop = -(height);
+        break;
+      case 'e':
+        positionOffsetLeft = -(1.5 * width);
+        positionOffsetTop = -(height);
+        break;
+      case 'sw-alt':
+        positionOffsetLeft = -(0.5 * width);
+        positionOffsetTop = -(height);
+        break;
+      case 'sw':
+        positionOffsetLeft = -(0.5 * width);
+        positionOffsetTop = -(height);
+        break;
+      case 's':
+        positionOffsetLeft = -(width);
+        positionOffsetTop = -(height);
+        break;
+      case 'se':
+        positionOffsetLeft = -(1.5 * width);
+        positionOffsetTop = -(height);
+        break;
+      case 'se-alt':
+        positionOffsetLeft = -(1.5 * width);
+        positionOffsetTop = -(height);
+        break;
+      default:
+        positionOffsetLeft = 0;
+        positionOffsetTop = 0;
+    }
+
+    left += positionOffsetLeft;
+    top += positionOffsetTop;
+
+    console.log('top Final', top);
+    console.log('left Final', left);
 
     const position = {
       height: `${height}px`,

@@ -30,16 +30,16 @@ Hooks.once('init', () => {
 Hooks.once('setup', () => {
   game.modules.get(CONSTANTS.MODULE_ID).api = API;
 
-  const enableAutoScaleNamePlatesNote = game.settings.get(CONSTANTS.MODULE_ID, 'enableAutoScaleNamePlatesNote');
-  if (enableAutoScaleNamePlatesNote) {
-    Hooks.once('canvasReady', () => {
-      Hooks.on('canvasPan', (c) => {
-        if (game.scenes.get(c.scene.id).isView) {
-          TokenNoteHover.autoScaleNotes(c);
-        }
-      });
-    });
-  }
+  // const enableAutoScaleNamePlatesNote = game.settings.get(CONSTANTS.MODULE_ID, 'enableAutoScaleNamePlatesNote');
+  // if (enableAutoScaleNamePlatesNote) {
+  //   Hooks.once('canvasReady', () => {
+  //     Hooks.on('canvasPan', (c) => {
+  //       if (game.scenes.get(c.scene.id).isView) {
+  //         TokenNoteHover.autoScaleNotes(c);
+  //       }
+  //     });
+  //   });
+  // }
 });
 
 /* ------------------------------------ */

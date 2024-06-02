@@ -1,7 +1,7 @@
 {
     "id": "token-note-hover",
     "title": "Token Note Hover",
-    "description": "Displays the note of a hovered-over token.",
+    "description": "Displays the token note when hovered over.",
     "version": "#{VERSION}#",
     "authors": [
         {
@@ -9,10 +9,6 @@
             "discord": "jendave",
             "url": "https://jendave.itch.io/",
             "github": "jendave"
-        },
-        {
-            "name": "FriendlyLambda",
-            "url": "https://gitlab.com/friendlylambda/map-note-hover-display"
         },
         {
             "name": "p4535992",
@@ -40,20 +36,7 @@
         "./icons/**",
         "./packs/**"
     ],
-    "media": [
-        {
-            "type": "screenshot",
-            "url": "https://github.com/p4535992/media/raw/master/foundryvtt-token-note-hover/create_pin.png"
-        },
-        {
-            "type": "screenshot",
-            "url": "https://github.com/p4535992/media/raw/master/foundryvtt-token-note-hover/note-config.png"
-        },
-        {
-            "type": "screenshot",
-            "url": "https://github.com/p4535992/media/raw/master/foundryvtt-token-note-hover/journal-preview.png"
-        }
-    ],
+    "media": [],
     "languages": [
         {
             "lang": "en",
@@ -78,7 +61,7 @@
     ],
     "compatibility": {
         "minimum": 11,
-        "verified": 11
+        "verified": 12
     },
     "manifest": "#{MANIFEST}#",
     "url": "#{URL}#",
@@ -104,47 +87,6 @@
                 "compatibility": {}
             }
         ],
-        "conflicts": [
-            {
-                "id": "backgroundless-pins",
-                "reason": "Redundancy of features you can disable 'FVTT Backgroundless Pins' module if you want, BUT IS NOT MANDATORY"
-            },
-            {
-                "id": "journal-thumbnail",
-                "reason": "Redundancy of features you can disable 'Thumbnails for Journal Entries' module if you want, BUT IS NOT MANDATORY"
-            },
-            {
-                "id": "gmtext-in-notes",
-                "reason": "Redundancy of features you can disable 'GM-only tooltips for Notes' module if you want, BUT IS NOT MANDATORY"
-            },
-            {
-                "id": "revealed-notes-manager",
-                "reason": "Redundancy of features you can disable 'Revealed Notes Manager' module if you want, BUT IS NOT MANDATORY"
-            },
-            {
-                "id": "journal-sidebar-images",
-                "description": "Redundancy of features you can disable 'Journal Sidebar Images' module if you want, BUT IS NOT MANDATORY"
-            },
-            {
-                "id": "one-click-note-creation",
-                "reason": "Redundancy of features you can disable 'One click note creation' module if you want, BUT IS NOT MANDATORY"
-            },
-            {
-                "id": "jal",
-                "reason": "Redundancy of features you can disable 'Journal Anchor Links' module if you want, BUT IS NOT MANDATORY"
-            },
-            {
-                "id": "disguise-unreachable-links",
-                "reason": "Redundancy of features you can disable 'Disguise Unreachable Links' module if you want, BUT IS NOT MANDATORY"
-            },
-            {
-                "id": "journal-directory-pages",
-                "reason": "Redundancy of features you can disable 'Journal Directory Pages' module if you want, BUT IS NOT MANDATORY"
-            },
-            {
-                "id": "player-pin-defaults",
-                "reason": "Redundancy of features you can disable 'Player Pin Defaults' module if you want, BUT IS NOT MANDATORY"
-            }
-        ]
+        "conflicts": []
     }
 }

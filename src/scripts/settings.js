@@ -42,7 +42,7 @@ export default function registerSettings() {
     type: Number,
     default: 500,
     config: true,
-    onChange: (s) => { },
+    // onChange: (s) => { },
     // @ts-ignore
     range: { min: 100, max: 3000, step: 100 },
   });
@@ -64,6 +64,29 @@ export default function registerSettings() {
       purple: 'Purple',
       red: 'Red',
       yellow: 'Yellow',
+    },
+  });
+
+  game.settings.register(CONSTANTS.MODULE_ID, 'tooltipPlacement', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.Tooltip.Placement.title`,
+    hint: '',
+    scope: 'world',
+    config: true,
+    type: String,
+    default: 'East',
+    choices: {
+      'nw-alt': 'North West Alt',
+      nw: 'North West',
+      n: 'North',
+      ne: 'North East',
+      'ne-alt': 'North East Alt',
+      w: 'West',
+      e: 'East',
+      'sw-alt': 'South West Alt',
+      sw: 'South West',
+      s: 'South',
+      se: 'South East',
+      'se-alt': 'South East Alt',
     },
   });
 
