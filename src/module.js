@@ -24,26 +24,16 @@ Hooks.once('init', () => {
 
   Hooks.once('socketlib.ready', registerSocket);
 });
+
 /* ------------------------------------ */
 /* Setup module                         */
 /* ------------------------------------ */
 Hooks.once('setup', () => {
   game.modules.get(CONSTANTS.MODULE_ID).api = API;
-
-  // const enableAutoScaleNamePlatesNote = game.settings.get(CONSTANTS.MODULE_ID, 'enableAutoScaleNamePlatesNote');
-  // if (enableAutoScaleNamePlatesNote) {
-  //   Hooks.once('canvasReady', () => {
-  //     Hooks.on('canvasPan', (c) => {
-  //       if (game.scenes.get(c.scene.id).isView) {
-  //         TokenNoteHover.autoScaleNotes(c);
-  //       }
-  //     });
-  //   });
-  // }
 });
 
 /* ------------------------------------ */
-/* When ready							*/
+/* When ready                           */
 /* ------------------------------------ */
 
 Hooks.once('ready', () => {
@@ -92,19 +82,21 @@ Hooks.on('hoverToken', (note, hovered) => {
       return canvas.hud.tokenNoteHover.clear();
     }
 
+    const actorPermissionsRequired = game.settings.get(CONSTANTS.MODULE_ID, 'actorPermissionsRequired');
+
     // If the note is hovered by the mouse cursor (not via alt/option)
     if (hovered) {
       API.tokenNoteHover.hoverTimer = setTimeout(() => {
-        if (note.interactionState === 1) {
+        if (note.interactionState === 1
+          && (note.actor.permission >= actorPermissionsRequired
+            || note.actor.ownership.default === -1)) {
           canvas.hud.tokenNoteHover.bind(note);
         }
       }, previewDelay);
-    } else {
-      // THis code should be never reached
-      if (!hovered) {
-        clearTimeout(API.tokenNoteHover.hoverTimer);
-        return canvas.hud.tokenNoteHover.clear();
-      }
+    } else if (!hovered) {
+      // This code should be never reached
+      clearTimeout(API.tokenNoteHover.hoverTimer);
+      return canvas.hud.tokenNoteHover.clear();
     }
   } else {
     return canvas.hud.tokenNoteHover.clear();
@@ -112,7 +104,8 @@ Hooks.on('hoverToken', (note, hovered) => {
 });
 
 Hooks.once('canvasInit', () => {
-  // This module is only required for GMs (game.user accessible from 'ready' event but not 'init' event)
+  // This module is only required for GMs
+  // (game.user accessible from 'ready' event but not 'init' event)
   libWrapper.register(CONSTANTS.MODULE_ID, 'Note.prototype._drawTooltip', TokenNoteHover._addDrawTooltip2, 'MIXED');
 
   libWrapper.register(
@@ -127,9 +120,6 @@ Hooks.once('canvasInit', () => {
   libWrapper.register(CONSTANTS.MODULE_ID, 'Note.prototype._onUpdate', TokenNoteHover._noteUpdate, 'WRAPPER');
 
   libWrapper.register(CONSTANTS.MODULE_ID, 'Note.prototype.isVisible', TokenNoteHover._isVisible, 'MIXED');
-});
-
-Hooks.on('renderSettingsConfig', (app, html, data) => {
 });
 
 // This runs only on canvas drop and after the renderNoteConfig hook above.
