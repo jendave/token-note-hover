@@ -40,7 +40,7 @@ export default function registerSettings() {
     hint: `${CONSTANTS.MODULE_ID}.Settings.PreviewDelayH`,
     scope: 'world',
     type: Number,
-    default: 500,
+    default: 1000,
     config: true,
     // onChange: (s) => { },
     // @ts-ignore

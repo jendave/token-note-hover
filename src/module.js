@@ -95,7 +95,9 @@ Hooks.on('hoverToken', (note, hovered) => {
     // If the note is hovered by the mouse cursor (not via alt/option)
     if (hovered) {
       API.tokenNoteHover.hoverTimer = setTimeout(() => {
-        canvas.hud.tokenNoteHover.bind(note);
+        if (note.interactionState === 1) {
+          canvas.hud.tokenNoteHover.bind(note);
+        }
       }, previewDelay);
     } else {
       // THis code should be never reached
