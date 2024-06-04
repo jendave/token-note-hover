@@ -216,8 +216,8 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     left += positionOffsetLeft;
     top += positionOffsetTop;
 
-    console.log('top Final', top);
-    console.log('left Final', left);
+    // console.log('top Final', top);
+    // console.log('left Final', left);
 
     const position = {
       height: `${height}px`,
@@ -271,12 +271,12 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     let left = x;
     let top = y;
 
-    console.log('x', x);
-    console.log('y', y);
-    console.log('top', top);
-    console.log('left', left);
-    console.log('width', width);
-    console.log('height', height);
+    // console.log('x', x);
+    // console.log('y', y);
+    // console.log('top', top);
+    // console.log('left', left);
+    // console.log('width', width);
+    // console.log('height', height);
 
     let positionOffsetLeft = 0;
     let positionOffsetTop = 0;
@@ -338,8 +338,8 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     left += positionOffsetLeft;
     top += positionOffsetTop;
 
-    console.log('top Final', top);
-    console.log('left Final', left);
+    // console.log('top Final', top);
+    // console.log('left Final', left);
 
     const position = {
       height: `${height}px`,
@@ -348,6 +348,8 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
       top: `${top}px`,
     };
     elementToTooltip.css(position);
+
+    console.log(`Color Scheme: ${game.settings.get('foundry-ironsworn', 'color-scheme')}`);
 
     const tooltipPopupClass = tooltipColor
       ? `token-note-hover-hud-tooltip-${tooltipColor}`

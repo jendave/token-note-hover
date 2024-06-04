@@ -56,6 +56,8 @@ export default function registerSettings() {
     default: 'Default',
     choices: {
       default: 'Default',
+      zinc: 'Zinc',
+      phosphor: 'Phosphor',
       blue: 'Blue',
       dark: 'Dark',
       green: 'Green',
@@ -95,7 +97,7 @@ export default function registerSettings() {
     hint: `${CONSTANTS.MODULE_ID}.Settings.fontSizeH`,
     scope: 'client',
     type: String,
-    default: '',
+    default: '1.5rem',
     config: true,
   });
 

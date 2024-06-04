@@ -57,7 +57,9 @@
         "styles/jquery.powertip-orange.css",
         "styles/jquery.powertip-purple.css",
         "styles/jquery.powertip-red.css",
-        "styles/jquery.powertip-yellow.css"
+        "styles/jquery.powertip-yellow.css",
+        "styles/jquery.powertip-phosphor.css",
+        "styles/jquery.powertip-zinc.css"
     ],
     "compatibility": {
         "minimum": 11,
