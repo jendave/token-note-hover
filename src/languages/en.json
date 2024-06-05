@@ -3,19 +3,15 @@
     "Settings": {
       "Enabled": {
         "Name": "Hover Enabled",
-        "Hint": "Show the note when the token is hovered over."
+        "Hint": "Display the note when the token is hovered over."
       },      
-      "ActorPermissionsRequired": {
-        "Name": "Actor Permissions Required",
-        "Hint": "Actor permissions required to view the token notes."
+      "OwnershipPermissionsRequired": {
+        "Name": "Ownership Permissions Required",
+        "Hint": "Ownership permissions required to view the token notes."
       },
-      "tooltipSmartPlacement": {
-        "Name": "'Smartplacement' of token note",
+      "SmartPlacement": {
+        "Name": "Smart Placement of Token Notes",
         "Hint": "Token notes will be have their placements changed to stay inside the browser viewport."
-      },
-      "DarkMode": {
-        "Name": "Dark Mode",
-        "Hint": "Show the token note with light text on a dark background."
       },
       "FontSize": {
         "Name": "Text Size Override",
@@ -27,19 +23,18 @@
       },
       "DisplayDelay": {
         "Name": "Display Delay",
-        "Hint": "How long before the token note display appears (in milliseconds)."
+        "Hint": "Length of delay before the token note display appears (in milliseconds)."
       },
-      "ShowTextOnly": {
-        "Name": "ShowTextOnly",
-        "Hint": "Show the note as text snippet"
+      "DisplayImages": {
+        "Name": "Display Images",
+        "Hint": "Display images contained in token notes."
       },
 
       "ShowJournalPreviewN": "Show Journal Preview",
       "ShowJournalPreviewH": "Shows a Journal preview when hovering over a map pin",
       "PreviewTypeN": "Journal Preview Type",
       "PreviewTypeH": "The type of Journal preview to show (HTML or Text snippet)",
-      "PreviewDelayN": "Display Delay",
-      "PreviewDelayH": "How long before token note appears (in milliseconds)",
+ 
       "MaxLengthN": "Preview Maximum Length",
       "MaxLengthH": "**TEXT PREVIEW ONLY** How many characters should the text preview show?",
 
@@ -155,14 +150,6 @@
 
     "NumberWsSuffixOnNameplateN": "Trick Setting: Enter the number of white spaces to be added as suffix (or prefix with negative number) in the nameplate of the note for a better center alignment",
     "NumberWsSuffixOnNameplateH": "Temporary tooltip text alignment trick with width ratio != 1. Basically I would have to rewrite quite a bit of code, to apply the same logic as the tiles on the notes...something the foundryvtt team should do . As a temporary trick we add a number of whitespace as a suffix to better 'center' the text on the note.",
-
-
-
-
-
-    "Tooltip.ForceRemove.title": "Tooltip Force remove when not on hover. Note: do not use this if you need a interactive note.",
-    "Tooltip.SmartPlacement.title": "Tooltip activate 'Smartplacement' feature",
-    "Tooltip.FollowMouse.title": "Tooltip activate Follow Mouse feature",
 
     "Name": "Name:",
     "Folder": "Journal Entry Folder:",

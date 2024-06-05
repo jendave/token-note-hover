@@ -10,9 +10,9 @@ export default function registerSettings() {
     config: true,
   });
 
-  game.settings.register(CONSTANTS.MODULE_ID, 'actorPermissionsRequired', {
-    name: `${CONSTANTS.MODULE_ID}.Settings.ActorPermissionsRequired.Name`,
-    hint: `${CONSTANTS.MODULE_ID}.Settings.ActorPermissionsRequired.Hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, 'ownershipPermissionsRequired', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.OwnershipPermissionsRequired.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.OwnershipPermissionsRequired.Hint`,
     scope: 'world',
     type: Number,
     default: '0',
@@ -26,24 +26,22 @@ export default function registerSettings() {
     },
   });
 
-  game.settings.register(CONSTANTS.MODULE_ID, 'tooltipSmartPlacement', {
-    name: `${CONSTANTS.MODULE_ID}.Settings.tooltipSmartPlacement.Name`,
-    hint: `${CONSTANTS.MODULE_ID}.Settings.tooltipSmartPlacement.Hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, 'smartPlacement', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.SmartPlacement.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.SmartPlacement.Hint`,
     scope: 'client',
     type: Boolean,
     default: true,
     config: true,
   });
 
-  game.settings.register(CONSTANTS.MODULE_ID, 'previewDelay', {
-    name: `${CONSTANTS.MODULE_ID}.Settings.PreviewDelayN`,
-    hint: `${CONSTANTS.MODULE_ID}.Settings.PreviewDelayH`,
-    scope: 'world',
+  game.settings.register(CONSTANTS.MODULE_ID, 'displayDelay', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.DisplayDelay.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.DisplayDelay.Hint`,
+    scope: 'client',
     type: Number,
     default: 1000,
     config: true,
-    // onChange: (s) => { },
-    // @ts-ignore
     range: { min: 100, max: 3000, step: 100 },
   });
 
@@ -111,9 +109,9 @@ export default function registerSettings() {
     config: true,
   });
 
-  game.settings.register(CONSTANTS.MODULE_ID, 'showTextOnly', {
-    name: `${CONSTANTS.MODULE_ID}.Settings.showTextOnly.Name`,
-    hint: `${CONSTANTS.MODULE_ID}.Settings.showTextOnly.Hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, 'displayImages', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.DisplayImages.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.DisplayImages.Hint`,
     scope: 'client',
     type: Boolean,
     default: true,

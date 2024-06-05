@@ -1,5 +1,5 @@
 import CONSTANTS from '../constants';
-import TokenNoteHoverPixiHelpers from '../pixi/token-note-hover-pixi-helpers';
+// import TokenNoteHoverPixiHelpers from '../pixi/token-note-hover-pixi-helpers';
 
 /**
  * @class TokenNoteHoverHUD
@@ -34,18 +34,18 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     const note = this.object;
     const { actor } = note;
 
-    const dataTmp = await TokenNoteHoverPixiHelpers._manageContentHtmlFromNote(note);
-    data = mergeObject(data, dataTmp);
+    // const dataTmp = await TokenNoteHoverPixiHelpers._manageContentHtmlFromNote(note);
+    // data = mergeObject(data, dataTmp);
 
     let tempContent = '';
     let actorIsOwner = true;
-    const showTextOnly = game.settings.get(CONSTANTS.MODULE_ID, 'showTextOnly');
+    const displayImages = game.settings.get(CONSTANTS.MODULE_ID, 'displayImages');
     if (actor) {
       actorIsOwner = actor.isOwner ?? true;
 
       switch (actor.type) {
         case 'starship':
-          if (!showTextOnly) {
+          if (displayImages) {
             tempContent = await TextEditor.enrichHTML(actor.system.notes, {
               secrets: actorIsOwner,
               documents: true,
@@ -64,7 +64,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
           break;
         case 'character':
           if (actor.sheet?.constructor.name === 'IronswornCharacterSheetV2') {
-            if (!showTextOnly) {
+            if (displayImages) {
               tempContent = await TextEditor.enrichHTML(actor.system.biography, {
                 secrets: actorIsOwner,
                 documents: true,
@@ -78,7 +78,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
               })).replaceAll(/<img.*>/g, '');
             }
           } else if (actor.sheet?.constructor.name === 'StarforgedCharacterSheet') {
-            if (!showTextOnly) {
+            if (displayImages) {
               tempContent = await TextEditor.enrichHTML(actor.system.notes, {
                 secrets: actorIsOwner,
                 documents: true,
@@ -94,7 +94,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
           }
           break;
         case 'foe':
-          if (!showTextOnly) {
+          if (displayImages) {
             tempContent = await TextEditor.enrichHTML(
               Array.from(actor.items.values()).map((c) => c.system.description),
               {
@@ -115,7 +115,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
           }
           break;
         case 'shared':
-          if (!showTextOnly) {
+          if (displayImages) {
             tempContent = await TextEditor.enrichHTML(actor.system.biography, {
               secrets: actorIsOwner,
               documents: true,
@@ -130,7 +130,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
           }
           break;
         case 'site':
-          if (!showTextOnly) {
+          if (displayImages) {
             tempContent = await TextEditor.enrichHTML(actor.system.description, {
               secrets: actorIsOwner,
               documents: true,
@@ -145,7 +145,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
           }
           break;
         case 'location':
-          if (!showTextOnly) {
+          if (displayImages) {
             tempContent = await TextEditor.enrichHTML(actor.system.description, {
               secrets: actorIsOwner,
               documents: true,
@@ -193,7 +193,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
 
     const tooltipPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipPlacement') ?? 'e';
 
-    const tooltipSmartPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipSmartPlacement') ?? false;
+    const smartPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'smartPlacement') ?? false;
 
     // let orientation = '';
     // if (tooltipPlacement.includes('e')) {
@@ -304,7 +304,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     const fontSize = game.settings.get(CONSTANTS.MODULE_ID, 'fontSize') || canvas.grid.size / 5;
     const maxWidth = game.settings.get(CONSTANTS.MODULE_ID, 'maxWidth');
     const tooltipPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipPlacement') ?? 'e';
-    const tooltipSmartPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipSmartPlacement');
+    const smartPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'smartPlacement');
 
     // let orientation = '';
     // if (tooltipPlacement.includes('e')) {
@@ -436,7 +436,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
       // If a tooltip would extend outside of the viewport then its placement will be changed to an
       // orientation that would be entirely within the current viewport.
       // Only applies if followMouse is set to false.
-      smartPlacement: tooltipSmartPlacement,
+      smartPlacement: smartPlacement,
 
       // (default: false) Allow the mouse to hover on the tooltip.
       // This lets users interact with the content in the tooltip.
