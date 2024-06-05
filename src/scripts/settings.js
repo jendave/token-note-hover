@@ -111,6 +111,24 @@ export default function registerSettings() {
     config: true,
   });
 
+  game.settings.register(CONSTANTS.MODULE_ID, 'showTextOnly', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.showTextOnly.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.showTextOnly.Hint`,
+    scope: 'client',
+    type: Boolean,
+    default: true,
+    config: true,
+  });
+
+  game.settings.register(CONSTANTS.MODULE_ID, 'maxLength', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.MaxLengthN`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.MaxLengthH`,
+    scope: 'client',
+    type: Number,
+    default: 500,
+    config: true,
+  });
+
   game.settings.register(CONSTANTS.MODULE_ID, 'tooltipUseMousePositionForCoordinates', {
     name: `${CONSTANTS.MODULE_ID}.Settings.tooltipUseMousePositionForCoordinatesN`,
     hint: `${CONSTANTS.MODULE_ID}.Settings.tooltipUseMousePositionForCoordinatesH`,

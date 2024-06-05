@@ -39,62 +39,125 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
 
     let tempContent = '';
     let actorIsOwner = true;
+    const showTextOnly = game.settings.get(CONSTANTS.MODULE_ID, 'showTextOnly');
     if (actor) {
       actorIsOwner = actor.isOwner ?? true;
 
       switch (actor.type) {
         case 'starship':
-          tempContent = await TextEditor.enrichHTML(actor.system.notes, {
-            secrets: actorIsOwner,
-            documents: true,
-            async: true,
-          });
-          break;
-        case 'character':
-          if (actor.sheet?.constructor.name === 'IronswornCharacterSheetV2') {
-            tempContent = await TextEditor.enrichHTML(actor.system.biography, {
-              secrets: actorIsOwner,
-              documents: true,
-              async: true,
-            });
-          } else if (actor.sheet?.constructor.name === 'StarforgedCharacterSheet') {
+          if (!showTextOnly) {
             tempContent = await TextEditor.enrichHTML(actor.system.notes, {
               secrets: actorIsOwner,
               documents: true,
               async: true,
             });
-          }
-          break;
-        case 'foe':
-          tempContent = await TextEditor.enrichHTML(
-            Array.from(actor.items.values()).map((c) => c.system.description),
-            {
+          } else {
+            // const maxLength = game.settings.get(CONSTANTS.MODULE_ID, 'maxLength');
+            // const textContent = $(actor.system.notes).text();
+            // tempContent = textContent.length > maxLength ? `${textContent.substr(0, maxLength)} ...` : textContent;
+            tempContent = (await TextEditor.enrichHTML(actor.system.notes, {
               secrets: actorIsOwner,
               documents: true,
               async: true,
-            },
-          );
+            })).replaceAll(/<img.*>/g, '');
+          }
+          break;
+        case 'character':
+          if (actor.sheet?.constructor.name === 'IronswornCharacterSheetV2') {
+            if (!showTextOnly) {
+              tempContent = await TextEditor.enrichHTML(actor.system.biography, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(actor.system.biography, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              })).replaceAll(/<img.*>/g, '');
+            }
+          } else if (actor.sheet?.constructor.name === 'StarforgedCharacterSheet') {
+            if (!showTextOnly) {
+              tempContent = await TextEditor.enrichHTML(actor.system.notes, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(actor.system.notes, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              })).replaceAll(/<img.*>/g, '');
+            }
+          }
+          break;
+        case 'foe':
+          if (!showTextOnly) {
+            tempContent = await TextEditor.enrichHTML(
+              Array.from(actor.items.values()).map((c) => c.system.description),
+              {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              },
+            );
+          } else {
+            tempContent = (await TextEditor.enrichHTML(
+              Array.from(actor.items.values()).map((c) => c.system.description),
+              {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              },
+            )).replaceAll(/<img.*>/g, '');
+          }
           break;
         case 'shared':
-          tempContent = await TextEditor.enrichHTML(actor.system.biography, {
-            secrets: actorIsOwner,
-            documents: true,
-            async: true,
-          });
+          if (!showTextOnly) {
+            tempContent = await TextEditor.enrichHTML(actor.system.biography, {
+              secrets: actorIsOwner,
+              documents: true,
+              async: true,
+            });
+          } else {
+            tempContent = (await TextEditor.enrichHTML(actor.system.biography, {
+              secrets: actorIsOwner,
+              documents: true,
+              async: true,
+            })).replaceAll(/<img.*>/g, '');
+          }
           break;
         case 'site':
-          tempContent = await TextEditor.enrichHTML(actor.system.description, {
-            secrets: actorIsOwner,
-            documents: true,
-            async: true,
-          });
+          if (!showTextOnly) {
+            tempContent = await TextEditor.enrichHTML(actor.system.description, {
+              secrets: actorIsOwner,
+              documents: true,
+              async: true,
+            });
+          } else {
+            tempContent = (await TextEditor.enrichHTML(actor.system.description, {
+              secrets: actorIsOwner,
+              documents: true,
+              async: true,
+            })).replaceAll(/<img.*>/g, '');
+          }
           break;
         case 'location':
-          tempContent = await TextEditor.enrichHTML(actor.system.description, {
-            secrets: actorIsOwner,
-            documents: true,
-            async: true,
-          });
+          if (!showTextOnly) {
+            tempContent = await TextEditor.enrichHTML(actor.system.description, {
+              secrets: actorIsOwner,
+              documents: true,
+              async: true,
+            });
+          } else {
+            tempContent = (await TextEditor.enrichHTML(actor.system.description, {
+              secrets: actorIsOwner,
+              documents: true,
+              async: true,
+            })).replaceAll(/<img.*>/g, '');
+          }
           break;
         default:
           tempContent = null;

@@ -29,6 +29,10 @@
         "Name": "Display Delay",
         "Hint": "How long before the token note display appears (in milliseconds)."
       },
+      "ShowTextOnly": {
+        "Name": "ShowTextOnly",
+        "Hint": "Show the note as text snippet"
+      },
 
       "ShowJournalPreviewN": "Show Journal Preview",
       "ShowJournalPreviewH": "Shows a Journal preview when hovering over a map pin",
@@ -36,6 +40,8 @@
       "PreviewTypeH": "The type of Journal preview to show (HTML or Text snippet)",
       "PreviewDelayN": "Display Delay",
       "PreviewDelayH": "How long before token note appears (in milliseconds)",
+      "MaxLengthN": "Preview Maximum Length",
+      "MaxLengthH": "**TEXT PREVIEW ONLY** How many characters should the text preview show?",
 
       "PlayerIconAutoOverrideN": "Enable Player-Only Icons by default",
       "PlayerIconAutoOverrideH": "Newly created notes will have player-only icons enabled automatically.",
