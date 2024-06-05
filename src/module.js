@@ -61,9 +61,7 @@ Hooks.on('renderHeadsUpDisplay', (app, html, data) => {
  * Hook on Note hover
  */
 Hooks.on('hoverToken', (note, hovered) => {
-  if (game.settings.get(CONSTANTS.MODULE_ID, 'enabled')) {
-    const displayDelay = game.settings.get(CONSTANTS.MODULE_ID, 'displayDelay');
-
+  if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
     let tooltipForceRemoveS = String(
       foundry.utils.getProperty(note, `document.flags.${CONSTANTS.MODULE_ID}.${CONSTANTS.FLAGS.TOOLTIP_FORCE_REMOVE}`),
     );
@@ -83,6 +81,7 @@ Hooks.on('hoverToken', (note, hovered) => {
     }
 
     const ownershipPermissionsRequired = game.settings.get(CONSTANTS.MODULE_ID, 'ownershipPermissionsRequired');
+    const tooltipDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipDelay');
 
     // If the note is hovered by the mouse cursor (not via alt/option)
     if (hovered) {
@@ -92,7 +91,7 @@ Hooks.on('hoverToken', (note, hovered) => {
             || note.actor.ownership.default === -1)) {
           canvas.hud.tokenNoteHover.bind(note);
         }
-      }, displayDelay);
+      }, tooltipDelay);
     } else if (!hovered) {
       // This code should be never reached
       clearTimeout(API.tokenNoteHover.hoverTimer);

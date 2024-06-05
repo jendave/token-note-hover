@@ -1,17 +1,17 @@
 {
   "token-note-hover": {
     "Settings": {
-      "Enabled": {
+      "HoverEnabled": {
         "Name": "Hover Enabled",
-        "Hint": "Display the note when the token is hovered over."
+        "Hint": "Display the note in a tootip when the token is hovered over."
       },      
       "OwnershipPermissionsRequired": {
         "Name": "Ownership Permissions Required",
         "Hint": "Ownership permissions required to view the token notes."
       },
       "SmartPlacement": {
-        "Name": "Smart Placement of Token Notes",
-        "Hint": "Token notes will be have their placements changed to stay inside the browser viewport."
+        "Name": "Smart Placement of Token Notes Tooltips",
+        "Hint": "The placement of the token notes tooltips may be changed to stay inside the browser viewport."
       },
       "FontSize": {
         "Name": "Text Size Override",
@@ -21,9 +21,9 @@
         "Name": "Maximum Width",
         "Hint": "The maximum width in px the token note display can grow to before it will force wrapping."
       },
-      "DisplayDelay": {
-        "Name": "Display Delay",
-        "Hint": "Length of delay before the token note display appears (in milliseconds)."
+      "TooltipDelay": {
+        "Name": "Tooltip Delay",
+        "Hint": "Length of delay before the token note tooltip appears (in milliseconds)."
       },
       "DisplayImages": {
         "Name": "Display Images",

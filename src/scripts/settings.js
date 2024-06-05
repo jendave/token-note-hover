@@ -1,9 +1,9 @@
 import CONSTANTS from './constants';
 
 export default function registerSettings() {
-  game.settings.register(CONSTANTS.MODULE_ID, 'enabled', {
-    name: `${CONSTANTS.MODULE_ID}.Settings.Enabled.Name`,
-    hint: `${CONSTANTS.MODULE_ID}.Settings.Enabled.Hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, 'hoverEnabled', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.HoverEnabled.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.HoverEnabled.Hint`,
     scope: 'client',
     type: Boolean,
     default: true,
@@ -35,9 +35,9 @@ export default function registerSettings() {
     config: true,
   });
 
-  game.settings.register(CONSTANTS.MODULE_ID, 'displayDelay', {
-    name: `${CONSTANTS.MODULE_ID}.Settings.DisplayDelay.Name`,
-    hint: `${CONSTANTS.MODULE_ID}.Settings.DisplayDelay.Hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, 'tooltipDelay', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.TooltipDelay.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.TooltipDelay.Hint`,
     scope: 'client',
     type: Number,
     default: 1000,
