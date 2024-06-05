@@ -6,8 +6,9 @@
  */
 .token-note-hover-hud-tooltip-zinc {
   cursor: default;
-  background: url(../../../ui/parchment.jpg) repeat;
-  border: 1px solid #acacac;
+  background-image: url(../../../ui/parchment.jpg);
+  background-repeat: repeat;
+  border: 1px solid #000000;
   border-radius: 6px;
   color: #000000;
   display: none;

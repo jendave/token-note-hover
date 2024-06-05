@@ -240,12 +240,8 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
 
     const fontSize = game.settings.get(CONSTANTS.MODULE_ID, 'fontSize') || canvas.grid.size / 5;
     const maxWidth = game.settings.get(CONSTANTS.MODULE_ID, 'maxWidth');
-
     const tooltipPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipPlacement') ?? 'e';
-
     const tooltipSmartPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipSmartPlacement');
-
-    const tooltipColor = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipColor');
 
     // let orientation = '';
     // if (tooltipPlacement.includes('e')) {
@@ -349,8 +345,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     };
     elementToTooltip.css(position);
 
+    let tooltipColor = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipColor');
+
     console.log(`Color Scheme: ${game.settings.get('foundry-ironsworn', 'color-scheme')}`);
 
+    if (tooltipColor === 'system') {
+      tooltipColor = game.settings.get('foundry-ironsworn', 'color-scheme');
+    }
     const tooltipPopupClass = tooltipColor
       ? `token-note-hover-hud-tooltip-${tooltipColor}`
       : 'token-note-hover-hud-tooltip-default';
