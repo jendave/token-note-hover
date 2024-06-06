@@ -46,58 +46,58 @@ export default function registerSettings() {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, 'tooltipColor', {
-    name: `${CONSTANTS.MODULE_ID}.Settings.Tooltip.Color.title`,
-    hint: '',
-    scope: 'world',
+    name: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Hint`,
+    scope: 'client',
     config: true,
     type: String,
     default: 'System',
     choices: {
-      system: 'System',
-      default: 'Default',
-      phosphor: 'Phosphor',
-      zinc: 'Zinc',
-      blue: 'Blue',
-      dark: 'Dark',
-      green: 'Green',
-      light: 'Light',
-      orange: 'Orange',
-      purple: 'Purple',
-      red: 'Red',
-      yellow: 'Yellow',
-    },
-  });
-
-  game.settings.register(CONSTANTS.MODULE_ID, 'tooltipPlacement', {
-    name: `${CONSTANTS.MODULE_ID}.Settings.Tooltip.Placement.title`,
-    hint: '',
-    scope: 'world',
-    config: true,
-    type: String,
-    default: 'East',
-    choices: {
-      'nw-alt': 'North West Alt',
-      nw: 'North West',
-      n: 'North',
-      ne: 'North East',
-      'ne-alt': 'North East Alt',
-      w: 'West',
-      e: 'East',
-      'sw-alt': 'South West Alt',
-      sw: 'South West',
-      s: 'South',
-      se: 'South East',
-      'se-alt': 'South East Alt',
+      system: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.System`,
+      default: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Default`,
+      blue: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Blue`,
+      dark: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Dark`,
+      green: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Green`,
+      light: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Light`,
+      orange: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Orange`,
+      phosphor: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Phosphor`,
+      purple: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Purple`,
+      red: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Red`,
+      yellow: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Yellow`,
+      zinc: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Zinc`,
     },
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, 'fontSize', {
-    name: `${CONSTANTS.MODULE_ID}.Settings.fontSizeN`,
-    hint: `${CONSTANTS.MODULE_ID}.Settings.fontSizeH`,
+    name: `${CONSTANTS.MODULE_ID}.Settings.FontSize.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.FontSize.Hint`,
     scope: 'client',
     type: String,
     default: '1.5rem',
     config: true,
+  });
+
+  game.settings.register(CONSTANTS.MODULE_ID, 'tooltipPlacement', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Hint`,
+    scope: 'world',
+    config: true,
+    type: String,
+    default: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.east`,
+    choices: {
+      'nw-alt': `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.north-west-alt`,
+      nw: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.north-west`,
+      n: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.north`,
+      ne: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.north-east`,
+      'ne-alt': `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.north-east-alt`,
+      w: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.west`,
+      e: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.east`,
+      'sw-alt': `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.south-west-alt`,
+      sw: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.south-west`,
+      s: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.south`,
+      se: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.south-east`,
+      'se-alt': `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.south-east-alt`,
+    },
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, 'maxWidth', {
@@ -127,42 +127,13 @@ export default function registerSettings() {
     config: true,
   });
 
-  game.settings.register(CONSTANTS.MODULE_ID, 'tooltipUseMousePositionForCoordinates', {
-    name: `${CONSTANTS.MODULE_ID}.Settings.tooltipUseMousePositionForCoordinatesN`,
-    hint: `${CONSTANTS.MODULE_ID}.Settings.tooltipUseMousePositionForCoordinatesH`,
+  game.settings.register(CONSTANTS.MODULE_ID, 'useMousePositionForCoordinates', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.UseMousePositionForCoordinates.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.UseMousePositionForCoordinates.Hint`,
     scope: 'world',
     config: true,
     default: true,
     type: Boolean,
-  });
-
-  // ============================================
-  // Pin Players Default
-  // =============================================
-
-  game.settings.register(CONSTANTS.MODULE_ID, 'playerPinDefaultsGlobal', {
-    name: `${CONSTANTS.MODULE_ID}.Settings.playerPinDefaults.globalN`,
-    hint: `${CONSTANTS.MODULE_ID}.Settings.playerPinDefaults.globalH`,
-    scope: 'world',
-    config: true,
-    type: Boolean,
-    default: true,
-  });
-
-  game.settings.register(CONSTANTS.MODULE_ID, 'playerPinDefaultsAnchorPoint', {
-    name: `${CONSTANTS.MODULE_ID}.Settings.playerPinDefaults.anchorPointN`,
-    hint: `${CONSTANTS.MODULE_ID}.Settings.playerPinDefaults.anchorPointH`,
-    scope: 'world',
-    config: true,
-    type: Number,
-    default: 1,
-    choices: {
-      0: 'Center',
-      1: 'Bottom',
-      2: 'Top',
-      3: 'Left',
-      4: 'Right',
-    },
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, 'debug', {

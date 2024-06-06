@@ -54,7 +54,8 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
           } else {
             // const maxLength = game.settings.get(CONSTANTS.MODULE_ID, 'maxLength');
             // const textContent = $(actor.system.notes).text();
-            // tempContent = textContent.length > maxLength ? `${textContent.substr(0, maxLength)} ...` : textContent;
+            // tempContent = textContent.length > maxLength ?
+            //     `${textContent.substr(0, maxLength)} ...` : textContent;
             tempContent = (await TextEditor.enrichHTML(actor.system.notes, {
               secrets: actorIsOwner,
               documents: true,
@@ -192,20 +193,12 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     const { maxWidth } = this;
 
     const tooltipPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipPlacement') ?? 'e';
-
     const smartPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'smartPlacement') ?? false;
-
-    // let orientation = '';
-    // if (tooltipPlacement.includes('e')) {
-    //   orientation = 'right';
-    // } else {
-    //   orientation = 'left';
-    // }
 
     // WITH TOOLTIP
     let x = 0;
     let y = 0;
-    if (game.settings.get(CONSTANTS.MODULE_ID, 'tooltipUseMousePositionForCoordinates')) {
+    if (game.settings.get(CONSTANTS.MODULE_ID, 'useMousePositionForCoordinates')) {
       const positionMouse = canvas.mousePosition;
       x = positionMouse.x;
       y = positionMouse.y;
@@ -306,17 +299,10 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     const tooltipPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipPlacement') ?? 'e';
     const smartPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'smartPlacement');
 
-    // let orientation = '';
-    // if (tooltipPlacement.includes('e')) {
-    //   orientation = 'right';
-    // } else {
-    //   orientation = 'left';
-    // }
-
     // WITH TOOLTIP
     let x = 0;
     let y = 0;
-    if (game.settings.get(CONSTANTS.MODULE_ID, 'tooltipUseMousePositionForCoordinates')) {
+    if (game.settings.get(CONSTANTS.MODULE_ID, 'useMousePositionForCoordinates')) {
       const positionMouse = canvas.mousePosition;
       x = positionMouse.x;
       y = positionMouse.y;
@@ -329,13 +315,6 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     const height = this.object.h;
     let left = x;
     let top = y;
-
-    // console.log('x', x);
-    // console.log('y', y);
-    // console.log('top', top);
-    // console.log('left', left);
-    // console.log('width', width);
-    // console.log('height', height);
 
     let positionOffsetLeft = 0;
     let positionOffsetTop = 0;

@@ -3,8 +3,8 @@
     "Settings": {
       "HoverEnabled": {
         "Name": "Hover Enabled",
-        "Hint": "Display the note in a tootip when the token is hovered over."
-      },      
+        "Hint": "Display the note in a tooltip when the token is hovered over."
+      },
       "OwnershipPermissionsRequired": {
         "Name": "Ownership Permissions Required",
         "Hint": "Ownership permissions required to view the token notes."
@@ -13,28 +13,67 @@
         "Name": "Smart Placement of Token Notes Tooltips",
         "Hint": "The placement of the token notes tooltips may be changed to stay inside the browser viewport."
       },
+      "TooltipDelay": {
+        "Name": "Tooltip Delay",
+        "Hint": "Length of delay before the token note tooltip appears (in milliseconds)."
+      },
+      "TooltipColor": {
+        "Name": "Tooltip Theme",
+        "Hint": "The color theme of the token note tooltip. `System` will use the game system theme.",
+        "System": "System",
+        "Default": "Default",
+        "Blue": "Blue",
+        "Dark": "Dark",
+        "Green": "Green",
+        "Light": "Light",
+        "Orange": "Orange",
+        "Phosphor": "Phosphor",
+        "Purple": "Purple",
+        "Red": "Red",
+        "Yellow": "Yellow",
+        "Zinc": "Zinc"
+      },
       "FontSize": {
-        "Name": "Text Size Override",
-        "Hint": "Override the base text size for the token note display. Example: 1.5rem."
+        "Name": "Text Size",
+        "Hint": "The base text size for the token note display."
+      },
+      "TooltipPlacement": {
+        "Name": "Tooltip Placement",
+        "Hint": "Placement of tooltip relative to the token.",
+        "Choices": {
+          "north-west-alt": "North West Alt",
+          "north-west": "North West",
+          "north": "North",
+          "north-east": "North East",
+          "north-east-alt": "North East Alt",
+          "west": "West",
+          "east": "East",
+          "south-west-alt": "South West Alt",
+          "south-west": "South West",
+          "south": "South",
+          "south-east": "South East",
+          "south-east-alt": "South East Alt"
+        }
       },
       "MaxWidth": {
         "Name": "Maximum Width",
         "Hint": "The maximum width in px the token note display can grow to before it will force wrapping."
-      },
-      "TooltipDelay": {
-        "Name": "Tooltip Delay",
-        "Hint": "Length of delay before the token note tooltip appears (in milliseconds)."
       },
       "DisplayImages": {
         "Name": "Display Images",
         "Hint": "Display images contained in token notes."
       },
 
+      "UseMousePositionForCoordinates": {
+        "Name": "Use Mouse Position for Tooltip Coordinates",
+        "Hint": "Use mouse position to display the tooltip"
+      },
+
       "ShowJournalPreviewN": "Show Journal Preview",
       "ShowJournalPreviewH": "Shows a Journal preview when hovering over a map pin",
       "PreviewTypeN": "Journal Preview Type",
       "PreviewTypeH": "The type of Journal preview to show (HTML or Text snippet)",
- 
+
       "MaxLengthN": "Preview Maximum Length",
       "MaxLengthH": "**TEXT PREVIEW ONLY** How many characters should the text preview show?",
 
@@ -67,8 +106,15 @@
       "maxWidthN": "Maximum Width",
       "maxWidthH": "The maximum width the entry display can grow to before it'll force wrapping.",
 
-      "tooltipUseMousePositionForCoordinatesN": "Use mouse position for show the tooltip",
-      "tooltipUseMousePositionForCoordinatesH": "When you hover a note on the canvas the tooltip is build based on the current mouse position instead the journal icon position. This solution seem to be more dynamic.",
+      "Tooltip.Color.choices.default": "Default",
+      "Tooltip.Color.choices.blue": "Blue",
+      "Tooltip.Color.choices.dark": "Dark",
+      "Tooltip.Color.choices.green": "Green",
+      "Tooltip.Color.choices.light": "Light",
+      "Tooltip.Color.choices.orange": "Orange",
+      "Tooltip.Color.choices.purple": "Purple",
+      "Tooltip.Color.choices.red": "Red",
+      "Tooltip.Color.choices.yellow": "Yellow",
 
       "forceToShowNotesN": "Force to show notes",
       "forceToShowNotesH": "Automatically flag journal notes to show on the map without having to have your players turn it on themselves.",
@@ -121,17 +167,6 @@
       "playerPinDefaults.addPlayerNameH": "When on, the format of the pin label is \"<pinlabel> /n <name of character>\" on two lines.",
       "playerPinDefaults.playerColorTextN": "Player Pin Defaults: Player Color as Text Color",
       "playerPinDefaults.playerColorTextH": "When on, the player's color is used to tint the text color",
-
-      "Tooltip.Color.title": "Tooltip Color",
-      "Tooltip.Color.choices.default": "Default",
-      "Tooltip.Color.choices.blue": "Blue",
-      "Tooltip.Color.choices.dark": "Dark",
-      "Tooltip.Color.choices.green": "Green",
-      "Tooltip.Color.choices.light": "Light",
-      "Tooltip.Color.choices.orange": "Orange",
-      "Tooltip.Color.choices.purple": "Purple",
-      "Tooltip.Color.choices.red": "Red",
-      "Tooltip.Color.choices.yellow": "Yellow",
 
       "Tooltip.Placement.title": "Tooltip Placement",
       "Tooltip.Placement.choices.north-west-alt": "North West Alt",

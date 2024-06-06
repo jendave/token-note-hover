@@ -640,9 +640,9 @@ export default class TokenNoteHover {
     // Returned object
     let defaults = {
       data: {
-        global: game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsGlobal'),
+       // global: game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsGlobal'),
       //  iconSize: game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsImageSize'),
-        textAnchor: game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsAnchorPoint'),
+       // textAnchor: game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsAnchorPoint'),
        // textColor: game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsPlayerColorText') ? playerColor : null,
        // fontSize: game.settings.get(CONSTANTS.MODULE_ID, 'playerPinDefaultsFontSize'),
         texture: {
