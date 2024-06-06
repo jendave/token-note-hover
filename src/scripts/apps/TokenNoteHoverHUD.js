@@ -1,5 +1,4 @@
 import CONSTANTS from '../constants';
-// import TokenNoteHoverPixiHelpers from '../pixi/token-note-hover-pixi-helpers';
 
 /**
  * @class TokenNoteHoverHUD
@@ -30,7 +29,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
    */
   async getData() {
     // Token Note Hover
-    let data = super.getData();
+    const data = super.getData();
     const note = this.object;
     const { actor } = note;
 
@@ -177,9 +176,8 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
                 <h3>${data.title}</h3>
                 ${data.body}
             </div>`);
-
-      return data;
     }
+    return data;
   }
 
   /**
@@ -192,8 +190,8 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     const { fontSize } = this;
     const { maxWidth } = this;
 
-    const tooltipPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipPlacement') ?? 'e';
-    const smartPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'smartPlacement') ?? false;
+    // const tooltipPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipPlacement') ?? 'e';
+    // const smartPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'smartPlacement') ?? false;
 
     // WITH TOOLTIP
     let x = 0;
@@ -294,8 +292,8 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
       elementToTooltip = $(elementToTooltip);
     }
 
-    const fontSize = game.settings.get(CONSTANTS.MODULE_ID, 'fontSize') || canvas.grid.size / 5;
-    const maxWidth = game.settings.get(CONSTANTS.MODULE_ID, 'maxWidth');
+    // const fontSize = game.settings.get(CONSTANTS.MODULE_ID, 'fontSize') || canvas.grid.size / 5;
+    // const maxWidth = game.settings.get(CONSTANTS.MODULE_ID, 'maxWidth');
     const tooltipPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipPlacement') ?? 'e';
     const smartPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'smartPlacement');
 
@@ -389,7 +387,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
 
     let tooltipColor = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipColor');
 
-    console.log(`Color Scheme: ${game.settings.get('foundry-ironsworn', 'color-scheme')}`);
+    // console.log(`Color Scheme: ${game.settings.get('foundry-ironsworn', 'color-scheme')}`);
 
     if (tooltipColor === 'system') {
       tooltipColor = game.settings.get('foundry-ironsworn', 'color-scheme');
@@ -415,7 +413,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
       // If a tooltip would extend outside of the viewport then its placement will be changed to an
       // orientation that would be entirely within the current viewport.
       // Only applies if followMouse is set to false.
-      smartPlacement: smartPlacement,
+      smartPlacement,
 
       // (default: false) Allow the mouse to hover on the tooltip.
       // This lets users interact with the content in the tooltip.

@@ -10,6 +10,15 @@ export default function registerSettings() {
     config: true,
   });
 
+  game.settings.register(CONSTANTS.MODULE_ID, 'displayImages', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.DisplayImages.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.DisplayImages.Hint`,
+    scope: 'client',
+    type: Boolean,
+    default: true,
+    config: true,
+  });
+
   game.settings.register(CONSTANTS.MODULE_ID, 'ownershipPermissionsRequired', {
     name: `${CONSTANTS.MODULE_ID}.Settings.OwnershipPermissionsRequired.Name`,
     hint: `${CONSTANTS.MODULE_ID}.Settings.OwnershipPermissionsRequired.Hint`,
@@ -23,6 +32,29 @@ export default function registerSettings() {
       1: 'Limited',
       2: 'Observer',
       3: 'Owner',
+    },
+  });
+
+  game.settings.register(CONSTANTS.MODULE_ID, 'tooltipPlacement', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Hint`,
+    scope: 'world',
+    config: true,
+    type: String,
+    default: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.east`,
+    choices: {
+      'nw-alt': `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.north-west-alt`,
+      nw: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.north-west`,
+      n: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.north`,
+      ne: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.north-east`,
+      'ne-alt': `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.north-east-alt`,
+      w: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.west`,
+      e: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.east`,
+      'sw-alt': `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.south-west-alt`,
+      sw: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.south-west`,
+      s: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.south`,
+      se: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.south-east`,
+      'se-alt': `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.south-east-alt`,
     },
   });
 
@@ -77,55 +109,23 @@ export default function registerSettings() {
     config: true,
   });
 
-  game.settings.register(CONSTANTS.MODULE_ID, 'tooltipPlacement', {
-    name: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Name`,
-    hint: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Hint`,
-    scope: 'world',
-    config: true,
-    type: String,
-    default: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.east`,
-    choices: {
-      'nw-alt': `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.north-west-alt`,
-      nw: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.north-west`,
-      n: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.north`,
-      ne: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.north-east`,
-      'ne-alt': `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.north-east-alt`,
-      w: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.west`,
-      e: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.east`,
-      'sw-alt': `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.south-west-alt`,
-      sw: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.south-west`,
-      s: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.south`,
-      se: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.south-east`,
-      'se-alt': `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.south-east-alt`,
-    },
-  });
-
   game.settings.register(CONSTANTS.MODULE_ID, 'maxWidth', {
-    name: `${CONSTANTS.MODULE_ID}.Settings.maxWidthN`,
-    hint: `${CONSTANTS.MODULE_ID}.Settings.maxWidthH`,
+    name: `${CONSTANTS.MODULE_ID}.Settings.MaxWidth.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.MaxWidth.Hint`,
     scope: 'client',
     type: Number,
     default: 800,
     config: true,
   });
 
-  game.settings.register(CONSTANTS.MODULE_ID, 'displayImages', {
-    name: `${CONSTANTS.MODULE_ID}.Settings.DisplayImages.Name`,
-    hint: `${CONSTANTS.MODULE_ID}.Settings.DisplayImages.Hint`,
-    scope: 'client',
-    type: Boolean,
-    default: true,
-    config: true,
-  });
-
-  game.settings.register(CONSTANTS.MODULE_ID, 'maxLength', {
-    name: `${CONSTANTS.MODULE_ID}.Settings.MaxLengthN`,
-    hint: `${CONSTANTS.MODULE_ID}.Settings.MaxLengthH`,
-    scope: 'client',
-    type: Number,
-    default: 500,
-    config: true,
-  });
+  // game.settings.register(CONSTANTS.MODULE_ID, 'maxLength', {
+  //   name: `${CONSTANTS.MODULE_ID}.Settings.MaxLengthN`,
+  //   hint: `${CONSTANTS.MODULE_ID}.Settings.MaxLengthH`,
+  //   scope: 'client',
+  //   type: Number,
+  //   default: 500,
+  //   config: true,
+  // });
 
   game.settings.register(CONSTANTS.MODULE_ID, 'useMousePositionForCoordinates', {
     name: `${CONSTANTS.MODULE_ID}.Settings.UseMousePositionForCoordinates.Name`,
@@ -137,8 +137,8 @@ export default function registerSettings() {
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, 'debug', {
-    name: `${CONSTANTS.MODULE_ID}.Settings.debugN`,
-    hint: `${CONSTANTS.MODULE_ID}.Settings.debugH`,
+    name: `${CONSTANTS.MODULE_ID}.Settings.Debug.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.Debug.Hint`,
     scope: 'world',
     config: true,
     type: Boolean,
