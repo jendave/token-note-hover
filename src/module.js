@@ -45,8 +45,6 @@ Hooks.on('hoverToken', (note, hovered) => {
         }
       }, tooltipDelay);
     }
-  } else {
-    return canvas.hud.tokenNoteHover.clear();
   }
   return canvas.hud.tokenNoteHover.clear();
 });
