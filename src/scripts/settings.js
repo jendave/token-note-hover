@@ -136,12 +136,12 @@ export default function registerSettings() {
     type: Boolean,
   });
 
-  game.settings.register(CONSTANTS.MODULE_ID, 'debug', {
-    name: `${CONSTANTS.MODULE_ID}.Settings.Debug.Name`,
-    hint: `${CONSTANTS.MODULE_ID}.Settings.Debug.Hint`,
-    scope: 'world',
-    config: true,
-    type: Boolean,
-    default: false,
-  });
+  // game.settings.register(CONSTANTS.MODULE_ID, 'debug', {
+  //   name: `${CONSTANTS.MODULE_ID}.Settings.Debug.Name`,
+  //   hint: `${CONSTANTS.MODULE_ID}.Settings.Debug.Hint`,
+  //   scope: 'world',
+  //   config: true,
+  //   type: Boolean,
+  //   default: false,
+  // });
 }

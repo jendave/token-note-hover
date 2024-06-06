@@ -1,4 +1,4 @@
-import CONSTANTS from '../constants';
+import CONSTANTS from './constants';
 
 /**
  * @class TokenNoteHoverHUD
@@ -28,13 +28,9 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
    * Get data for template
    */
   async getData() {
-    // Token Note Hover
     const data = super.getData();
     const note = this.object;
     const { actor } = note;
-
-    // const dataTmp = await TokenNoteHoverPixiHelpers._manageContentHtmlFromNote(note);
-    // data = mergeObject(data, dataTmp);
 
     let tempContent = '';
     let actorIsOwner = true;
@@ -190,9 +186,6 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     const { fontSize } = this;
     const { maxWidth } = this;
 
-    // const tooltipPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipPlacement') ?? 'e';
-    // const smartPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'smartPlacement') ?? false;
-
     // WITH TOOLTIP
     let x = 0;
     let y = 0;
@@ -207,8 +200,8 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
 
     const width = this.object.w;
     const height = this.object.h;
-    let left = x; // - width / 2;
-    let top = y; // - height / 2;
+    let left = x;
+    let top = y;
 
     let positionOffsetLeft = 0;
     let positionOffsetTop = 0;
@@ -270,9 +263,6 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     left += positionOffsetLeft;
     top += positionOffsetTop;
 
-    // console.log('top Final', top);
-    // console.log('left Final', left);
-
     const position = {
       height: `${height}px`,
       width: `${width}px`,
@@ -292,8 +282,6 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
       elementToTooltip = $(elementToTooltip);
     }
 
-    // const fontSize = game.settings.get(CONSTANTS.MODULE_ID, 'fontSize') || canvas.grid.size / 5;
-    // const maxWidth = game.settings.get(CONSTANTS.MODULE_ID, 'maxWidth');
     const tooltipPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipPlacement') ?? 'e';
     const smartPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'smartPlacement');
 
@@ -374,9 +362,6 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     left += positionOffsetLeft;
     top += positionOffsetTop;
 
-    // console.log('top Final', top);
-    // console.log('left Final', left);
-
     const position = {
       height: `${height}px`,
       width: `${width}px`,
@@ -386,8 +371,6 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     elementToTooltip.css(position);
 
     let tooltipColor = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipColor');
-
-    // console.log(`Color Scheme: ${game.settings.get('foundry-ironsworn', 'color-scheme')}`);
 
     if (tooltipColor === 'system') {
       tooltipColor = game.settings.get('foundry-ironsworn', 'color-scheme');
