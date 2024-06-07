@@ -106,7 +106,7 @@ jobs:
         run: npm run build
 
       - name: Create zip file
-        run: (cd ./dist/${{github.repository}} && zip -r ./module.zip .)
+        run: (cd ./dist/token-note-hover && zip -r ./module.zip .)
 
       # Update the GitHub release with the manifest and module archive files.
       - name: Update Release With Files
