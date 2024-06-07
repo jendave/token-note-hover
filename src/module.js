@@ -28,6 +28,11 @@ Hooks.on('renderHeadsUpDisplay', (app, html, data) => {
   canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
 });
 
+// Hooks.on('canvasPan', () => {
+//   //canvas.hud.tokenNoteHover.clear();
+//   $.powerTip.reposition(canvas.hud.tokenNoteHover.element);
+// });
+
 /**
  * Hook on Note hover
  */

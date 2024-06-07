@@ -202,6 +202,8 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     let left = x;
     let top = y;
 
+    // console.log(`x: ${x}, y: ${y}, width: ${width}, height: ${height}`);
+
     let positionOffsetLeft = 0;
     let positionOffsetTop = 0;
 

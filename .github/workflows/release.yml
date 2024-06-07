@@ -105,28 +105,14 @@ jobs:
       - name: NPM Run build
         run: npm run build
 
-      # Create a "module.zip" archive containing all the module's required files.
-      # If you have other directories or files that will need to be added to
-      # your packaged module, add them here.
-      - name: Create Module Archive
-        run: |
-          # Note that `zip` will only emit warnings when a file or directory
-          # doesn't exist, it will not fail.
-          zip                                    \
-            --recurse-paths                      \
-            ./module.zip                         \
-            module.json                          \
-            index.js                             \
-            index.js.map                         \
-            README.md                            \
-            CHANGELOG.md                         \
-            LICENSE                              \
-            templates/                           \
-            languages/              
+      - name: Make package directory
+        run: mkdir package
 
-          # styles/                              \ 
-          # Don't forget to add a backslash at the end of the line for any
-          # additional files or directories!
+      - name: Copy files to package directory
+        run: cp -r dist/* package
+
+      - name: Create zip file
+        run: (cd package && zip -r "$OLDPWD/module.zip" .)
 
       # Update the GitHub release with the manifest and module archive files.
       - name: Update Release With Files
