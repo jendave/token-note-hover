@@ -114,6 +114,9 @@ jobs:
       - name: Create zip file
         run: (cd package && zip -r "$OLDPWD/module.zip" .)
 
+      - name: Copy module.json to package directory
+        run: cp -r dist/module.json package
+
       # Update the GitHub release with the manifest and module archive files.
       - name: Update Release With Files
         id: create_version_release
