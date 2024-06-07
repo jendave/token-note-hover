@@ -44,7 +44,7 @@
             "path": "languages/en.json"
         }
     ],
-    "scripts": ["scripts/lib/jquery.powertip.min.js"],
+    "scripts": ["scripts/libs/jquery.powertip.min.js"],
     "esmodules": ["module.js"],
     "styles": [
         "styles/token-note-hover.css",
