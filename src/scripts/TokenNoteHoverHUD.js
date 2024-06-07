@@ -186,7 +186,6 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     const { fontSize } = this;
     const { maxWidth } = this;
 
-    // WITH TOOLTIP
     let x = 0;
     let y = 0;
     if (game.settings.get(CONSTANTS.MODULE_ID, 'useMousePositionForCoordinates')) {
@@ -285,7 +284,6 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     const tooltipPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipPlacement') ?? 'e';
     const smartPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'smartPlacement');
 
-    // WITH TOOLTIP
     let x = 0;
     let y = 0;
     if (game.settings.get(CONSTANTS.MODULE_ID, 'useMousePositionForCoordinates')) {
@@ -379,9 +377,9 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
       ? `token-note-hover-hud-tooltip-${tooltipColor}`
       : 'token-note-hover-hud-tooltip-default';
 
-    const tooltipTipContent = $(this.contentTooltip);
+    const contentTooltip = $(this.contentTooltip);
 
-    elementToTooltip.data('powertipjq', tooltipTipContent);
+    elementToTooltip.data('powertipjq', contentTooltip);
     elementToTooltip.powerTip({
       // (default: 'powerTip') HTML id attribute for the tooltip div.
       // popupId: popupId, // e.g. default 'powerTip'
@@ -425,12 +423,12 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
       // (cross the gap between the element and the tooltip div) for mouseOnToPopup tooltips.
       // And, second, it lets the cursor briefly leave the element and return without causing
       // the whole fade-out, intent test, and fade-in cycle to happen.
-      closeDelay: 0,
+      closeDelay: 100,
 
       // (default: 100) Hover intent polling interval in milliseconds.
-      intentPollInterval: 0,
+      intentPollInterval: 100,
     });
-    // }
+
     $.powerTip.show(elementToTooltip);
   }
 }
