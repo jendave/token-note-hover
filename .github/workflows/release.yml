@@ -105,17 +105,8 @@ jobs:
       - name: NPM Run build
         run: npm run build
 
-      - name: Make package directory
-        run: mkdir package
-
-      - name: Copy files to package directory
-        run: cp -r dist/* package
-
       - name: Create zip file
-        run: (cd package && zip -r "$OLDPWD/module.zip" .)
-
-      - name: Copy module.json to package directory
-        run: cp -r "$OLDPWD/module.json" .
+        run: (cd ./dist/${{github.repository}} && zip -r ./module.zip .)
 
       # Update the GitHub release with the manifest and module archive files.
       - name: Update Release With Files
@@ -127,6 +118,6 @@ jobs:
           draft: ${{ github.event.release.unpublished }}
           prerelease: ${{ github.event.release.prerelease }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "./module.json, ./module.zip"
+          artifacts: "./dist/module.json, ./dist/module.zip"
           tag: ${{ github.event.release.tag_name }}
           body: ${{ github.event.release.body }}
