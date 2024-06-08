@@ -164,11 +164,14 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
       data.title = actor.name;
       data.body = content;
 
-      this.fontSize = data.fontSize;
-      this.maxWidth = data.maxWidth;
+      // this.fontSize = data.fontSize;
+      // this.maxWidth = data.maxWidth;
+
+      data.fontSize = game.settings.get(CONSTANTS.MODULE_ID, 'fontSize');
+      data.maxWidth = game.settings.get(CONSTANTS.MODULE_ID, 'maxWidth');
 
       this.contentTooltip = await TextEditor.enrichHTML(`
-            <div id="container" class="token-note-hover-hud-container" style="font-size:${data.fontSize}px; max-width:${data.maxWidth}px">
+            <div id="container" class="token-note-hover-hud-container" style="font-size:${data.fontSize}; max-width:${data.maxWidth}px">
                 <h3>${data.title}</h3>
                 ${data.body}
             </div>`);
@@ -183,8 +186,8 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     if (!this.object) {
       return;
     }
-    const { fontSize } = this;
-    const { maxWidth } = this;
+    const fontSize = game.settings.get(CONSTANTS.MODULE_ID, 'fontSize');
+    const maxWidth = game.settings.get(CONSTANTS.MODULE_ID, 'maxWidth');
 
     let x = 0;
     let y = 0;
@@ -269,7 +272,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
       width: `${width}px`,
       left: `${left}px`,
       top: `${top}px`,
-      'font-size': `${fontSize}px`,
+      'font-size': `${fontSize}`,
       'max-width': `${maxWidth}px`,
     };
     this.element.css(position);

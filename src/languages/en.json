@@ -57,7 +57,7 @@
       },
       "FontSize": {
         "Name": "Text Size",
-        "Hint": "The base text size for the token note display."
+        "Hint": "The base text size for the token note display. Use 'rem' or 'px' units."
       },
       "MaxWidth": {
         "Name": "Maximum Width",

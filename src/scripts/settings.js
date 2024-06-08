@@ -105,7 +105,7 @@ export default function registerSettings() {
     hint: `${CONSTANTS.MODULE_ID}.Settings.FontSize.Hint`,
     scope: 'client',
     type: String,
-    default: '1.5rem',
+    default: '1rem',
     config: true,
   });
 
@@ -114,7 +114,7 @@ export default function registerSettings() {
     hint: `${CONSTANTS.MODULE_ID}.Settings.MaxWidth.Hint`,
     scope: 'client',
     type: Number,
-    default: 800,
+    default: 500,
     config: true,
   });
 
