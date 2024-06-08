@@ -1,42 +1,20 @@
 {
     "id": "token-note-hover",
     "title": "Token Note Hover",
-    "description": "Displays the token note when hovered over.",
+    "description": "Displays the token note in a tooltip when hovered over.",
     "version": "#{VERSION}#",
+    "compatibility": {
+        "minimum": 11,
+        "verified": 12
+    },
     "authors": [
         {
             "name": "David Y. Hudson",
             "discord": "jendave",
             "url": "https://jendave.itch.io/",
             "github": "jendave"
-        },
-        {
-            "name": "p4535992",
-            "url": "https://github.com/p4535992",
-            "discord": "",
-            "twitter": "",
-            "patreon": "p4535992",
-            "github": "p4535992",
-            "ko-fi": "",
-            "reddit": "",
-            "email": ""
         }
     ],
-    "type": "module",
-    "socket": true,
-    "includes": [
-        "./assets/**",
-        "./lang/**",
-        "./languages/**",
-        "./scripts/**",
-        "./styles/**",
-        "./templates/**",
-        "./module.json",
-        "./README.md",
-        "./icons/**",
-        "./packs/**"
-    ],
-    "media": [],
     "languages": [
         {
             "lang": "en",
@@ -44,8 +22,23 @@
             "path": "languages/en.json"
         }
     ],
-    "scripts": ["scripts/libs/jquery.powertip.min.js"],
-    "esmodules": ["module.js"],
+    "esmodules": [
+        "module.js"
+    ],
+    "type": "module",
+    "socket": true,
+    "includes": [
+        "./assets/**",
+        "./languages/**",
+        "./scripts/**",
+        "./styles/**",
+        "./templates/**",
+        "./module.json"
+    ],
+    "media": [],
+    "scripts": [
+        "scripts/libs/jquery.powertip.min.js"
+    ],
     "styles": [
         "styles/token-note-hover.css",
         "styles/jquery.powertip.css",
@@ -61,10 +54,6 @@
         "styles/jquery.powertip-phosphor.css",
         "styles/jquery.powertip-zinc.css"
     ],
-    "compatibility": {
-        "minimum": 11,
-        "verified": 12
-    },
     "manifest": "#{MANIFEST}#",
     "url": "#{URL}#",
     "download": "#{DOWNLOAD}#",
@@ -74,21 +63,18 @@
     "bugs": "https://github.com/jendave/token-note-hover/issues",
     "allowBugReporter": true,
     "relationships": {
-        "systems": [],
-        "requires": [
+        "systems": [
             {
-                "id": "lib-wrapper",
-                "type": "module",
-                "manifest": "https://github.com/ruipin/fvtt-lib-wrapper/releases/latest/download/module.json",
-                "compatibility": {}
-            },
-            {
-                "id": "socketlib",
-                "type": "module",
-                "manifest": "https://raw.githubusercontent.com/manuelVo/foundryvtt-socketlib/develop/module.json",
-                "compatibility": {}
-            }
+                "id": "foundry-ironsworn",
+                "type": "system",
+                "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
+                "compatibility": {
+                  "minimum": "1.22.7",
+                  "verified": "1.22"
+                }
+              }
         ],
+        "requires": [],
         "conflicts": []
     }
 }
