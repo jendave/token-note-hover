@@ -38,7 +38,7 @@ export default function registerSettings() {
   game.settings.register(CONSTANTS.MODULE_ID, 'tooltipPlacement', {
     name: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Name`,
     hint: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Hint`,
-    scope: 'world',
+    scope: 'client',
     config: true,
     type: String,
     default: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.east`,
@@ -130,7 +130,7 @@ export default function registerSettings() {
   game.settings.register(CONSTANTS.MODULE_ID, 'useMousePositionForCoordinates', {
     name: `${CONSTANTS.MODULE_ID}.Settings.UseMousePositionForCoordinates.Name`,
     hint: `${CONSTANTS.MODULE_ID}.Settings.UseMousePositionForCoordinates.Hint`,
-    scope: 'world',
+    scope: 'client',
     config: true,
     default: true,
     type: Boolean,

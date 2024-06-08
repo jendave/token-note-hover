@@ -13,7 +13,7 @@ The `Token Note Hover` module displays the note of a hovered-over token.
 
 It provides some basic customization options in the settings, such as a light theme and a dark theme.
 
-All settings, including `enable module` are client-side only so each player must enable the features they need.
+All settings, except for `token ownership required` are client-side only so each player must enable the features they need.
 
 ## Contact
 
@@ -38,7 +38,7 @@ https://github.com/jendave/token-note-hover/releases/latest/download/module.json
 
 Module by David Hudson and licensed for use under the [Gnu GPL license v3](https://opensource.org/license/gpl-3-0).
 
-This project is based on [Map Note Hover Display](https://gitlab.com/friendlylambda/map-note-hover-display) by [Friendly Lambda](https://gitlab.com/friendlylambda) and [Pin Cushion](https://github.com/p4535992/foundryvtt-pin-cushion) by [4535992](https://github.com/p4535992).
+This project is based on [Pin Cushion](https://github.com/p4535992/foundryvtt-pin-cushion) by [4535992](https://github.com/p4535992).
 
 ## FoundryVTT Modules and Other Resources
 
