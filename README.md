@@ -11,7 +11,12 @@ The `Token Note Hover` module displays the note of a hovered-over token.
 
 *The module currently only supports Ironsworn and Ironsworn: Starforged.*
 
-It provides some basic customization options in the settings, such as a light theme and a dark theme.
+It provides some customization options in the settings:
+
+* Tooltip themes
+* Placement, display delay, display window size and font size customization
+* Show/hide note images for tooltip display
+* Can require minimum ownership level on notes for display
 
 All settings, except for `token ownership required` are client-side only so each player must enable the features they need.
 
@@ -58,3 +63,4 @@ Please check out my other modules and resources for Ironsworn and Ironsworn: Sta
 * [I'll Be Home for Life Day! - Star Wars Life Day Oracle](https://jendave.itch.io/ill-be-home-for-life-day)
 * [Critical Success Oracles](https://jendave.itch.io/critical-success-oracles)
 * [I Owe My Soul to the Corporate Planet - Company Planet Oracles](https://jendave.itch.io/i-owe-my-soul-to-the-corporate-planet)
+* [Creature Rank Generator](https://jendave.itch.io/creature-rank-generator)
