@@ -202,8 +202,24 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
 
     const width = this.object.w;
     const height = this.object.h;
-    let left = x;
-    let top = y;
+    // let left = x;
+    // let top = y;
+
+    // let left = x - (width / 2);
+    // let top = y - (height / 2);
+
+    let left = x - ((width / 2) * canvas.scene._viewPosition.scale);
+    let top = y - ((height / 2) * canvas.scene._viewPosition.scale);
+
+    console.log(`Width2: ${width} px`);
+    console.log(`Height2: ${height} px`);
+
+    console.log(`Scale: ${canvas.scene._viewPosition.scale}`);
+        console.log(`left: ${left}`);
+    console.log(`top: ${top}`);
+
+    console.log(`x: ${x} px`);
+    console.log(`y: ${y} px`);
 
     // console.log(`x: ${x}, y: ${y}, width: ${width}, height: ${height}`);
 
@@ -264,8 +280,8 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
         positionOffsetTop = 0;
     }
 
-    left += positionOffsetLeft;
-    top += positionOffsetTop;
+    // left += positionOffsetLeft;
+    // top += positionOffsetTop;
 
     const position = {
       height: `${height}px`,
@@ -302,8 +318,18 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
 
     const width = this.object.w;
     const height = this.object.h;
-    let left = x;
-    let top = y;
+
+    // let left = x - (width / 2);
+    // let top = y - (height / 2);
+
+    let left = x - ((width / 2) * canvas.scene._viewPosition.scale);
+    let top = y - ((height / 2) * canvas.scene._viewPosition.scale);
+
+    console.log(`left: ${left}`);
+    console.log(`top: ${top}`);
+
+    console.log(`x: ${x} px`);
+    console.log(`y: ${y} px`);
 
     let positionOffsetLeft = 0;
     let positionOffsetTop = 0;
@@ -362,8 +388,8 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
         positionOffsetTop = 0;
     }
 
-    left += positionOffsetLeft;
-    top += positionOffsetTop;
+    // left += positionOffsetLeft;
+    // top += positionOffsetTop;
 
     const position = {
       height: `${height}px`,
@@ -383,6 +409,17 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
       : 'token-note-hover-hud-tooltip-default';
 
     const contentTooltip = $(this.contentTooltip);
+
+    const element = document.getElementById('token-note-hover');
+    console.log(`Width: ${element.offsetWidth} px`);
+    console.log(`Height: ${element.offsetHeight} px`);
+
+    console.log(`Width2: ${width} px`);
+    console.log(`Height2: ${height} px`);
+
+    console.log(`Scale: ${canvas.scene._viewPosition.scale}`);
+
+    // canvas.scene._viewPosition.scale
 
     elementToTooltip.data('powertipjq', contentTooltip);
     elementToTooltip.powerTip({

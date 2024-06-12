@@ -33,6 +33,10 @@ Hooks.on('renderHeadsUpDisplay', (app, html, data) => {
 //   $.powerTip.reposition(canvas.hud.tokenNoteHover.element);
 // });
 
+Hooks.on("canvasPan", async function (canvas, position) {
+  console.log(`canvasPan position: ${position.x}, ${position.y}`);
+});
+
 /**
  * Hook on Note hover
  */
