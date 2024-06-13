@@ -47,10 +47,6 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
               async: true,
             });
           } else {
-            // const maxLength = game.settings.get(CONSTANTS.MODULE_ID, 'maxLength');
-            // const textContent = $(actor.system.notes).text();
-            // tempContent = textContent.length > maxLength ?
-            //     `${textContent.substr(0, maxLength)} ...` : textContent;
             tempContent = (await TextEditor.enrichHTML(actor.system.notes, {
               secrets: actorIsOwner,
               documents: true,
@@ -164,9 +160,6 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
       data.title = actor.name;
       data.body = content;
 
-      // this.fontSize = data.fontSize;
-      // this.maxWidth = data.maxWidth;
-
       data.fontSize = game.settings.get(CONSTANTS.MODULE_ID, 'fontSize');
       data.maxWidth = game.settings.get(CONSTANTS.MODULE_ID, 'maxWidth');
 
@@ -202,86 +195,9 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
 
     const width = this.object.w;
     const height = this.object.h;
-    // let left = x;
-    // let top = y;
 
-    // let left = x - (width / 2);
-    // let top = y - (height / 2);
-
-    let left = x - ((width / 2) * canvas.scene._viewPosition.scale);
-    let top = y - ((height / 2) * canvas.scene._viewPosition.scale);
-
-    console.log(`Width2: ${width} px`);
-    console.log(`Height2: ${height} px`);
-
-    console.log(`Scale: ${canvas.scene._viewPosition.scale}`);
-        console.log(`left: ${left}`);
-    console.log(`top: ${top}`);
-
-    console.log(`x: ${x} px`);
-    console.log(`y: ${y} px`);
-
-    // console.log(`x: ${x}, y: ${y}, width: ${width}, height: ${height}`);
-
-    let positionOffsetLeft = 0;
-    let positionOffsetTop = 0;
-
-    switch (game.settings.get(CONSTANTS.MODULE_ID, 'tooltipPlacement')) {
-      case 'nw-alt':
-        positionOffsetLeft = -(0.5 * width);
-        positionOffsetTop = -(0.5 * height);
-        break;
-      case 'nw':
-        positionOffsetLeft = -(0.5 * width);
-        positionOffsetTop = -(0.5 * height);
-        break;
-      case 'n':
-        positionOffsetLeft = -(width);
-        positionOffsetTop = -(0.5 * height);
-        break;
-      case 'ne':
-        positionOffsetLeft = -(1.5 * width);
-        positionOffsetTop = -(0.5 * height);
-        break;
-      case 'ne-alt':
-        positionOffsetLeft = -(1.5 * width);
-        positionOffsetTop = -(0.5 * height);
-        break;
-      case 'w':
-        positionOffsetLeft = -(0.5 * width);
-        positionOffsetTop = -(height);
-        break;
-      case 'e':
-        positionOffsetLeft = -(1.5 * width);
-        positionOffsetTop = -(height);
-        break;
-      case 'sw-alt':
-        positionOffsetLeft = -(0.5 * width);
-        positionOffsetTop = -(height);
-        break;
-      case 'sw':
-        positionOffsetLeft = -(0.5 * width);
-        positionOffsetTop = -(height);
-        break;
-      case 's':
-        positionOffsetLeft = -(width);
-        positionOffsetTop = -(height);
-        break;
-      case 'se':
-        positionOffsetLeft = -(1.5 * width);
-        positionOffsetTop = -(height);
-        break;
-      case 'se-alt':
-        positionOffsetLeft = -(1.5 * width);
-        positionOffsetTop = -(height);
-        break;
-      default:
-        positionOffsetLeft = 0;
-        positionOffsetTop = 0;
-    }
-
-    // left += positionOffsetLeft;
-    // top += positionOffsetTop;
+    const left = x - (width / 2);
+    const top = y - (height / 2);
 
     const position = {
       height: `${height}px`,
@@ -319,77 +235,8 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     const width = this.object.w;
     const height = this.object.h;
 
-    // let left = x - (width / 2);
-    // let top = y - (height / 2);
-
-    let left = x - ((width / 2) * canvas.scene._viewPosition.scale);
-    let top = y - ((height / 2) * canvas.scene._viewPosition.scale);
-
-    console.log(`left: ${left}`);
-    console.log(`top: ${top}`);
-
-    console.log(`x: ${x} px`);
-    console.log(`y: ${y} px`);
-
-    let positionOffsetLeft = 0;
-    let positionOffsetTop = 0;
-
-    switch (game.settings.get(CONSTANTS.MODULE_ID, 'tooltipPlacement')) {
-      case 'nw-alt':
-        positionOffsetLeft = -(0.5 * width);
-        positionOffsetTop = -(0.5 * height);
-        break;
-      case 'nw':
-        positionOffsetLeft = -(0.5 * width);
-        positionOffsetTop = -(0.5 * height);
-        break;
-      case 'n':
-        positionOffsetLeft = -(width);
-        positionOffsetTop = -(0.5 * height);
-        break;
-      case 'ne':
-        positionOffsetLeft = -(1.5 * width);
-        positionOffsetTop = -(0.5 * height);
-        break;
-      case 'ne-alt':
-        positionOffsetLeft = -(1.5 * width);
-        positionOffsetTop = -(0.5 * height);
-        break;
-      case 'w':
-        positionOffsetLeft = -(0.5 * width);
-        positionOffsetTop = -(height);
-        break;
-      case 'e':
-        positionOffsetLeft = -(1.5 * width);
-        positionOffsetTop = -(height);
-        break;
-      case 'sw-alt':
-        positionOffsetLeft = -(0.5 * width);
-        positionOffsetTop = -(height);
-        break;
-      case 'sw':
-        positionOffsetLeft = -(0.5 * width);
-        positionOffsetTop = -(height);
-        break;
-      case 's':
-        positionOffsetLeft = -(width);
-        positionOffsetTop = -(height);
-        break;
-      case 'se':
-        positionOffsetLeft = -(1.5 * width);
-        positionOffsetTop = -(height);
-        break;
-      case 'se-alt':
-        positionOffsetLeft = -(1.5 * width);
-        positionOffsetTop = -(height);
-        break;
-      default:
-        positionOffsetLeft = 0;
-        positionOffsetTop = 0;
-    }
-
-    // left += positionOffsetLeft;
-    // top += positionOffsetTop;
+    const left = x - (width / 2);
+    const top = y - (height / 2);
 
     const position = {
       height: `${height}px`,
@@ -409,17 +256,6 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
       : 'token-note-hover-hud-tooltip-default';
 
     const contentTooltip = $(this.contentTooltip);
-
-    const element = document.getElementById('token-note-hover');
-    console.log(`Width: ${element.offsetWidth} px`);
-    console.log(`Height: ${element.offsetHeight} px`);
-
-    console.log(`Width2: ${width} px`);
-    console.log(`Height2: ${height} px`);
-
-    console.log(`Scale: ${canvas.scene._viewPosition.scale}`);
-
-    // canvas.scene._viewPosition.scale
 
     elementToTooltip.data('powertipjq', contentTooltip);
     elementToTooltip.powerTip({

@@ -118,30 +118,12 @@ export default function registerSettings() {
     config: true,
   });
 
-  // game.settings.register(CONSTANTS.MODULE_ID, 'maxLength', {
-  //   name: `${CONSTANTS.MODULE_ID}.Settings.MaxLengthN`,
-  //   hint: `${CONSTANTS.MODULE_ID}.Settings.MaxLengthH`,
-  //   scope: 'client',
-  //   type: Number,
-  //   default: 500,
-  //   config: true,
-  // });
-
   game.settings.register(CONSTANTS.MODULE_ID, 'useMousePositionForCoordinates', {
     name: `${CONSTANTS.MODULE_ID}.Settings.UseMousePositionForCoordinates.Name`,
     hint: `${CONSTANTS.MODULE_ID}.Settings.UseMousePositionForCoordinates.Hint`,
     scope: 'client',
     config: true,
-    default: true,
+    default: false,
     type: Boolean,
   });
-
-  // game.settings.register(CONSTANTS.MODULE_ID, 'debug', {
-  //   name: `${CONSTANTS.MODULE_ID}.Settings.Debug.Name`,
-  //   hint: `${CONSTANTS.MODULE_ID}.Settings.Debug.Hint`,
-  //   scope: 'world',
-  //   config: true,
-  //   type: Boolean,
-  //   default: false,
-  // });
 }

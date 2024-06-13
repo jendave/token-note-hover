@@ -1,6 +1,3 @@
-/* ------------------------------------ */
-/* Other Hooks                          */
-/* ------------------------------------ */
 import CONSTANTS from './scripts/constants';
 import registerSettings from './scripts/settings';
 import TokenNoteHoverHUD from './scripts/TokenNoteHoverHUD';
@@ -16,25 +13,12 @@ Hooks.once('init', () => {
   registerSettings();
 });
 
-/* ------------------------------------ */
-/* When ready                           */
-/* ------------------------------------ */
-
 /**
  * Hook on render HUD
  */
 Hooks.on('renderHeadsUpDisplay', (app, html, data) => {
   html.append('<template id="token-note-hover"></template>');
   canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
-});
-
-// Hooks.on('canvasPan', () => {
-//   //canvas.hud.tokenNoteHover.clear();
-//   $.powerTip.reposition(canvas.hud.tokenNoteHover.element);
-// });
-
-Hooks.on("canvasPan", async function (canvas, position) {
-  console.log(`canvasPan position: ${position.x}, ${position.y}`);
 });
 
 /**

@@ -63,17 +63,9 @@
         "Name": "Maximum Width",
         "Hint": "The maximum width in px the token note display can grow to before it will force wrapping."
       },
-      "MaxLength": {
-        "Name": "Preview Maximum Length",
-        "Hint": "Number characters the token Nnote tootltip will show."
-      },
       "UseMousePositionForCoordinates": {
         "Name": "Use Mouse Position for Tooltip Coordinates",
         "Hint": "Use mouse position to display the tooltip"
-      },
-      "Debug": {
-        "Name": "Enable debugging",
-        "Hint": "Prints debug messages to the console"
       }
     }
   }
