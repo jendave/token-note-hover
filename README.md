@@ -1,4 +1,4 @@
-# Token Note Hover for Ironsworn & Starforged
+# Token Note Hover
 
 ![GitHub all releases](https://img.shields.io/github/downloads/jendave/token-note-hover/total)
 [![Latest Version](https://img.shields.io/github/v/release/jendave/token-note-hover?display_name=tag&sort=semver&label=Latest%20Version)](https://github.com/jendave/stoken-note-hover/releases/latest)
@@ -7,13 +7,15 @@
 
 ## Features and Notes
 
-The `Token Note Hover` module displays the note of a hovered-over token.
+The `Token Note Hover` module displays the note of a hovered-over token. Links, images and scrolling in the tooltip are supported.
 
-*The module currently only supports Ironsworn and Ironsworn: Starforged.*
+The note will note display if the token is being dragged.
+
+*The module currently only supports [D&D 5E](https://foundryvtt.com/packages/dnd5e) and [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn).*
 
 It provides some customization options in the settings:
 
-* Tooltip themes
+* Tooltip themes (Ironsworn/Starforged only)
 * Placement, display delay, display window size and font size customization
 * Show/hide note images for tooltip display
 * Can require minimum ownership level on notes for display
@@ -23,6 +25,7 @@ All settings, except for `token ownership required` are client-side only so each
 ## Contact
 
 * [Ironsworn/Starforged Discord Server - FoundryVTT Channel](https://discord.com/channels/437120373436186625/867434336201605160)
+* [FoundryVTT Discord Server - Module Discussion Channel](https://discord.com/channels/170995199584108546/513918036919713802)
 * [GitHub Repository](https://github.com/jendave/token-note-hover)
 
 ## Module Installation
@@ -34,6 +37,8 @@ Or use this URL and click on `Install`:
 ```bash
 https://github.com/jendave/token-note-hover/releases/latest/download/module.json
 ```
+
+Installing the [Zoom/Pan Options](https://foundryvtt.com/packages/zoom-pan-options) module is highly recommended for properly zooming in on a token.
 
 ## Screenshot
 

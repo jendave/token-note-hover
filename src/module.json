@@ -4,7 +4,7 @@
   "description": "Displays the token note in a tooltip when hovered over.",
   "version": "#{VERSION}#",
   "compatibility": {
-    "minimum": 11,
+    "minimum": 12,
     "verified": 12
   },
   "authors": [
@@ -58,8 +58,17 @@
         "type": "system",
         "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
         "compatibility": {
-          "minimum": "1.22.7",
-          "verified": "1.22"
+          "minimum": "1.23.4",
+          "verified": "1.23"
+        }
+      },
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "manifest": "https://github.com/foundryvtt/dnd5e/releases/download/release-3.2.1/system.json",
+        "compatibility": {
+          "minimum": "3.2.1",
+          "verified": "3.2"
         }
       }
     ],

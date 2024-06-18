@@ -35,41 +35,12 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     let tempContent = '';
     let actorIsOwner = true;
     const displayImages = game.settings.get(CONSTANTS.MODULE_ID, 'displayImages');
-    if (actor) {
-      actorIsOwner = actor.isOwner ?? true;
+    if (game.data.system.id === 'foundry-ironsworn') {
+      if (actor) {
+        actorIsOwner = actor.isOwner ?? true;
 
-      switch (actor.type) {
-        case 'starship':
-          if (displayImages) {
-            tempContent = await TextEditor.enrichHTML(actor.system.notes, {
-              secrets: actorIsOwner,
-              documents: true,
-              async: true,
-            });
-          } else {
-            tempContent = (await TextEditor.enrichHTML(actor.system.notes, {
-              secrets: actorIsOwner,
-              documents: true,
-              async: true,
-            })).replaceAll(/<img.*>/g, '');
-          }
-          break;
-        case 'character':
-          if (actor.sheet?.constructor.name === 'IronswornCharacterSheetV2') {
-            if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.biography, {
-                secrets: actorIsOwner,
-                documents: true,
-                async: true,
-              });
-            } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.biography, {
-                secrets: actorIsOwner,
-                documents: true,
-                async: true,
-              })).replaceAll(/<img.*>/g, '');
-            }
-          } else if (actor.sheet?.constructor.name === 'StarforgedCharacterSheet') {
+        switch (actor.type) {
+          case 'starship':
             if (displayImages) {
               tempContent = await TextEditor.enrichHTML(actor.system.notes, {
                 secrets: actorIsOwner,
@@ -83,76 +54,161 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
                 async: true,
               })).replaceAll(/<img.*>/g, '');
             }
-          }
-          break;
-        case 'foe':
-          if (displayImages) {
-            tempContent = await TextEditor.enrichHTML(
-              Array.from(actor.items.values()).map((c) => c.system.description),
-              {
+            break;
+          case 'character':
+            if (actor.sheet?.constructor.name === 'IronswornCharacterSheetV2') {
+              if (displayImages) {
+                tempContent = await TextEditor.enrichHTML(actor.system.biography, {
+                  secrets: actorIsOwner,
+                  documents: true,
+                  async: true,
+                });
+              } else {
+                tempContent = (await TextEditor.enrichHTML(actor.system.biography, {
+                  secrets: actorIsOwner,
+                  documents: true,
+                  async: true,
+                })).replaceAll(/<img.*>/g, '');
+              }
+            } else if (actor.sheet?.constructor.name === 'StarforgedCharacterSheet') {
+              if (displayImages) {
+                tempContent = await TextEditor.enrichHTML(actor.system.notes, {
+                  secrets: actorIsOwner,
+                  documents: true,
+                  async: true,
+                });
+              } else {
+                tempContent = (await TextEditor.enrichHTML(actor.system.notes, {
+                  secrets: actorIsOwner,
+                  documents: true,
+                  async: true,
+                })).replaceAll(/<img.*>/g, '');
+              }
+            }
+            break;
+          case 'foe':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(
+                Array.from(actor.items.values()).map((c) => c.system.description),
+                {
+                  secrets: actorIsOwner,
+                  documents: true,
+                  async: true,
+                },
+              );
+            } else {
+              tempContent = (await TextEditor.enrichHTML(
+                Array.from(actor.items.values()).map((c) => c.system.description),
+                {
+                  secrets: actorIsOwner,
+                  documents: true,
+                  async: true,
+                },
+              )).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          case 'shared':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(actor.system.biography, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
-              },
-            );
-          } else {
-            tempContent = (await TextEditor.enrichHTML(
-              Array.from(actor.items.values()).map((c) => c.system.description),
-              {
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(actor.system.biography, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
-              },
-            )).replaceAll(/<img.*>/g, '');
-          }
-          break;
-        case 'shared':
-          if (displayImages) {
-            tempContent = await TextEditor.enrichHTML(actor.system.biography, {
-              secrets: actorIsOwner,
-              documents: true,
-              async: true,
-            });
-          } else {
-            tempContent = (await TextEditor.enrichHTML(actor.system.biography, {
-              secrets: actorIsOwner,
-              documents: true,
-              async: true,
-            })).replaceAll(/<img.*>/g, '');
-          }
-          break;
-        case 'site':
-          if (displayImages) {
-            tempContent = await TextEditor.enrichHTML(actor.system.description, {
-              secrets: actorIsOwner,
-              documents: true,
-              async: true,
-            });
-          } else {
-            tempContent = (await TextEditor.enrichHTML(actor.system.description, {
-              secrets: actorIsOwner,
-              documents: true,
-              async: true,
-            })).replaceAll(/<img.*>/g, '');
-          }
-          break;
-        case 'location':
-          if (displayImages) {
-            tempContent = await TextEditor.enrichHTML(actor.system.description, {
-              secrets: actorIsOwner,
-              documents: true,
-              async: true,
-            });
-          } else {
-            tempContent = (await TextEditor.enrichHTML(actor.system.description, {
-              secrets: actorIsOwner,
-              documents: true,
-              async: true,
-            })).replaceAll(/<img.*>/g, '');
-          }
-          break;
-        default:
-          tempContent = null;
+              })).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          case 'site':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(actor.system.description, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(actor.system.description, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              })).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          case 'location':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(actor.system.description, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(actor.system.description, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              })).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          default:
+            tempContent = null;
+        }
+      }
+    } else if (game.data.system.id === 'dnd5e') {
+      if (actor) {
+        actorIsOwner = actor.isOwner ?? true;
+
+        switch (actor.type) {
+          case 'vehicle':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(actor.system.details.biography.value, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(actor.system.details.biography.value, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              })).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          case 'character':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(actor.system.details.biography.value, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(actor.system.details.biography.value, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              })).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          case 'npc':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(actor.system.details.biography.value, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(actor.system.details.biography.value, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              })).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          default:
+            tempContent = null;
+        }
       }
 
       const content = tempContent;
@@ -249,7 +305,11 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     let tooltipColor = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipColor');
 
     if (tooltipColor === 'system') {
-      tooltipColor = game.settings.get('foundry-ironsworn', 'color-scheme');
+      if (game.data.system.id === 'foundry-ironsworn') {
+        tooltipColor = game.settings.get('foundry-ironsworn', 'color-scheme');
+      } else if (game.data.system.id === 'dnd5e') {
+        tooltipColor = 'default';
+      }
     }
     const tooltipPopupClass = tooltipColor
       ? `token-note-hover-hud-tooltip-${tooltipColor}`

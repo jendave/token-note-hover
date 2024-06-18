@@ -4,6 +4,7 @@
 
 * New Features and Changes
   * Complete re-write using [Pin Cushion Module](https://github.com/p4535992/foundryvtt-pin-cushion) as a foundation. As a result, the LICENSE has been changed to the GPLv3.
+  * Supports [D&D 5E](https://foundryvtt.com/packages/dnd5e) and [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn).
   * Interact with tooltip - Links, scrolling
   * Adjust placement of tooltips relative to token
   * Tooltip themes
