@@ -210,21 +210,21 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             tempContent = null;
         }
       }
+    }
 
-      const content = tempContent;
+    const content = tempContent;
 
-      data.title = actor.name;
-      data.body = content;
+    data.title = actor.name;
+    data.body = content;
 
-      data.fontSize = game.settings.get(CONSTANTS.MODULE_ID, 'fontSize');
-      data.maxWidth = game.settings.get(CONSTANTS.MODULE_ID, 'maxWidth');
+    data.fontSize = game.settings.get(CONSTANTS.MODULE_ID, 'fontSize');
+    data.maxWidth = game.settings.get(CONSTANTS.MODULE_ID, 'maxWidth');
 
-      this.contentTooltip = await TextEditor.enrichHTML(`
+    this.contentTooltip = await TextEditor.enrichHTML(`
             <div id="container" class="token-note-hover-hud-container" style="font-size:${data.fontSize}; max-width:${data.maxWidth}px">
                 <h3>${data.title}</h3>
                 ${data.body}
             </div>`);
-    }
     return data;
   }
 
