@@ -1,0 +1,85 @@
+{
+  "id": "token-note-hover",
+  "title": "Token Note Hover",
+  "description": "Displays the token note in a tooltip when hovered over.",
+  "version": "#{VERSION}#",
+  "compatibility": {
+    "minimum": 12,
+    "verified": 12
+  },
+  "authors": [
+    {
+      "name": "David Y. Hudson",
+      "discord": "jendave",
+      "url": "https://jendave.itch.io/",
+      "github": "jendave"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    }
+  ],
+  "esmodules": ["module.js"],
+  "type": "module",
+  "socket": true,
+  "includes": ["./assets/**", "./languages/**", "./scripts/**", "./styles/**", "./templates/**", "./module.json"],
+  "media": [],
+  "scripts": ["scripts/libs/jquery.powertip.min.js"],
+  "styles": [
+    "styles/token-note-hover.css",
+    "styles/jquery.powertip.css",
+    "styles/jquery.powertip-blue.css",
+    "styles/jquery.powertip-dark.css",
+    "styles/jquery.powertip-default.css",
+    "styles/jquery.powertip-green.css",
+    "styles/jquery.powertip-light.css",
+    "styles/jquery.powertip-orange.css",
+    "styles/jquery.powertip-purple.css",
+    "styles/jquery.powertip-red.css",
+    "styles/jquery.powertip-yellow.css",
+    "styles/jquery.powertip-phosphor.css",
+    "styles/jquery.powertip-zinc.css"
+  ],
+  "manifest": "#{MANIFEST}#",
+  "url": "#{URL}#",
+  "download": "#{DOWNLOAD}#",
+  "license": "https://raw.githubusercontent.com/jendave/token-note-hover/main/LICENSE",
+  "changelog": "https://raw.githubusercontent.com/jendave/token-note-hover/main/CHANGELOG.md",
+  "readme": "https://raw.githubusercontent.com/jendave/token-note-hover/main/README.md",
+  "bugs": "https://github.com/jendave/token-note-hover/issues",
+  "allowBugReporter": true,
+  "relationships": {
+    "systems": [
+      {
+        "id": "foundry-ironsworn",
+        "type": "system",
+        "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "1.23.4",
+          "verified": "1.23"
+        }
+      },
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "manifest": "https://github.com/foundryvtt/dnd5e/releases/download/release-3.2.1/system.json",
+        "compatibility": {
+          "minimum": "3.2.1",
+          "verified": "3.2"
+        }
+      }
+    ],
+    "requires": [],
+    "conflicts": [],
+    "recommends": [
+      {
+        "id": "zoom-pan-options",
+        "type": "module",
+        "reason": "Tooltip placement is much better with this module installed."
+      }
+    ]
+  }
+}

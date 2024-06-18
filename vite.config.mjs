@@ -4,14 +4,22 @@ import resolve       from '@rollup/plugin-node-resolve'; // This resolves NPM mo
 import preprocess    from 'svelte-preprocess';
 import {
    postcssConfig,
-   terserConfig }    from '@typhonjs-fvtt/runtime/rollup';
+   terserConfig 
+}    from '@typhonjs-fvtt/runtime/rollup';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
+import cleanPlugin from 'vite-plugin-clean';
+import { normalizePath } from 'vite';
+import path from 'path';
+import { run } from 'vite-plugin-run'
 
 // ATTENTION!
 // Please modify the below variables: s_PACKAGE_ID and s_SVELTE_HASH_ID appropriately.
 
 // For convenience, you just need to modify the package ID below as it is used to fill in default proxy settings for
 // the dev server.
+const s_MODULE_ID = "token-note-hover";
 const s_PACKAGE_ID = 'modules/token-note-hover';
+const s_ENTRY_JAVASCRIPT = "module.js";
 
 // A short additional string to add to Svelte CSS hash values to make yours unique. This reduces the amount of
 // duplicated framework CSS overlap between many TRL packages enabled on Foundry VTT at the same time. 'tnh' is chosen
@@ -20,6 +28,11 @@ const s_SVELTE_HASH_ID = 'tnh';
 
 const s_COMPRESS = false; // Set to true to compress the module bundle.
 const s_SOURCEMAPS = true; // Generate sourcemaps for the bundle (recommended).
+
+// EXPERIMENTAL: Set to true to enable linking against the TyphonJS Runtime Library module.
+// You must add a Foundry module dependency on the `typhonjs` Foundry package or manually install it in Foundry from:
+// https://github.com/typhonjs-fvtt-lib/typhonjs/releases/latest/download/module.json
+const s_TYPHONJS_MODULE_LIB = false;
 
 // Used in bundling particularly during development. If you npm-link packages to your project add them here.
 const s_RESOLVE_CONFIG = {
@@ -39,7 +52,7 @@ export default () =>
       resolve: { conditions: ['import', 'browser'] },
 
       esbuild: {
-         target: ['es2022']
+         target: ['es2022', 'chrome100'],
       },
 
       css: {
@@ -61,7 +74,7 @@ export default () =>
          open: '/game',
          proxy: {
             // Serves static files from main Foundry server.
-            [`^(/${s_PACKAGE_ID}/(assets|lang|packs|style.css))`]: 'http://localhost:30000',
+            [`^(/${s_PACKAGE_ID}/(images|fonts|assets|lang|languages|packs|styles|templates|style.css))`]: 'http://localhost:30000',
 
             // All other paths besides package ID path are served from main Foundry server.
             [`^(?!/${s_PACKAGE_ID}/)`]: 'http://localhost:30000',
@@ -72,7 +85,7 @@ export default () =>
       },
 
       build: {
-         outDir: __dirname,
+         outDir: normalizePath( path.resolve(__dirname, `./dist/${s_MODULE_ID}`)),
          emptyOutDir: false,
          sourcemap: s_SOURCEMAPS,
          brotliSize: true,
@@ -80,9 +93,9 @@ export default () =>
          target: ['es2022'],
          terserOptions: s_COMPRESS ? { ...terserConfig(), ecma: 2022 } : void 0,
          lib: {
-            entry: './index.js',
+            entry: "./" + s_ENTRY_JAVASCRIPT,
             formats: ['es'],
-            fileName: 'index'
+            fileName: 'module'
          }
       },
 
@@ -94,6 +107,56 @@ export default () =>
       },
 
       plugins: [
+         run([
+            {
+              name: 'run sass',
+              run: ['sass',  `src/styles:dist/${s_MODULE_ID}/styles`]
+            },
+          ]),
+          viteStaticCopy({
+            targets: [
+              {
+                src: normalizePath(path.resolve(__dirname, './src/assets')) + '/[!.]*', // 1️
+                dest: normalizePath(path.resolve(__dirname, `./dist/${s_MODULE_ID}/assets`)), // 2️
+              },
+              {
+                src: normalizePath(path.resolve(__dirname, './src/images')) + '/[!.]*', // 1️
+                dest: normalizePath(path.resolve(__dirname, `./dist/${s_MODULE_ID}/images`)), // 2️
+              },
+              {
+                src: normalizePath(path.resolve(__dirname, './src/icons')) + '/[!.]*', // 1️
+                dest: normalizePath(path.resolve(__dirname, `./dist/${s_MODULE_ID}/icons`)), // 2️
+              },
+              {
+                src: normalizePath(path.resolve(__dirname, './src/templates')) + '/[!.]*', // 1️
+                dest: normalizePath(path.resolve(__dirname, `./dist/${s_MODULE_ID}/templates`)), // 2️
+              },
+              {
+                src: normalizePath(path.resolve(__dirname, './src/lang')) + '/[!.]*',
+                dest: normalizePath(path.resolve(__dirname, `./dist/${s_MODULE_ID}/lang`)),
+              },
+              {
+                src: normalizePath(path.resolve(__dirname, './src/languages')) + '/[!.]*',
+                dest: normalizePath(path.resolve(__dirname, `./dist/${s_MODULE_ID}/languages`)),
+              },
+              {
+                src: normalizePath(path.resolve(__dirname, './src/styles')) + '/**/*.css',
+                dest: normalizePath(path.resolve(__dirname, `./dist/${s_MODULE_ID}/styles`)),
+              },
+              {
+                src: normalizePath(path.resolve(__dirname, './src/packs')) + '/[!.^(_?.*)]*', // + '/[!.^(_source)]*',
+                dest: normalizePath(path.resolve(__dirname, `./dist/${s_MODULE_ID}/packs`)),
+              },
+              {
+                src: normalizePath(path.resolve(__dirname, './src/module.json')),
+                dest: normalizePath(path.resolve(__dirname, `./dist/${s_MODULE_ID}/`)),
+              },
+                {
+                src: normalizePath(path.resolve(__dirname, './src/scripts/libs')) + '/[!.]*',
+                dest: normalizePath(path.resolve(__dirname, `./dist/${s_MODULE_ID}/scripts/libs`)),
+              },
+            ],
+          }),
          svelte({
             compilerOptions: {
                // Provides a custom hash adding the string defined in `s_SVELTE_HASH_ID` to scoped Svelte styles;
@@ -105,7 +168,12 @@ export default () =>
             preprocess: preprocess()
          }),
 
-         resolve(s_RESOLVE_CONFIG)  // Necessary when bundling npm-linked packages.
+         resolve(s_RESOLVE_CONFIG),  // Necessary when bundling npm-linked packages.
+
+         // When s_TYPHONJS_MODULE_LIB is true transpile against the Foundry module version of TRL.
+         s_TYPHONJS_MODULE_LIB && typhonjsRuntime(),
+   
+         cleanPlugin()
       ]
    };
 };

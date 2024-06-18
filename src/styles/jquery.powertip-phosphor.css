@@ -1,0 +1,19 @@
+/**
+ * PowerTip
+ * https://stevenbenner.github.io/jquery-powertip/
+ *
+ * Stylesheet for the monochrome (default) theme.
+ */
+.token-note-hover-hud-tooltip-phosphor {
+  cursor: default;
+  background-color: #333;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--ironsworn-color-light);
+  border-radius: 6px;
+  color: var(--ironsworn-color-light);
+  display: none;
+  padding: 10px;
+  position: absolute;
+  /* white-space: nowrap; */
+  z-index: 2147483647;
+}
