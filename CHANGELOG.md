@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.0.0](https://github.com/jendave/token-note-hover/commits/main) (2024-06-xx)
+## [2.0.0](https://github.com/jendave/token-note-hover/commits/main) (2024-06-18)
 
 * New Features and Changes
   * Complete re-write using [Pin Cushion Module](https://github.com/p4535992/foundryvtt-pin-cushion) as a foundation. As a result, the LICENSE has been changed to the GPLv3.
