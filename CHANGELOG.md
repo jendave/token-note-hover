@@ -1,15 +1,15 @@
 # Changelog
 
-## [2.0.0](https://github.com/jendave/token-note-hover/commits/main) (2024-xx-xx)
+## [2.0.0](https://github.com/jendave/token-note-hover/commits/main) (2024-06-xx)
 
 * New Features and Changes
   * Complete re-write using [Pin Cushion Module](https://github.com/p4535992/foundryvtt-pin-cushion) as a foundation. As a result, the LICENSE has been changed to the GPLv3.
   * Supports [D&D 5E](https://foundryvtt.com/packages/dnd5e) and [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn).
-  * Interact with tooltip - Links, scrolling
+  * Interaction with the tooltip - clicking on links, scrolling text
   * Adjust placement of tooltips relative to token
   * Tooltip themes
   * Hide images for tooltip display
-  * Require ownership level on notes to display
+  * Require token ownership level to display tooltips
 
 ## [1.0.3](https://github.com/jendave/token-note-hover/commits/main) (2024-03-24)
 

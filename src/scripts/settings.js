@@ -114,7 +114,7 @@ export default function registerSettings() {
     hint: `${CONSTANTS.MODULE_ID}.Settings.MaxWidth.Hint`,
     scope: 'client',
     type: Number,
-    default: 500,
+    default: 800,
     config: true,
   });
 

@@ -7,20 +7,20 @@
 
 ## Features and Notes
 
-The `Token Note Hover` module displays the note of a hovered-over token. Links, images and scrolling in the tooltip are supported.
+The `Token Note Hover` module displays the note of a hovered-over token in a tooltip. Links, images and scrolling in the tooltip are supported.
 
-The note will note display if the token is being dragged.
+The tooltip will not display while the token is being dragged.
 
 *The module currently only supports [D&D 5E](https://foundryvtt.com/packages/dnd5e) and [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn).*
 
-It provides some customization options in the settings:
+The module provides some customization options in the settings:
 
 * Tooltip themes (Ironsworn/Starforged only)
 * Placement, display delay, display window size and font size customization
 * Show/hide note images for tooltip display
-* Can require minimum ownership level on notes for display
+* Can require minimum token ownership level on notes for display
 
-All settings, except for `token ownership required` are client-side only so each player must enable the features they need.
+All settings, except for `token ownership required` are client-side only so each player can enable the features they need.
 
 ## Contact
 
