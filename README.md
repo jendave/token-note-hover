@@ -48,11 +48,11 @@ Installing the [Zoom/Pan Options](https://foundryvtt.com/packages/zoom-pan-optio
 
 ### D&D 5E
 
-![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dnd5e.png?raw=true)
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dnd5e.jpg?raw=true)
 
 ### Pathfinder 2e
 
-![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_pf2e.png?raw=true)
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_pf2e.jpg?raw=true)
 
 ## Credits
 
