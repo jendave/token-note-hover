@@ -72,7 +72,7 @@ Please check out my other modules and resources for Ironsworn and Ironsworn: Sta
 * [Augmented Reality Cyberpunk City Kit](https://foundryvtt.com/packages/augmented-reality-foundry)
 * [Token Note Hover](https://github.com/jendave/token-note-hover)
 
-### [Itch.io](itch.io) Resources
+### [Itch.io](https://itch.io) Resources
 
 * [The City on the Breeze - Cyberpunk-inspired Oracle arrays](https://jendave.itch.io/the-city-on-the-breeze)
 * [I'll Be Home for Life Day! - Star Wars Life Day Oracle](https://jendave.itch.io/ill-be-home-for-life-day)
