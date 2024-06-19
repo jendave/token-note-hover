@@ -210,6 +210,135 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             tempContent = null;
         }
       }
+    } else if (game.data.system.id === 'pf2e') {
+      if (actor) {
+        actorIsOwner = actor.isOwner ?? true;
+
+        switch (actor.type) {
+          case 'vehicle':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(actor.system.details.description, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(actor.system.details.description, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              })).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          case 'character':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(actor.system.details.biography.appearance, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(actor.system.details.biography.appearance, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              })).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          case 'npc':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(actor.system.details.publicNotes, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(actor.system.details.publicNotes, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              })).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          case 'loot':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(actor.system.details.description, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(actor.system.details.description, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              })).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          case 'hazard':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(actor.system.details.description, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(actor.system.details.description, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              })).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          case 'army':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(actor.system.details.description, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(actor.system.details.description, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              })).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          case 'familiar':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(actor.system.details.creature.value, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(actor.system.details.creature.value, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              })).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          case 'party':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(actor.system.details.description, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(actor.system.details.description, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              })).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          default:
+            tempContent = null;
+        }
+      }
     }
 
     const content = tempContent;
@@ -307,7 +436,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     if (tooltipColor === 'system') {
       if (game.data.system.id === 'foundry-ironsworn') {
         tooltipColor = game.settings.get('foundry-ironsworn', 'color-scheme');
-      } else if (game.data.system.id === 'dnd5e') {
+      } else {
         tooltipColor = 'default';
       }
     }

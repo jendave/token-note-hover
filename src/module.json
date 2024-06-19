@@ -70,6 +70,15 @@
           "minimum": "3.2.1",
           "verified": "3.2"
         }
+      },
+      {
+        "id": "pf2e",
+        "type": "system",
+        "manifest": "https://github.com/foundryvtt/pf2e/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "6.0.3",
+          "verified": "6.0"
+        }
       }
     ],
     "requires": [],
