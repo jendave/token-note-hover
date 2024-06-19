@@ -56,7 +56,7 @@ Installing the [Zoom/Pan Options](https://foundryvtt.com/packages/zoom-pan-optio
 
 ## Credits
 
-Module by David Hudson and licensed for use under the [Gnu GPL license v3](https://opensource.org/license/gpl-3-0).
+Module by David Hudson and licensed for use under the [GNU GPL license v3](https://opensource.org/license/gpl-3-0).
 
 This project is based on [Pin Cushion](https://github.com/p4535992/foundryvtt-pin-cushion) by [4535992](https://github.com/p4535992).
 
