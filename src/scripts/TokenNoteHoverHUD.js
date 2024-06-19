@@ -20,7 +20,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
       classes: [...super.defaultOptions.classes, CONSTANTS.ELEMENT_ID],
       minimizable: false,
       resizable: false,
-      template: 'modules/token-note-hover/templates/token-note-preview.html',
+      template: 'modules/token-note-hover/templates/token-note.html',
     });
   }
 

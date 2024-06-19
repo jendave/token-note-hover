@@ -1,4 +1,3 @@
-
 import fs from 'fs';
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import logger from 'fancy-log';
@@ -118,7 +117,6 @@ function cleanPackEntry(data, { clearSourceId = true, ownership = 0 } = {}) {
   if (data.label) data.label = cleanString(data.label);
   if (data.name) data.name = cleanString(data.name);
 }
-
 
 /**
  * Removes invisible whitespace characters and normalizes single- and double-quotes.
@@ -269,7 +267,6 @@ async function extractPacks(packName, entryName) {
     });
   }
 }
-
 
 /**
  * Standardize name format.
