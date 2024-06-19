@@ -11,7 +11,7 @@ The `Token Note Hover` module displays the note of a hovered-over token in a too
 
 The tooltip will not display while the token is being dragged.
 
-*The module currently only supports [D&D 5E](https://foundryvtt.com/packages/dnd5e) and [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn).*
+*The module currently supports [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn), [D&D 5E](https://foundryvtt.com/packages/dnd5e) and [Pathfinder 2e](https://foundryvtt.com/packages/pf2e).*
 
 The module provides some customization options in the settings:
 
@@ -42,7 +42,17 @@ Installing the [Zoom/Pan Options](https://foundryvtt.com/packages/zoom-pan-optio
 
 ## Screenshot
 
-![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot.jpg?raw=true)
+### Ironsworn/Starforged
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_ironsworn.jpg?raw=true)
+
+### D&D 5E
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dnd5e.jpg?raw=true)
+
+### Pathfinder 2e
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_pf2e.jpg?raw=true)
 
 ## Credits
 

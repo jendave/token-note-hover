@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.0.1](https://github.com/jendave/token-note-hover/commits/main) (2024-06-19)
+
+* Support for [Pathfinder 2e](https://foundryvtt.com/packages/pf2e).
+
 ## [2.0.0](https://github.com/jendave/token-note-hover/commits/main) (2024-06-18)
 
 * New Features and Changes
