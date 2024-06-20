@@ -66,6 +66,10 @@
       "UseMousePositionForCoordinates": {
         "Name": "Use Mouse Position for Tooltip Coordinates",
         "Hint": "Use mouse position to display the tooltip"
+      },
+      "ShowTitle": {
+        "Name": "Show Title on Tooltip",
+        "Hint": "Show token title on tooltip"
       }
     }
   }

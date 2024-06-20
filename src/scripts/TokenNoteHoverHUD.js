@@ -349,11 +349,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     data.fontSize = game.settings.get(CONSTANTS.MODULE_ID, 'fontSize');
     data.maxWidth = game.settings.get(CONSTANTS.MODULE_ID, 'maxWidth');
 
+    const tooltipTitle = game.settings.get(CONSTANTS.MODULE_ID, 'showTitle') ? `<h3>${data.title}</h3>` : '';
+
     this.contentTooltip = await TextEditor.enrichHTML(`
-            <div id="container" class="token-note-hover-hud-container" style="font-size:${data.fontSize}; max-width:${data.maxWidth}px">
-                <h3>${data.title}</h3>
-                ${data.body}
-            </div>`);
+                <div id="container" class="token-note-hover-hud-container" style="font-size:${data.fontSize}; max-width:${data.maxWidth}px">
+                    ${tooltipTitle}
+                    ${data.body}
+                </div>`);
     return data;
   }
 

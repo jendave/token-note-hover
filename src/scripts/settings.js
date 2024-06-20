@@ -126,4 +126,13 @@ export default function registerSettings() {
     default: false,
     type: Boolean,
   });
+
+  game.settings.register(CONSTANTS.MODULE_ID, 'showTitle', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.ShowTitle.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.ShowTitle.Hint`,
+    scope: 'client',
+    config: true,
+    default: true,
+    type: Boolean,
+  });
 }
