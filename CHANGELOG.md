@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.0.2](https://github.com/jendave/token-note-hover/commits/main) (2024-06-20)
+
+* Added setting to enable token title on tooltip.
+
 ## [2.0.1](https://github.com/jendave/token-note-hover/commits/main) (2024-06-19)
 
 * Support for [Pathfinder 2e](https://foundryvtt.com/packages/pf2e).
