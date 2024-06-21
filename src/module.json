@@ -79,6 +79,15 @@
           "minimum": "6.0.3",
           "verified": "6.0"
         }
+      },
+      {
+        "id": "twodsix",
+        "type": "system",
+        "manifest": "https://github.com/xdy/twodsix-foundryvtt/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "5.1.0",
+          "verified": "5.1"
+        }
       }
     ],
     "requires": [],
@@ -87,7 +96,7 @@
       {
         "id": "zoom-pan-options",
         "type": "module",
-        "reason": "Tooltip placement is much better with this module installed."
+        "reason": "Install for improved tooltip placement while zooming."
       }
     ]
   }
