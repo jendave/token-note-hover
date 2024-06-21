@@ -23,9 +23,7 @@
     }
   ],
   "esmodules": ["module.js"],
-  "type": "module",
   "socket": true,
-  "includes": ["./assets/**", "./languages/**", "./scripts/**", "./styles/**", "./templates/**", "./module.json"],
   "media": [],
   "scripts": ["scripts/libs/jquery.powertip.min.js"],
   "styles": [
@@ -50,7 +48,6 @@
   "changelog": "https://raw.githubusercontent.com/jendave/token-note-hover/main/CHANGELOG.md",
   "readme": "https://raw.githubusercontent.com/jendave/token-note-hover/main/README.md",
   "bugs": "https://github.com/jendave/token-note-hover/issues",
-  "allowBugReporter": true,
   "relationships": {
     "systems": [
       {
@@ -79,6 +76,15 @@
           "minimum": "6.0.3",
           "verified": "6.0"
         }
+      },
+      {
+        "id": "twodsix",
+        "type": "system",
+        "manifest": "https://github.com/xdy/twodsix-foundryvtt/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "5.1.0",
+          "verified": "5.1"
+        }
       }
     ],
     "requires": [],
@@ -87,7 +93,7 @@
       {
         "id": "zoom-pan-options",
         "type": "module",
-        "reason": "Tooltip placement is much better with this module installed."
+        "reason": "Install for improved tooltip placement while zooming."
       }
     ]
   }

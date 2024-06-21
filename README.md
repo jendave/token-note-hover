@@ -11,14 +11,20 @@ The `Token Note Hover` module displays the note of a hovered-over token in a too
 
 The tooltip will not display while the token is being dragged.
 
-*The module currently supports [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn), [D&D 5E](https://foundryvtt.com/packages/dnd5e) and [Pathfinder 2e](https://foundryvtt.com/packages/pf2e).*
+### Supported Systems
 
-The module provides some customization options in the settings:
+* [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn)
+* [D&D 5E](https://foundryvtt.com/packages/dnd5e)
+* [Pathfinder 2e](https://foundryvtt.com/packages/pf2e)
+* [Twodsix - Cepheus & Traveller](https://foundryvtt.com/packages/twodsix)
+
+### Some customization options
 
 * Tooltip themes (Ironsworn/Starforged only)
 * Placement, display delay, display window size and font size customization
 * Show/hide note images for tooltip display
 * Can require minimum token ownership level on notes for display
+* Display token title in tooltip
 
 All settings, except for `token ownership required` are client-side only so each player can enable the features they need.
 
@@ -53,6 +59,10 @@ Installing the [Zoom/Pan Options](https://foundryvtt.com/packages/zoom-pan-optio
 ### Pathfinder 2e
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_pf2e.jpg?raw=true)
+
+### Twodsix - Cepheus & Traveller
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_twodsix.jpg?raw=true)
 
 ## Credits
 
