@@ -23,9 +23,7 @@
     }
   ],
   "esmodules": ["module.js"],
-  "type": "module",
   "socket": true,
-  "includes": ["./assets/**", "./languages/**", "./scripts/**", "./styles/**", "./templates/**", "./module.json"],
   "media": [],
   "scripts": ["scripts/libs/jquery.powertip.min.js"],
   "styles": [
@@ -50,7 +48,6 @@
   "changelog": "https://raw.githubusercontent.com/jendave/token-note-hover/main/CHANGELOG.md",
   "readme": "https://raw.githubusercontent.com/jendave/token-note-hover/main/README.md",
   "bugs": "https://github.com/jendave/token-note-hover/issues",
-  "allowBugReporter": true,
   "relationships": {
     "systems": [
       {
