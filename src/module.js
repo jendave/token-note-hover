@@ -29,11 +29,11 @@ Hooks.on('hoverToken', (note, hovered) => {
     const ownershipPermissionsRequired = game.settings.get(CONSTANTS.MODULE_ID, 'ownershipPermissionsRequired');
     const tooltipDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipDelay');
 
-    if (!hovered) {
-      setTimeout(() => {
-        return canvas.hud.tokenNoteHover.hide();
-      }, tooltipDelay);
-    }
+    // if (!hovered) {
+    //   setTimeout(() => {
+    //     return canvas.hud.tokenNoteHover.hide();
+    //   }, tooltipDelay);
+    // }
 
     if (hovered) {
       setTimeout(() => {
@@ -45,5 +45,20 @@ Hooks.on('hoverToken', (note, hovered) => {
       }, tooltipDelay);
     }
   }
+
+  const element = document.querySelector('#container.token-note-hover-hud-container');
+  console.log(element);
+
+  element.addEventListener('mouseover', onMouseOver);
+  element.addEventListener('mouseleave', onMouseLeave);
+
   return canvas.hud.tokenNoteHover.clear();
 });
+
+function onMouseOver(event) {
+  console.log('we are in!'); // event.target
+}
+
+function onMouseLeave(event) {
+  console.log('we are leaving!'); //
+}
