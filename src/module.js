@@ -29,6 +29,12 @@ Hooks.on('hoverToken', (note, hovered) => {
     const ownershipPermissionsRequired = game.settings.get(CONSTANTS.MODULE_ID, 'ownershipPermissionsRequired');
     const tooltipDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipDelay');
 
+    if (!hovered) {
+      setTimeout(() => {
+        return canvas.hud.tokenNoteHover.hide();
+      }, tooltipDelay);
+    }
+
     if (hovered) {
       setTimeout(() => {
         if (note.interactionState === 1

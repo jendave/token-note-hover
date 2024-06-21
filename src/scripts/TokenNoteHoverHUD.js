@@ -596,7 +596,25 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
       // (default: 100) Hover intent polling interval in milliseconds.
       intentPollInterval: 100,
     });
-
+    console.log(elementToTooltip);
+    // const elementquery = document.querySelector(this.element);
+    // if (elementquery.matches(':hover')) {
+    //   console.log('Mouse is over the element now.');
+    // }
     $.powerTip.show(elementToTooltip);
   }
 }
+
+TokenNoteHoverHUD.prototype.hide = function () {
+  let elementToTooltip = this.element;
+  if (!elementToTooltip.document) {
+    elementToTooltip = $(elementToTooltip);
+  }
+  // if (elementToTooltip) {
+  //   $.powerTip.hide();
+  // }
+   console.log(elementToTooltip);
+//   if (elementToTooltip.matches(':hover')) {
+//     console.log('Mouse is over the element now.');
+// }
+};
