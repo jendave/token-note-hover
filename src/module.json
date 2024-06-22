@@ -89,12 +89,6 @@
     ],
     "requires": [],
     "conflicts": [],
-    "recommends": [
-      {
-        "id": "zoom-pan-options",
-        "type": "module",
-        "reason": "Install for improved tooltip placement while zooming."
-      }
-    ]
+    "recommends": []
   }
 }
