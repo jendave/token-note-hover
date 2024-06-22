@@ -35,9 +35,13 @@
         "Name": "Tooltip Smart Placement ",
         "Hint": "Dynamic placement of the tooltips to stay inside the browser viewport."
       },
-      "TooltipDelay": {
-        "Name": "Tooltip Delay",
+      "TooltipOpenDelay": {
+        "Name": "Tooltip Open Delay",
         "Hint": "Length of delay before the token note tooltip appears (in milliseconds)."
+      },
+      "TooltipCloseDelay": {
+        "Name": "Tooltip Close Delay",
+        "Hint": "Length of delay before the token note tooltip closes (in milliseconds)."
       },
       "TooltipColor": {
         "Name": "Tooltip Theme",

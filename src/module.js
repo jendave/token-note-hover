@@ -2,25 +2,16 @@ import CONSTANTS from './scripts/constants';
 import registerSettings from './scripts/settings';
 import TokenNoteHoverHUD from './scripts/TokenNoteHoverHUD';
 
-// function onMouseOver(event) {
-//   console.log('we are in!'); // event.target
-// }
-
-// function onMouseLeave(event) {
-//   console.log('we are leaving!'); //
-// }
-
+// eslint-disable-next-line no-unused-vars
 function onMouseOver(event) {
-  // console.log(event.target);
-  canvas.hud.tokenNoteHover.hover = true;
-  //this.hover = true;
-  console.log(`isHovered module:  ${canvas.hud.tokenNoteHover.hover}`);
+  canvas.hud.tokenNoteHover.isHovered = true;
+  // console.log(`isHovered module:  ${canvas.hud.tokenNoteHover.hover}`);
 }
 
+// eslint-disable-next-line no-unused-vars
 function onMouseLeave(event) {
-  // console.log(event.target);
-  canvas.hud.tokenNoteHover.hover = false;
-  console.log(`isHovered module:  ${canvas.hud.tokenNoteHover.hover}`);
+  canvas.hud.tokenNoteHover.isHovered = false;
+  // console.log(`isHovered module:  ${canvas.hud.tokenNoteHover.hover}`);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -37,6 +28,7 @@ Hooks.once('init', () => {
 /**
  * Hook on render HUD
  */
+// eslint-disable-next-line no-unused-vars
 Hooks.on('renderHeadsUpDisplay', (app, html, data) => {
   html.append('<template id="token-note-hover"></template>');
   canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
@@ -48,11 +40,12 @@ Hooks.on('renderHeadsUpDisplay', (app, html, data) => {
 Hooks.on('hoverToken', (note, hovered) => {
   if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
     const ownershipPermissionsRequired = game.settings.get(CONSTANTS.MODULE_ID, 'ownershipPermissionsRequired');
-    const tooltipDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipDelay');
+    const tooltipOpenDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipOpenDelay');
+    const tooltipCloseDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipCloseDelay');
 
     if (!hovered) {
       if (!canvas.hud.tokenNoteHover.hover) {
-        setTimeout(() => canvas.hud.tokenNoteHover.hide(), tooltipDelay);
+        setTimeout(() => canvas.hud.tokenNoteHover.hide(), tooltipCloseDelay);
       }
     }
 
@@ -63,18 +56,14 @@ Hooks.on('hoverToken', (note, hovered) => {
             || note.actor.ownership.default === -1)) {
           canvas.hud.tokenNoteHover.bind(note);
         }
-      }, tooltipDelay);
+      }, tooltipOpenDelay);
     }
   }
 
   const element = document.querySelector('#container.token-note-hover-hud-container');
 
-  // if (element.matches(':hover')) {
-  //   console.log('Mouse is over the element now.');
-  // }
-
   if (element) {
-    console.log(element);
+    // console.log(`module element: ${element}`);
     element.addEventListener('mouseover', onMouseOver);
     element.addEventListener('mouseleave', onMouseLeave);
   }

@@ -9,15 +9,15 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
   constructor(note, options) {
     super(note, options);
     this.data = note;
-    this._hover = false;
+    this.hover = false;
   }
 
-  get hover() {
-    return this._hover;
+  get isHovered() {
+    return this.hover;
   }
 
-  set hover(value) {
-    this._hover = value;
+  set isHovered(value) {
+    this.hover = value;
   }
 
   /**
@@ -247,6 +247,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
                 async: true,
               });
             } else {
+              // eslint-disable-next-line max-len
               tempContent = (await TextEditor.enrichHTML(actor.system.details.biography.appearance, {
                 secrets: actorIsOwner,
                 documents: true,
@@ -510,6 +511,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
 
     let elementToTooltip = this.element;
     if (!elementToTooltip.document) {
+      // eslint-disable-next-line no-undef
       elementToTooltip = $(elementToTooltip);
     }
 
@@ -550,10 +552,14 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
         tooltipColor = 'default';
       }
     }
+
+    const tooltipCloseDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipCloseDelay');
+
     const tooltipPopupClass = tooltipColor
       ? `token-note-hover-hud-tooltip-${tooltipColor}`
       : 'token-note-hover-hud-tooltip-default';
 
+    // eslint-disable-next-line no-undef
     const contentTooltip = $(this.contentTooltip);
 
     elementToTooltip.data('powertipjq', contentTooltip);
@@ -600,43 +606,24 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
       // (cross the gap between the element and the tooltip div) for mouseOnToPopup tooltips.
       // And, second, it lets the cursor briefly leave the element and return without causing
       // the whole fade-out, intent test, and fade-in cycle to happen.
-      closeDelay: 100,
+      closeDelay: tooltipCloseDelay,
 
       // (default: 100) Hover intent polling interval in milliseconds.
       intentPollInterval: 100,
     });
 
+    // eslint-disable-next-line no-undef
     $.powerTip.show(elementToTooltip);
   }
 }
 
-// TokenNoteHoverHUD.prototype.mouse = function () {
-//   var element = document.querySelector('#container.token-note-hover-hud-container');
-//   console.log(element);
-
-//   if (element) {
-//     element.addEventListener('mouseover', onMouseOver);
-//     element.addEventListener('mouseleave', onMouseLeave);
-//   }
-// };
-
+// eslint-disable-next-line func-names
 TokenNoteHoverHUD.prototype.hide = function () {
-  var element = document.querySelector('#container.token-note-hover-hud-container');
-  console.log(element);
+  const element = document.querySelector('#container.token-note-hover-hud-container');
+  // console.log(`TokenNoteHoverHUD: ${element}`);
 
-  if (element && !this.hover) {
-    setTimeout(() => $.powerTip.hide(), 1000);
+  if (element && !this.isHovered) {
+    // eslint-disable-next-line no-undef
+    $.powerTip.hide();
   }
 };
-
-function onMouseOver(event) {
-  // console.log(event.target);
-  this.hover = true;
-  console.log(`isHovered:  ${this.hover}`);
-}
-
-function onMouseLeave(event) {
-  // console.log(event.target);
-  this.hover = false;
-  console.log(`isHovered:  ${this.hover}`);
-}
