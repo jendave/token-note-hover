@@ -5,13 +5,13 @@ import TokenNoteHoverHUD from './scripts/TokenNoteHoverHUD';
 // eslint-disable-next-line no-unused-vars
 function onMouseOver(event) {
   canvas.hud.tokenNoteHover.isHovered = true;
-  // console.log(`isHovered module:  ${canvas.hud.tokenNoteHover.hover}`);
+  // console.log(`isHovered module.js:  ${canvas.hud.tokenNoteHover.hover}`);
 }
 
 // eslint-disable-next-line no-unused-vars
 function onMouseLeave(event) {
   canvas.hud.tokenNoteHover.isHovered = false;
-  // console.log(`isHovered module:  ${canvas.hud.tokenNoteHover.hover}`);
+  // console.log(`isHovered module.js:  ${canvas.hud.tokenNoteHover.hover}`);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -63,7 +63,7 @@ Hooks.on('hoverToken', (note, hovered) => {
   const element = document.querySelector('#container.token-note-hover-hud-container');
 
   if (element) {
-    // console.log(`module element: ${element}`);
+    // console.log(`element module.js: ${element}`);
     element.addEventListener('mouseover', onMouseOver);
     element.addEventListener('mouseleave', onMouseLeave);
   }

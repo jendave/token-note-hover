@@ -620,7 +620,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
 // eslint-disable-next-line func-names
 TokenNoteHoverHUD.prototype.hide = function () {
   const element = document.querySelector('#container.token-note-hover-hud-container');
-  // console.log(`TokenNoteHoverHUD: ${element}`);
+  // console.log(`element TokenNoteHoverHUD.js: ${element}`);
 
   if (element && !this.isHovered) {
     // eslint-disable-next-line no-undef
