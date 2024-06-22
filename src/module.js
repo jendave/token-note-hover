@@ -2,6 +2,27 @@ import CONSTANTS from './scripts/constants';
 import registerSettings from './scripts/settings';
 import TokenNoteHoverHUD from './scripts/TokenNoteHoverHUD';
 
+// function onMouseOver(event) {
+//   console.log('we are in!'); // event.target
+// }
+
+// function onMouseLeave(event) {
+//   console.log('we are leaving!'); //
+// }
+
+function onMouseOver(event) {
+  // console.log(event.target);
+  canvas.hud.tokenNoteHover.hover = true;
+  //this.hover = true;
+  console.log(`isHovered module:  ${canvas.hud.tokenNoteHover.hover}`);
+}
+
+function onMouseLeave(event) {
+  // console.log(event.target);
+  canvas.hud.tokenNoteHover.hover = false;
+  console.log(`isHovered module:  ${canvas.hud.tokenNoteHover.hover}`);
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                    Hooks                                   */
 /* -------------------------------------------------------------------------- */
@@ -29,11 +50,11 @@ Hooks.on('hoverToken', (note, hovered) => {
     const ownershipPermissionsRequired = game.settings.get(CONSTANTS.MODULE_ID, 'ownershipPermissionsRequired');
     const tooltipDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipDelay');
 
-    // if (!hovered) {
-    //   setTimeout(() => {
-    //     return canvas.hud.tokenNoteHover.hide();
-    //   }, tooltipDelay);
-    // }
+    if (!hovered) {
+      if (!canvas.hud.tokenNoteHover.hover) {
+        setTimeout(() => canvas.hud.tokenNoteHover.hide(), tooltipDelay);
+      }
+    }
 
     if (hovered) {
       setTimeout(() => {
@@ -47,18 +68,16 @@ Hooks.on('hoverToken', (note, hovered) => {
   }
 
   const element = document.querySelector('#container.token-note-hover-hud-container');
-  console.log(element);
 
-  element.addEventListener('mouseover', onMouseOver);
-  element.addEventListener('mouseleave', onMouseLeave);
+  // if (element.matches(':hover')) {
+  //   console.log('Mouse is over the element now.');
+  // }
+
+  if (element) {
+    console.log(element);
+    element.addEventListener('mouseover', onMouseOver);
+    element.addEventListener('mouseleave', onMouseLeave);
+  }
 
   return canvas.hud.tokenNoteHover.clear();
 });
-
-function onMouseOver(event) {
-  console.log('we are in!'); // event.target
-}
-
-function onMouseLeave(event) {
-  console.log('we are leaving!'); //
-}

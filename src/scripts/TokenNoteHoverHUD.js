@@ -9,6 +9,15 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
   constructor(note, options) {
     super(note, options);
     this.data = note;
+    this._hover = false;
+  }
+
+  get hover() {
+    return this._hover;
+  }
+
+  set hover(value) {
+    this._hover = value;
   }
 
   /**
@@ -597,36 +606,37 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
       intentPollInterval: 100,
     });
 
-    // var element = document.querySelector('#container');
-    // console.log(element);
-
-    // element.addEventListener('mouseover', changeDef);
-    // element.addEventListener('mouseleave', changeDef);
-    // var element = document.querySelector('#container');
-    // console.log(element);
-    // const elementquery = document.querySelector(this.element);
-    // if (elementquery.matches(':hover')) {
-    //   console.log('Mouse is over the element now.');
-    // }
     $.powerTip.show(elementToTooltip);
   }
 }
 
+// TokenNoteHoverHUD.prototype.mouse = function () {
+//   var element = document.querySelector('#container.token-note-hover-hud-container');
+//   console.log(element);
+
+//   if (element) {
+//     element.addEventListener('mouseover', onMouseOver);
+//     element.addEventListener('mouseleave', onMouseLeave);
+//   }
+// };
+
 TokenNoteHoverHUD.prototype.hide = function () {
   var element = document.querySelector('#container.token-note-hover-hud-container');
-  // let elementToTooltip = this.element;
-  // if (!elementToTooltip.document) {
-  //   elementToTooltip = $(elementToTooltip);
-  // }
-  // if (elementToTooltip) {
-  //   $.powerTip.hide();
-  // }
   console.log(element);
 
-  element.addEventListener('mouseover', changeDef);
-  element.addEventListener('mouseleave', changeDef);
+  if (element && !this.hover) {
+    setTimeout(() => $.powerTip.hide(), 1000);
+  }
 };
 
-function changeDef(event) {
-  console.log('help!'); //event.target
+function onMouseOver(event) {
+  // console.log(event.target);
+  this.hover = true;
+  console.log(`isHovered:  ${this.hover}`);
+}
+
+function onMouseLeave(event) {
+  // console.log(event.target);
+  this.hover = false;
+  console.log(`isHovered:  ${this.hover}`);
 }
