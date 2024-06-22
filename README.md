@@ -44,7 +44,11 @@ Or use this URL and click on `Install`:
 https://github.com/jendave/token-note-hover/releases/latest/download/module.json
 ```
 
-Installing the [Zoom/Pan Options](https://foundryvtt.com/packages/zoom-pan-options) module is highly recommended for properly zooming in on a token.
+### Other Recommended Modules
+
+* [Zoom/Pan Options](https://foundryvtt.com/packages/zoom-pan-options) for `Zoom Around Cursor` setting.
+* [Lock View](https://foundryvtt.com/packages/LockView) to prevent zooming from affecting the tooltip placement.
+  * Note that these two modules conflict with each other.
 
 ## Screenshot
 

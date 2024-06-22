@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.1.1](https://github.com/jendave/token-note-hover/commits/main) (2024-06-xx)
+
+* Remove [Zoom/Pan Options](https://foundryvtt.com/packages/zoom-pan-options) from `recommended` in module.json. It was causing confusion.
+
 ## [2.1.0](https://github.com/jendave/token-note-hover/commits/main) (2024-06-21)
 
 * The tooltip will now close when the pointer is not hovering over the token nor the tooltip. Previously, the tooltip would only close if the pointer hovered the tooltip, then moved off.

@@ -61,7 +61,19 @@ npm init @eslint/config
 ```
 
 ```javascript
-        this.element.css({
+  setPosition() {
+    const fontSize = game.settings.get(MODULE_NAME, "fontSize") || canvas.grid.size / 5 + "px";
+    const darkMode = game.settings.get(MODULE_NAME, "darkMode");
+
+    if (this.object) {
+      const tokenNoteXPosition = this.object.x;
+      const tokenNoteYPosition = this.object.y;
+      const viewportWidth = visualViewport.width;
+      const tokenNoteIconWidth = this.object.w;
+      const tokenNoteIconHeight = this.object.h;
+      const orientation = (this.object.getGlobalPosition()?.x ?? 0) < viewportWidth / 2 ? "right" : "left";
+      let scaling = this.calculateScale(canvas.scene.dimensions.size, canvas.stage.scale.x) / 2.8;
+      this.element.css({
         background: darkMode ? `url("./ui/denim075.png") repeat` : "white",
         border: darkMode ? "1px solid var(--color-border-dark)" : "1px solid var(--color-border-light-primary)",
         "border-radius": "5px",
@@ -83,4 +95,23 @@ npm init @eslint/config
         "pointer-events": "none",
         scale: String(scaling) + " " + String(scaling)
       });
+    }
+
+  }
+}
+```
+
+```json
+    "recommends": [
+      {
+        "id": "zoom-pan-options",
+        "type": "module",
+        "reason": "Install for improved tooltip placement while zooming."
+      },
+      {
+        "id": "LockView",
+        "type": "module",
+        "reason": "Install for improved tooltip placement."
+      }
+    ]
 ```
