@@ -1,9 +1,12 @@
 import CONSTANTS from './constants';
 
 /**
- * @class TokenNoteHoverHUD
- *
  * A HUD extension that shows the Note preview
+ *
+ * @export
+ * @class TokenNoteHoverHUD
+ * @typedef {TokenNoteHoverHUD}
+ * @extends {BasePlaceableHUD}
  */
 export default class TokenNoteHoverHUD extends BasePlaceableHUD {
   constructor(note, options) {
@@ -12,16 +15,28 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     this.hover = false;
   }
 
+  /**
+   * Is element hovered over
+   *
+   * @type {boolean}
+   */
   get isHovered() {
     return this.hover;
   }
 
+  /**
+   * Set if element hovered over
+   */
   set isHovered(value) {
     this.hover = value;
   }
 
   /**
    * Retrieve and override default options for this application
+   *
+   * @static
+   * @readonly
+   * @type {*}
    */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
@@ -35,6 +50,9 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
 
   /**
    * Get data for template
+   *
+   * @async
+   * @returns {unknown}
    */
   async getData() {
     const data = super.getData();

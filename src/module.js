@@ -3,12 +3,22 @@ import registerSettings from './scripts/settings';
 import TokenNoteHoverHUD from './scripts/TokenNoteHoverHUD';
 
 // eslint-disable-next-line no-unused-vars
+/**
+ * OnMouseOver
+ *
+ * @param {*} event
+ */
 function onMouseOver(event) {
   canvas.hud.tokenNoteHover.isHovered = true;
   // console.log(`isHovered module.js:  ${canvas.hud.tokenNoteHover.hover}`);
 }
 
 // eslint-disable-next-line no-unused-vars
+/**
+ * onMouseLeave
+ *
+ * @param {*} event
+ */
 function onMouseLeave(event) {
   canvas.hud.tokenNoteHover.isHovered = false;
   // console.log(`isHovered module.js:  ${canvas.hud.tokenNoteHover.hover}`);

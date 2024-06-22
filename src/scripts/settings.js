@@ -1,5 +1,10 @@
 import CONSTANTS from './constants';
 
+/**
+ * Register Settings
+ *
+ * @export
+ */
 export default function registerSettings() {
   game.settings.register(CONSTANTS.MODULE_ID, 'hoverEnabled', {
     name: `${CONSTANTS.MODULE_ID}.Settings.HoverEnabled.Name`,
