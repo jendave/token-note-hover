@@ -1,5 +1,10 @@
 import CONSTANTS from './constants';
 
+/**
+ * Register Settings
+ *
+ * @export
+ */
 export default function registerSettings() {
   game.settings.register(CONSTANTS.MODULE_ID, 'hoverEnabled', {
     name: `${CONSTANTS.MODULE_ID}.Settings.HoverEnabled.Name`,
@@ -67,12 +72,22 @@ export default function registerSettings() {
     config: true,
   });
 
-  game.settings.register(CONSTANTS.MODULE_ID, 'tooltipDelay', {
-    name: `${CONSTANTS.MODULE_ID}.Settings.TooltipDelay.Name`,
-    hint: `${CONSTANTS.MODULE_ID}.Settings.TooltipDelay.Hint`,
+  game.settings.register(CONSTANTS.MODULE_ID, 'tooltipOpenDelay', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.TooltipOpenDelay.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.TooltipOpenDelay.Hint`,
     scope: 'client',
     type: Number,
-    default: 1000,
+    default: 200,
+    config: true,
+    range: { min: 100, max: 3000, step: 100 },
+  });
+
+  game.settings.register(CONSTANTS.MODULE_ID, 'tooltipCloseDelay', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.TooltipCloseDelay.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.TooltipCloseDelay.Hint`,
+    scope: 'client',
+    type: Number,
+    default: 300,
     config: true,
     range: { min: 100, max: 3000, step: 100 },
   });

@@ -1,18 +1,42 @@
 import CONSTANTS from './constants';
 
 /**
- * @class TokenNoteHoverHUD
- *
  * A HUD extension that shows the Note preview
+ *
+ * @export
+ * @class TokenNoteHoverHUD
+ * @typedef {TokenNoteHoverHUD}
+ * @extends {BasePlaceableHUD}
  */
 export default class TokenNoteHoverHUD extends BasePlaceableHUD {
   constructor(note, options) {
     super(note, options);
     this.data = note;
+    this.hover = false;
+  }
+
+  /**
+   * Is element hovered over
+   *
+   * @type {boolean}
+   */
+  get isHovered() {
+    return this.hover;
+  }
+
+  /**
+   * Set if element hovered over
+   */
+  set isHovered(value) {
+    this.hover = value;
   }
 
   /**
    * Retrieve and override default options for this application
+   *
+   * @static
+   * @readonly
+   * @type {*}
    */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
@@ -26,6 +50,9 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
 
   /**
    * Get data for template
+   *
+   * @async
+   * @returns {unknown}
    */
   async getData() {
     const data = super.getData();
@@ -238,6 +265,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
                 async: true,
               });
             } else {
+              // eslint-disable-next-line max-len
               tempContent = (await TextEditor.enrichHTML(actor.system.details.biography.appearance, {
                 secrets: actorIsOwner,
                 documents: true,
@@ -501,6 +529,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
 
     let elementToTooltip = this.element;
     if (!elementToTooltip.document) {
+      // eslint-disable-next-line no-undef
       elementToTooltip = $(elementToTooltip);
     }
 
@@ -541,10 +570,14 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
         tooltipColor = 'default';
       }
     }
+
+    const tooltipCloseDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipCloseDelay');
+
     const tooltipPopupClass = tooltipColor
       ? `token-note-hover-hud-tooltip-${tooltipColor}`
       : 'token-note-hover-hud-tooltip-default';
 
+    // eslint-disable-next-line no-undef
     const contentTooltip = $(this.contentTooltip);
 
     elementToTooltip.data('powertipjq', contentTooltip);
@@ -591,12 +624,24 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
       // (cross the gap between the element and the tooltip div) for mouseOnToPopup tooltips.
       // And, second, it lets the cursor briefly leave the element and return without causing
       // the whole fade-out, intent test, and fade-in cycle to happen.
-      closeDelay: 100,
+      closeDelay: tooltipCloseDelay,
 
       // (default: 100) Hover intent polling interval in milliseconds.
       intentPollInterval: 100,
     });
 
+    // eslint-disable-next-line no-undef
     $.powerTip.show(elementToTooltip);
   }
 }
+
+// eslint-disable-next-line func-names
+TokenNoteHoverHUD.prototype.hide = function () {
+  const element = document.querySelector('#container.token-note-hover-hud-container');
+  // console.log(`element TokenNoteHoverHUD.js: ${element}`);
+
+  if (element && !this.isHovered) {
+    // eslint-disable-next-line no-undef
+    $.powerTip.hide();
+  }
+};
