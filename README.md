@@ -76,9 +76,9 @@ This project is based on [Pin Cushion](https://github.com/p4535992/foundryvtt-pi
 
 ## FoundryVTT Modules and Other Resources
 
-Please check out my other modules and resources for Ironsworn and Ironsworn: Starforged
+Please check out my other modules and resources for Ironsworn, Ironsworn: Starforged and other systems.
 
-### [FoundryVTT](https://foundryvtt.com/) Modules
+### [FoundryVTT](https://foundryvtt.com/community/david-hudson/packages) Modules
 
 * [Starforged Custom Oracles](https://foundryvtt.com/packages/starforged-custom-oracles)
 * [Starsmith Compendiums for Ironsworn: Starforged](https://foundryvtt.com/packages/starsmith-expanded-oracles)
@@ -86,7 +86,7 @@ Please check out my other modules and resources for Ironsworn and Ironsworn: Sta
 * [Augmented Reality Cyberpunk City Kit](https://foundryvtt.com/packages/augmented-reality-foundry)
 * [Token Note Hover](https://github.com/jendave/token-note-hover)
 
-### [Itch.io](https://itch.io) Resources
+### [Itch.io](https://jendave.itch.io/) Resources
 
 * [The City on the Breeze - Cyberpunk-inspired Oracle arrays](https://jendave.itch.io/the-city-on-the-breeze)
 * [I'll Be Home for Life Day! - Star Wars Life Day Oracle](https://jendave.itch.io/ill-be-home-for-life-day)
