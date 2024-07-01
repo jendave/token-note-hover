@@ -68,6 +68,12 @@ https://github.com/jendave/token-note-hover/releases/latest/download/module.json
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_twodsix.jpg?raw=true)
 
+## Troubleshooting
+
+* If the hover does not work or causes the sidebar to move unexpectedly
+  * Try enabling, reloading the screen, then re-enabling the module.
+  * Try uninstalling and re-installing the module.
+
 ## Credits
 
 Module by David Hudson and licensed for use under the [GNU GPL license v3](https://opensource.org/license/gpl-3-0).
