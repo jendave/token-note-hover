@@ -71,7 +71,7 @@ https://github.com/jendave/token-note-hover/releases/latest/download/module.json
 ## Troubleshooting
 
 * If the hover does not work or causes the sidebar to move unexpectedly
-  * Try enabling, reloading the screen, then re-enabling the module.
+  * In the `Configure Settings`, uncheck the `Hover Enabled` box, reload the screen, then re-check the `Hover Enabled` box.
   * Try uninstalling and re-installing the module.
 
 ## Credits
