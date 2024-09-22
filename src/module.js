@@ -46,25 +46,28 @@ Hooks.on('renderHeadsUpDisplay', (app, html, data) => {
  * Hook on Note hover
  */
 Hooks.on('hoverToken', (note, hovered) => {
-  if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
-    const ownershipPermissionsRequired = game.settings.get(CONSTANTS.MODULE_ID, 'ownershipPermissionsRequired');
-    const tooltipOpenDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipOpenDelay');
-    const tooltipCloseDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipCloseDelay');
+  if (note.hasActiveHUD === false && note.controlled === false) {
+    if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
+      const ownershipPermissionsRequired = game.settings.get(CONSTANTS.MODULE_ID, 'ownershipPermissionsRequired');
+      const tooltipOpenDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipOpenDelay');
+      const tooltipCloseDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipCloseDelay');
 
-    if (!hovered) {
-      if (!canvas.hud.tokenNoteHover.hover) {
-        setTimeout(() => canvas.hud.tokenNoteHover.hide(), tooltipCloseDelay);
-      }
-    }
-
-    if (hovered) {
-      setTimeout(() => {
-        if (note.interactionState === 1
-          && (note.actor.permission >= ownershipPermissionsRequired
-            || note.actor.ownership.default === -1)) {
-          canvas.hud.tokenNoteHover.bind(note);
+      if (!hovered) {
+        if (!canvas.hud.tokenNoteHover.hover) {
+          setTimeout(() => canvas.hud.tokenNoteHover.hide(), tooltipCloseDelay);
         }
-      }, tooltipOpenDelay);
+      }
+      // TODO: show note only if  note.hasActiveHUD === false
+
+      if (hovered) {
+        setTimeout(() => {
+          if (note.interactionState === 1
+            && (note.actor.permission >= ownershipPermissionsRequired
+              || note.actor.ownership.default === -1)) {
+            canvas.hud.tokenNoteHover.bind(note);
+          }
+        }, tooltipOpenDelay);
+      }
     }
   }
 
