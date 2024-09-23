@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.1.2](https://github.com/jendave/token-note-hover/commits/main) (2024-09-22)
+
+* Note won't display when the token is displaying a HUD or is controlled/clicked.
+
 ## [2.1.1](https://github.com/jendave/token-note-hover/commits/main) (2024-06-22)
 
 * Remove [Zoom/Pan Options](https://foundryvtt.com/packages/zoom-pan-options) from `recommended` in module.json. It was causing confusion.

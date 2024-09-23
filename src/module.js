@@ -42,6 +42,20 @@ Hooks.on('renderHeadsUpDisplay', (app, html, data) => {
   canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
 });
 
+Hooks.on('renderTokenHUD', (obj, html) => {
+  if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
+    const tooltipCloseDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipCloseDelay');
+    setTimeout(() => canvas.hud.tokenNoteHover.hide(), tooltipCloseDelay);
+  }
+});
+
+Hooks.on('controlToken', (obj, html) => {
+  if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
+    const tooltipCloseDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipCloseDelay');
+    setTimeout(() => canvas.hud.tokenNoteHover.hide(), tooltipCloseDelay);
+  }
+});
+
 /**
  * Hook on Note hover
  */
