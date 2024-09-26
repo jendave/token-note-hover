@@ -466,6 +466,115 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             tempContent = null;
         }
       }
+    } else if (game.data.system.id === 'CoC7') {
+      if (actor) {
+        actorIsOwner = actor.isOwner ?? true;
+        let characterNoteArray = [];
+
+        switch (actor.type) {
+          case 'character':
+            for (let i = 0; i < actor.system.biography.length; i += 1) {
+              characterNoteArray = characterNoteArray.concat(actor.system.biography[i].value);
+            }
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(characterNoteArray.join('</p><p>'), {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(characterNoteArray.join('</p><p>'), {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              })).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          case 'container':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(actor.system.description.value, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(actor.system.description.value, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              })).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          case 'creature':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(
+                actor.system.biography.personalDescription.value,
+                {
+                  secrets: actorIsOwner,
+                  documents: true,
+                  async: true,
+                },
+              );
+            } else {
+              tempContent = (await TextEditor.enrichHTML(
+                actor.system.biography.personalDescription.value,
+                {
+                  secrets: actorIsOwner,
+                  documents: true,
+                  async: true,
+                },
+              )).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          case 'npc':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(
+                actor.system.biography.personalDescription.value,
+                {
+                  secrets: actorIsOwner,
+                  documents: true,
+                  async: true,
+                },
+              );
+            } else {
+              tempContent = (await TextEditor.enrichHTML(
+                actor.system.biography.personalDescription.value,
+                {
+                  secrets: actorIsOwner,
+                  documents: true,
+                  async: true,
+                },
+              )).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          default:
+            tempContent = null;
+        }
+      }
+    } else if (game.data.system.id === 'worldbuilding') {
+      if (actor) {
+        actorIsOwner = actor.isOwner ?? true;
+
+        switch (actor.type) {
+          case 'character':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(actor.system.biography, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(actor.system.biography, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              })).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          default:
+            tempContent = null;
+        }
+      }
     }
 
     const content = tempContent;

@@ -17,6 +17,8 @@ The tooltip will not display while the token is being dragged.
 * [D&D 5E](https://foundryvtt.com/packages/dnd5e)
 * [Pathfinder 2e](https://foundryvtt.com/packages/pf2e)
 * [Twodsix - Cepheus & Traveller](https://foundryvtt.com/packages/twodsix)
+* [Call of Cthulhu 7th edition](https://foundryvtt.com/packages/CoC7)
+* [Simple Worldbuilding System](https://foundryvtt.com/packages/worldbuilding)
 
 ### Some customization options
 
@@ -67,6 +69,14 @@ https://github.com/jendave/token-note-hover/releases/latest/download/module.json
 ### Twodsix - Cepheus & Traveller
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_twodsix.jpg?raw=true)
+
+### Call of Cthulhu 7th edition
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_cthulhu.jpg?raw=true)
+
+### Simple Worldbuilding System
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_simple.jpg?raw=true)
 
 ## Troubleshooting
 

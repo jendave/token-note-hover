@@ -42,6 +42,7 @@ Hooks.on('renderHeadsUpDisplay', (app, html, data) => {
   canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
 });
 
+// eslint-disable-next-line no-unused-vars
 Hooks.on('renderTokenHUD', (obj, html) => {
   if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
     const tooltipCloseDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipCloseDelay');
@@ -49,6 +50,7 @@ Hooks.on('renderTokenHUD', (obj, html) => {
   }
 });
 
+// eslint-disable-next-line no-unused-vars
 Hooks.on('controlToken', (obj, html) => {
   if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
     const tooltipCloseDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipCloseDelay');

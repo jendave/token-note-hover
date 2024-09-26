@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.1.3](https://github.com/jendave/token-note-hover/commits/main) (2024-09-25)
+
+* Added support for:
+  * [Call of Cthulhu 7th edition](https://foundryvtt.com/packages/CoC7).
+  * [Simple Worldbuilding System](https://foundryvtt.com/packages/worldbuilding).
+
 ## [2.1.2](https://github.com/jendave/token-note-hover/commits/main) (2024-09-22)
 
 * Note won't display when the token is displaying a HUD or is controlled/clicked.

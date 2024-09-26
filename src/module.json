@@ -85,6 +85,24 @@
           "minimum": "5.1.0",
           "verified": "5.1"
         }
+      },
+      {
+        "id": "CoC7",
+        "type": "system",
+        "manifest": "https://github.com/Miskatonic-Investigative-Society/CoC7-FoundryVTT/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "0.10.19",
+          "verified": "0.10"
+        }
+      },
+      {
+        "id": "worldbuilding",
+        "type": "system",
+        "manifest": "https://raw.githubusercontent.com/foundryvtt/worldbuilding/release-082/system.json",
+        "compatibility": {
+          "minimum": "0.8.2",
+          "verified": "0.8"
+        }
       }
     ],
     "requires": [],
