@@ -9,7 +9,9 @@ import TokenNoteHoverHUD from './scripts/TokenNoteHoverHUD';
  */
 // eslint-disable-next-line no-unused-vars
 function onMouseOver(event) {
-  canvas.hud.tokenNoteHover.isHovered = true;
+  if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
+    canvas.hud.tokenNoteHover.isHovered = true;
+  }
 }
 
 /**
@@ -19,7 +21,9 @@ function onMouseOver(event) {
  */
 // eslint-disable-next-line no-unused-vars
 function onMouseLeave(event) {
-  canvas.hud.tokenNoteHover.isHovered = false;
+  if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
+    canvas.hud.tokenNoteHover.isHovered = false;
+  }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -38,8 +42,10 @@ Hooks.once('init', () => {
  */
 // eslint-disable-next-line no-unused-vars
 Hooks.on('renderHeadsUpDisplay', (app, html, data) => {
-  html.append('<template id="token-note-hover"></template>');
-  canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
+  if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
+    html.append('<template id="token-note-hover"></template>');
+    canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
+  }
 });
 
 // eslint-disable-next-line no-unused-vars
@@ -62,8 +68,8 @@ Hooks.on('controlToken', (obj, html) => {
  * Hook on Note hover
  */
 Hooks.on('hoverToken', (note, hovered) => {
-  if (note.hasActiveHUD === false && note.controlled === false) {
-    if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
+  if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
+    if (note.hasActiveHUD === false && note.controlled === false) {
       const ownershipPermissionsRequired = game.settings.get(CONSTANTS.MODULE_ID, 'ownershipPermissionsRequired');
       const tooltipOpenDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipOpenDelay');
       const tooltipCloseDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipCloseDelay');
