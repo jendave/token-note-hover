@@ -78,11 +78,14 @@ https://github.com/jendave/token-note-hover/releases/latest/download/module.json
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_simple.jpg?raw=true)
 
-## Troubleshooting
+## Troubleshooting and Tips
 
 * If the hover does not work or causes the sidebar to move unexpectedly try the following:
   * In the `Configure Settings`, uncheck the `Hover Enabled` box, reload the screen, then re-check the `Hover Enabled` box.
   * Try uninstalling and re-installing the module.
+* The Token Note will not display if the token is selected or showing a HUD.
+  * This ensures the note does not display when the token is being used to show other attributes.
+  * In the `Configure Settings` dialog, enable the `Core` setting checkbox for `Left-Click to Release Objects` to de-select objects easily.
 
 ## Credits
 
