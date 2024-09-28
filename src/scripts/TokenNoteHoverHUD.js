@@ -469,21 +469,26 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     } else if (game.data.system.id === 'CoC7') {
       if (actor) {
         actorIsOwner = actor.isOwner ?? true;
-        let characterNoteArray = [];
+        let characterNoteArray = [''];
 
         switch (actor.type) {
           case 'character':
             for (let i = 0; i < actor.system.biography.length; i += 1) {
+              characterNoteArray = characterNoteArray.concat('<h3>');
+              characterNoteArray = characterNoteArray.concat(actor.system.biography[i].title);
+              characterNoteArray = characterNoteArray.concat('</h3>');
+              characterNoteArray = characterNoteArray.concat('<p>');
               characterNoteArray = characterNoteArray.concat(actor.system.biography[i].value);
+              characterNoteArray = characterNoteArray.concat('</p>');
             }
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(characterNoteArray.join('</p><p>'), {
+              tempContent = await TextEditor.enrichHTML(characterNoteArray.join(''), {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(characterNoteArray.join('</p><p>'), {
+              tempContent = (await TextEditor.enrichHTML(characterNoteArray.join(''), {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -585,7 +590,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     data.fontSize = game.settings.get(CONSTANTS.MODULE_ID, 'fontSize');
     data.maxWidth = game.settings.get(CONSTANTS.MODULE_ID, 'maxWidth');
 
-    const tooltipTitle = game.settings.get(CONSTANTS.MODULE_ID, 'showTitle') ? `<h3>${data.title}</h3>` : '';
+    const tooltipTitle = game.settings.get(CONSTANTS.MODULE_ID, 'showTitle') ? `<h2>${data.title}</h2>` : '';
 
     this.contentTooltip = await TextEditor.enrichHTML(`
                 <div id="container" class="token-note-hover-hud-container" style="font-size:${data.fontSize}; max-width:${data.maxWidth}px">
