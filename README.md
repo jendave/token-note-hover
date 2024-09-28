@@ -52,7 +52,7 @@ https://github.com/jendave/token-note-hover/releases/latest/download/module.json
 * [Lock View](https://foundryvtt.com/packages/LockView) to prevent zooming from affecting the tooltip placement.
   * Note that these two modules conflict with each other.
 
-## Screenshot
+## Screenshots
 
 ### Ironsworn/Starforged
 
