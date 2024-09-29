@@ -107,6 +107,7 @@ export default function registerSettings() {
       dark: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Dark`,
       green: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Green`,
       light: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Light`,
+      oceanic: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Oceanic`,
       orange: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Orange`,
       phosphor: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Phosphor`,
       purple: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Purple`,

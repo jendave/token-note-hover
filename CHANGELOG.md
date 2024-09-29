@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.1.5](https://github.com/jendave/token-note-hover/commits/main) (2024-09-29)
+
+* Added support for [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn) `Oceanic` theme.
+
 ## [2.1.4](https://github.com/jendave/token-note-hover/commits/main) (2024-09-28)
 
 * Fixed formatting for notes on [Call of Cthulhu 7th edition](https://foundryvtt.com/packages/CoC7) characters. This required slightly increasing the size of the title on the note.

@@ -4,13 +4,12 @@
  *
  * Stylesheet for the monochrome (default) theme.
  */
-.token-note-hover-hud-tooltip-phosphor {
+.token-note-hover-hud-tooltip-oceanic {
   cursor: default;
-  background-color: #333;
-  background-color: rgba(0, 0, 0, 0.8);
-  border: 1px solid var(#52e0e0);
+  background-color: #fff7e6;
+  border: 1px solid #0c092a;
   border-radius: 6px;
-  color: var(#52e0e0);
+  color: var(#0c092a);
   display: none;
   padding: 10px;
   position: absolute;
