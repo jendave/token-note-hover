@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.1.5](https://github.com/jendave/token-note-hover/commits/main) (2024-10-02)
+
+* Fix bug with `Phosphor` theme text color.
+
 ## [2.1.5](https://github.com/jendave/token-note-hover/commits/main) (2024-09-29)
 
 * Added support for [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn) `Oceanic` theme.

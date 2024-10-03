@@ -8,9 +8,9 @@
   cursor: default;
   background-color: #333;
   background-color: rgba(0, 0, 0, 0.8);
-  border: 1px solid var(#52e0e0);
+  border: 1px solid var(--ironsworn-color-light);
   border-radius: 6px;
-  color: var(#52e0e0);
+  color: var(--ironsworn-color-light);
   display: none;
   padding: 10px;
   position: absolute;
