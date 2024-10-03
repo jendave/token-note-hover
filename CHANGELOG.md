@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.1.5](https://github.com/jendave/token-note-hover/commits/main) (2024-10-02)
+## [2.1.6](https://github.com/jendave/token-note-hover/commits/main) (2024-10-02)
 
 * Fix bug with `Phosphor` theme text color.
 
