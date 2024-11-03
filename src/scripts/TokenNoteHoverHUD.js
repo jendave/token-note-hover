@@ -39,7 +39,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
    * @type {*}
    */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       id: CONSTANTS.ELEMENT_ID,
       classes: [...super.defaultOptions.classes, CONSTANTS.ELEMENT_ID],
       minimizable: false,
