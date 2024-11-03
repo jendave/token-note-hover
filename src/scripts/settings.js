@@ -152,8 +152,4 @@ export default function registerSettings() {
     default: true,
     type: Boolean,
   });
-
-  if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
-    canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
-  }
 }
