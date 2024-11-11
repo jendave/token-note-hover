@@ -104,6 +104,7 @@ Please check out my other modules and resources for Ironsworn, Ironsworn: Starfo
 * [Ironsmith Expanded Oracles for Ironsworn](https://foundryvtt.com/packages/ironsmith-expanded-oracles)
 * [Augmented Reality Cyberpunk City Kit](https://foundryvtt.com/packages/augmented-reality-foundry)
 * [Token Note Hover](https://github.com/jendave/token-note-hover)
+* [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 
 ### [Itch.io](https://jendave.itch.io/) Resources
 
