@@ -52,31 +52,77 @@ https://github.com/jendave/token-note-hover/releases/latest/download/module.json
 * [Lock View](https://foundryvtt.com/packages/LockView) to prevent zooming from affecting the tooltip placement.
   * Note that these two modules conflict with each other.
 
-## Screenshots
+## Screenshots and Note Locations
 
 ### Ironsworn/Starforged
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_ironsworn.jpg?raw=true)
 
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Character** | Notes |
+| **Shared Sheet** | Notes |
+| **NPC** | Text entry area |
+| **Starship** | Notes |
+| **Location** | Text entry area |
+
 ### D&D 5E
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dnd5e.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Player Character** | Biography |
+| **Non-player Character** | Biography Public |
+| **Group** | Description |
+| **Vehicle** | Description |
 
 ### Pathfinder 2e
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_pf2e.jpg?raw=true)
 
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Player Character** | Biography Appearance |
+| **Non-player Character** | Notes Description |
+| **Army** | Description |
+| **Familiar** | Creature Type |
+| **Hazard** | Description |
+| **Loot** | Text entry area |
+| **Party** | List of party members |
+| **Vehicle** | Description |
+
 ### Twodsix - Cepheus & Traveller
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_twodsix.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Traveller** | Character Notes |
+| **Animal** | Animal Notes |
+| **Robot** | Robot Notes |
+| **Ship** | Ship Notes |
+| **Space Object** | Notes |
+| **Vehicle** | Cargo Notes |
 
 ### Call of Cthulhu 7th edition
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_cthulhu.jpg?raw=true)
 
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Character** | Backstory |
+| **Container** | Description |
+| **Creature** | Notes |
+| **NPC** | Notes |
+
 ### Simple Worldbuilding System
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_simple.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Actor** | Description |
 
 ## Troubleshooting and Tips
 

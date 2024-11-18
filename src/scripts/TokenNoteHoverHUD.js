@@ -220,13 +220,28 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'npc':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.details.biography.value, {
+              tempContent = await TextEditor.enrichHTML(actor.system.details.biography.public, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.details.biography.value, {
+              tempContent = (await TextEditor.enrichHTML(actor.system.details.biography.public, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              })).replaceAll(/<img.*>/g, '');
+            }
+            break;
+          case 'group':
+            if (displayImages) {
+              tempContent = await TextEditor.enrichHTML(actor.system.description.full, {
+                secrets: actorIsOwner,
+                documents: true,
+                async: true,
+              });
+            } else {
+              tempContent = (await TextEditor.enrichHTML(actor.system.description.full, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -240,7 +255,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     } else if (game.data.system.id === 'pf2e') {
       if (actor) {
         actorIsOwner = actor.isOwner ?? true;
-
+        let partyNoteArray = [''];
         switch (actor.type) {
           case 'vehicle':
             if (displayImages) {
@@ -349,14 +364,19 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             }
             break;
           case 'party':
+            for (let i = 0; i < actor.members.length; i += 1) {
+              partyNoteArray = partyNoteArray.concat('<p>');
+              partyNoteArray = partyNoteArray.concat(actor.members[i].name);
+              partyNoteArray = partyNoteArray.concat('</p>');
+            }
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.details.description, {
+              tempContent = await TextEditor.enrichHTML(partyNoteArray.join(''), {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.details.description, {
+              tempContent = (await TextEditor.enrichHTML(partyNoteArray.join(''), {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,

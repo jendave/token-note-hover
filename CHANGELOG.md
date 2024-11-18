@@ -2,6 +2,11 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [2.1.9](https://github.com/jendave/token-note-hover/commits/main) (2024-11-18)
+
+* Fixed issues with D&D 5E and Pathfinder 2e notes.
+* Added documentation for the location of the notes for each actor token.
+
 ## [2.1.8](https://github.com/jendave/token-note-hover/commits/main) (2024-11-03)
 
 * Fix initialization error.
