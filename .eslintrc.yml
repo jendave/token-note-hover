@@ -7,4 +7,7 @@ extends:
 parserOptions:
   ecmaVersion: latest
   sourceType: module
-rules: {}
+rules: {
+    // Override rules here
+    'max-len': ['error', { 'code': 120 }], // Increase max line length to 120
+  }

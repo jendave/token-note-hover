@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [2.1.10](https://github.com/jendave/token-note-hover/commits/main) (2024-11-25)
+
+* Added better error handling of missing fields
+
 ## [2.1.9](https://github.com/jendave/token-note-hover/commits/main) (2024-11-18)
 
 * Fixed issues with D&D 5E and Pathfinder 2e notes.

@@ -69,13 +69,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
         switch (actor.type) {
           case 'starship':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.notes, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.notes, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.notes, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.notes, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -85,13 +85,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
           case 'character':
             if (actor.sheet?.constructor.name === 'IronswornCharacterSheetV2') {
               if (displayImages) {
-                tempContent = await TextEditor.enrichHTML(actor.system.biography, {
+                tempContent = await TextEditor.enrichHTML(actor.system?.biography, {
                   secrets: actorIsOwner,
                   documents: true,
                   async: true,
                 });
               } else {
-                tempContent = (await TextEditor.enrichHTML(actor.system.biography, {
+                tempContent = (await TextEditor.enrichHTML(actor.system?.biography, {
                   secrets: actorIsOwner,
                   documents: true,
                   async: true,
@@ -99,13 +99,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
               }
             } else if (actor.sheet?.constructor.name === 'StarforgedCharacterSheet') {
               if (displayImages) {
-                tempContent = await TextEditor.enrichHTML(actor.system.notes, {
+                tempContent = await TextEditor.enrichHTML(actor.system?.notes, {
                   secrets: actorIsOwner,
                   documents: true,
                   async: true,
                 });
               } else {
-                tempContent = (await TextEditor.enrichHTML(actor.system.notes, {
+                tempContent = (await TextEditor.enrichHTML(actor.system?.notes, {
                   secrets: actorIsOwner,
                   documents: true,
                   async: true,
@@ -116,7 +116,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
           case 'foe':
             if (displayImages) {
               tempContent = await TextEditor.enrichHTML(
-                Array.from(actor.items.values()).map((c) => c.system.description),
+                Array.from(actor.items.values()).map((c) => c.system?.description),
                 {
                   secrets: actorIsOwner,
                   documents: true,
@@ -125,7 +125,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
               );
             } else {
               tempContent = (await TextEditor.enrichHTML(
-                Array.from(actor.items.values()).map((c) => c.system.description),
+                Array.from(actor.items.values()).map((c) => c.system?.description),
                 {
                   secrets: actorIsOwner,
                   documents: true,
@@ -136,13 +136,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'shared':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.biography, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.biography, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.biography, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.biography, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -151,13 +151,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'site':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.description, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.description, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.description, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.description, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -166,13 +166,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'location':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.description, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.description, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.description, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.description, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -190,13 +190,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
         switch (actor.type) {
           case 'vehicle':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.details.biography.value, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.details?.biography?.value, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.details.biography.value, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.details?.biography?.value, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -205,13 +205,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'character':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.details.biography.value, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.details?.biography?.value, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.details.biography.value, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.details?.biography?.value, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -220,13 +220,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'npc':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.details.biography.public, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.details?.biography?.public, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.details.biography.public, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.details?.biography?.public, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -235,13 +235,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'group':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.description.full, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.description?.full, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.description.full, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.description?.full, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -259,13 +259,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
         switch (actor.type) {
           case 'vehicle':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.details.description, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.details?.description, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.details.description, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.details?.description, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -274,14 +274,14 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'character':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.details.biography.appearance, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.details?.biography?.appearance, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
               // eslint-disable-next-line max-len
-              tempContent = (await TextEditor.enrichHTML(actor.system.details.biography.appearance, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.details?.biography?.appearance, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -290,13 +290,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'npc':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.details.publicNotes, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.details?.publicNotes, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.details.publicNotes, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.details?.publicNotes, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -305,13 +305,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'loot':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.details.description, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.details?.description, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.details.description, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.details?.description, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -320,13 +320,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'hazard':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.details.description, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.details?.description, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.details.description, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.details?.description, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -335,13 +335,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'army':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.details.description, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.details?.description, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.details.description, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.details?.description, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -350,13 +350,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'familiar':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.details.creature.value, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.details?.creature?.value, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.details.creature.value, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.details?.creature?.value, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -394,13 +394,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
         switch (actor.type) {
           case 'vehicle':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.cargoList, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.cargoList, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.cargoList, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.cargoList, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -409,13 +409,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'traveller':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.notes, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.notes, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.notes, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.notes, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -424,13 +424,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'animal':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.notes, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.notes, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.notes, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.notes, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -439,13 +439,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'robot':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.notes, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.notes, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.notes, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.notes, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -454,13 +454,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'ship':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.notes, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.notes, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.notes, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.notes, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -469,13 +469,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'space-object':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.notes, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.notes, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.notes, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.notes, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -495,10 +495,10 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
           case 'character':
             for (let i = 0; i < actor.system.biography.length; i += 1) {
               characterNoteArray = characterNoteArray.concat('<h3>');
-              characterNoteArray = characterNoteArray.concat(actor.system.biography[i].title);
+              characterNoteArray = characterNoteArray.concat(actor.system?.biography[i]?.title);
               characterNoteArray = characterNoteArray.concat('</h3>');
               characterNoteArray = characterNoteArray.concat('<p>');
-              characterNoteArray = characterNoteArray.concat(actor.system.biography[i].value);
+              characterNoteArray = characterNoteArray.concat(actor.system?.biography[i]?.value);
               characterNoteArray = characterNoteArray.concat('</p>');
             }
             if (displayImages) {
@@ -517,13 +517,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'container':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.description.value, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.description?.value, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.description.value, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.description?.value, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
@@ -533,7 +533,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
           case 'creature':
             if (displayImages) {
               tempContent = await TextEditor.enrichHTML(
-                actor.system.biography.personalDescription.value,
+                actor.system?.biography?.personalDescription?.value,
                 {
                   secrets: actorIsOwner,
                   documents: true,
@@ -542,7 +542,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
               );
             } else {
               tempContent = (await TextEditor.enrichHTML(
-                actor.system.biography.personalDescription.value,
+                actor.system?.biography?.personalDescription?.value,
                 {
                   secrets: actorIsOwner,
                   documents: true,
@@ -554,7 +554,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
           case 'npc':
             if (displayImages) {
               tempContent = await TextEditor.enrichHTML(
-                actor.system.biography.personalDescription.value,
+                actor.system?.biography?.personalDescription?.value,
                 {
                   secrets: actorIsOwner,
                   documents: true,
@@ -563,7 +563,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
               );
             } else {
               tempContent = (await TextEditor.enrichHTML(
-                actor.system.biography.personalDescription.value,
+                actor.system?.biography?.personalDescription?.value,
                 {
                   secrets: actorIsOwner,
                   documents: true,
@@ -583,13 +583,13 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
         switch (actor.type) {
           case 'character':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system.biography, {
+              tempContent = await TextEditor.enrichHTML(actor.system?.biography, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system.biography, {
+              tempContent = (await TextEditor.enrichHTML(actor.system?.biography, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
