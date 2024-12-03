@@ -166,17 +166,17 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
             break;
           case 'location':
             if (displayImages) {
-              tempContent = await TextEditor.enrichHTML(actor.system?.description, {
+              tempContent = await TextEditor.enrichHTML('<b>Location Type:<b> ' + game.i18n.localize(actor.system?.klass).charAt(0).toUpperCase() + actor.system?.klass.slice(1) + ' ' + (actor.system?.subtype !== 'star' ? actor.system?.subtype : '') + actor.system?.description, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
               });
             } else {
-              tempContent = (await TextEditor.enrichHTML(actor.system?.description, {
+              tempContent = await TextEditor.enrichHTML('<b>Location Type:<b> ' + game.i18n.localize(actor.system?.klass).charAt(0).toUpperCase() + actor.system?.klass.slice(1) + ' ' + (actor.system?.subtype !== 'star' ? actor.system?.subtype : '') + actor.system?.description, {
                 secrets: actorIsOwner,
                 documents: true,
                 async: true,
-              })).replaceAll(/<img.*>/g, '');
+              }).replaceAll(/<img.*>/g, '');
             }
             break;
           default:

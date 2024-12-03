@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [2.1.11](https://github.com/jendave/token-note-hover/commits/main) (2024-12-02)
+
+* Added Location Type for Ironsworn/Starforged.
+
 ## [2.1.10](https://github.com/jendave/token-note-hover/commits/main) (2024-11-25)
 
 * Added better error handling of missing fields
