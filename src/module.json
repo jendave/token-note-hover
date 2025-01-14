@@ -104,6 +104,15 @@
           "minimum": "0.8.2",
           "verified": "0.8"
         }
+      },
+      {
+        "id": "rqg",
+        "type": "system",
+        "manifest": "https://github.com/sun-dragon-cult/fvtt-system-rqg/releases/download/v3.4.9/system.json",
+        "compatibility": {
+          "minimum": "3.4.9",
+          "verified": "3.4.9"
+        }
       }
     ],
     "requires": [],

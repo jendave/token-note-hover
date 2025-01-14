@@ -19,6 +19,7 @@ The tooltip will not display while the token is being dragged.
 * [Twodsix - Cepheus & Traveller](https://foundryvtt.com/packages/twodsix)
 * [Call of Cthulhu 7th edition](https://foundryvtt.com/packages/CoC7)
 * [Simple Worldbuilding System](https://foundryvtt.com/packages/worldbuilding)
+* [RuneQuest Glorantha](https://foundryvtt.com/packages/rqg)
 
 ### Some customization options
 
@@ -124,6 +125,14 @@ https://github.com/jendave/token-note-hover/releases/latest/download/module.json
 | Actor Type | Note Location |
 | ------------- | ----------- |
 | **Actor** | Description |
+
+### RuneQuest Glorantha
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_rqg.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Actor** | Allies & Notes |
 
 ## Troubleshooting and Tips
 
