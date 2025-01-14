@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [2.1.12](https://github.com/jendave/token-note-hover/commits/main) (2025-01-14)
+
+* Added support for [RuneQuest Glorantha](https://foundryvtt.com/packages/rqg).
+
 ## [2.1.11](https://github.com/jendave/token-note-hover/commits/main) (2024-12-02)
 
 * Added Location Type for Ironsworn/Starforged.
