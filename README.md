@@ -20,6 +20,7 @@ The tooltip will not display while the token is being dragged.
 * [Call of Cthulhu 7th edition](https://foundryvtt.com/packages/CoC7)
 * [Simple Worldbuilding System](https://foundryvtt.com/packages/worldbuilding)
 * [RuneQuest Glorantha](https://foundryvtt.com/packages/rqg)
+* [Level Up: Advanced 5th Edition](https://foundryvtt.com/packages/a5e)
 
 ### Some customization options
 

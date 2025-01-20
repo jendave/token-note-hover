@@ -99,7 +99,7 @@ export default function registerSettings() {
     scope: 'client',
     config: true,
     type: String,
-    default: 'System',
+    default: 'system',
     choices: {
       system: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.System`,
       default: `${CONSTANTS.MODULE_ID}.Settings.TooltipColor.Default`,
