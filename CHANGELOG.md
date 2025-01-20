@@ -2,6 +2,12 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [2.1.13](https://github.com/jendave/token-note-hover/commits/main) (2025-01-20)
+
+* [Pull Request](https://github.com/jendave/token-note-hover/pull/15) from [Syrious](https://github.com/Syrious)
+  * Added support for [Level Up: Advanced 5th Edition](https://foundryvtt.com/packages/a5e).
+  * Refactored all systems into their own files.
+
 ## [2.1.12](https://github.com/jendave/token-note-hover/commits/main) (2025-01-14)
 
 * Added support for [RuneQuest Glorantha](https://foundryvtt.com/packages/rqg).

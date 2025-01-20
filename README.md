@@ -135,6 +135,15 @@ https://github.com/jendave/token-note-hover/releases/latest/download/module.json
 | ------------- | ----------- |
 | **Actor** | Allies & Notes |
 
+### Level Up: Advanced 5th Edition
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_a5e.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Player Character** | Notes |
+| **Non-Player Character** | Notes & Private Notes (GM only)|
+
 ## Troubleshooting and Tips
 
 * If the hover does not work or causes the sidebar to move unexpectedly try the following:
@@ -149,6 +158,10 @@ https://github.com/jendave/token-note-hover/releases/latest/download/module.json
 Module by David Hudson and licensed for use under the [GNU GPL license v3](https://opensource.org/license/gpl-3-0).
 
 This project is based on [Pin Cushion](https://github.com/p4535992/foundryvtt-pin-cushion) by [4535992](https://github.com/p4535992).
+
+### Contributors
+
+* [Syrious](https://github.com/Syrious) - Level Up A5E system and code refactoring.
 
 ## FoundryVTT Modules and Other Resources
 
