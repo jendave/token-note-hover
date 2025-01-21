@@ -8,9 +8,6 @@ import { worldbuilding } from "./systems/worldbuilding.js";
 import { rqg } from "./systems/rqg.js";
 import { a5e } from "./systems/a5e.js";
 
-
-
-
 /**
  * A HUD extension that shows the Note preview
  *
@@ -24,6 +21,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     super(note, options);
     this.data = note;
     this.hover = false;
+    this.contentAvailable = false;
   }
 
   /**
@@ -76,7 +74,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     if (game.data.system.id === 'foundry-ironsworn') {
       tempContent = await ironsworn(actor, displayImages, tempContent);
     } else if (game.data.system.id === 'dnd5e') {
-      tempContent = await dnd5e(actor, displayImages, tempContent);
+      tempContent = await dnd5e(actor, displayImages);
     } else if (game.data.system.id === 'pf2e') {
       tempContent = await pf2e(actor, displayImages, tempContent);
     } else if (game.data.system.id === 'twodsix') {
@@ -88,8 +86,10 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     } else if (game.data.system.id === 'rqg') {
       tempContent = await rqg(actor, displayImages, tempContent);
     }else if (game.data.system.id === 'a5e') {
-        tempContent = await a5e(actor, displayImages, tempContent);
+      tempContent = await a5e(actor, displayImages);
     }
+
+    this.contentAvailable = tempContent !== null && tempContent !== '';
 
     const content = tempContent;
 
@@ -148,6 +148,10 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
   }
 
   activateListeners(html) {
+    if (!this.contentAvailable) {
+        return;
+    }
+
     super.activateListeners(html);
 
     let elementToTooltip = this.element;

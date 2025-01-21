@@ -1,67 +1,38 @@
-export async function a5e(actor, displayImages, tempContent) {
+import { processNotes } from "../textUtil.js";
+
+export async function a5e(actor, displayImages) {
     // Using a guard here looks cleaner
     if (!actor) {
-        return tempContent;
+        return null;
     }
 
     const actorIsOwner = actor.isOwner ?? true;
 
     switch (actor.type) {
         case "character":
-            tempContent = await getCharacterNotes(displayImages, actor, actorIsOwner);
-            break;
+            return await getCharacterNotes(displayImages, actor, actorIsOwner);
         case "npc":
-            tempContent = await getNpcNotes(displayImages, actor, actorIsOwner);
-            break;
+            return await getNpcNotes(displayImages, actor, actorIsOwner);
         default:
-            tempContent = null;
+            return null;
     }
-
-    return tempContent;
 }
 
 async function getCharacterNotes(displayImages, actor, actorIsOwner) {
-  if (displayImages) {
-    return await TextEditor.enrichHTML(actor.system?.details?.notes, {
-      secrets: actorIsOwner,
-      documents: true,
-      async: true,
-    });
-  } else {
-    return (
-      await TextEditor.enrichHTML(actor.system?.details?.notes, {
-        secrets: actorIsOwner,
-        documents: true,
-        async: true,
-      })
-    ).replaceAll(/<img.*>/g, "");
-  }
+    return await processNotes(actor.system?.details?.notes, actorIsOwner, displayImages);
 }
 
 async function getNpcNotes(displayImages, actor, actorIsOwner) {
-    let publicNotes = actor.system?.details?.notes;
-    let privateNotes = '';
+    const publicNotes = actor.system?.details?.notes;
+    const privateNotes = actor.system?.details?.privateNotes;
+    let notes = publicNotes;
 
-    if (game.user.isGM) {
-        privateNotes += '<br><h3>GM Notes</h3>'
-        privateNotes += actor.system?.details?.privateNotes;
+    if (game.user.isGM && privateNotes) {
+        notes += "<br><h3>GM Notes</h3>";
+        notes += privateNotes;
     }
 
-    const notes = publicNotes + privateNotes;
-
-    if (displayImages) {
-    return await TextEditor.enrichHTML(notes, {
-      secrets: actorIsOwner,
-      documents: true,
-      async: true,
-    });
-  } else {
-    return (
-      await TextEditor.enrichHTML(notes, {
-        secrets: actorIsOwner,
-        documents: true,
-        async: true,
-      })
-    ).replaceAll(/<img.*>/g, "");
-  }
+    return await processNotes(notes, actorIsOwner, displayImages);
 }
+
+
