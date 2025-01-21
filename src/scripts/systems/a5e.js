@@ -1,41 +1,25 @@
 import { getTextFromNote } from "../textUtil.js";
 
-export async function a5e(actor, displayImages, tempContent) {
+export async function a5e(actor, displayImages) {
   // Using a guard here looks cleaner
   if (!actor) {
-    return tempContent;
+    return null;
   }
 
   const actorIsOwner = actor.isOwner ?? true;
 
   switch (actor.type) {
     case "character":
-      tempContent = await getCharacterNotes(displayImages, actor, actorIsOwner);
-      break;
+      return await getCharacterNotes(displayImages, actor, actorIsOwner);
     case "npc":
-      tempContent = await getNpcNotes(displayImages, actor, actorIsOwner);
-      break;
+      return await getNpcNotes(displayImages, actor, actorIsOwner);
     default:
-      tempContent = null;
+      return null;
   }
-
-  return tempContent;
 }
 
 async function getCharacterNotes(displayImages, actor, actorIsOwner) {
-  let notes = actor.system?.details?.notes;
-
-  const renderedNotes = await getTextFromNote(notes, actorIsOwner);
-
-  if (!renderedNotes) {
-    return null;
-  }
-
-  if (displayImages) {
-    return renderedNotes;
-  } else {
-    return renderedNotes.replaceAll(/<img.*>/g, "");
-  }
+  return await processNotes(actor.system?.details?.notes, actorIsOwner, displayImages);
 }
 
 async function getNpcNotes(displayImages, actor, actorIsOwner) {
@@ -47,15 +31,15 @@ async function getNpcNotes(displayImages, actor, actorIsOwner) {
     privateNotes += actor.system?.details?.privateNotes;
   }
 
-  const renderedNotes = await getTextFromNote(publicNotes + privateNotes, actorIsOwner);
+  return await processNotes(publicNotes + privateNotes, actorIsOwner, displayImages);
+}
+
+async function processNotes(notes, actorIsOwner, displayImages) {
+  const renderedNotes = await getTextFromNote(notes, actorIsOwner);
 
   if (!renderedNotes) {
     return null;
   }
 
-  if (displayImages) {
-    return renderedNotes;
-  } else {
-    return renderedNotes.replaceAll(/<img.*>/g, "");
-  }
+  return displayImages ? renderedNotes : renderedNotes.replaceAll(/<img.*>/g, "");
 }

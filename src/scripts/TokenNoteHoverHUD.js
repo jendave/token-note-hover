@@ -86,10 +86,10 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     } else if (game.data.system.id === 'rqg') {
       tempContent = await rqg(actor, displayImages, tempContent);
     }else if (game.data.system.id === 'a5e') {
-        tempContent = await a5e(actor, displayImages, tempContent);
+      tempContent = await a5e(actor, displayImages);
     }
 
-    this.contentAvailable = tempContent !== null;
+    this.contentAvailable = tempContent !== null && tempContent !== '';
 
     const content = tempContent;
 
