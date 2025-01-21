@@ -9,7 +9,7 @@
 
 The `Token Note Hover` module displays the note of a hovered-over token in a tooltip. Links, images and scrolling in the tooltip are supported.
 
-The tooltip will not display while the token is being dragged.
+The tooltip will not display if the note is empty or while the token is being dragged.
 
 ### Supported Systems
 
