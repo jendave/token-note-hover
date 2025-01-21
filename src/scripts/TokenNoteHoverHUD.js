@@ -85,7 +85,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
       tempContent = await worldbuilding(actor, displayImages, tempContent);
     } else if (game.data.system.id === 'rqg') {
       tempContent = await rqg(actor, displayImages, tempContent);
-    }else if (game.data.system.id === 'a5e') {
+    } else if (game.data.system.id === 'a5e') {
       tempContent = await a5e(actor, displayImages);
     }
 
@@ -149,7 +149,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
 
   activateListeners(html) {
     if (!this.contentAvailable) {
-        return;
+      return;
     }
 
     super.activateListeners(html);
