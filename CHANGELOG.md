@@ -2,6 +2,11 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [2.1.14](https://github.com/jendave/token-note-hover/commits/main) (2025-01-20)
+
+* [Pull Request](https://github.com/jendave/token-note-hover/pull/16) from [Syrious](https://github.com/Syrious)
+  * Notes no longer display if they are empty.
+
 ## [2.1.13](https://github.com/jendave/token-note-hover/commits/main) (2025-01-20)
 
 * [Pull Request](https://github.com/jendave/token-note-hover/pull/15) from [Syrious](https://github.com/Syrious)
