@@ -1,4 +1,4 @@
-import { getTextFromNote, processNotes } from "../textUtil.js";
+import { processNotes } from "../textUtil.js";
 
 export async function a5e(actor, displayImages) {
     // Using a guard here looks cleaner
