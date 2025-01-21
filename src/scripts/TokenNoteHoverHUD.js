@@ -8,9 +8,6 @@ import { worldbuilding } from "./systems/worldbuilding.js";
 import { rqg } from "./systems/rqg.js";
 import { a5e } from "./systems/a5e.js";
 
-
-
-
 /**
  * A HUD extension that shows the Note preview
  *
@@ -24,6 +21,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     super(note, options);
     this.data = note;
     this.hover = false;
+    this.contentAvailable = false;
   }
 
   /**
@@ -91,6 +89,8 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
         tempContent = await a5e(actor, displayImages, tempContent);
     }
 
+    this.contentAvailable = tempContent !== null;
+
     const content = tempContent;
 
     data.title = actor.name;
@@ -148,6 +148,10 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
   }
 
   activateListeners(html) {
+    if (!this.contentAvailable) {
+        return;
+    }
+
     super.activateListeners(html);
 
     let elementToTooltip = this.element;
