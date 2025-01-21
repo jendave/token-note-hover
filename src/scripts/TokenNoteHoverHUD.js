@@ -74,7 +74,7 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     if (game.data.system.id === 'foundry-ironsworn') {
       tempContent = await ironsworn(actor, displayImages, tempContent);
     } else if (game.data.system.id === 'dnd5e') {
-      tempContent = await dnd5e(actor, displayImages, tempContent);
+      tempContent = await dnd5e(actor, displayImages);
     } else if (game.data.system.id === 'pf2e') {
       tempContent = await pf2e(actor, displayImages, tempContent);
     } else if (game.data.system.id === 'twodsix') {

@@ -1,79 +1,22 @@
-export async function dnd5e(actor, displayImages, tempContent) {
-    if (actor) {
-        const actorIsOwner = actor.isOwner ?? true;
+import { processNotes } from "../textUtil.js";
 
-        switch (actor.type) {
-            case "vehicle":
-                if (displayImages) {
-                    tempContent = await TextEditor.enrichHTML(actor.system?.details?.biography?.value, {
-                        secrets: actorIsOwner,
-                        documents: true,
-                        async: true,
-                    });
-                } else {
-                    tempContent = (
-                        await TextEditor.enrichHTML(actor.system?.details?.biography?.value, {
-                            secrets: actorIsOwner,
-                            documents: true,
-                            async: true,
-                        })
-                    ).replaceAll(/<img.*>/g, "");
-                }
-                break;
-            case "character":
-                if (displayImages) {
-                    tempContent = await TextEditor.enrichHTML(actor.system?.details?.biography?.value, {
-                        secrets: actorIsOwner,
-                        documents: true,
-                        async: true,
-                    });
-                } else {
-                    tempContent = (
-                        await TextEditor.enrichHTML(actor.system?.details?.biography?.value, {
-                            secrets: actorIsOwner,
-                            documents: true,
-                            async: true,
-                        })
-                    ).replaceAll(/<img.*>/g, "");
-                }
-                break;
-            case "npc":
-                if (displayImages) {
-                    tempContent = await TextEditor.enrichHTML(actor.system?.details?.biography?.public, {
-                        secrets: actorIsOwner,
-                        documents: true,
-                        async: true,
-                    });
-                } else {
-                    tempContent = (
-                        await TextEditor.enrichHTML(actor.system?.details?.biography?.public, {
-                            secrets: actorIsOwner,
-                            documents: true,
-                            async: true,
-                        })
-                    ).replaceAll(/<img.*>/g, "");
-                }
-                break;
-            case "group":
-                if (displayImages) {
-                    tempContent = await TextEditor.enrichHTML(actor.system?.description?.full, {
-                        secrets: actorIsOwner,
-                        documents: true,
-                        async: true,
-                    });
-                } else {
-                    tempContent = (
-                        await TextEditor.enrichHTML(actor.system?.description?.full, {
-                            secrets: actorIsOwner,
-                            documents: true,
-                            async: true,
-                        })
-                    ).replaceAll(/<img.*>/g, "");
-                }
-                break;
-            default:
-                tempContent = null;
-        }
-    }
-    return tempContent;
+export async function dnd5e(actor, displayImages) {
+  if (!actor) {
+    return null;
+  }
+
+  const actorIsOwner = actor.isOwner ?? true;
+
+  switch (actor.type) {
+    case "vehicle":
+      return await processNotes(actor.system?.details?.biography?.value, actorIsOwner, displayImages);
+    case "character":
+      return await processNotes(actor.system?.details?.biography?.value, actorIsOwner, displayImages);
+    case "npc":
+      return await processNotes(actor.system?.details?.biography?.public, actorIsOwner, displayImages);
+    case "group":
+      return await processNotes(actor.system?.description?.full, actorIsOwner, displayImages);
+    default:
+      return null;
+  }
 }
