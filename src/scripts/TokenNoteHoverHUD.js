@@ -16,7 +16,7 @@ import { a5e } from "./systems/a5e.js";
  * @typedef {TokenNoteHoverHUD}
  * @extends {BasePlaceableHUD}
  */
-export default class TokenNoteHoverHUD extends BasePlaceableHUD {
+export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlaceableHUD {
   constructor(note, options) {
     super(note, options);
     this.data = note;
