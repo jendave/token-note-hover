@@ -16,7 +16,7 @@ import { a5e } from "./systems/a5e.js";
  * @typedef {TokenNoteHoverHUD}
  * @extends {BasePlaceableHUD}
  */
-export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlaceableHUD {
+export default class TokenNoteHoverHUD extends foundry.applications.hud.TokenHUD {
   constructor(note, options) {
     super(note, options);
     this.data = note;
@@ -144,7 +144,7 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       'font-size': `${fontSize}`,
       'max-width': `${maxWidth}px`,
     };
-    this.element.css(position);
+    this.element.position = position;
   }
 
   activateListeners(html) {
@@ -260,6 +260,29 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
     // eslint-disable-next-line no-undef
     $.powerTip.show(elementToTooltip);
   }
+  /**
+   * Render the HTML template
+   *
+   * @async
+   * @param {...unknown} args
+   * @returns {Promise<unknown[]>}
+   */
+  // async _renderHTML(...args) {
+  //   const div = document.createElement('form');
+  //   div.innerHTML = `<p><input type="text" placeholder="text here" name="textstring"></p><input type="button" value="Check" data-action="dothing">`;
+  //   return [div];
+  // }
+
+  /**
+   * Replace HTML in the template
+   *
+   * @param {unknown} result
+   * @param {unknown} content
+   * @param {unknown} options
+   */
+  // _replaceHTML(result, content, options) {
+  //   content.replaceChildren(...result);
+  // }
 }
 
 // eslint-disable-next-line func-names
