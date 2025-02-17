@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.0](https://github.com/jendave/token-note-hover/commits/main) (2025-xx-xx)
+
+* Updated for [FoundryVTT v13](https://foundryvtt.com/releases/13.336)
+
 ## [2.1.14](https://github.com/jendave/token-note-hover/commits/main) (2025-01-20)
 
 * [Pull Request](https://github.com/jendave/token-note-hover/pull/16) from [Syrious](https://github.com/Syrious)
