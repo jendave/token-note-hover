@@ -71,6 +71,7 @@ Hooks.on('hoverToken', (note, hovered) => {
   if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
     if (note.hasActiveHUD === false && note.controlled === false) {
       canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
+      // canvas.hud.tokenNoteHover = new TokenNoteHoverHUD(note);
       const ownershipPermissionsRequired = game.settings.get(CONSTANTS.MODULE_ID, 'ownershipPermissionsRequired');
       const tooltipOpenDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipOpenDelay');
       const tooltipCloseDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipCloseDelay');
