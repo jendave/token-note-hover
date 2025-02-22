@@ -41,10 +41,12 @@ Hooks.once('init', () => {
  * Hook on render HUD
  */
 // eslint-disable-next-line no-unused-vars
-Hooks.on('renderHeadsUpDisplay', (app, html, data) => {
+Hooks.on('renderTokenNoteHoverHUD', (app, html, data) => {
   if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
     html.append('<template id="token-note-hover"></template>');
-    canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
+    // if (!canvas.hud.tokenNoteHover) {
+    //   canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
+    // }
   }
 });
 
@@ -70,8 +72,6 @@ Hooks.on('controlToken', (obj, html) => {
 Hooks.on('hoverToken', (note, hovered) => {
   if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
     if (note.hasActiveHUD === false && note.controlled === false) {
-      canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
-      // canvas.hud.tokenNoteHover = new TokenNoteHoverHUD(note);
       const ownershipPermissionsRequired = game.settings.get(CONSTANTS.MODULE_ID, 'ownershipPermissionsRequired');
       const tooltipOpenDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipOpenDelay');
       const tooltipCloseDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipCloseDelay');
@@ -88,7 +88,11 @@ Hooks.on('hoverToken', (note, hovered) => {
           if (note.interactionState === 1
             && (note.actor.permission >= ownershipPermissionsRequired
               || note.actor.ownership.default === -1)) {
+                if (!canvas.hud.tokenNoteHover) {
+                  canvas.hud.tokenNoteHover = new TokenNoteHoverHUD(note);
+                }
             canvas.hud.tokenNoteHover.bind(note);
+            canvas.hud.tokenNoteHover.render();
           }
         }, tooltipOpenDelay);
       }
@@ -102,5 +106,6 @@ Hooks.on('hoverToken', (note, hovered) => {
     element.addEventListener('mouseleave', onMouseLeave);
   }
 
-  return canvas.hud.tokenNoteHover.close();
+ // return canvas.hud.tokenNoteHover.close();
+ return;
 });

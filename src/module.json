@@ -64,10 +64,11 @@
       {
         "id": "dnd5e",
         "type": "system",
-        "manifest": "https://github.com/foundryvtt/dnd5e/releases/download/release-3.2.1/system.json",
+        "manifest": "https://github.com/foundryvtt/dnd5e/releases/download/release-4.3.3/system.json",
         "compatibility": {
-          "minimum": "3.2.1",
-          "verified": "3.2"
+          "minimum": "4.3.3",
+          "verified": "4.3.3",
+          "maximum": "4.3.99"
         }
       },
       {

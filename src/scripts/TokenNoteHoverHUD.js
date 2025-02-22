@@ -16,12 +16,22 @@ import { a5e } from "./systems/a5e.js";
  * @typedef {TokenNoteHoverHUD}
  * @extends {BasePlaceableHUD}
  */
-export default class TokenNoteHoverHUD extends foundry.applications.hud.TokenHUD {
+export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlaceableHUD {
   constructor(note, options) {
     super(note, options);
-    this.data = note;
+    this.note = note;
     this.hover = false;
     this.contentAvailable = false;
+  }
+
+  async _renderHTML(...args) {
+    const div = document.createElement('form');
+    div.innerHTML = '<p>Test Note</p>' //this.note;
+    return [div];
+  }
+
+  _replaceHTML(result, content, options) {
+    content.replaceChildren(...result);
   }
 
   /**
@@ -47,15 +57,18 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.TokenHUD
    * @readonly
    * @type {*}
    */
-  static get defaultOptions() {
-    return foundry.utils.mergeObject(super.defaultOptions, {
+  static DEFAULT_OPTIONS = {
       id: CONSTANTS.ELEMENT_ID,
       classes: [...super.defaultOptions.classes, CONSTANTS.ELEMENT_ID],
       minimizable: false,
-      resizable: false,
-      template: 'modules/token-note-hover/templates/token-note.html',
-    });
-  }
+      resizable: false
+    };
+
+  static PARTS = {
+    foo: {
+      template: 'modules/token-note-hover/templates/token-note.html'
+    }
+  };
 
   /**
    * Get data for template
@@ -63,7 +76,7 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.TokenHUD
    * @async
    * @returns {unknown}
    */
-  async getData() {
+  async _prepareContext() {
     const data = super.getData();
     const note = this.object;
     const { actor } = note;
@@ -147,10 +160,12 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.TokenHUD
     this.element.position = position;
   }
 
-  activateListeners(html) {
+  _onRender(context, options) {
     if (!this.contentAvailable) {
       return;
     }
+
+    const html = $(this.element)
 
     super.activateListeners(html);
 
