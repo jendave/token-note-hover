@@ -26,7 +26,7 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
 
   async _renderHTML(...args) {
     const div = document.createElement('form');
-    div.innerHTML = '<p>Test Note</p>' //this.note;
+    div.innerHTML = $(this.element)
     return [div];
   }
 
