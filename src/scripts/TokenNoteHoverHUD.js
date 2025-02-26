@@ -59,13 +59,23 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
    */
   static DEFAULT_OPTIONS = {
       id: CONSTANTS.ELEMENT_ID,
-      classes: [...super.defaultOptions.classes, CONSTANTS.ELEMENT_ID],
+     // classes: [...super.defaultOptions.classes, CONSTANTS.ELEMENT_ID],
       minimizable: false,
       resizable: false
     };
 
+    // static get defaultOptions() {
+    //   return foundry.utils.mergeObject(super.defaultOptions, {
+    //     id: CONSTANTS.ELEMENT_ID,
+    //     classes: [...super.defaultOptions.classes, CONSTANTS.ELEMENT_ID],
+    //     minimizable: false,
+    //     resizable: false,
+    //     template: 'modules/token-note-hover/templates/token-note.html',
+    //   });
+    // }
+
   static PARTS = {
-    foo: {
+    note: {
       template: 'modules/token-note-hover/templates/token-note.html'
     }
   };
@@ -77,7 +87,7 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
    * @returns {unknown}
    */
   async _prepareContext() {
-    const data = super.getData();
+    let data = super._prepareContext();
     const note = this.object;
     const { actor } = note;
 
@@ -165,9 +175,10 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       return;
     }
 
-    const html = $(this.element)
+    super._onRender(context, options)
+    // super.activateListeners(html);
 
-    super.activateListeners(html);
+    const html = $(this.element)
 
     let elementToTooltip = this.element;
     if (!elementToTooltip.document) {

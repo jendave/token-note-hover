@@ -76,6 +76,10 @@ Hooks.on('hoverToken', (note, hovered) => {
       const tooltipOpenDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipOpenDelay');
       const tooltipCloseDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipCloseDelay');
 
+      if (!canvas.hud.tokenNoteHover) {
+        canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
+      }
+
       if (!hovered) {
         if (!canvas.hud.tokenNoteHover.hover) {
           setTimeout(() => canvas.hud.tokenNoteHover.hide(), tooltipCloseDelay);
@@ -88,9 +92,9 @@ Hooks.on('hoverToken', (note, hovered) => {
           if (note.interactionState === 1
             && (note.actor.permission >= ownershipPermissionsRequired
               || note.actor.ownership.default === -1)) {
-                if (!canvas.hud.tokenNoteHover) {
-                  canvas.hud.tokenNoteHover = new TokenNoteHoverHUD(note);
-                }
+            if (!canvas.hud.tokenNoteHover) {
+              canvas.hud.tokenNoteHover = new TokenNoteHoverHUD(note);
+            }
             canvas.hud.tokenNoteHover.bind(note);
             canvas.hud.tokenNoteHover.render();
           }
@@ -106,6 +110,9 @@ Hooks.on('hoverToken', (note, hovered) => {
     element.addEventListener('mouseleave', onMouseLeave);
   }
 
- // return canvas.hud.tokenNoteHover.close();
- return;
+  if (game.release.generation < 13) {
+    return canvas.hud.tokenNoteHover.clear();
+  } else {
+    return canvas.hud.tokenNoteHover.close();
+  }
 });
