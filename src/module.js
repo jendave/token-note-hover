@@ -43,10 +43,9 @@ Hooks.once('init', () => {
 // eslint-disable-next-line no-unused-vars
 Hooks.on('renderTokenNoteHoverHUD', (app, html, data) => {
   if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
-    html.append('<template id="token-note-hover"></template>');
-    // if (!canvas.hud.tokenNoteHover) {
-    //   canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
-    // }
+    if (!canvas.hud.tokenNoteHover) {
+      canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
+    }
   }
 });
 
@@ -85,18 +84,13 @@ Hooks.on('hoverToken', (note, hovered) => {
           setTimeout(() => canvas.hud.tokenNoteHover.hide(), tooltipCloseDelay);
         }
       }
-      // TODO: show note only if  note.hasActiveHUD === false
 
       if (hovered) {
         setTimeout(() => {
           if (note.interactionState === 1
             && (note.actor.permission >= ownershipPermissionsRequired
               || note.actor.ownership.default === -1)) {
-            if (!canvas.hud.tokenNoteHover) {
-              canvas.hud.tokenNoteHover = new TokenNoteHoverHUD(note);
-            }
             canvas.hud.tokenNoteHover.bind(note);
-            canvas.hud.tokenNoteHover.render();
           }
         }, tooltipOpenDelay);
       }
@@ -110,9 +104,5 @@ Hooks.on('hoverToken', (note, hovered) => {
     element.addEventListener('mouseleave', onMouseLeave);
   }
 
-  if (game.release.generation < 13) {
-    return canvas.hud.tokenNoteHover.clear();
-  } else {
-    return canvas.hud.tokenNoteHover.close();
-  }
+  return canvas.hud.tokenNoteHover.close();
 });
