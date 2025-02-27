@@ -2,9 +2,9 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
-## [2.1.15](https://github.com/jendave/token-note-hover/commits/main) (2025-xx-xx)
+## [2.1.15](https://github.com/jendave/token-note-hover/commits/main) (2025-02-26)
 
-* Adjust module compatibility for v12.
+* Adjust module maximum compatibility for v12 only.
 
 ## [2.1.14](https://github.com/jendave/token-note-hover/commits/main) (2025-01-20)
 
