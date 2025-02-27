@@ -165,7 +165,6 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
     }
 
     super._onRender(context, options)
-    // super.activateListeners(html);
 
     const html = $(this.element)
 
