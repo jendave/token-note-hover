@@ -11,16 +11,21 @@ The `Token Note Hover` module displays the note of a hovered-over token in a too
 
 The tooltip will not display if the note is empty or while the token is being dragged.
 
+## FoundryVTT Compatability
+
+* [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 3.0.0 and above only run on [FoundryVTT v13](https://foundryvtt.com/releases/13.336).
+* [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 2.1.x only runs on [FoundryVTT v12](https://foundryvtt.com/releases/12.331).
+
 ### Supported Systems
 
-* [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn)
-* [D&D 5E](https://foundryvtt.com/packages/dnd5e)
-* [Pathfinder 2e](https://foundryvtt.com/packages/pf2e)
-* [Twodsix - Cepheus & Traveller](https://foundryvtt.com/packages/twodsix)
-* [Call of Cthulhu 7th edition](https://foundryvtt.com/packages/CoC7)
-* [Simple Worldbuilding System](https://foundryvtt.com/packages/worldbuilding)
-* [RuneQuest Glorantha](https://foundryvtt.com/packages/rqg)
-* [Level Up: Advanced 5th Edition](https://foundryvtt.com/packages/a5e)
+* [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn). FoundryVTT v12 and v13.
+* [D&D 5E](https://foundryvtt.com/packages/dnd5e). FoundryVTT v12 and v13.
+* [Pathfinder 2e](https://foundryvtt.com/packages/pf2e). FoundryVTT v12 only.
+* [Twodsix - Cepheus & Traveller](https://foundryvtt.com/packages/twodsix). FoundryVTT v12 only.
+* [Call of Cthulhu 7th edition](https://foundryvtt.com/packages/CoC7). FoundryVTT v12 only.
+* [Simple Worldbuilding System](https://foundryvtt.com/packages/worldbuilding). FoundryVTT v12 only.
+* [RuneQuest Glorantha](https://foundryvtt.com/packages/rqg). FoundryVTT v12 only.
+* [Level Up: Advanced 5th Edition](https://foundryvtt.com/packages/a5e). FoundryVTT v12 only.
 
 ### Some customization options
 
@@ -41,12 +46,18 @@ All settings, except for `token ownership required` are client-side only so each
 
 ## Module Installation
 
-To install the module, search for `Token Note Hover` in the `Add-On Modules` tab of of the Foundry VTT game setup screen. Then click on `Install`.
+To install the latest version of this module, search for `Token Note Hover` in the `Add-On Modules` tab of of the Foundry VTT game setup screen. Then click on `Install`.
 
 Or use this URL and click on `Install`:
 
 ```bash
 https://github.com/jendave/token-note-hover/releases/latest/download/module.json
+```
+
+To install the v12 version of this module, use this URL and click on `Install`:
+
+```bash
+https://github.com/jendave/token-note-hover/releases/download/2.1.15/module.json
 ```
 
 ### Other Recommended Modules
