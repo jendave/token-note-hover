@@ -62,12 +62,6 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
     resizable: false
   };
 
-  // static PARTS = {
-  //   note: {
-  //     template: 'modules/token-note-hover/templates/token-note.html'
-  //   }
-  // };
-
   /**
    * Get data for template
    *
@@ -119,6 +113,9 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
                 </div>`);
     return data;
   }
+
+  // class="standard-form"
+  // 
 
   /**
    * Set app position
