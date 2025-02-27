@@ -25,8 +25,7 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
   }
 
   async _renderHTML(...args) {
-    const div = document.createElement('form');
-    div.innerHTML = $(this.element)
+    const div = document.createElement('note');
     return [div];
   }
 
@@ -63,11 +62,11 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
     resizable: false
   };
 
-  static PARTS = {
-    note: {
-      template: 'modules/token-note-hover/templates/token-note.html'
-    }
-  };
+  // static PARTS = {
+  //   note: {
+  //     template: 'modules/token-note-hover/templates/token-note.html'
+  //   }
+  // };
 
   /**
    * Get data for template
