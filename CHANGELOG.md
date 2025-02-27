@@ -5,6 +5,12 @@
 ## [3.0.0](https://github.com/jendave/token-note-hover/commits/main) (2025-xx-xx)
 
 * Updated for [FoundryVTT v13](https://foundryvtt.com/releases/13.336)
+* [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 3.x only runs on [FoundryVTT v13](https://foundryvtt.com/releases/13.336).
+
+## [2.1.15](https://github.com/jendave/token-note-hover/commits/main) (2025-02-26)
+
+* Adjust module maximum compatibility for v12 only.
+* [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 2.x only runs on [FoundryVTT v12](https://foundryvtt.com/releases/12.331).
 
 ## [2.1.14](https://github.com/jendave/token-note-hover/commits/main) (2025-01-20)
 
