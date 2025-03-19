@@ -11,7 +11,7 @@ The `Token Note Hover` module displays the note of a hovered-over token in a too
 
 The tooltip will not display if the note is empty or while the token is being dragged.
 
-## FoundryVTT Compatability
+## FoundryVTT Compatibility
 
 * [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 3.0.0 and above only run on [FoundryVTT v13](https://foundryvtt.com/releases/13.338).
 * [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 2.1.x only runs on [FoundryVTT v12](https://foundryvtt.com/releases/12.331).
