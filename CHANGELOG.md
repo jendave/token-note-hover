@@ -5,7 +5,7 @@
 ## [3.0.0](https://github.com/jendave/token-note-hover/commits/main) (2025-03-19)
 
 * Updated for [FoundryVTT v13](https://foundryvtt.com/releases/13.338)
-* [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 3.x only runs on [FoundryVTT v13](https://foundryvtt.com/releases/13.336).
+* [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 3.x only runs on [FoundryVTT v13](https://foundryvtt.com/releases/13.338).
 
 ## [2.1.15](https://github.com/jendave/token-note-hover/commits/main) (2025-02-26)
 
