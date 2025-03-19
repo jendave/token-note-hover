@@ -13,7 +13,7 @@ The tooltip will not display if the note is empty or while the token is being dr
 
 ## FoundryVTT Compatability
 
-* [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 3.0.0 and above only run on [FoundryVTT v13](https://foundryvtt.com/releases/13.336).
+* [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 3.0.0 and above only run on [FoundryVTT v13](https://foundryvtt.com/releases/13.338).
 * [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 2.1.x only runs on [FoundryVTT v12](https://foundryvtt.com/releases/12.331).
 
 ### Supported Systems
@@ -41,6 +41,7 @@ All settings, except for `token ownership required` are client-side only so each
 
 * [Ironsworn/Starforged Discord Server - FoundryVTT Channel](https://discord.com/channels/437120373436186625/867434336201605160) (jendave)
 * [FoundryVTT Discord Server - Module Discussion Channel](https://discord.com/channels/170995199584108546/513918036919713802) (jendave)
+* [VOID Affiliate Network Discord Server - Game Hacks Channel](https://discord.com/channels/1222986351272787990/1222986351792619687) (jendave)
 * [GitHub Repository](https://github.com/jendave/token-note-hover)
 * [Itch.io](https://jendave.itch.io/)
 
@@ -186,6 +187,7 @@ Please check out my other modules and resources for Ironsworn, Ironsworn: Starfo
 * [Augmented Reality Cyberpunk City Kit](https://foundryvtt.com/packages/augmented-reality-foundry)
 * [Token Note Hover](https://github.com/jendave/token-note-hover)
 * [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
+* [VOID 1680 AM for FoundryVTT](https://foundryvtt.com/packages/void-1680-am)
 
 ### [Itch.io](https://jendave.itch.io/) Resources
 
