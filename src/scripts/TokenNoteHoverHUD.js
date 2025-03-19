@@ -16,12 +16,21 @@ import { a5e } from "./systems/a5e.js";
  * @typedef {TokenNoteHoverHUD}
  * @extends {BasePlaceableHUD}
  */
-export default class TokenNoteHoverHUD extends BasePlaceableHUD {
+export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlaceableHUD {
   constructor(note, options) {
     super(note, options);
-    this.data = note;
+    this.note = note;
     this.hover = false;
     this.contentAvailable = false;
+  }
+
+  async _renderHTML(...args) {
+    const div = document.createElement('note');
+    return [div];
+  }
+
+  _replaceHTML(result, content, options) {
+    content.replaceChildren(...result);
   }
 
   /**
@@ -47,15 +56,11 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
    * @readonly
    * @type {*}
    */
-  static get defaultOptions() {
-    return foundry.utils.mergeObject(super.defaultOptions, {
-      id: CONSTANTS.ELEMENT_ID,
-      classes: [...super.defaultOptions.classes, CONSTANTS.ELEMENT_ID],
-      minimizable: false,
-      resizable: false,
-      template: 'modules/token-note-hover/templates/token-note.html',
-    });
-  }
+  static DEFAULT_OPTIONS = {
+    id: CONSTANTS.ELEMENT_ID,
+    minimizable: false,
+    resizable: false
+  };
 
   /**
    * Get data for template
@@ -63,8 +68,8 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
    * @async
    * @returns {unknown}
    */
-  async getData() {
-    const data = super.getData();
+  async _prepareContext() {
+    let data = super._prepareContext();
     const note = this.object;
     const { actor } = note;
 
@@ -109,6 +114,9 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
     return data;
   }
 
+  // class="standard-form"
+  // 
+
   /**
    * Set app position
    */
@@ -144,15 +152,17 @@ export default class TokenNoteHoverHUD extends BasePlaceableHUD {
       'font-size': `${fontSize}`,
       'max-width': `${maxWidth}px`,
     };
-    this.element.css(position);
+    this.element.position = position;
   }
 
-  activateListeners(html) {
+  _onRender(context, options) {
     if (!this.contentAvailable) {
       return;
     }
 
-    super.activateListeners(html);
+    super._onRender(context, options)
+
+    const html = $(this.element)
 
     let elementToTooltip = this.element;
     if (!elementToTooltip.document) {

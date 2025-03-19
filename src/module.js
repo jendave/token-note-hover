@@ -41,10 +41,11 @@ Hooks.once('init', () => {
  * Hook on render HUD
  */
 // eslint-disable-next-line no-unused-vars
-Hooks.on('renderHeadsUpDisplay', (app, html, data) => {
+Hooks.on('renderTokenNoteHoverHUD', (app, html, data) => {
   if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
-    html.append('<template id="token-note-hover"></template>');
-    canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
+    if (!canvas.hud.tokenNoteHover) {
+      canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
+    }
   }
 });
 
@@ -74,12 +75,15 @@ Hooks.on('hoverToken', (note, hovered) => {
       const tooltipOpenDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipOpenDelay');
       const tooltipCloseDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipCloseDelay');
 
+      if (!canvas.hud.tokenNoteHover) {
+        canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
+      }
+
       if (!hovered) {
         if (!canvas.hud.tokenNoteHover.hover) {
           setTimeout(() => canvas.hud.tokenNoteHover.hide(), tooltipCloseDelay);
         }
       }
-      // TODO: show note only if  note.hasActiveHUD === false
 
       if (hovered) {
         setTimeout(() => {
@@ -100,5 +104,5 @@ Hooks.on('hoverToken', (note, hovered) => {
     element.addEventListener('mouseleave', onMouseLeave);
   }
 
-  return canvas.hud.tokenNoteHover.clear();
+  return canvas.hud.tokenNoteHover.close();
 });
