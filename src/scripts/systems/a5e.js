@@ -34,5 +34,3 @@ async function getNpcNotes(displayImages, actor, actorIsOwner) {
 
     return await processNotes(notes, actorIsOwner, displayImages);
 }
-
-
