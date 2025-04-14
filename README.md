@@ -59,7 +59,7 @@ https://github.com/jendave/token-note-hover/releases/latest/download/module.json
 To install the v12 version of this module, use this URL and click on `Install`:
 
 ```bash
-https://github.com/jendave/token-note-hover/releases/download/2.1.15/module.json
+https://github.com/jendave/token-note-hover/releases/download/2.1.16/module.json
 ```
 
 ### Other Recommended Modules
