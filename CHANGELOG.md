@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.1](https://github.com/jendave/token-note-hover/commits/main) (2025-04-14)
+
+* Small updates.
+
 ## [3.0.0](https://github.com/jendave/token-note-hover/commits/main) (2025-03-19)
 
 * Updated for [FoundryVTT v13](https://foundryvtt.com/releases/13.338)
