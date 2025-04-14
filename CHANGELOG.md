@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [2.1.16](https://github.com/jendave/token-note-hover/commits/main) (2025-04-14)
+
+* Added support for [Das Schwarze Auge / The Dark Eye (5th Edition)](https://foundryvtt.com/packages/dsa5).
+
 ## [2.1.15](https://github.com/jendave/token-note-hover/commits/main) (2025-02-26)
 
 * Adjust module maximum compatibility for v12 only.

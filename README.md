@@ -21,6 +21,7 @@ The tooltip will not display if the note is empty or while the token is being dr
 * [Simple Worldbuilding System](https://foundryvtt.com/packages/worldbuilding)
 * [RuneQuest Glorantha](https://foundryvtt.com/packages/rqg)
 * [Level Up: Advanced 5th Edition](https://foundryvtt.com/packages/a5e)
+* [Das Schwarze Auge / The Dark Eye (5th Edition)](https://foundryvtt.com/packages/dsa5)
 
 ### Some customization options
 
@@ -143,6 +144,16 @@ https://github.com/jendave/token-note-hover/releases/latest/download/module.json
 | ------------- | ----------- |
 | **Player Character** | Notes |
 | **Non-Player Character** | Notes & Private Notes (GM only)|
+
+### Das Schwarze Auge / The Dark Eye (5th Edition)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dsa5.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Character** | Notes |
+| **Creature** | Description |
+| **Non-Player Character** | Notes|
 
 ## Troubleshooting and Tips
 

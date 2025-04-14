@@ -7,7 +7,7 @@
         "license": "SEE LICENSE IN LICENSE",
         "private": true,
         "type": "module",
-        "author": "",
+        "author": "David Hudson",
         "contributors": [],
         "imports": {
                 "#runtime/*": "@typhonjs-fvtt/runtime/*",
