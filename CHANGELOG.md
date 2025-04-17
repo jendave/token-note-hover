@@ -2,14 +2,22 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.2](https://github.com/jendave/token-note-hover/commits/main) (2025-04-17)
+
+* Bump version and merge in v12 changes.
+
 ## [3.0.1](https://github.com/jendave/token-note-hover/commits/main) (2025-04-14)
 
-* Small updates.
+* Bump version and merge in v12 changes.
 
 ## [3.0.0](https://github.com/jendave/token-note-hover/commits/main) (2025-03-19)
 
 * Updated for [FoundryVTT v13](https://foundryvtt.com/releases/13.338)
 * [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 3.x only runs on [FoundryVTT v13](https://foundryvtt.com/releases/13.338).
+
+## [2.1.17](https://github.com/jendave/token-note-hover/commits/main) (2025-04-17)
+
+* Added support for [Starfinder](https://foundryvtt.com/packages/sfrpg).
 
 ## [2.1.16](https://github.com/jendave/token-note-hover/commits/main) (2025-04-14)
 

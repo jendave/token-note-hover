@@ -8,6 +8,7 @@ import { worldbuilding } from "./systems/worldbuilding.js";
 import { rqg } from "./systems/rqg.js";
 import { a5e } from "./systems/a5e.js";
 import { dsa5 } from "./systems/dsa5.js";
+import { sfrpg } from "./systems/sfrpg.js";
 
 /**
  * A HUD extension that shows the Note preview
@@ -95,6 +96,8 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       tempContent = await a5e(actor, displayImages);
     } else if (game.data.system.id === 'dsa5') {
       tempContent = await dsa5(actor, displayImages);
+    } else if (game.data.system.id === 'sfrpg') {
+      tempContent = await sfrpg(actor, displayImages);
     }
 
     this.contentAvailable = tempContent !== null && tempContent !== '';
