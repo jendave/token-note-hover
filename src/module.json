@@ -132,6 +132,15 @@
           "minimum": "6.2.2",
           "verified": "6.2.2"
         }
+      },
+      {
+        "id": "sfrpg",
+        "type": "system",
+        "manifest": "https://github.com/foundryvtt-starfinder/foundryvtt-starfinder/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "0.27.1",
+          "verified": "0.27"
+        }
       }
     ],
     "requires": [],

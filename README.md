@@ -22,6 +22,7 @@ The tooltip will not display if the note is empty or while the token is being dr
 * [RuneQuest Glorantha](https://foundryvtt.com/packages/rqg)
 * [Level Up: Advanced 5th Edition](https://foundryvtt.com/packages/a5e)
 * [Das Schwarze Auge / The Dark Eye (5th Edition)](https://foundryvtt.com/packages/dsa5)
+* [Starfinder 1st Edition](https://foundryvtt.com/packages/sfrpg)
 
 ### Some customization options
 
@@ -154,6 +155,20 @@ https://github.com/jendave/token-note-hover/releases/latest/download/module.json
 | **Character** | Notes |
 | **Creature** | Description |
 | **Non-Player Character** | Notes|
+
+### Starfinder 1st Edition
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_sfrpg.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Player Character** | Biography & GM Notes |
+| **Drone** | Biography & GM Notes |
+| **Hazard** | Notes |
+| **Non-Player Character** | Biography & GM Notes|
+| **Old-Style NPC** | Biography & GM Notes|
+| **Starship** | Notes |
+| **Vehicle** | Notes |
 
 ## Troubleshooting and Tips
 
