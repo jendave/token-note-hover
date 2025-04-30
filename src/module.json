@@ -67,8 +67,7 @@
         "manifest": "https://github.com/foundryvtt/dnd5e/releases/download/release-4.3.3/system.json",
         "compatibility": {
           "minimum": "4.3.3",
-          "verified": "4.3.3",
-          "maximum": "4.3.99"
+          "verified": "4.3.3"
         }
       },
       {

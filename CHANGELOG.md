@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.3](https://github.com/jendave/token-note-hover/commits/main) (2025-04-30)
+
+* Fixed versioning issue with [D&D 5E](https://foundryvtt.com/packages/dnd5e).
+
 ## [3.0.2](https://github.com/jendave/token-note-hover/commits/main) (2025-04-17)
 
 * Bump version and merge in v12 changes.
