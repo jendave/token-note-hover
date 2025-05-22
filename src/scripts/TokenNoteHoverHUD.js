@@ -176,7 +176,7 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       elementToTooltip = $(elementToTooltip);
     }
 
-    const tooltipPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipPlacement') ?? 'e';
+    let tooltipPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipPlacement') ?? 'e';
     const smartPlacement = game.settings.get(CONSTANTS.MODULE_ID, 'smartPlacement');
 
     let x = 0;
@@ -204,45 +204,49 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
     // };
 
     // right top
-    //     const position = {
-    //     position: 'fixed',  // Position relative to the viewport
-    //     top: `0px`,
-    //     right: `0px`,
-    //     left: 'auto',       // Ensure left doesn't interfere
-    //     bottom: 'auto',     // Ensure bottom doesn't interfere
-    //     display: 'block',  // Show the tooltip
-    // };
+    const position = {
+      position: 'fixed',  // Position relative to the viewport
+      top: `0px`,
+      right: `0px`,
+      left: 'auto',       // Ensure left doesn't interfere
+      bottom: 'auto',     // Ensure bottom doesn't interfere
+      display: 'block',  // Show the tooltip
+    };
+    tooltipPlacement = 'sw';
 
-//left top
-    //         const position = {
-    //     position: 'fixed',  // Position relative to the viewport
-    //     top: `0px`,
-    //     right: 'auto',
-    //     left: `0px`,    // Ensure left doesn't interfere
-    //     bottom: 'auto',     // Ensure bottom doesn't interfere
-    //     display: 'block',  // Show the tooltip
+    //left top
+    // const position = {
+    //   position: 'fixed',  // Position relative to the viewport
+    //   top: `0px`,
+    //   right: 'auto',
+    //   left: `0px`,    // Ensure left doesn't interfere
+    //   bottom: 'auto',     // Ensure bottom doesn't interfere
+    //   display: 'block',  // Show the tooltip
     // };
+    // tooltipPlacement = 'se';
 
     //left bottom
-            const position = {
-        position: 'fixed',  // Position relative to the viewport
-        top: 'auto',
-        right: 'auto',
-        left: `0px`,    // Ensure left doesn't interfere
-        bottom: `0px`,     // Ensure bottom doesn't interfere
-        display: 'block',  // Show the tooltip
-    };
+    // const position = {
+    //   position: 'fixed',  // Position relative to the viewport
+    //   top: 'auto',
+    //   right: 'auto',
+    //   left: `0px`,    // Ensure left doesn't interfere
+    //   bottom: `0px`,     // Ensure bottom doesn't interfere
+    //   display: 'block',  // Show the tooltip
+    // };
+    // tooltipPlacement = 'ne';
 
-        //right bottom
-        //     const position = {
-        // position: 'fixed',  // Position relative to the viewport
-        // top: 'auto',
-        // right: `0px`,
-        // left: 'auto',    // Ensure left doesn't interfere
-        // bottom: `0px`,     // Ensure bottom doesn't interfere
-        // display: 'block',  // Show the tooltip
-   // };
- 
+    //right bottom
+    // const position = {
+    //   position: 'fixed',  // Position relative to the viewport
+    //   top: 'auto',
+    //   right: `0px`,
+    //   left: 'auto',    // Ensure left doesn't interfere
+    //   bottom: `0px`,     // Ensure bottom doesn't interfere
+    //   display: 'block',  // Show the tooltip
+    // };
+    // tooltipPlacement = 'nw';
+
     elementToTooltip.css(position);
 
     let tooltipColor = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipColor');
