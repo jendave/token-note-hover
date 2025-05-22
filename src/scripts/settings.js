@@ -1,5 +1,4 @@
 import CONSTANTS from './constants';
-import TokenNoteHoverHUD from './TokenNoteHoverHUD';
 
 /**
  * Register Settings
@@ -151,5 +150,22 @@ export default function registerSettings() {
     config: true,
     default: true,
     type: Boolean,
+  });
+
+  game.settings.register(CONSTANTS.MODULE_ID, "imPosition", {
+    name: "Position of image", // Setting name
+    hint: "Set the location of the image on the screen (per user).", // Setting description
+    scope: "client", // Client-stored setting
+    config: true, // Show setting in configuration view
+    choices: {
+      // Choices
+      "Bottom left": "Bottom left",
+      "Bottom right": "Bottom right",
+      "Top left": "Top left",
+      "Top right": "Top right",
+      Centre: "Centre",
+    },
+    default: "Bottom left", // Default Value
+    type: String, // Value type
   });
 }

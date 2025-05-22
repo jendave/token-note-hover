@@ -196,12 +196,53 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
     const left = x - (width / 2);
     const top = y - (height / 2);
 
-    const position = {
-      height: `${height}px`,
-      width: `${width}px`,
-      left: `${left}px`,
-      top: `${top}px`,
+    // const position = {
+    //   height: `${height}px`,
+    //   width: `${width}px`,
+    //   left: `${left}px`,
+    //   top: `${top}px`,
+    // };
+
+    // right top
+    //     const position = {
+    //     position: 'fixed',  // Position relative to the viewport
+    //     top: `0px`,
+    //     right: `0px`,
+    //     left: 'auto',       // Ensure left doesn't interfere
+    //     bottom: 'auto',     // Ensure bottom doesn't interfere
+    //     display: 'block',  // Show the tooltip
+    // };
+
+//left top
+    //         const position = {
+    //     position: 'fixed',  // Position relative to the viewport
+    //     top: `0px`,
+    //     right: 'auto',
+    //     left: `0px`,    // Ensure left doesn't interfere
+    //     bottom: 'auto',     // Ensure bottom doesn't interfere
+    //     display: 'block',  // Show the tooltip
+    // };
+
+    //left bottom
+            const position = {
+        position: 'fixed',  // Position relative to the viewport
+        top: 'auto',
+        right: 'auto',
+        left: `0px`,    // Ensure left doesn't interfere
+        bottom: `0px`,     // Ensure bottom doesn't interfere
+        display: 'block',  // Show the tooltip
     };
+
+        //right bottom
+        //     const position = {
+        // position: 'fixed',  // Position relative to the viewport
+        // top: 'auto',
+        // right: `0px`,
+        // left: 'auto',    // Ensure left doesn't interfere
+        // bottom: `0px`,     // Ensure bottom doesn't interfere
+        // display: 'block',  // Show the tooltip
+   // };
+ 
     elementToTooltip.css(position);
 
     let tooltipColor = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipColor');
