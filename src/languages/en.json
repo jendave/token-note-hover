@@ -31,6 +31,17 @@
           "south-east-alt": "South East Alt"
         }
       },
+      "TooltipScreenPosition": {
+        "Name": "Position of Note on Screen",
+        "Hint": "Set the location of the note on the screen.",
+        "Choices": {
+          "adjacent-to-token": "Adjacent to Token",
+          "bottom-left": "Bottom left",
+          "bottom-right": "Bottom right",
+          "top-left": "Top left",
+          "top-right": "Top right"
+        }
+      },
       "SmartPlacement": {
         "Name": "Tooltip Smart Placement ",
         "Hint": "Dynamic placement of the tooltips to stay inside the browser viewport."

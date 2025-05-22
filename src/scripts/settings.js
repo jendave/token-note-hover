@@ -63,6 +63,22 @@ export default function registerSettings() {
     },
   });
 
+  game.settings.register(CONSTANTS.MODULE_ID, "noteScreenPosition", {
+    name: `${CONSTANTS.MODULE_ID}.Settings.TooltipScreenPosition.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.TooltipScreenPosition.Hint`,
+    scope: "client",
+    config: true,
+    type: String,
+    default: `${CONSTANTS.MODULE_ID}.Settings.TooltipScreenPosition.Choices.adjacent-to-token`,
+    choices: {
+      'adjacent-to-token': `${CONSTANTS.MODULE_ID}.Settings.TooltipScreenPosition.Choices.adjacent-to-token`,
+      'top-left': `${CONSTANTS.MODULE_ID}.Settings.TooltipScreenPosition.Choices.top-left`,
+      'top-right': `${CONSTANTS.MODULE_ID}.Settings.TooltipScreenPosition.Choices.top-right`,
+      "bottom-left": `${CONSTANTS.MODULE_ID}.Settings.TooltipScreenPosition.Choices.bottom-left`,
+      "bottom-right": `${CONSTANTS.MODULE_ID}.Settings.TooltipScreenPosition.Choices.bottom-right`
+    },
+  });
+
   game.settings.register(CONSTANTS.MODULE_ID, 'smartPlacement', {
     name: `${CONSTANTS.MODULE_ID}.Settings.SmartPlacement.Name`,
     hint: `${CONSTANTS.MODULE_ID}.Settings.SmartPlacement.Hint`,
@@ -150,22 +166,5 @@ export default function registerSettings() {
     config: true,
     default: true,
     type: Boolean,
-  });
-
-  game.settings.register(CONSTANTS.MODULE_ID, "imPosition", {
-    name: "Position of image", // Setting name
-    hint: "Set the location of the image on the screen (per user).", // Setting description
-    scope: "client", // Client-stored setting
-    config: true, // Show setting in configuration view
-    choices: {
-      // Choices
-      "Bottom left": "Bottom left",
-      "Bottom right": "Bottom right",
-      "Top left": "Top left",
-      "Top right": "Top right",
-      Centre: "Centre",
-    },
-    default: "Bottom left", // Default Value
-    type: String, // Value type
   });
 }

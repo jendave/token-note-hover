@@ -203,49 +203,69 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
     //   top: `${top}px`,
     // };
 
-    // right top
-    const position = {
-      position: 'fixed',  // Position relative to the viewport
-      top: `0px`,
-      right: `0px`,
-      left: 'auto',       // Ensure left doesn't interfere
-      bottom: 'auto',     // Ensure bottom doesn't interfere
-      display: 'block',  // Show the tooltip
-    };
-    tooltipPlacement = 'sw';
+    const centre = canvas.scene._viewPosition;
+    const windowWidthScaled = window.innerWidth / centre.scale;
+    const windowHeightScaled = window.innerHeight / centre.scale;
+    let xAxis = 0;
+    let yAxis = 0;
+    const sidebar = document.getElementById("sidebar");
+    const sidebarCollapsed = sidebar.classList.contains("collapsed");
+
+    // if (tooltipPlacement.includes("e")) {
+    // yAxis = centre.y + windowHeightScaled / 2;
+    // xAxis = centre.x - windowWidthScaled / 2;
 
     //left top
+    // xAxis = centre.x + windowWidthScaled / 2;
+    // yAxis = centre.y - windowHeightScaled / 2;
+    // tooltipPlacement = 'se-alt';
     // const position = {
-    //   position: 'fixed',  // Position relative to the viewport
-    //   top: `0px`,
-    //   right: 'auto',
-    //   left: `0px`,    // Ensure left doesn't interfere
-    //   bottom: 'auto',     // Ensure bottom doesn't interfere
-    //   display: 'block',  // Show the tooltip
+    //   position: 'fixed',
+    //   top: `${yAxis}px`,
+    //   right: `${xAxis}px`,
+    //   left: 'auto',
+    //   bottom: 'auto',
+    //   display: 'block',
     // };
-    // tooltipPlacement = 'se';
 
-    //left bottom
+    // left bottom
+    // xAxis = centre.x + windowWidthScaled / 2;
+    // yAxis = centre.y + windowHeightScaled / 2;
+    // tooltipPlacement = 'ne-alt';
     // const position = {
-    //   position: 'fixed',  // Position relative to the viewport
-    //   top: 'auto',
-    //   right: 'auto',
-    //   left: `0px`,    // Ensure left doesn't interfere
-    //   bottom: `0px`,     // Ensure bottom doesn't interfere
-    //   display: 'block',  // Show the tooltip
+    //   position: 'fixed',
+    //   top: `${yAxis}px`,
+    //   right: `${xAxis}px`,
+    //   left: 'auto',
+    //   bottom: 'auto',
+    //   display: 'block',
     // };
-    // tooltipPlacement = 'ne';
 
-    //right bottom
+    // right top
+    // xAxis = centre.x - windowWidthScaled / 2;
+    // yAxis = centre.y - windowHeightScaled / 2;
+    // tooltipPlacement = 'sw-alt';
     // const position = {
-    //   position: 'fixed',  // Position relative to the viewport
-    //   top: 'auto',
-    //   right: `0px`,
-    //   left: 'auto',    // Ensure left doesn't interfere
-    //   bottom: `0px`,     // Ensure bottom doesn't interfere
-    //   display: 'block',  // Show the tooltip
+    //   position: 'fixed',
+    //   top: `${yAxis}px`,
+    //   right: `${xAxis}px`,
+    //   left: 'auto',
+    //   bottom: 'auto',
+    //   display: 'block',
     // };
-    // tooltipPlacement = 'nw';
+
+    // right bottom
+    xAxis = centre.x - windowWidthScaled / 2;
+    yAxis = centre.y + windowHeightScaled / 2;
+    tooltipPlacement = 'nw-alt';
+    const position = {
+      position: 'fixed',
+      top: `${yAxis}px`,
+      right: `${xAxis}px`,
+      left: 'auto',
+      bottom: 'auto',
+      display: 'block',
+    };
 
     elementToTooltip.css(position);
 
