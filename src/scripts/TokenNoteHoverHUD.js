@@ -76,7 +76,6 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
     const { actor } = note;
 
     let tempContent = '';
-    // let actorIsOwner = true;
     const displayImages = game.settings.get(CONSTANTS.MODULE_ID, 'displayImages');
     if (game.data.system.id === 'foundry-ironsworn') {
       tempContent = await ironsworn(actor, displayImages, tempContent);
@@ -119,9 +118,6 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
                 </div>`);
     return data;
   }
-
-  // class="standard-form"
-  // 
 
   /**
    * Set app position
@@ -181,91 +177,61 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
 
     let x = 0;
     let y = 0;
+    let position;
+
     if (game.settings.get(CONSTANTS.MODULE_ID, 'useMousePositionForCoordinates')) {
       const positionMouse = canvas.mousePosition;
       x = positionMouse.x;
       y = positionMouse.y;
-    } else {
+    } else if (game.settings.get(CONSTANTS.MODULE_ID, 'tooltipScreenPosition') === 'adjacent-to-token') {
       x = this.object.center ? this.object.center.x : this.object.x;
       y = this.object.center ? this.object.center.y : this.object.y;
+      const width = this.object.w;
+      const height = this.object.h;
+
+      const left = x - (width / 2);
+      const top = y - (height / 2);
+
+      position = {
+        height: `${height}px`,
+        width: `${width}px`,
+        left: `${left}px`,
+        top: `${top}px`,
+      };
+    } else {
+      const centre = canvas.scene._viewPosition;
+      const windowWidthScaled = window.innerWidth / centre.scale;
+      const windowHeightScaled = window.innerHeight / centre.scale;
+      let xAxis = 0;
+      let yAxis = 0;
+      const sidebar = document.getElementById("sidebar");
+      const sidebarCollapsed = sidebar.classList.contains("collapsed");
+      if (game.settings.get(CONSTANTS.MODULE_ID, 'tooltipScreenPosition') === 'top-left') {
+        xAxis = centre.x + windowWidthScaled / 2;
+        yAxis = centre.y - windowHeightScaled / 2;
+        tooltipPlacement = 'se-alt';
+      } else if (game.settings.get(CONSTANTS.MODULE_ID, 'tooltipScreenPosition') === 'top-right') {
+        xAxis = centre.x - windowWidthScaled / 2;
+        yAxis = centre.y - windowHeightScaled / 2;
+        tooltipPlacement = 'sw-alt';
+      } else if (game.settings.get(CONSTANTS.MODULE_ID, 'tooltipScreenPosition') === 'bottom-left') {
+        xAxis = centre.x + windowWidthScaled / 2;
+        yAxis = centre.y + windowHeightScaled / 2;
+        tooltipPlacement = 'ne-alt';
+      } else if (game.settings.get(CONSTANTS.MODULE_ID, 'tooltipScreenPosition') === 'bottom-right') {
+        xAxis = centre.x - windowWidthScaled / 2;
+        yAxis = centre.y + windowHeightScaled / 2;
+        tooltipPlacement = 'nw-alt';
+      }
+      position = {
+        position: 'fixed',
+        top: `${yAxis}px`,
+        right: `${xAxis}px`,
+        left: 'auto',
+        bottom: 'auto',
+        display: 'block',
+      };
     }
-
-    const width = this.object.w;
-    const height = this.object.h;
-
-    const left = x - (width / 2);
-    const top = y - (height / 2);
-
-    // const position = {
-    //   height: `${height}px`,
-    //   width: `${width}px`,
-    //   left: `${left}px`,
-    //   top: `${top}px`,
-    // };
-
-    const centre = canvas.scene._viewPosition;
-    const windowWidthScaled = window.innerWidth / centre.scale;
-    const windowHeightScaled = window.innerHeight / centre.scale;
-    let xAxis = 0;
-    let yAxis = 0;
-    const sidebar = document.getElementById("sidebar");
-    const sidebarCollapsed = sidebar.classList.contains("collapsed");
-
-    // if (tooltipPlacement.includes("e")) {
-    // yAxis = centre.y + windowHeightScaled / 2;
-    // xAxis = centre.x - windowWidthScaled / 2;
-
-    //left top
-    // xAxis = centre.x + windowWidthScaled / 2;
-    // yAxis = centre.y - windowHeightScaled / 2;
-    // tooltipPlacement = 'se-alt';
-    // const position = {
-    //   position: 'fixed',
-    //   top: `${yAxis}px`,
-    //   right: `${xAxis}px`,
-    //   left: 'auto',
-    //   bottom: 'auto',
-    //   display: 'block',
-    // };
-
-    // left bottom
-    // xAxis = centre.x + windowWidthScaled / 2;
-    // yAxis = centre.y + windowHeightScaled / 2;
-    // tooltipPlacement = 'ne-alt';
-    // const position = {
-    //   position: 'fixed',
-    //   top: `${yAxis}px`,
-    //   right: `${xAxis}px`,
-    //   left: 'auto',
-    //   bottom: 'auto',
-    //   display: 'block',
-    // };
-
-    // right top
-    // xAxis = centre.x - windowWidthScaled / 2;
-    // yAxis = centre.y - windowHeightScaled / 2;
-    // tooltipPlacement = 'sw-alt';
-    // const position = {
-    //   position: 'fixed',
-    //   top: `${yAxis}px`,
-    //   right: `${xAxis}px`,
-    //   left: 'auto',
-    //   bottom: 'auto',
-    //   display: 'block',
-    // };
-
-    // right bottom
-    xAxis = centre.x - windowWidthScaled / 2;
-    yAxis = centre.y + windowHeightScaled / 2;
-    tooltipPlacement = 'nw-alt';
-    const position = {
-      position: 'fixed',
-      top: `${yAxis}px`,
-      right: `${xAxis}px`,
-      left: 'auto',
-      bottom: 'auto',
-      display: 'block',
-    };
 
     elementToTooltip.css(position);
 

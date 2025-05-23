@@ -63,7 +63,7 @@ export default function registerSettings() {
     },
   });
 
-  game.settings.register(CONSTANTS.MODULE_ID, "noteScreenPosition", {
+  game.settings.register(CONSTANTS.MODULE_ID, "tooltipScreenPosition", {
     name: `${CONSTANTS.MODULE_ID}.Settings.TooltipScreenPosition.Name`,
     hint: `${CONSTANTS.MODULE_ID}.Settings.TooltipScreenPosition.Hint`,
     scope: "client",
