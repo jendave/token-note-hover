@@ -2,6 +2,11 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.4](https://github.com/jendave/token-note-hover/commits/main) (2025-05-23)
+
+* Notes can be configured to appear in corners of screen. [Issue #20](https://github.com/jendave/token-note-hover/issues/20).
+* Notes appearing adjacent to the token or following mouse now appear much closer to the token.
+
 ## [3.0.3](https://github.com/jendave/token-note-hover/commits/main) (2025-04-30)
 
 * Fixed versioning issue with [D&D 5E](https://foundryvtt.com/packages/dnd5e).

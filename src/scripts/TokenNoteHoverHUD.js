@@ -183,20 +183,34 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       const positionMouse = canvas.mousePosition;
       x = positionMouse.x;
       y = positionMouse.y;
+      const centre = canvas.scene._viewPosition;
+      const widthScaled = this.object.w / 2 * centre.scale;
+      const heightScaled = this.object.h * centre.scale;
+
+      const leftScaled = x - (widthScaled / 2);
+      const topScaled = y - (heightScaled);
+
+      position = {
+        height: `${heightScaled}px`,
+        width: `${widthScaled}px`,
+        left: `${leftScaled}px`,
+        top: `${topScaled}px`,
+      };
     } else if (game.settings.get(CONSTANTS.MODULE_ID, 'tooltipScreenPosition') === 'adjacent-to-token') {
       x = this.object.center ? this.object.center.x : this.object.x;
       y = this.object.center ? this.object.center.y : this.object.y;
-      const width = this.object.w;
-      const height = this.object.h;
+      const centre = canvas.scene._viewPosition;
+      const widthScaled = this.object.w / 2 * centre.scale;
+      const heightScaled = this.object.h * centre.scale;
 
-      const left = x - (width / 2);
-      const top = y - (height / 2);
+      const leftScaled = x - (widthScaled / 2);
+      const topScaled = y - (heightScaled);
 
       position = {
-        height: `${height}px`,
-        width: `${width}px`,
-        left: `${left}px`,
-        top: `${top}px`,
+        height: `${heightScaled}px`,
+        width: `${widthScaled}px`,
+        left: `${leftScaled}px`,
+        top: `${topScaled}px`,
       };
     } else {
       const centre = canvas.scene._viewPosition;
