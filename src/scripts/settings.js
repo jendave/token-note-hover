@@ -1,5 +1,4 @@
 import CONSTANTS from './constants';
-import TokenNoteHoverHUD from './TokenNoteHoverHUD';
 
 /**
  * Register Settings
@@ -61,6 +60,22 @@ export default function registerSettings() {
       s: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.south`,
       se: `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.south-east`,
       'se-alt': `${CONSTANTS.MODULE_ID}.Settings.TooltipPlacement.Choices.south-east-alt`,
+    },
+  });
+
+  game.settings.register(CONSTANTS.MODULE_ID, "tooltipScreenPosition", {
+    name: `${CONSTANTS.MODULE_ID}.Settings.TooltipScreenPosition.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.TooltipScreenPosition.Hint`,
+    scope: "client",
+    config: true,
+    type: String,
+    default: `${CONSTANTS.MODULE_ID}.Settings.TooltipScreenPosition.Choices.adjacent-to-token`,
+    choices: {
+      'adjacent-to-token': `${CONSTANTS.MODULE_ID}.Settings.TooltipScreenPosition.Choices.adjacent-to-token`,
+      'top-left': `${CONSTANTS.MODULE_ID}.Settings.TooltipScreenPosition.Choices.top-left`,
+      'top-right': `${CONSTANTS.MODULE_ID}.Settings.TooltipScreenPosition.Choices.top-right`,
+      "bottom-left": `${CONSTANTS.MODULE_ID}.Settings.TooltipScreenPosition.Choices.bottom-left`,
+      "bottom-right": `${CONSTANTS.MODULE_ID}.Settings.TooltipScreenPosition.Choices.bottom-right`
     },
   });
 

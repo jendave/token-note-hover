@@ -31,6 +31,17 @@
           "south-east-alt": "South East Alt"
         }
       },
+      "TooltipScreenPosition": {
+        "Name": "Tooltip Position on Screen",
+        "Hint": "Set the position of the tooltip on the screen.",
+        "Choices": {
+          "adjacent-to-token": "Adjacent to Token",
+          "bottom-left": "Bottom left",
+          "bottom-right": "Bottom right",
+          "top-left": "Top left",
+          "top-right": "Top right"
+        }
+      },
       "SmartPlacement": {
         "Name": "Tooltip Smart Placement ",
         "Hint": "Dynamic placement of the tooltips to stay inside the browser viewport."
@@ -70,7 +81,7 @@
       },
       "UseMousePositionForCoordinates": {
         "Name": "Use Mouse Position for Tooltip Coordinates",
-        "Hint": "Use mouse position to display the tooltip"
+        "Hint": "Use mouse position to display the tooltip. Overrides the tooltip position setting."
       },
       "ShowTitle": {
         "Name": "Show Title on Tooltip",

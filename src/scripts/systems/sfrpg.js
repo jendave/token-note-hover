@@ -5,27 +5,27 @@ export async function sfrpg(actor, displayImages) {
         return null;
     }
 
-        const actorIsOwner = actor.isOwner ?? true;
+    const actorIsOwner = actor.isOwner ?? true;
 
-        switch (actor.type) {
-            case "drone":
-                return await getDroneNotes(displayImages, actor, actorIsOwner);
-            case "vehicle":
-                return await getVehicleHazardNotes(displayImages, actor, actorIsOwner);
-            case "character":
-                return await getCharacterNotes(displayImages, actor, actorIsOwner);
-            case "npc2":
-                return await getCharacterNotes(displayImages, actor, actorIsOwner);
-            case "npc":
-                return await getCharacterNotes(displayImages, actor, actorIsOwner);
-            case "hazard":
-                return await getVehicleHazardNotes(displayImages, actor, actorIsOwner);
-            case "starship":
-                return await getStarshipNotes(displayImages, actor, actorIsOwner);
-            default:
-                return null;
-        }
+    switch (actor.type) {
+        case "drone":
+            return await getDroneNotes(displayImages, actor, actorIsOwner);
+        case "vehicle":
+            return await getVehicleHazardNotes(displayImages, actor, actorIsOwner);
+        case "character":
+            return await getCharacterNotes(displayImages, actor, actorIsOwner);
+        case "npc2":
+            return await getCharacterNotes(displayImages, actor, actorIsOwner);
+        case "npc":
+            return await getCharacterNotes(displayImages, actor, actorIsOwner);
+        case "hazard":
+            return await getVehicleHazardNotes(displayImages, actor, actorIsOwner);
+        case "starship":
+            return await getStarshipNotes(displayImages, actor, actorIsOwner);
+        default:
+            return null;
     }
+}
 
 async function getDroneNotes(displayImages, actor, actorIsOwner) {
     const publicNotes = actor.system?.details?.biography?.value;

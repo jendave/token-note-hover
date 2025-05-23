@@ -33,6 +33,7 @@ The tooltip will not display if the note is empty or while the token is being dr
 
 * Tooltip themes (Ironsworn/Starforged only)
 * Placement, display delay, display window size and font size customization
+* Note can appear adjacent to the token or in a corner of the screen.
 * Show/hide note images for tooltip display
 * Can require minimum token ownership level on notes for display
 * Display token title in tooltip
