@@ -204,23 +204,26 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       const windowHeightScaled = window.innerHeight / centre.scale;
       let xAxis = 0;
       let yAxis = 0;
-      const sidebar = document.getElementById("sidebar");
       if (game.settings.get(CONSTANTS.MODULE_ID, 'tooltipScreenPosition') === 'top-left') {
         xAxis = centre.x + (windowWidthScaled / 2);
         yAxis = centre.y - (windowHeightScaled / 2);
         tooltipPlacement = 'se-alt';
       } else if (game.settings.get(CONSTANTS.MODULE_ID, 'tooltipScreenPosition') === 'top-right') {
-        xAxis = centre.x - (windowWidthScaled / 2) + sidebar.offsetWidth * 3;
+        const sidebar = document.getElementById("sidebar");
+        const sidebarWidthScaled = sidebar.offsetWidth / centre.scale;
+        xAxis = centre.x - (windowWidthScaled / 2) + sidebarWidthScaled;
         yAxis = centre.y - (windowHeightScaled / 2);
-        tooltipPlacement = 'sw-alt';
+        tooltipPlacement = 'sw';
       } else if (game.settings.get(CONSTANTS.MODULE_ID, 'tooltipScreenPosition') === 'bottom-left') {
         xAxis = centre.x + (windowWidthScaled / 2);
         yAxis = centre.y + (windowHeightScaled / 2);
         tooltipPlacement = 'ne-alt';
       } else if (game.settings.get(CONSTANTS.MODULE_ID, 'tooltipScreenPosition') === 'bottom-right') {
-        xAxis = centre.x - (windowWidthScaled / 2);
+        const sidebar = document.getElementById("sidebar");
+        const sidebarWidthScaled = sidebar.offsetWidth / centre.scale;
+        xAxis = centre.x - (windowWidthScaled / 2) + sidebarWidthScaled;
         yAxis = centre.y + (windowHeightScaled / 2);
-        tooltipPlacement = 'nw-alt';
+        tooltipPlacement = 'nw';
       }
       position = {
         position: 'fixed',
