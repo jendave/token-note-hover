@@ -1,3 +1,5 @@
+import CONSTANTS from '../constants';
+
 export async function pf2e(actor, displayImages, tempContent) {
     if (actor) {
         const actorIsOwner = actor.isOwner ?? true;
@@ -5,14 +7,14 @@ export async function pf2e(actor, displayImages, tempContent) {
         switch (actor.type) {
             case "vehicle":
                 if (displayImages) {
-                    tempContent = await TextEditor.enrichHTML(actor.system?.details?.description, {
+                    tempContent = await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.details?.description, {
                         secrets: actorIsOwner,
                         documents: true,
                         async: true,
                     });
                 } else {
                     tempContent = (
-                        await TextEditor.enrichHTML(actor.system?.details?.description, {
+                        await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.details?.description, {
                             secrets: actorIsOwner,
                             documents: true,
                             async: true,
@@ -21,50 +23,58 @@ export async function pf2e(actor, displayImages, tempContent) {
                 }
                 break;
             case "character":
-                if (displayImages) {
-                    tempContent = await TextEditor.enrichHTML(actor.system?.details?.biography?.appearance, {
-                        secrets: actorIsOwner,
-                        documents: true,
-                        async: true,
-                    });
-                } else {
-                    // eslint-disable-next-line max-len
-                    tempContent = (
-                        await TextEditor.enrichHTML(actor.system?.details?.biography?.appearance, {
+                if (game.settings.get(CONSTANTS.MODULE_ID, 'displayPC')) {
+                    if (displayImages) {
+                        tempContent = await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.details?.biography?.appearance, {
                             secrets: actorIsOwner,
                             documents: true,
                             async: true,
-                        })
-                    ).replaceAll(/<img.*>/g, "");
+                        });
+                    } else {
+                        // eslint-disable-next-line max-len
+                        tempContent = (
+                            await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.details?.biography?.appearance, {
+                                secrets: actorIsOwner,
+                                documents: true,
+                                async: true,
+                            })
+                        ).replaceAll(/<img.*>/g, "");
+                    }
+                } else {
+                    return null;
                 }
                 break;
             case "npc":
-                if (displayImages) {
-                    tempContent = await TextEditor.enrichHTML(actor.system?.details?.publicNotes, {
-                        secrets: actorIsOwner,
-                        documents: true,
-                        async: true,
-                    });
-                } else {
-                    tempContent = (
-                        await TextEditor.enrichHTML(actor.system?.details?.publicNotes, {
+                if (game.settings.get(CONSTANTS.MODULE_ID, 'displayNPC')) {
+                    if (displayImages) {
+                        tempContent = await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.details?.publicNotes, {
                             secrets: actorIsOwner,
                             documents: true,
                             async: true,
-                        })
-                    ).replaceAll(/<img.*>/g, "");
+                        });
+                    } else {
+                        tempContent = (
+                            await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.details?.publicNotes, {
+                                secrets: actorIsOwner,
+                                documents: true,
+                                async: true,
+                            })
+                        ).replaceAll(/<img.*>/g, "");
+                    }
+                } else {
+                    return null;
                 }
                 break;
             case "loot":
                 if (displayImages) {
-                    tempContent = await TextEditor.enrichHTML(actor.system?.details?.description, {
+                    tempContent = await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.details?.description, {
                         secrets: actorIsOwner,
                         documents: true,
                         async: true,
                     });
                 } else {
                     tempContent = (
-                        await TextEditor.enrichHTML(actor.system?.details?.description, {
+                        await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.details?.description, {
                             secrets: actorIsOwner,
                             documents: true,
                             async: true,
@@ -74,14 +84,14 @@ export async function pf2e(actor, displayImages, tempContent) {
                 break;
             case "hazard":
                 if (displayImages) {
-                    tempContent = await TextEditor.enrichHTML(actor.system?.details?.description, {
+                    tempContent = await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.details?.description, {
                         secrets: actorIsOwner,
                         documents: true,
                         async: true,
                     });
                 } else {
                     tempContent = (
-                        await TextEditor.enrichHTML(actor.system?.details?.description, {
+                        await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.details?.description, {
                             secrets: actorIsOwner,
                             documents: true,
                             async: true,
@@ -91,14 +101,14 @@ export async function pf2e(actor, displayImages, tempContent) {
                 break;
             case "army":
                 if (displayImages) {
-                    tempContent = await TextEditor.enrichHTML(actor.system?.details?.description, {
+                    tempContent = await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.details?.description, {
                         secrets: actorIsOwner,
                         documents: true,
                         async: true,
                     });
                 } else {
                     tempContent = (
-                        await TextEditor.enrichHTML(actor.system?.details?.description, {
+                        await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.details?.description, {
                             secrets: actorIsOwner,
                             documents: true,
                             async: true,
@@ -108,14 +118,14 @@ export async function pf2e(actor, displayImages, tempContent) {
                 break;
             case "familiar":
                 if (displayImages) {
-                    tempContent = await TextEditor.enrichHTML(actor.system?.details?.creature?.value, {
+                    tempContent = await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.details?.creature?.value, {
                         secrets: actorIsOwner,
                         documents: true,
                         async: true,
                     });
                 } else {
                     tempContent = (
-                        await TextEditor.enrichHTML(actor.system?.details?.creature?.value, {
+                        await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.details?.creature?.value, {
                             secrets: actorIsOwner,
                             documents: true,
                             async: true,
@@ -130,14 +140,14 @@ export async function pf2e(actor, displayImages, tempContent) {
                     partyNoteArray = partyNoteArray.concat("</p>");
                 }
                 if (displayImages) {
-                    tempContent = await TextEditor.enrichHTML(partyNoteArray.join(""), {
+                    tempContent = await foundry.applications.ux.TextEditor.enrichHTML(partyNoteArray.join(""), {
                         secrets: actorIsOwner,
                         documents: true,
                         async: true,
                     });
                 } else {
                     tempContent = (
-                        await TextEditor.enrichHTML(partyNoteArray.join(""), {
+                        await foundry.applications.ux.TextEditor.enrichHTML(partyNoteArray.join(""), {
                             secrets: actorIsOwner,
                             documents: true,
                             async: true,

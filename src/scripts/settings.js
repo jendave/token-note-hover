@@ -24,6 +24,24 @@ export default function registerSettings() {
     config: true,
   });
 
+  game.settings.register(CONSTANTS.MODULE_ID, 'displayPC', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.DisplayPC.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.DisplayPC.Hint`,
+    scope: 'client',
+    type: Boolean,
+    default: true,
+    config: true,
+  });
+
+  game.settings.register(CONSTANTS.MODULE_ID, 'displayNPC', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.DisplayNPC.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.DisplayNPC.Hint`,
+    scope: 'client',
+    type: Boolean,
+    default: true,
+    config: true,
+  });
+
   game.settings.register(CONSTANTS.MODULE_ID, 'ownershipPermissionsRequired', {
     name: `${CONSTANTS.MODULE_ID}.Settings.OwnershipPermissionsRequired.Name`,
     hint: `${CONSTANTS.MODULE_ID}.Settings.OwnershipPermissionsRequired.Hint`,

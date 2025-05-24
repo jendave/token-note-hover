@@ -1,3 +1,4 @@
+import CONSTANTS from '../constants';
 import { processNotes } from "../textUtil.js";
 
 export async function dnd5e(actor, displayImages) {
@@ -11,9 +12,17 @@ export async function dnd5e(actor, displayImages) {
     case "vehicle":
       return await processNotes(actor.system?.details?.biography?.value, actorIsOwner, displayImages);
     case "character":
-      return await processNotes(actor.system?.details?.biography?.value, actorIsOwner, displayImages);
+      if (game.settings.get(CONSTANTS.MODULE_ID, 'displayPC')) {
+        return await processNotes(actor.system?.details?.biography?.value, actorIsOwner, displayImages);
+      } else {
+        return null;
+      }
     case "npc":
-      return await processNotes(actor.system?.details?.biography?.public, actorIsOwner, displayImages);
+      if (game.settings.get(CONSTANTS.MODULE_ID, 'displayNPC')) {
+        return await processNotes(actor.system?.details?.biography?.public, actorIsOwner, displayImages);
+      } else {
+        return null;
+      }
     case "group":
       return await processNotes(actor.system?.description?.full, actorIsOwner, displayImages);
     default:

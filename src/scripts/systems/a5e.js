@@ -1,3 +1,4 @@
+import CONSTANTS from '../constants';
 import { processNotes } from "../textUtil.js";
 
 export async function a5e(actor, displayImages) {
@@ -10,9 +11,17 @@ export async function a5e(actor, displayImages) {
 
     switch (actor.type) {
         case "character":
-            return await getCharacterNotes(displayImages, actor, actorIsOwner);
+            if (game.settings.get(CONSTANTS.MODULE_ID, 'displayPC')) {
+                return await getCharacterNotes(displayImages, actor, actorIsOwner);
+            } else {
+                return null;
+            }
         case "npc":
-            return await getNpcNotes(displayImages, actor, actorIsOwner);
+            if (game.settings.get(CONSTANTS.MODULE_ID, 'displayNPC')) {
+                return await getNpcNotes(displayImages, actor, actorIsOwner);
+            } else {
+                return null;
+            }
         default:
             return null;
     }

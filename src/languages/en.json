@@ -9,6 +9,14 @@
         "Name": "Display Images",
         "Hint": "Display images contained in token notes."
       },
+      "DisplayPC": {
+        "Name": "Display Notes for PC Tokens",
+        "Hint": "Display notes for PC tokens."
+      },
+      "DisplayNPC": {
+        "Name": "Display Notes for NPC Tokens",
+        "Hint": "Display notes for NPC tokens."
+      },
       "OwnershipPermissionsRequired": {
         "Name": "Ownership Permissions Required",
         "Hint": "Token ownership permissions required to view the notes."

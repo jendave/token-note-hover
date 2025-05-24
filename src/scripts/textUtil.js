@@ -13,7 +13,7 @@ async function getTextFromNote(notes, actorIsOwner) {
         return null;
     }
 
-    return await TextEditor.enrichHTML(notes, {
+    return await foundry.applications.ux.TextEditor.enrichHTML(notes, {
         secrets: actorIsOwner,
         documents: true,
         async: true,

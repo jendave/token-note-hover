@@ -1,3 +1,4 @@
+import CONSTANTS from '../constants';
 import { processNotes } from "../textUtil.js";
 
 export async function sfrpg(actor, displayImages) {
@@ -13,11 +14,23 @@ export async function sfrpg(actor, displayImages) {
         case "vehicle":
             return await getVehicleHazardNotes(displayImages, actor, actorIsOwner);
         case "character":
-            return await getCharacterNotes(displayImages, actor, actorIsOwner);
+            if (game.settings.get(CONSTANTS.MODULE_ID, 'displayPC')) {
+                return await getCharacterNotes(displayImages, actor, actorIsOwner);
+            } else {
+                return null;
+            }
         case "npc2":
-            return await getCharacterNotes(displayImages, actor, actorIsOwner);
+            if (game.settings.get(CONSTANTS.MODULE_ID, 'displayNPC')) {
+                return await getCharacterNotes(displayImages, actor, actorIsOwner);
+            } else {
+                return null;
+            }
         case "npc":
-            return await getCharacterNotes(displayImages, actor, actorIsOwner);
+            if (game.settings.get(CONSTANTS.MODULE_ID, 'displayNPC')) {
+                return await getCharacterNotes(displayImages, actor, actorIsOwner);
+            } else {
+                return null;
+            }
         case "hazard":
             return await getVehicleHazardNotes(displayImages, actor, actorIsOwner);
         case "starship":
