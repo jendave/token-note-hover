@@ -14,7 +14,7 @@ The tooltip will not display if the note is empty or while the token is being dr
 ## FoundryVTT Compatibility
 
 * [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 3.0.0 and above only run on [FoundryVTT v13](https://foundryvtt.com/releases/13.338).
-* [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 2.1.x only runs on [FoundryVTT v12](https://foundryvtt.com/releases/12.331).
+* [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 2.1.x and below only run on [FoundryVTT v12](https://foundryvtt.com/releases/12.331).
 
 ### Supported Systems
 
