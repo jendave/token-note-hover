@@ -184,6 +184,12 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Starship** | Notes |
 | **Vehicle** | Notes |
 
+## Support
+
+For questions, feature requests or bug reports, please open an [issue](https://github.com/jendave/token-note-hover/issues).
+
+[Pull requests](https://github.com/jendave/token-note-hover/pulls) are welcome. Please include a reason for the request or create an issue before starting one.
+
 ## Troubleshooting and Tips
 
 * If the hover does not work or causes the sidebar to move unexpectedly try the following:
