@@ -209,13 +209,14 @@ Please check out my other modules and resources for Ironsworn, Ironsworn: Starfo
 
 ### [FoundryVTT](https://foundryvtt.com/community/david-hudson/packages) Modules
 
-* [Starforged Custom Oracles](https://foundryvtt.com/packages/starforged-custom-oracles)
+* [Starforged Custom Compendiums](https://foundryvtt.com/packages/starforged-custom-oracles)
 * [Starsmith Compendiums for Ironsworn: Starforged](https://foundryvtt.com/packages/starsmith-expanded-oracles)
 * [Ironsmith Expanded Oracles for Ironsworn](https://foundryvtt.com/packages/ironsmith-expanded-oracles)
 * [Augmented Reality Cyberpunk City Kit](https://foundryvtt.com/packages/augmented-reality-foundry)
 * [Token Note Hover](https://github.com/jendave/token-note-hover)
 * [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 * [VOID 1680 AM for FoundryVTT](https://foundryvtt.com/packages/void-1680-am)
+* [Ancient Wonders](https://foundryvtt.com/packages/ancient-wonders)
 
 ### [Itch.io](https://jendave.itch.io/) Resources
 
