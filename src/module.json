@@ -4,9 +4,9 @@
   "description": "Displays the token note in a tooltip when hovered over.",
   "version": "#{VERSION}#",
   "compatibility": {
-    "minimum": 13,
-    "verified": 13,
-    "maximum": 13
+    "minimum": "13",
+    "verified": "13",
+    "maximum": "13"
   },
   "authors": [
     {
