@@ -2,7 +2,7 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
-## [3.0.6](https://github.com/jendave/token-note-hover/commits/main) (2025-04-17)
+## [3.0.6](https://github.com/jendave/token-note-hover/commits/main) (2025-06-15)
 
 * Added support for [Pathfinder 1](https://foundryvtt.com/packages/pf1).
 
