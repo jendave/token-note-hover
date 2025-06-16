@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.6](https://github.com/jendave/token-note-hover/commits/main) (2025-04-17)
+
+* Added support for [Pathfinder 1](https://foundryvtt.com/packages/pf1).
+
 ## [3.0.5](https://github.com/jendave/token-note-hover/commits/main) (2025-05-23)
 
 * Notes can be disabled for PCs and NPCs. [Issue #21](https://github.com/jendave/token-note-hover/issues/21).

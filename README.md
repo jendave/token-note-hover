@@ -28,6 +28,7 @@ The tooltip will not display if the note is empty or while the token is being dr
 * [Level Up: Advanced 5th Edition](https://foundryvtt.com/packages/a5e). FoundryVTT v12 only.
 * [Das Schwarze Auge / The Dark Eye (5th Edition)](https://foundryvtt.com/packages/dsa5). FoundryVTT v12 and v13.
 * [Starfinder 1st Edition](https://foundryvtt.com/packages/sfrpg). FoundryVTT v12 and v13.
+* [Pathfinder 1](https://foundryvtt.com/packages/pf1). FoundryVTT v13.
 
 ### Some customization options
 
@@ -182,6 +183,18 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Non-Player Character** | Biography & GM Notes|
 | **Old-Style NPC** | Biography & GM Notes|
 | **Starship** | Notes |
+| **Vehicle** | Notes |
+
+### Pathfinder 1st Edition
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_pf1.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Player Character** | Notes |
+| **Haunt** | Notes |
+| **Trap** | Notes |
+| **Non-Player Character** | Notes|
 | **Vehicle** | Notes |
 
 ## Support
