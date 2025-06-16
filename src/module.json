@@ -142,13 +142,22 @@
           "verified": "0.27"
         }
       },
-            {
+      {
         "id": "pf1",
         "type": "system",
         "manifest": "https://gitlab.com/foundryvtt_pathfinder1e/foundryvtt-pathfinder1/-/releases/permalink/latest/downloads/system.json",
         "compatibility": {
           "minimum": "11.7",
-          "verified": "11.7"
+          "verified": "11"
+        }
+      },
+      {
+        "id": "wfrp4e",
+        "type": "system",
+        "manifest": "https://github.com/moo-man/WFRP4e-FoundryVTT/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "9.1.1",
+          "verified": "9"
         }
       }
     ],

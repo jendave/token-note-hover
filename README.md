@@ -29,6 +29,7 @@ The tooltip will not display if the note is empty or while the token is being dr
 * [Das Schwarze Auge / The Dark Eye (5th Edition)](https://foundryvtt.com/packages/dsa5). FoundryVTT v12 and v13.
 * [Starfinder 1st Edition](https://foundryvtt.com/packages/sfrpg). FoundryVTT v12 and v13.
 * [Pathfinder 1](https://foundryvtt.com/packages/pf1). FoundryVTT v13.
+* [Warhammer Fantasy Roleplay 4th Edition](https://foundryvtt.com/packages/wfrp4e). FoundryVTT v13.
 
 ### Some customization options
 
@@ -196,6 +197,17 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Trap** | Notes |
 | **Non-Player Character** | Notes|
 | **Vehicle** | Notes |
+
+### Warhammer Fantasy Roleplay 4th Edition
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_wfrp4e.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Player Character** | Notes - Biography & Notes - GM Notes |
+| **Non-Player Character** | Notes - Biography & Notes - GM Notes|
+| **Creature** | Notes - Biography & Notes - GM Notes |
+| **Vehicle** | Description - Description & Description - GM Notes |
 
 ## Support
 

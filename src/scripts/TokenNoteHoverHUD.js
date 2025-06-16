@@ -10,6 +10,7 @@ import { a5e } from "./systems/a5e.js";
 import { dsa5 } from "./systems/dsa5.js";
 import { sfrpg } from "./systems/sfrpg.js";
 import { pf1 } from "./systems/pf1.js";
+import { wfrp4e } from "./systems/wfrp4e.js";
 
 /**
  * A HUD extension that shows the Note preview
@@ -100,6 +101,8 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       tempContent = await sfrpg(actor, displayImages);
     } else if (game.data.system.id === 'pf1') {
       tempContent = await pf1(actor, displayImages);
+    } else if (game.data.system.id === 'wfrp4e') {
+      tempContent = await wfrp4e(actor, displayImages);
     }
 
     this.contentAvailable = tempContent !== null && tempContent !== '';
