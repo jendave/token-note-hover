@@ -24,7 +24,7 @@ The tooltip will not display if the note is empty or while the token is being dr
 * [Twodsix - Cepheus & Traveller](https://foundryvtt.com/packages/twodsix). FoundryVTT v12 and v13.
 * [Call of Cthulhu 7th edition](https://foundryvtt.com/packages/CoC7). FoundryVTT v12 and v13.
 * [Simple Worldbuilding System](https://foundryvtt.com/packages/worldbuilding). FoundryVTT v12 and v13.
-* [RuneQuest Glorantha](https://foundryvtt.com/packages/rqg). FoundryVTT v12 only.
+* [RuneQuest Glorantha](https://foundryvtt.com/packages/rqg). FoundryVTT v12 and v13.
 * [Level Up: Advanced 5th Edition](https://foundryvtt.com/packages/a5e). FoundryVTT v12 only.
 * [Das Schwarze Auge / The Dark Eye (5th Edition)](https://foundryvtt.com/packages/dsa5). FoundryVTT v12 and v13.
 * [Starfinder 1st Edition](https://foundryvtt.com/packages/sfrpg). FoundryVTT v12 and v13.
