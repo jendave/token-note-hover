@@ -72,6 +72,7 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 * [Zoom/Pan Options](https://foundryvtt.com/packages/zoom-pan-options) for `Zoom Around Cursor` setting.
 * [Lock View](https://foundryvtt.com/packages/LockView) to prevent zooming from affecting the tooltip placement.
   * Note that these two modules conflict with each other.
+* [Force Client Settings](https://foundryvtt.com/packages/force-client-settings) for forcing chosen settings for clients to the defaults provided by the GM.
 
 ## Screenshots and Note Locations
 
