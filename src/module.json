@@ -159,6 +159,15 @@
           "minimum": "9.1.1",
           "verified": "9"
         }
+      },
+            {
+        "id": "cyphersystem",
+        "type": "system",
+        "manifest": "https://github.com/moo-man/WFRP4e-FoundryVTT/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "3.3.1",
+          "verified": "3"
+        }
       }
     ],
     "requires": [],
