@@ -30,6 +30,7 @@ The tooltip will not display if the note is empty or while the token is being dr
 * [Starfinder 1st Edition](https://foundryvtt.com/packages/sfrpg). FoundryVTT v12 and v13.
 * [Pathfinder 1](https://foundryvtt.com/packages/pf1). FoundryVTT v13.
 * [Warhammer Fantasy Roleplay 4th Edition](https://foundryvtt.com/packages/wfrp4e). FoundryVTT v13.
+* [Cypher System](https://foundryvtt.com/packages/cyphersystem). FoundryVTT v13.
 
 ### Some customization options
 
@@ -210,6 +211,19 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Non-Player Character** | Notes - Biography & Notes - GM Notes|
 | **Creature** | Notes - Biography & Notes - GM Notes |
 | **Vehicle** | Description - Description & Description - GM Notes |
+
+### Cypher System
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_cyphersystem.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Community** | Notes |
+| **Companion** | Notes |
+| **Marker** | Notes |
+| **NPC/Creature** | Notes |
+| **PC** | Notes & GM Notes |
+| **Vehicle** | Notes |
 
 ## Support
 

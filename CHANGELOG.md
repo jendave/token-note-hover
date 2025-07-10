@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.8](https://github.com/jendave/token-note-hover/commits/main) (2025-xx-xx)
+
+* Added support for [Cypher System](https://foundryvtt.com/packages/cyphersystem).
+
 ## [3.0.7](https://github.com/jendave/token-note-hover/commits/main) (2025-06-15)
 
 * Added support for [Warhammer Fantasy Roleplay 4th Edition](https://foundryvtt.com/packages/wfrp4e).
