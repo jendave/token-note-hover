@@ -2,9 +2,14 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
-## [3.0.8](https://github.com/jendave/token-note-hover/commits/main) (2025-xx-xx)
+## [3.0.9](https://github.com/jendave/token-note-hover/commits/main) (2025-07-22)
 
 * Added support for [Cypher System](https://foundryvtt.com/packages/cyphersystem).
+
+## [3.0.8](https://github.com/jendave/token-note-hover/commits/main) (2025-07-17)
+
+* Added support for [Savage Worlds Adventure Edition](https://foundryvtt.com/packages/swade).
+* Reformatted README.
 
 ## [3.0.7](https://github.com/jendave/token-note-hover/commits/main) (2025-06-15)
 

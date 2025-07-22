@@ -160,13 +160,22 @@
           "verified": "9"
         }
       },
-            {
+      {
         "id": "cyphersystem",
         "type": "system",
         "manifest": "https://github.com/moo-man/WFRP4e-FoundryVTT/releases/latest/download/system.json",
         "compatibility": {
-          "minimum": "3.3.1",
+          "minimum": "3.3.2",
           "verified": "3"
+        }
+      },
+      {
+        "id": "swade",
+        "type": "system",
+        "manifest": "https://gitlab.com/api/v4/projects/16269883/packages/generic/swade/latest/system.json",
+        "compatibility": {
+          "minimum": "5.0.3",
+          "verified": "5"
         }
       }
     ],

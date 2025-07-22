@@ -12,6 +12,7 @@ import { sfrpg } from "./systems/sfrpg.js";
 import { pf1 } from "./systems/pf1.js";
 import { wfrp4e } from "./systems/wfrp4e.js";
 import { cyphersystem } from "./systems/cyphersystem.js";
+import { swade } from "./systems/swade.js";
 
 /**
  * A HUD extension that shows the Note preview
@@ -106,6 +107,8 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       tempContent = await wfrp4e(actor, displayImages);
     } else if (game.data.system.id === 'cyphersystem') {
       tempContent = await cyphersystem(actor, displayImages);
+    } else if (game.data.system.id === 'swade') {
+      tempContent = await swade(actor, displayImages);
     }
 
     this.contentAvailable = tempContent !== null && tempContent !== '';

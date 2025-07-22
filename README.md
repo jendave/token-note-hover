@@ -18,19 +18,20 @@ The tooltip will not display if the note is empty or while the token is being dr
 
 ### Supported Systems
 
-* [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn). FoundryVTT v12 and v13.
-* [D&D 5E](https://foundryvtt.com/packages/dnd5e). FoundryVTT v12 and v13.
-* [Pathfinder 2e](https://foundryvtt.com/packages/pf2e). FoundryVTT v12 and v13.
-* [Twodsix - Cepheus & Traveller](https://foundryvtt.com/packages/twodsix). FoundryVTT v12 and v13.
 * [Call of Cthulhu 7th edition](https://foundryvtt.com/packages/CoC7). FoundryVTT v12 and v13.
-* [Simple Worldbuilding System](https://foundryvtt.com/packages/worldbuilding). FoundryVTT v12 and v13.
-* [RuneQuest Glorantha](https://foundryvtt.com/packages/rqg). FoundryVTT v12 and v13.
-* [Level Up: Advanced 5th Edition](https://foundryvtt.com/packages/a5e). FoundryVTT v12 only.
-* [Das Schwarze Auge / The Dark Eye (5th Edition)](https://foundryvtt.com/packages/dsa5). FoundryVTT v12 and v13.
-* [Starfinder 1st Edition](https://foundryvtt.com/packages/sfrpg). FoundryVTT v12 and v13.
-* [Pathfinder 1](https://foundryvtt.com/packages/pf1). FoundryVTT v13.
-* [Warhammer Fantasy Roleplay 4th Edition](https://foundryvtt.com/packages/wfrp4e). FoundryVTT v13.
 * [Cypher System](https://foundryvtt.com/packages/cyphersystem). FoundryVTT v13.
+* [D&D 5E](https://foundryvtt.com/packages/dnd5e). FoundryVTT v12 and v13.
+* [Das Schwarze Auge / The Dark Eye (5th Edition)](https://foundryvtt.com/packages/dsa5). FoundryVTT v12 and v13.
+* [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn). FoundryVTT v12 and v13.
+* [Level Up: Advanced 5th Edition](https://foundryvtt.com/packages/a5e). FoundryVTT v12 only.
+* [Pathfinder 1](https://foundryvtt.com/packages/pf1). FoundryVTT v13.
+* [Pathfinder 2e](https://foundryvtt.com/packages/pf2e). FoundryVTT v12 and v13.
+* [RuneQuest Glorantha](https://foundryvtt.com/packages/rqg). FoundryVTT v12 and v13.
+* [Savage Worlds Adventure Edition](https://foundryvtt.com/packages/swade). FoundryVTT v13.
+* [Simple Worldbuilding System](https://foundryvtt.com/packages/worldbuilding). FoundryVTT v12 and v13.
+* [Starfinder 1st Edition](https://foundryvtt.com/packages/sfrpg). FoundryVTT v12 and v13.
+* [Twodsix - Cepheus & Traveller](https://foundryvtt.com/packages/twodsix). FoundryVTT v12 and v13.
+* [Warhammer Fantasy Roleplay 4th Edition](https://foundryvtt.com/packages/wfrp4e). FoundryVTT v13.
 
 ### Some customization options
 
@@ -78,6 +79,51 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 
 ## Screenshots and Note Locations
 
+### Call of Cthulhu 7th edition
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_cthulhu.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Character** | Backstory |
+| **Container** | Description |
+| **Creature** | Notes |
+| **NPC** | Notes |
+
+### Cypher System
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_cyphersystem.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Community** | Notes |
+| **Companion** | Notes |
+| **Marker** | Notes |
+| **NPC/Creature** | Notes |
+| **PC** | Notes & GM Notes |
+| **Vehicle** | Notes |
+
+### D&D 5E
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dnd5e.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Player Character** | Biography |
+| **Non-player Character** | Biography Public |
+| **Group** | Description |
+| **Vehicle** | Description |
+
+### Das Schwarze Auge / The Dark Eye (5th Edition)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dsa5.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Character** | Notes |
+| **Creature** | Description |
+| **Non-Player Character** | Notes |
+
 ### Ironsworn/Starforged
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_ironsworn.jpg?raw=true)
@@ -90,16 +136,26 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Starship** | Notes |
 | **Location** | Text entry area |
 
-### D&D 5E
+### Level Up: Advanced 5th Edition
 
-![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dnd5e.jpg?raw=true)
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_a5e.jpg?raw=true)
 
 | Actor Type | Note Location |
 | ------------- | ----------- |
-| **Player Character** | Biography |
-| **Non-player Character** | Biography Public |
-| **Group** | Description |
-| **Vehicle** | Description |
+| **Player Character** | Notes |
+| **Non-Player Character** | Notes & Private Notes (GM only) |
+
+### Pathfinder 1st Edition
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_pf1.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Player Character** | Notes |
+| **Haunt** | Notes |
+| **Trap** | Notes |
+| **Non-Player Character** | Notes |
+| **Vehicle** | Notes |
 
 ### Pathfinder 2e
 
@@ -116,6 +172,47 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Party** | List of party members |
 | **Vehicle** | Description |
 
+### RuneQuest Glorantha
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_rqg.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Actor** | Allies & Notes |
+
+### Savage Worlds Adventure Edition
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_swade.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Player Character** | About - Notes |
+| **Non-Player Character** | Description |
+| **Group** | Description |
+| **Vehicle** | Description |
+
+### Simple Worldbuilding System
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_simple.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Actor** | Description |
+
+### Starfinder 1st Edition
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_sfrpg.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Player Character** | Biography & GM Notes |
+| **Drone** | Biography & GM Notes |
+| **Hazard** | Notes |
+| **Non-Player Character** | Biography & GM Notes|
+| **Old-Style NPC** | Biography & GM Notes |
+| **Starship** | Notes |
+| **Vehicle** | Notes |
+
 ### Twodsix - Cepheus & Traveller
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_twodsix.jpg?raw=true)
@@ -129,78 +226,6 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Space Object** | Notes |
 | **Vehicle** | Cargo Notes |
 
-### Call of Cthulhu 7th edition
-
-![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_cthulhu.jpg?raw=true)
-
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Character** | Backstory |
-| **Container** | Description |
-| **Creature** | Notes |
-| **NPC** | Notes |
-
-### Simple Worldbuilding System
-
-![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_simple.jpg?raw=true)
-
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Actor** | Description |
-
-### RuneQuest Glorantha
-
-![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_rqg.jpg?raw=true)
-
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Actor** | Allies & Notes |
-
-### Level Up: Advanced 5th Edition
-
-![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_a5e.jpg?raw=true)
-
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Player Character** | Notes |
-| **Non-Player Character** | Notes & Private Notes (GM only)|
-
-### Das Schwarze Auge / The Dark Eye (5th Edition)
-
-![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dsa5.jpg?raw=true)
-
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Character** | Notes |
-| **Creature** | Description |
-| **Non-Player Character** | Notes|
-
-### Starfinder 1st Edition
-
-![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_sfrpg.jpg?raw=true)
-
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Player Character** | Biography & GM Notes |
-| **Drone** | Biography & GM Notes |
-| **Hazard** | Notes |
-| **Non-Player Character** | Biography & GM Notes|
-| **Old-Style NPC** | Biography & GM Notes|
-| **Starship** | Notes |
-| **Vehicle** | Notes |
-
-### Pathfinder 1st Edition
-
-![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_pf1.jpg?raw=true)
-
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Player Character** | Notes |
-| **Haunt** | Notes |
-| **Trap** | Notes |
-| **Non-Player Character** | Notes|
-| **Vehicle** | Notes |
-
 ### Warhammer Fantasy Roleplay 4th Edition
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_wfrp4e.jpg?raw=true)
@@ -208,22 +233,9 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | Actor Type | Note Location |
 | ------------- | ----------- |
 | **Player Character** | Notes - Biography & Notes - GM Notes |
-| **Non-Player Character** | Notes - Biography & Notes - GM Notes|
+| **Non-Player Character** | Notes - Biography & Notes - GM Notes |
 | **Creature** | Notes - Biography & Notes - GM Notes |
 | **Vehicle** | Description - Description & Description - GM Notes |
-
-### Cypher System
-
-![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_cyphersystem.jpg?raw=true)
-
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Community** | Notes |
-| **Companion** | Notes |
-| **Marker** | Notes |
-| **NPC/Creature** | Notes |
-| **PC** | Notes & GM Notes |
-| **Vehicle** | Notes |
 
 ## Support
 
