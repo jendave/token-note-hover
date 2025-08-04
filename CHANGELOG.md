@@ -2,6 +2,12 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.10](https://github.com/jendave/token-note-hover/commits/main) (2025-08-04)
+
+* Updated CSS to fix issue where Token Note Hover settings caused problems in multiple system character sheets.
+  * [Issue 23](https://github.com/jendave/token-note-hover/issues/23)
+  * [Issue 24](https://github.com/jendave/token-note-hover/issues/24)
+
 ## [3.0.9](https://github.com/jendave/token-note-hover/commits/main) (2025-07-22)
 
 * Added support for [Cypher System](https://foundryvtt.com/packages/cyphersystem).
