@@ -121,7 +121,7 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
     data.fontSize = game.settings.get(CONSTANTS.MODULE_ID, 'fontSize');
     data.maxWidth = game.settings.get(CONSTANTS.MODULE_ID, 'maxWidth');
 
-    const tooltipTitle = game.settings.get(CONSTANTS.MODULE_ID, 'showTitle') ? `<h2>${data.title}</h2>` : '';
+    const tooltipTitle = game.settings.get(CONSTANTS.MODULE_ID, 'showTitle') ? `<div class="token-note-hover-hud-h2">${data.title}</div>` : '';
 
     this.contentTooltip = await foundry.applications.ux.TextEditor.enrichHTML(`
                 <div id="container" class="token-note-hover-hud-container" style="font-size:${data.fontSize}; max-width:${data.maxWidth}px">

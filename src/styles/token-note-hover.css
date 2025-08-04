@@ -10,66 +10,14 @@
   border: none;
 }
 
-h1 {
-  color: inherit;
-  display: inherit;
-  margin: inherit;
-  padding: inherit;
-  border: inherit;
-  font: inherit;
-  font-size: revert;
-}
-
-h2 {
-  color: inherit;
-  display: inherit;
-  margin: inherit;
-  padding: inherit;
-  border: inherit;
-  font: inherit;
-  font-size: revert;
-}
-
-h3 {
-  color: inherit;
-  display: inherit;
-  margin: inherit;
-  padding: inherit;
-  border: inherit;
-  font: inherit;
-  font-size: revert;
-}
-
-h4 {
-  color: inherit;
-  display: inherit;
-  margin: inherit;
-  padding: inherit;
-  border: inherit;
-  font: inherit;
-  font-size: revert;
-}
-
-h5 {
-  color: inherit;
-  display: inherit;
-  margin: inherit;
-  padding: inherit;
-  border: inherit;
-  font: inherit;
-  font-size: revert;
-}
-
-h6 {
-  color: inherit;
-  display: inherit;
-  margin: inherit;
-  padding: inherit;
-  border: inherit;
-  font: inherit;
-  font-size: revert;
-}
-
-p {
-  color: inherit;
+.token-note-hover-hud-h2 {
+  /* Adjust as needed for H2 size */
+  font-size: 1.5em;
+  font-weight: bold;
+  /* Default H2 margin */
+  margin-top: 0.83em;
+  /* Default H2 margin */
+  margin-bottom: 0.83em;
+  /* Headings are block-level elements */
+  display: block;
 }
