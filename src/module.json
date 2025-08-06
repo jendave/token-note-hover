@@ -186,6 +186,15 @@
           "minimum": "5.1.4",
           "verified": "5"
         }
+      },
+      {
+        "id": "alienrpg",
+        "type": "system",
+        "manifest": "https://https://github.com/pwatson100/alienrpg/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "3.2.4",
+          "verified": "3"
+        }
       }
     ],
     "requires": [],

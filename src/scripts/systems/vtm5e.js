@@ -17,7 +17,7 @@ export async function vtm5e(actor, displayImages) {
                 return null;
             }
         case "ghoul":
-            if (game.settings.get(CONSTANTS.MODULE_ID, 'displayPC')) {
+            if (game.settings.get(CONSTANTS.MODULE_ID, 'displayNPC')) {
                 return await getPrivateNotes(displayImages, actor, actorIsOwner);
             } else {
                 return null;
@@ -29,13 +29,13 @@ export async function vtm5e(actor, displayImages) {
                 return null;
             }
         case "hunter":
-            if (game.settings.get(CONSTANTS.MODULE_ID, 'displayNPC')) {
+            if (game.settings.get(CONSTANTS.MODULE_ID, 'displayPC')) {
                 return await getPrivateNotes(displayImages, actor, actorIsOwner);
             } else {
                 return null;
             }
         case "spc":
-            if (game.settings.get(CONSTANTS.MODULE_ID, 'displayPC')) {
+            if (game.settings.get(CONSTANTS.MODULE_ID, 'displayNPC')) {
                 return await getPrivateNotes(displayImages, actor, actorIsOwner);
             } else {
                 return null;

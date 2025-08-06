@@ -18,6 +18,7 @@ The tooltip will not display if the note is empty or while the token is being dr
 
 ### Supported Systems
 
+* [Alien RPG](https://foundryvtt.com/packages/alienrpg). FoundryVTT v13.
 * [Call of Cthulhu 7th edition](https://foundryvtt.com/packages/CoC7). FoundryVTT v12 and v13.
 * [Cypher System](https://foundryvtt.com/packages/cyphersystem). FoundryVTT v13.
 * [D&D 5E](https://foundryvtt.com/packages/dnd5e). FoundryVTT v12 and v13.
@@ -79,6 +80,21 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 * [Force Client Settings](https://foundryvtt.com/packages/force-client-settings) for forcing chosen settings for clients to the defaults provided by the GM.
 
 ## Screenshots and Note Locations
+
+### Alien RPG
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_alienrpg.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Character** | Description |
+| **Colony** | Description |
+| **Creature** | Notes |
+| **Planet** | Description |
+| **Spacecraft** | Description |
+| **Synthetic** | Description |
+| **Territory** | Description |
+| **Vehicles** | Description |
 
 ### Call of Cthulhu 7th edition
 
