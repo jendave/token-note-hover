@@ -21,3 +21,14 @@
   /* Headings are block-level elements */
   display: block;
 }
+
+.token-note-hover-hud-h3 {
+  /* Approximate default h3 font size */
+  font-size: 1.17em;
+  font-weight: bold;
+  display: block;
+  /* Approximate default h3 top margin */
+  margin-top: 1em;
+  /* Approximate default h3 bottom margin */
+  margin-bottom: 1em;
+}

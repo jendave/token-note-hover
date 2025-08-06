@@ -13,6 +13,7 @@ import { pf1 } from "./systems/pf1.js";
 import { wfrp4e } from "./systems/wfrp4e.js";
 import { cyphersystem } from "./systems/cyphersystem.js";
 import { swade } from "./systems/swade.js";
+import { vtm5e } from "./systems/vtm5e.js";
 
 /**
  * A HUD extension that shows the Note preview
@@ -109,6 +110,8 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       tempContent = await cyphersystem(actor, displayImages);
     } else if (game.data.system.id === 'swade') {
       tempContent = await swade(actor, displayImages);
+    } else if (game.data.system.id === 'vtm5e') {
+      tempContent = await vtm5e(actor, displayImages);
     }
 
     this.contentAvailable = tempContent !== null && tempContent !== '';

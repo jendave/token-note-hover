@@ -46,7 +46,7 @@ async function getDroneNotes(displayImages, actor, actorIsOwner) {
     let notes = publicNotes;
 
     if (game.user.isGM && privateNotes) {
-        notes += "<br><h3>GM Notes</h3>";
+        notes += "<div class=\"token-note-hover-hud-h3\">GM Notes</div>";
         notes += privateNotes;
     }
 
@@ -59,7 +59,7 @@ async function getCharacterNotes(displayImages, actor, actorIsOwner) {
     let notes = publicNotes;
 
     if (game.user.isGM && privateNotes) {
-        notes += "<br><h3>GM Notes</h3>";
+        notes += "<div class=\"token-note-hover-hud-h3\">GM Notes</div>";
         notes += privateNotes;
     }
 

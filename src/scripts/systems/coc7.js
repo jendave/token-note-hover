@@ -9,9 +9,9 @@ export async function coc7(actor, displayImages, tempContent) {
             case "character":
                 if (game.settings.get(CONSTANTS.MODULE_ID, 'displayPC')) {
                     for (let i = 0; i < actor.system.biography.length; i += 1) {
-                        characterNoteArray = characterNoteArray.concat("<h3>");
+                        characterNoteArray = characterNoteArray.concat("<div class=\"token-note-hover-hud-h3\">");
                         characterNoteArray = characterNoteArray.concat(actor.system?.biography[i]?.title);
-                        characterNoteArray = characterNoteArray.concat("</h3>");
+                        characterNoteArray = characterNoteArray.concat("</div>");
                         characterNoteArray = characterNoteArray.concat("<p>");
                         characterNoteArray = characterNoteArray.concat(actor.system?.biography[i]?.value);
                         characterNoteArray = characterNoteArray.concat("</p>");

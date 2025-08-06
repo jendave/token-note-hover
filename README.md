@@ -32,6 +32,7 @@ The tooltip will not display if the note is empty or while the token is being dr
 * [Starfinder 1st Edition](https://foundryvtt.com/packages/sfrpg). FoundryVTT v12 and v13.
 * [Twodsix - Cepheus & Traveller](https://foundryvtt.com/packages/twodsix). FoundryVTT v12 and v13.
 * [Warhammer Fantasy Roleplay 4th Edition](https://foundryvtt.com/packages/wfrp4e). FoundryVTT v13.
+* [World of Darkness 5e](https://foundryvtt.com/packages/vtm5e). FoundryVTT v13.
 
 ### Some customization options
 
@@ -232,10 +233,24 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 
 | Actor Type | Note Location |
 | ------------- | ----------- |
-| **Player Character** | Notes - Biography & Notes - GM Notes |
-| **Non-Player Character** | Notes - Biography & Notes - GM Notes |
-| **Creature** | Notes - Biography & Notes - GM Notes |
-| **Vehicle** | Description - Description & Description - GM Notes |
+| **Player Character** | Notes - Biography & GM Notes |
+| **Non-Player Character** | Notes - Biography & GM Notes |
+| **Creature** | Notes - Biography & GM Notes |
+| **Vehicle** | Description - Description & GM Notes |
+
+### World of Darkness 5e
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_vtm5e.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Ghoul** | Notes - Public Notes & Private Notes |
+| **Group** | Notes - Public Notes & Storyteller Notes |
+| **Hunter** | Notes - Public Notes & Private Notes |
+| **Mortal** | Notes - Public Notes & Private Notes |
+| **Story Character** | Notes - Public Notes & Private Notes |
+| **Vampire** | Notes - Public Notes & Private Notes |
+| **Werewolf** | Notes - Public Notes & Private Notes |
 
 ## Support
 

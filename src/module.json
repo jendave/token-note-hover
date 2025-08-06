@@ -177,6 +177,15 @@
           "minimum": "5.0.3",
           "verified": "5"
         }
+      },
+      {
+        "id": "vtm5e",
+        "type": "system",
+        "manifest": "https://github.com/WoD5E-Developers/wod5e/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "5.1.4",
+          "verified": "5"
+        }
       }
     ],
     "requires": [],

@@ -2,6 +2,11 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.11](https://github.com/jendave/token-note-hover/commits/main) (2025-08-05)
+
+* Added support for * [World of Darkness 5e](https://foundryvtt.com/packages/vtm5e).
+* Updated formatting in various systems.
+
 ## [3.0.10](https://github.com/jendave/token-note-hover/commits/main) (2025-08-04)
 
 * Updated CSS to fix issue where Token Note Hover settings caused problems in multiple system character sheets.
