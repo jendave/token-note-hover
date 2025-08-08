@@ -15,6 +15,8 @@ import { cyphersystem } from "./systems/cyphersystem.js";
 import { swade } from "./systems/swade.js";
 import { vtm5e } from "./systems/vtm5e.js";
 import { alienrpg } from "./systems/alienrpg.js";
+import { shadowdark } from "./systems/shadowdark.js";
+import { drawsteel } from "./systems/drawsteel.js";
 
 /**
  * A HUD extension that shows the Note preview
@@ -115,6 +117,10 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       tempContent = await vtm5e(actor, displayImages);
     } else if (game.data.system.id === 'alienrpg') {
       tempContent = await alienrpg(actor, displayImages);
+    } else if (game.data.system.id === 'shadowdark') {
+      tempContent = await shadowdark(actor, displayImages);
+    } else if (game.data.system.id === 'draw-steel') {
+      tempContent = await drawsteel(actor, displayImages);
     }
 
     this.contentAvailable = tempContent !== null && tempContent !== '';

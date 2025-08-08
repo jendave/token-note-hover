@@ -1,6 +1,10 @@
 import CONSTANTS from '../constants';
 
 export async function pf2e(actor, displayImages, tempContent) {
+    if (!actor) {
+        return null;
+    }
+    
     if (actor) {
         const actorIsOwner = actor.isOwner ?? true;
         let partyNoteArray = [""];

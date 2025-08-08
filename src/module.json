@@ -64,7 +64,7 @@
       {
         "id": "dnd5e",
         "type": "system",
-        "manifest": "https://github.com/foundryvtt/dnd5e/releases/download/release-5.0.3/system.json",
+        "manifest": "https://raw.githubusercontent.com/foundryvtt/dnd5e/master/system.json",
         "compatibility": {
           "minimum": "5.0.3",
           "verified": "5.0"
@@ -100,7 +100,7 @@
       {
         "id": "worldbuilding",
         "type": "system",
-        "manifest": "https://raw.githubusercontent.com/foundryvtt/worldbuilding/release-082/system.json",
+        "manifest": "https://raw.githubusercontent.com/foundryvtt/worldbuilding/master/system.json",
         "compatibility": {
           "minimum": "0.8.2",
           "verified": "0.8"
@@ -109,7 +109,7 @@
       {
         "id": "rqg",
         "type": "system",
-        "manifest": "https://github.com/sun-dragon-cult/fvtt-system-rqg/releases/download/v3.4.9/system.json",
+        "manifest": "https://github.com/sun-dragon-cult/fvtt-system-rqg/releases/latest/download/system.json",
         "compatibility": {
           "minimum": "3.4.9",
           "verified": "3.4.9"
@@ -127,7 +127,7 @@
       {
         "id": "dsa5",
         "type": "system",
-        "manifest": "https://raw.githubusercontent.com/Plushtoast/dsa5-foundryVTT/foundry12/system.json",
+        "manifest": "https://raw.githubusercontent.com/Plushtoast/dsa5-foundryVTT/foundry13/system.json",
         "compatibility": {
           "minimum": "6.2.2",
           "verified": "6.2.2"
@@ -163,7 +163,7 @@
       {
         "id": "cyphersystem",
         "type": "system",
-        "manifest": "https://github.com/moo-man/WFRP4e-FoundryVTT/releases/latest/download/system.json",
+        "manifest": "https://raw.githubusercontent.com/mrkwnzl/cyphersystem-foundryvtt/main/system.json",
         "compatibility": {
           "minimum": "3.3.2",
           "verified": "3"
@@ -190,10 +190,28 @@
       {
         "id": "alienrpg",
         "type": "system",
-        "manifest": "https://https://github.com/pwatson100/alienrpg/releases/latest/download/system.json",
+        "manifest": "https://github.com/pwatson100/alienrpg/releases/latest/download/system.json",
         "compatibility": {
           "minimum": "3.2.4",
           "verified": "3"
+        }
+      },
+      {
+        "id": "shadowdark",
+        "type": "system",
+        "manifest": "https://github.com/Muttley/foundryvtt-shadowdark/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "3.6.0",
+          "verified": "3"
+        }
+      },
+      {
+        "id": "draw-steel",
+        "type": "system",
+        "manifest": "https://raw.githubusercontent.com/MetaMorphic-Digital/draw-steel/refs/heads/main/system.json",
+        "compatibility": {
+          "minimum": "0.7.3",
+          "verified": "0.7"
         }
       }
     ],

@@ -2,6 +2,11 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.13](https://github.com/jendave/token-note-hover/commits/main) (2025-08-06)
+
+* Added support for [Shadowdark RPG](https://foundryvtt.com/packages/shadowdark).
+* Added support for [Draw Steel](https://foundryvtt.com/packages/draw-steel).
+
 ## [3.0.12](https://github.com/jendave/token-note-hover/commits/main) (2025-08-06)
 
 * Added support for [Alien RPG](https://foundryvtt.com/packages/alienrpg).

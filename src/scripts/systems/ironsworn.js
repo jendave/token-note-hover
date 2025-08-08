@@ -1,6 +1,10 @@
 import CONSTANTS from '../constants';
 
 export async function ironsworn(actor, displayImages, tempContent) {
+    if (!actor) {
+        return null;
+    }
+    
     if (actor) {
         const actorIsOwner = actor.isOwner ?? true;
 

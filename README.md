@@ -23,12 +23,14 @@ The tooltip will not display if the note is empty or while the token is being dr
 * [Cypher System](https://foundryvtt.com/packages/cyphersystem). FoundryVTT v13.
 * [D&D 5E](https://foundryvtt.com/packages/dnd5e). FoundryVTT v12 and v13.
 * [Das Schwarze Auge / The Dark Eye (5th Edition)](https://foundryvtt.com/packages/dsa5). FoundryVTT v12 and v13.
+* [Draw Steel](https://foundryvtt.com/packages/draw-steel). FoundryVTT v13.
 * [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn). FoundryVTT v12 and v13.
 * [Level Up: Advanced 5th Edition](https://foundryvtt.com/packages/a5e). FoundryVTT v12 only.
 * [Pathfinder 1](https://foundryvtt.com/packages/pf1). FoundryVTT v13.
 * [Pathfinder 2e](https://foundryvtt.com/packages/pf2e). FoundryVTT v12 and v13.
 * [RuneQuest Glorantha](https://foundryvtt.com/packages/rqg). FoundryVTT v12 and v13.
 * [Savage Worlds Adventure Edition](https://foundryvtt.com/packages/swade). FoundryVTT v13.
+* [Shadowdark RPG](https://foundryvtt.com/packages/shadowdark). FoundryVTT v13.
 * [Simple Worldbuilding System](https://foundryvtt.com/packages/worldbuilding). FoundryVTT v12 and v13.
 * [Starfinder 1st Edition](https://foundryvtt.com/packages/sfrpg). FoundryVTT v12 and v13.
 * [Twodsix - Cepheus & Traveller](https://foundryvtt.com/packages/twodsix). FoundryVTT v12 and v13.
@@ -141,6 +143,15 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Creature** | Description |
 | **Non-Player Character** | Notes |
 
+### Draw Steel
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_drawsteel.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Player Character** | Notes |
+| **Non-Player Character** | Notes & Private Notes (GM only) |
+
 ### Ironsworn/Starforged
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_ironsworn.jpg?raw=true)
@@ -207,6 +218,15 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Non-Player Character** | Description |
 | **Group** | Description |
 | **Vehicle** | Description |
+
+### Shadowdark
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_shadowdark.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Player Character** | Notes |
+| **Non-Player Character** | Notes & Private Notes (GM only) |
 
 ### Simple Worldbuilding System
 
