@@ -89,7 +89,7 @@
       },
       "UseMousePositionForCoordinates": {
         "Name": "Use Mouse Position for Tooltip Coordinates",
-        "Hint": "Use mouse position to display the tooltip. Overrides the tooltip position setting."
+        "Hint": "Use mouse position to display the tooltip. Overrides the Tooltip Position on Screen setting."
       },
       "ShowTitle": {
         "Name": "Show Title on Tooltip",

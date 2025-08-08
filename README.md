@@ -149,8 +149,8 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 
 | Actor Type | Note Location |
 | ------------- | ----------- |
-| **Player Character** | Notes |
-| **Non-Player Character** | Notes & Private Notes (GM only) |
+| **Character** | Biography & GM Notes |
+| **NPC** | Biography & GM Notes |
 
 ### Ironsworn/Starforged
 
@@ -225,8 +225,8 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 
 | Actor Type | Note Location |
 | ------------- | ----------- |
-| **Player Character** | Notes |
-| **Non-Player Character** | Notes & Private Notes (GM only) |
+| **Player** | Character Notes |
+| **NPC** | Description |
 
 ### Simple Worldbuilding System
 
