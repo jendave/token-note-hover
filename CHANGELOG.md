@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.14](https://github.com/jendave/token-note-hover/commits/main) (2025-08-12)
+
+* Tooltip positioning near the token works much better, especially if zoomed in. Helps prevent looping bug.
+
 ## [3.0.13](https://github.com/jendave/token-note-hover/commits/main) (2025-08-08)
 
 * Added support for [Shadowdark RPG](https://foundryvtt.com/packages/shadowdark).
