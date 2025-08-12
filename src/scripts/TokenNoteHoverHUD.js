@@ -208,11 +208,10 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       x = positionMouse.x;
       y = positionMouse.y;
       const centre = canvas.scene._viewPosition;
-      const widthScaled = this.object.w / 2 * centre.scale;
+      const widthScaled = this.object.w * centre.scale;
       const heightScaled = this.object.h * centre.scale;
-
-      const leftScaled = x - (widthScaled / 2);
-      const topScaled = y - (heightScaled);
+      const leftScaled = x - (this.object.w / 2);
+      const topScaled = y - (this.object.h / 2);
 
       position = {
         height: `${heightScaled}px`,
@@ -224,11 +223,10 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       x = this.object.center ? this.object.center.x : this.object.x;
       y = this.object.center ? this.object.center.y : this.object.y;
       const centre = canvas.scene._viewPosition;
-      const widthScaled = this.object.w / 2 * centre.scale;
+      const widthScaled = this.object.w * centre.scale;
       const heightScaled = this.object.h * centre.scale;
-
-      const leftScaled = x - (widthScaled / 2);
-      const topScaled = y - (heightScaled);
+      const leftScaled = x - (this.object.w / 2);
+      const topScaled = y - (this.object.h / 2);
 
       position = {
         height: `${heightScaled}px`,
