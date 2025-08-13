@@ -9,6 +9,8 @@ export async function dnd5e(actor, displayImages) {
   const actorIsOwner = actor.isOwner ?? true;
 
   switch (actor.type) {
+    case "encounter":
+      return await processNotes(actor.system?.description?.full, actorIsOwner, displayImages);
     case "vehicle":
       return await processNotes(actor.system?.details?.biography?.value, actorIsOwner, displayImages);
     case "character":

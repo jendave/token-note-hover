@@ -2,6 +2,11 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.15](https://github.com/jendave/token-note-hover/commits/main) (2025-08-12)
+
+* Add *Encounter* Actor type for [D&D 5E](https://foundryvtt.com/packages/dnd5e).
+* [D&D 5E](https://foundryvtt.com/packages/dnd5e) 5.1.0 minimum required.
+
 ## [3.0.14](https://github.com/jendave/token-note-hover/commits/main) (2025-08-12)
 
 * Tooltip positioning near the token works much better, especially if zoomed in. Helps prevent looping bug.

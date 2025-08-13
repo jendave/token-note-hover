@@ -132,6 +132,7 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Non-player Character** | Biography Public |
 | **Group** | Description |
 | **Vehicle** | Description |
+| **Encounter** | Description |
 
 ### Das Schwarze Auge / The Dark Eye (5th Edition)
 
