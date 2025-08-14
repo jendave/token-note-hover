@@ -213,6 +213,15 @@
           "minimum": "0.7.3",
           "verified": "0.7"
         }
+      },
+      {
+        "id": "daggerheart",
+        "type": "system",
+        "manifest": "https://github.com/Foundryborne/daggerheart/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "1.0.3",
+          "verified": "1.0"
+        }
       }
     ],
     "requires": [],

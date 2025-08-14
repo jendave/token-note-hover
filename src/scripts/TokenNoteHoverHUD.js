@@ -17,6 +17,7 @@ import { vtm5e } from "./systems/vtm5e.js";
 import { alienrpg } from "./systems/alienrpg.js";
 import { shadowdark } from "./systems/shadowdark.js";
 import { drawsteel } from "./systems/drawsteel.js";
+import { daggerheart } from "./systems/daggerheart.js";
 
 /**
  * A HUD extension that shows the Note preview
@@ -121,6 +122,8 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       tempContent = await shadowdark(actor, displayImages);
     } else if (game.data.system.id === 'draw-steel') {
       tempContent = await drawsteel(actor, displayImages);
+    } else if (game.data.system.id === 'daggerheart') {
+      tempContent = await daggerheart(actor, displayImages);
     }
 
     this.contentAvailable = tempContent !== null && tempContent !== '';

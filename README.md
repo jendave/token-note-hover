@@ -22,6 +22,7 @@ The tooltip will not display if the note is empty or while the token is being dr
 * [Call of Cthulhu 7th edition](https://foundryvtt.com/packages/CoC7). FoundryVTT v12 and v13.
 * [Cypher System](https://foundryvtt.com/packages/cyphersystem). FoundryVTT v13.
 * [D&D 5E](https://foundryvtt.com/packages/dnd5e). FoundryVTT v12 and v13.
+* [Daggerheart](https://foundryvtt.com/packages/daggerheart). FoundryVTT v13.
 * [Das Schwarze Auge / The Dark Eye (5th Edition)](https://foundryvtt.com/packages/dsa5). FoundryVTT v12 and v13.
 * [Draw Steel](https://foundryvtt.com/packages/draw-steel). FoundryVTT v13.
 * [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn). FoundryVTT v12 and v13.
@@ -133,6 +134,17 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Group** | Description |
 | **Vehicle** | Description |
 | **Encounter** | Description |
+
+### Daggerheart
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_daggerheart.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Adversary** | Notes |
+| **Character** | Biography - Background |
+| **Companion** | Partner |
+| **Environment** | Notes |
 
 ### Das Schwarze Auge / The Dark Eye (5th Edition)
 
