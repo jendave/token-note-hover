@@ -113,7 +113,7 @@ export default function registerSettings() {
     type: Number,
     default: 200,
     config: true,
-    range: { min: 100, max: 3000, step: 100 },
+    range: { min: 200, max: 3000, step: 100 },
   });
 
   game.settings.register(CONSTANTS.MODULE_ID, 'tooltipCloseDelay', {
