@@ -121,7 +121,7 @@ export default function registerSettings() {
     hint: `${CONSTANTS.MODULE_ID}.Settings.TooltipCloseDelay.Hint`,
     scope: 'client',
     type: Number,
-    default: 300,
+    default: 100,
     config: true,
     range: { min: 100, max: 3000, step: 100 },
   });
