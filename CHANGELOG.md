@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.16](https://github.com/jendave/token-note-hover/commits/main) (2025-08-14)
+
+* Added support for [Daggerheart](https://foundryvtt.com/packages/daggerheart).
+
 ## [3.0.15](https://github.com/jendave/token-note-hover/commits/main) (2025-08-12)
 
 * Add *Encounter* Actor type for [D&D 5E](https://foundryvtt.com/packages/dnd5e).
