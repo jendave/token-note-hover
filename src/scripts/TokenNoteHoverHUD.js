@@ -18,6 +18,7 @@ import { alienrpg } from "./systems/alienrpg.js";
 import { shadowdark } from "./systems/shadowdark.js";
 import { drawsteel } from "./systems/drawsteel.js";
 import { daggerheart } from "./systems/daggerheart.js";
+import { gurps } from "./systems/gurps.js";
 
 /**
  * A HUD extension that shows the Note preview
@@ -124,6 +125,8 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       tempContent = await drawsteel(actor, displayImages);
     } else if (game.data.system.id === 'daggerheart') {
       tempContent = await daggerheart(actor, displayImages);
+    } else if (game.data.system.id === 'gurps') {
+      tempContent = await gurps(actor, displayImages);
     }
 
     this.contentAvailable = tempContent !== null && tempContent !== '';

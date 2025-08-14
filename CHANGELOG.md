@@ -2,6 +2,11 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.17](https://github.com/jendave/token-note-hover/commits/main) (2025-08-14)
+
+* Added support for [GURPS 4th Edition Game Aid (Unofficial)](https://foundryvtt.com/packages/gurps).
+* Workaround for [issue](https://github.com/jendave/token-note-hover/issues/26) when mouse is moved too quickly over multiple tokens.
+
 ## [3.0.16](https://github.com/jendave/token-note-hover/commits/main) (2025-08-14)
 
 * Added support for [Daggerheart](https://foundryvtt.com/packages/daggerheart).

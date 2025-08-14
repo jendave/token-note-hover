@@ -25,6 +25,7 @@ The tooltip will not display if the note is empty or while the token is being dr
 * [Daggerheart](https://foundryvtt.com/packages/daggerheart). FoundryVTT v13.
 * [Das Schwarze Auge / The Dark Eye (5th Edition)](https://foundryvtt.com/packages/dsa5). FoundryVTT v12 and v13.
 * [Draw Steel](https://foundryvtt.com/packages/draw-steel). FoundryVTT v13.
+* [GURPS 4th Edition Game Aid (Unofficial)](https://foundryvtt.com/packages/gurps). FoundryVTT v13.
 * [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn). FoundryVTT v12 and v13.
 * [Level Up: Advanced 5th Edition](https://foundryvtt.com/packages/a5e). FoundryVTT v12 only.
 * [Pathfinder 1](https://foundryvtt.com/packages/pf1). FoundryVTT v13.
@@ -164,6 +165,15 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | ------------- | ----------- |
 | **Character** | Biography & GM Notes |
 | **NPC** | Biography & GM Notes |
+
+### GURPS 4th Edition Game Aid (Unofficial)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_gurps.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Character** | Notes |
+| **Enemy** | Notes |
 
 ### Ironsworn/Starforged
 
