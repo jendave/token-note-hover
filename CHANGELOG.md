@@ -2,7 +2,7 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
-## [3.0.18](https://github.com/jendave/token-note-hover/commits/main) (2025-08-xx)
+## [3.0.18](https://github.com/jendave/token-note-hover/commits/main) (2025-08-15)
 
 * Added support for [Warhammer 40,000 Roleplay: Wrath & Glory](https://foundryvtt.com/packages/wrath-and-glory).
 * Added support for [Dragonbane - Drakar och Demoner](https://foundryvtt.com/packages/dragonbane).
