@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.18](https://github.com/jendave/token-note-hover/commits/main) (2025-08-xx)
+
+* Added support for [Warhammer 40,000 Roleplay: Wrath & Glory](https://foundryvtt.com/packages/wrath-and-glory).
+
 ## [3.0.17](https://github.com/jendave/token-note-hover/commits/main) (2025-08-14)
 
 * Added support for [GURPS 4th Edition Game Aid (Unofficial)](https://foundryvtt.com/packages/gurps).

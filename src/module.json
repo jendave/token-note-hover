@@ -231,6 +231,15 @@
           "minimum": "0.18.5",
           "verified": "0.18"
         }
+      },
+      {
+        "id": "wrath-and-glory",
+        "type": "system",
+        "manifest": "https://github.com/moo-man/WrathAndGlory-FoundryVTT/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "7.1.1",
+          "verified": "7.1"
+        }
       }
     ],
     "requires": [],

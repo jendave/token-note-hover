@@ -36,6 +36,7 @@ The tooltip will not display if the note is empty or while the token is being dr
 * [Simple Worldbuilding System](https://foundryvtt.com/packages/worldbuilding). FoundryVTT v12 and v13.
 * [Starfinder 1st Edition](https://foundryvtt.com/packages/sfrpg). FoundryVTT v12 and v13.
 * [Twodsix - Cepheus & Traveller](https://foundryvtt.com/packages/twodsix). FoundryVTT v12 and v13.
+* [Warhammer 40,000 Roleplay: Wrath & Glory](https://foundryvtt.com/packages/wrath-and-glory). FoundryVTT v13.
 * [Warhammer Fantasy Roleplay 4th Edition](https://foundryvtt.com/packages/wfrp4e). FoundryVTT v13.
 * [World of Darkness 5e](https://foundryvtt.com/packages/vtm5e). FoundryVTT v13.
 
@@ -285,6 +286,16 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Ship** | Ship Notes |
 | **Space Object** | Notes |
 | **Vehicle** | Cargo Notes |
+
+### Warhammer 40,000 Roleplay: Wrath & Glory
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_wrath-and-glory.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Agent** | Notes |
+| **Threat** | Notes |
+| **Vehicle** | Notes |
 
 ### Warhammer Fantasy Roleplay 4th Edition
 
