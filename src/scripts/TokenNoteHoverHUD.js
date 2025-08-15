@@ -20,6 +20,7 @@ import { drawsteel } from "./systems/drawsteel.js";
 import { daggerheart } from "./systems/daggerheart.js";
 import { gurps } from "./systems/gurps.js";
 import { wrathAndGlory } from "./systems/wrathAndGlory.js";
+import { dragonbane } from "./systems/dragonbane.js";
 
 /**
  * A HUD extension that shows the Note preview
@@ -130,6 +131,10 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       tempContent = await gurps(actor, displayImages);
     } else if (game.data.system.id === 'wrath-and-glory') {
       tempContent = await wrathAndGlory(actor, displayImages);
+    } else if (game.data.system.id === 'wrath-and-glory') {
+      tempContent = await wrathAndGlory(actor, displayImages);
+    } else if (game.data.system.id === 'dragonbane') {
+      tempContent = await dragonbane(actor, displayImages);
     }
 
     this.contentAvailable = tempContent !== null && tempContent !== '';

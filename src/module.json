@@ -240,6 +240,15 @@
           "minimum": "7.1.1",
           "verified": "7.1"
         }
+      },
+      {
+        "id": "dragonbane",
+        "type": "system",
+        "manifest": "https://github.com/pafvel/dragonbane/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "2.5",
+          "verified": "2"
+        }
       }
     ],
     "requires": [],
