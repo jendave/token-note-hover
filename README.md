@@ -22,7 +22,7 @@ FoundryVTT v13 only unless otherwise noted.
 
 * [Alien RPG](https://foundryvtt.com/packages/alienrpg)
 * [Call of Cthulhu 7th edition](https://foundryvtt.com/packages/CoC7). FoundryVTT v12 and v13.
-* [Cypher System](https://foundryvtt.com/packages/cyphersystem).
+* [Cypher System](https://foundryvtt.com/packages/cyphersystem)
 * [D&D 5E](https://foundryvtt.com/packages/dnd5e). FoundryVTT v12 and v13.
 * [Daggerheart](https://foundryvtt.com/packages/daggerheart)
 * [Das Schwarze Auge / The Dark Eye (5th Edition)](https://foundryvtt.com/packages/dsa5). FoundryVTT v12 and v13.
