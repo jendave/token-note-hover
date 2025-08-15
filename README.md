@@ -13,12 +13,12 @@ The tooltip will not display if the note is empty or while the token is being dr
 
 ## FoundryVTT Compatibility
 
-* [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 3.0.0 and above only run on [FoundryVTT v13](https://foundryvtt.com/releases/13.338).
+* [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 3.0.0 and above only run on [FoundryVTT v13](https://foundryvtt.com/releases/13.341) and above.
 * [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 2.1.17 and below only run on [FoundryVTT v12](https://foundryvtt.com/releases/12.331).
 
 ### Supported Systems 
 
-FoundryVTT only unless otherwise noted.
+FoundryVTT v13 only unless otherwise noted.
 
 * [Alien RPG](https://foundryvtt.com/packages/alienrpg).
 * [Call of Cthulhu 7th edition](https://foundryvtt.com/packages/CoC7). FoundryVTT v12 and v13.
@@ -26,8 +26,10 @@ FoundryVTT only unless otherwise noted.
 * [D&D 5E](https://foundryvtt.com/packages/dnd5e). FoundryVTT v12 and v13.
 * [Daggerheart](https://foundryvtt.com/packages/daggerheart).
 * [Das Schwarze Auge / The Dark Eye (5th Edition)](https://foundryvtt.com/packages/dsa5). FoundryVTT v12 and v13.
+* [Delta Green](https://foundryvtt.com/packages/deltagreen).
 * [Dragonbane - Drakar och Demoner](https://foundryvtt.com/packages/dragonbane).
 * [Draw Steel](https://foundryvtt.com/packages/draw-steel).
+* [Forbidden Lands](https://foundryvtt.com/packages/forbidden-lands).
 * [GURPS 4th Edition Game Aid (Unofficial)](https://foundryvtt.com/packages/gurps). FoundryVTT v13.
 * [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn). FoundryVTT v12 and v13.
 * [Level Up: Advanced 5th Edition](https://foundryvtt.com/packages/a5e). FoundryVTT v12 only.
@@ -162,6 +164,17 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Creature** | Description |
 | **Non-Player Character** | Notes |
 
+### Delta Green
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_deltagreen.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Agent** | Notes |
+| **NPC** | Notes |
+| **Unnatural** | Notes |
+| **Vehicle** | Notes |
+
 ### Dragonbane - Drakar och Demoner
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dragonbane.jpg?raw=true)
@@ -180,6 +193,17 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | ------------- | ----------- |
 | **Character** | Biography & GM Notes |
 | **NPC** | Biography & GM Notes |
+
+### Forbidden Lands
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_forbidden-lands.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Character** | Notes |
+| **Monster** | Notes |
+| **Party** | Notes |
+| **Stronghold** | Notes |
 
 ### GURPS 4th Edition Game Aid (Unofficial)
 
@@ -328,13 +352,7 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 
 | Actor Type | Note Location |
 | ------------- | ----------- |
-| **Ghoul** | Notes - Public Notes & Private Notes |
-| **Group** | Notes - Public Notes & Storyteller Notes |
-| **Hunter** | Notes - Public Notes & Private Notes |
-| **Mortal** | Notes - Public Notes & Private Notes |
-| **Story Character** | Notes - Public Notes & Private Notes |
-| **Vampire** | Notes - Public Notes & Private Notes |
-| **Werewolf** | Notes - Public Notes & Private Notes |
+| **All Actors** | Appearance |
 
 ### World of Darkness 5e
 

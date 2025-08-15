@@ -258,6 +258,24 @@
           "minimum": "5.0.9",
           "verified": "5"
         }
+      },
+      {
+        "id": "forbidden-lands",
+        "type": "system",
+        "manifest": "https://raw.githubusercontent.com/fvtt-fria-ligan/forbidden-lands-foundry-vtt/main/system.json",
+        "compatibility": {
+          "minimum": "13",
+          "verified": "13"
+        }
+      },
+      {
+        "id": "deltagreen",
+        "type": "system",
+        "manifest": "https://github.com/TheLastScrub/delta-green-foundry-vtt-system/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "1.5.0",
+          "verified": "1.5"
+        }
       }
     ],
     "requires": [],
