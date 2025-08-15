@@ -41,6 +41,7 @@ FoundryVTT only unless otherwise noted.
 * [Twodsix - Cepheus & Traveller](https://foundryvtt.com/packages/twodsix). FoundryVTT v12 and v13.
 * [Warhammer 40,000 Roleplay: Wrath & Glory](https://foundryvtt.com/packages/wrath-and-glory).
 * [Warhammer Fantasy Roleplay 4th Edition](https://foundryvtt.com/packages/wfrp4e).
+* [World of Darkness 20th edition](https://foundryvtt.com/packages/worldofdarkness)
 * [World of Darkness 5e](https://foundryvtt.com/packages/vtm5e).
 
 ### Some customization options
@@ -320,6 +321,20 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Non-Player Character** | Notes - Biography & GM Notes |
 | **Creature** | Notes - Biography & GM Notes |
 | **Vehicle** | Description - Description & GM Notes |
+
+### World of Darkness 20th edition
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_worldofdarkness.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Ghoul** | Notes - Public Notes & Private Notes |
+| **Group** | Notes - Public Notes & Storyteller Notes |
+| **Hunter** | Notes - Public Notes & Private Notes |
+| **Mortal** | Notes - Public Notes & Private Notes |
+| **Story Character** | Notes - Public Notes & Private Notes |
+| **Vampire** | Notes - Public Notes & Private Notes |
+| **Werewolf** | Notes - Public Notes & Private Notes |
 
 ### World of Darkness 5e
 

@@ -249,6 +249,15 @@
           "minimum": "2.5",
           "verified": "2"
         }
+      },
+      {
+        "id": "worldofdarkness",
+        "type": "system",
+        "manifest": "https://github.com/JohanFalt/Foundry_WoD20/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "5.0.9",
+          "verified": "5"
+        }
       }
     ],
     "requires": [],
