@@ -66,7 +66,7 @@ async function getPrivateNotes(displayImages, actor, actorIsOwner) {
     const privateNotes = actor.system?.privatenotes;
     let notes = publicNotes;
 
-    if (game.user.isOwner && privateNotes) {
+    if (!game.settings.get(CONSTANTS.MODULE_ID, 'hidePrivateNotes') && game.user.isOwner && privateNotes) {
         notes += "<div class=\"token-note-hover-hud-h3\">Private Notes</div>";
         notes += privateNotes;
     }
