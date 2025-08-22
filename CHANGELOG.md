@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.20](https://github.com/jendave/token-note-hover/commits/main) (2025-08-22)
+
+* Added setting to hide private notes on tooltip.
+
 ## [3.0.19](https://github.com/jendave/token-note-hover/commits/main) (2025-08-21)
 
 * Rolled back fix for [issue](https://github.com/jendave/token-note-hover/issues/26). There was a regression bug where the note would disappear too quickly.

@@ -94,6 +94,10 @@
       "ShowTitle": {
         "Name": "Show Title on Tooltip",
         "Hint": "Show token title on tooltip"
+      },
+      "HidePrivateNotes": {
+        "Name": "Hide Private Notes",
+        "Hint": "Hide notes marked as private from the tooltip"
       }
     }
   }

@@ -45,7 +45,7 @@ async function getDroneNotes(displayImages, actor, actorIsOwner) {
     const privateNotes = actor.system?.details?.biography?.gmNotes;
     let notes = publicNotes;
 
-    if (game.user.isGM && privateNotes) {
+    if (!game.settings.get(CONSTANTS.MODULE_ID, 'hidePrivateNotes') && game.user.isGM && privateNotes) {
         notes += "<div class=\"token-note-hover-hud-h3\">GM Notes</div>";
         notes += privateNotes;
     }
@@ -58,7 +58,7 @@ async function getCharacterNotes(displayImages, actor, actorIsOwner) {
     const privateNotes = actor.system?.details?.biography?.gmNotes;
     let notes = publicNotes;
 
-    if (game.user.isGM && privateNotes) {
+    if (!game.settings.get(CONSTANTS.MODULE_ID, 'hidePrivateNotes') && game.user.isGM && privateNotes) {
         notes += "<div class=\"token-note-hover-hud-h3\">GM Notes</div>";
         notes += privateNotes;
     }

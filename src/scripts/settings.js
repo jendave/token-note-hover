@@ -185,4 +185,13 @@ export default function registerSettings() {
     default: true,
     type: Boolean,
   });
+
+  game.settings.register(CONSTANTS.MODULE_ID, 'hidePrivateNotes', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.HidePrivateNotes.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.HidePrivateNotes.Hint`,
+    scope: 'client',
+    config: true,
+    default: false,
+    type: Boolean,
+  });
 }

@@ -55,6 +55,7 @@ FoundryVTT v13 only unless otherwise noted.
 * Show/hide note images for tooltip display
 * Can require minimum token ownership level on notes for display
 * Display token title in tooltip
+* Hide/Display private notes
 
 All settings, except for `token ownership required` are client-side only so each player can enable the features they need.
 
