@@ -4,7 +4,7 @@
 
 ## [3.0.19](https://github.com/jendave/token-note-hover/commits/main) (2025-08-21)
 
-* Rolled back fix for [issue](https://github.com/jendave/token-note-hover/issues/26). Note would disappear too quickly.
+* Rolled back fix for [issue](https://github.com/jendave/token-note-hover/issues/26). There was a regression bug where the note would disappear too quickly.
 
 ## [3.0.18](https://github.com/jendave/token-note-hover/commits/main) (2025-08-15)
 
