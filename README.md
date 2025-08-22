@@ -13,33 +13,40 @@ The tooltip will not display if the note is empty or while the token is being dr
 
 ## FoundryVTT Compatibility
 
-* [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 3.0.0 and above only run on [FoundryVTT v13](https://foundryvtt.com/releases/13.338).
+* [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 3.0.0 and above only run on [FoundryVTT v13](https://foundryvtt.com/releases/13.341) and above.
 * [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 2.1.17 and below only run on [FoundryVTT v12](https://foundryvtt.com/releases/12.331).
 
-### Supported Systems
+## Supported Systems
 
-* [Alien RPG](https://foundryvtt.com/packages/alienrpg). FoundryVTT v13.
+FoundryVTT v13 only unless otherwise noted.
+
+* [Alien RPG](https://foundryvtt.com/packages/alienrpg)
 * [Call of Cthulhu 7th edition](https://foundryvtt.com/packages/CoC7). FoundryVTT v12 and v13.
-* [Cypher System](https://foundryvtt.com/packages/cyphersystem). FoundryVTT v13.
+* [Cypher System](https://foundryvtt.com/packages/cyphersystem)
 * [D&D 5E](https://foundryvtt.com/packages/dnd5e). FoundryVTT v12 and v13.
-* [Daggerheart](https://foundryvtt.com/packages/daggerheart). FoundryVTT v13.
+* [Daggerheart](https://foundryvtt.com/packages/daggerheart)
 * [Das Schwarze Auge / The Dark Eye (5th Edition)](https://foundryvtt.com/packages/dsa5). FoundryVTT v12 and v13.
-* [Draw Steel](https://foundryvtt.com/packages/draw-steel). FoundryVTT v13.
+* [Delta Green](https://foundryvtt.com/packages/deltagreen)
+* [Dragonbane - Drakar och Demoner](https://foundryvtt.com/packages/dragonbane)
+* [Draw Steel](https://foundryvtt.com/packages/draw-steel)
+* [Forbidden Lands](https://foundryvtt.com/packages/forbidden-lands)
 * [GURPS 4th Edition Game Aid (Unofficial)](https://foundryvtt.com/packages/gurps). FoundryVTT v13.
 * [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn). FoundryVTT v12 and v13.
 * [Level Up: Advanced 5th Edition](https://foundryvtt.com/packages/a5e). FoundryVTT v12 only.
-* [Pathfinder 1](https://foundryvtt.com/packages/pf1). FoundryVTT v13.
+* [Pathfinder 1](https://foundryvtt.com/packages/pf1)
 * [Pathfinder 2e](https://foundryvtt.com/packages/pf2e). FoundryVTT v12 and v13.
 * [RuneQuest Glorantha](https://foundryvtt.com/packages/rqg). FoundryVTT v12 and v13.
-* [Savage Worlds Adventure Edition](https://foundryvtt.com/packages/swade). FoundryVTT v13.
-* [Shadowdark RPG](https://foundryvtt.com/packages/shadowdark). FoundryVTT v13.
+* [Savage Worlds Adventure Edition](https://foundryvtt.com/packages/swade)
+* [Shadowdark RPG](https://foundryvtt.com/packages/shadowdark)
 * [Simple Worldbuilding System](https://foundryvtt.com/packages/worldbuilding). FoundryVTT v12 and v13.
 * [Starfinder 1st Edition](https://foundryvtt.com/packages/sfrpg). FoundryVTT v12 and v13.
 * [Twodsix - Cepheus & Traveller](https://foundryvtt.com/packages/twodsix). FoundryVTT v12 and v13.
-* [Warhammer Fantasy Roleplay 4th Edition](https://foundryvtt.com/packages/wfrp4e). FoundryVTT v13.
-* [World of Darkness 5e](https://foundryvtt.com/packages/vtm5e). FoundryVTT v13.
+* [Warhammer 40,000 Roleplay: Wrath & Glory](https://foundryvtt.com/packages/wrath-and-glory).
+* [Warhammer Fantasy Roleplay 4th Edition](https://foundryvtt.com/packages/wfrp4e)
+* [World of Darkness 20th edition](https://foundryvtt.com/packages/worldofdarkness)
+* [World of Darkness 5e](https://foundryvtt.com/packages/vtm5e)
 
-### Some customization options
+## Customization options
 
 * Tooltip themes
 * Placement, display delay, display window size and font size customization
@@ -157,6 +164,27 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Creature** | Description |
 | **Non-Player Character** | Notes |
 
+### Delta Green
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_deltagreen.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Agent** | Notes |
+| **NPC** | Notes |
+| **Unnatural** | Notes |
+| **Vehicle** | Notes |
+
+### Dragonbane - Drakar och Demoner
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dragonbane.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Player Character** | Notes |
+| **Monster** | Description |
+| **Non-Player Character** | Description |
+
 ### Draw Steel
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_drawsteel.jpg?raw=true)
@@ -165,6 +193,17 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | ------------- | ----------- |
 | **Character** | Biography & GM Notes |
 | **NPC** | Biography & GM Notes |
+
+### Forbidden Lands
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_forbidden-lands.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Character** | Notes |
+| **Monster** | Notes |
+| **Party** | Notes |
+| **Stronghold** | Notes |
 
 ### GURPS 4th Edition Game Aid (Unofficial)
 
@@ -286,6 +325,16 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Space Object** | Notes |
 | **Vehicle** | Cargo Notes |
 
+### Warhammer 40,000 Roleplay: Wrath & Glory
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_wrath-and-glory.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Agent** | Notes |
+| **Threat** | Notes |
+| **Vehicle** | Notes |
+
 ### Warhammer Fantasy Roleplay 4th Edition
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_wfrp4e.jpg?raw=true)
@@ -296,6 +345,14 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Non-Player Character** | Notes - Biography & GM Notes |
 | **Creature** | Notes - Biography & GM Notes |
 | **Vehicle** | Description - Description & GM Notes |
+
+### World of Darkness 20th edition
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_worldofdarkness.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **All Actors** | Appearance |
 
 ### World of Darkness 5e
 
