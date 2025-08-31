@@ -2,6 +2,12 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.21](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-08-31)
+
+* Fixed notes for [Draw Steel](https://foundryvtt.com/packages/draw-steel).
+* Added support for [Blades in the Dark](https://foundryvtt.com/packages/blades-in-the-dark).
+* Added support for [Powered by the Apocalpypse](https://foundryvtt.com/packages/pbta).
+
 ## [3.0.20](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-08-22)
 
 * Added setting to hide private notes on tooltip.

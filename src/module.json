@@ -210,8 +210,8 @@
         "type": "system",
         "manifest": "https://raw.githubusercontent.com/MetaMorphic-Digital/draw-steel/refs/heads/main/system.json",
         "compatibility": {
-          "minimum": "0.7.3",
-          "verified": "0.7"
+          "minimum": "0.8.0",
+          "verified": "0.8"
         }
       },
       {
@@ -275,6 +275,24 @@
         "compatibility": {
           "minimum": "1.5.0",
           "verified": "1.5"
+        }
+      },
+      {
+        "id": "blades-in-the-dark",
+        "type": "system",
+        "manifest": "https://github.com/Dez384/foundryvtt-blades-in-the-dark/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "6.0.2",
+          "verified": "6"
+        }
+      },
+      {
+        "id": "pbta",
+        "type": "system",
+        "manifest": "https://github.com/asacolips-projects/pbta/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "1.1.21",
+          "verified": "1.1"
         }
       }
     ],

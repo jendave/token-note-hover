@@ -1,7 +1,7 @@
 import CONSTANTS from '../constants.js';
 import { processNotes } from "../textUtil.js";
 
-export async function drawsteel(actor, displayImages) {
+export async function pbta(actor, displayImages) {
     // Using a guard here looks cleaner
     if (!actor) {
         return null;
@@ -10,15 +10,15 @@ export async function drawsteel(actor, displayImages) {
     const actorIsOwner = actor.isOwner ?? true;
 
     switch (actor.type) {
-        case "hero":
+        case "character":
             if (game.settings.get(CONSTANTS.MODULE_ID, 'displayPC')) {
                 return await getCharacterNotes(displayImages, actor, actorIsOwner);
             } else {
                 return null;
             }
         case "npc":
-            if (game.settings.get(CONSTANTS.MODULE_ID, 'displayPC')) {
-                return await getCharacterNotes(displayImages, actor, actorIsOwner);
+            if (game.settings.get(CONSTANTS.MODULE_ID, 'displayNPC')) {
+                return await getNpcNotes(displayImages, actor, actorIsOwner);
             } else {
                 return null;
             }
@@ -28,14 +28,9 @@ export async function drawsteel(actor, displayImages) {
 }
 
 async function getCharacterNotes(displayImages, actor, actorIsOwner) {
-    const publicNotes = actor.system?.biography?.value;
-    const privateNotes = actor.system?.biography?.director;
-    let notes = publicNotes;
+    return await processNotes(actor.system?.details?.biography.value, actorIsOwner, displayImages);
+}
 
-    if (!game.settings.get(CONSTANTS.MODULE_ID, 'hidePrivateNotes') && game.user.isGM && privateNotes) {
-        notes += "<div class=\"token-note-hover-hud-h3\">Director Notes</div>";
-        notes += privateNotes;
-    }
-
-    return await processNotes(notes, actorIsOwner, displayImages);
+async function getNpcNotes(displayImages, actor, actorIsOwner) {
+    return await processNotes(actor.system?.attributes?.bio?.value, actorIsOwner, displayImages);
 }
