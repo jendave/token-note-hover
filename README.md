@@ -31,7 +31,7 @@ FoundryVTT v13 only unless otherwise noted.
 * [Dragonbane - Drakar och Demoner](https://foundryvtt.com/packages/dragonbane).
 * [Draw Steel](https://foundryvtt.com/packages/draw-steel).
 * [Forbidden Lands](https://foundryvtt.com/packages/forbidden-lands).
-* [GURPS 4th Edition Game Aid (Unofficial)](https://foundryvtt.com/packages/gurps). FoundryVTT v13.
+* [GURPS 4th Edition Game Aid (Unofficial)](https://foundryvtt.com/packages/gurps).
 * [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn). FoundryVTT v12 and v13.
 * [Level Up: Advanced 5th Edition](https://foundryvtt.com/packages/a5e). FoundryVTT v12 only.
 * [Pathfinder 1](https://foundryvtt.com/packages/pf1).
