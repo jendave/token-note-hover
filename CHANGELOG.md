@@ -10,7 +10,7 @@
 
 * Fixed notes for [Draw Steel](https://foundryvtt.com/packages/draw-steel).
 * Added support for [Blades in the Dark](https://foundryvtt.com/packages/blades-in-the-dark).
-* Added support for [Powered by the Apocalpypse](https://foundryvtt.com/packages/pbta).
+* Added support for [Powered by the Apocalypse](https://foundryvtt.com/packages/pbta).
 
 ## [3.0.20](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-08-22)
 
