@@ -26,6 +26,7 @@ import { forbiddenlands } from './systems/forbiddenlands.js';
 import { deltagreen } from './systems/deltagreen.js';
 import { bladesInTheDark } from './systems/bladesInTheDark.js';
 import { pbta } from './systems/pbta.js';
+import { ose } from './systems/ose.js';
 
 /**
  * A HUD extension that shows the Note preview
@@ -150,6 +151,8 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       tempContent = await bladesInTheDark(actor, displayImages);
     } else if (game.data.system.id === 'pbta') {
       tempContent = await pbta(actor, displayImages);
+    } else if (game.data.system.id === 'ose') {
+      tempContent = await ose(actor, displayImages);
     }
 
     this.contentAvailable = tempContent !== null && tempContent !== '';

@@ -34,6 +34,7 @@ FoundryVTT v13 only unless otherwise noted.
 * [GURPS 4th Edition Game Aid (Unofficial)](https://foundryvtt.com/packages/gurps).
 * [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn). FoundryVTT v12 and v13.
 * [Level Up: Advanced 5th Edition](https://foundryvtt.com/packages/a5e). FoundryVTT v12 only.
+* [Old-School Essentials](https://foundryvtt.com/packages/ose).
 * [Pathfinder 1](https://foundryvtt.com/packages/pf1).
 * [Pathfinder 2e](https://foundryvtt.com/packages/pf2e). FoundryVTT v12 and v13.
 * [Powered by the Apocalpypse](https://foundryvtt.com/packages/pbta).
@@ -248,6 +249,15 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | ------------- | ----------- |
 | **Player Character** | Notes |
 | **Non-Player Character** | Notes & Private Notes (GM only) |
+
+### Old-School Essentials
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_ose.jpg?raw=true)
+
+| Actor Type | Note Location |
+| ------------- | ----------- |
+| **Character** | Notes |
+| **Monster** | Notes |
 
 ### Pathfinder 1st Edition
 

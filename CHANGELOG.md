@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.22](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-10-xx)
+
+* Added support for [Old-School Essentials](https://foundryvtt.com/packages/ose).
+
 ## [3.0.21](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-08-31)
 
 * Fixed notes for [Draw Steel](https://foundryvtt.com/packages/draw-steel).

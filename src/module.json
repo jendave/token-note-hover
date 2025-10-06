@@ -294,6 +294,15 @@
           "minimum": "1.1.21",
           "verified": "1.1"
         }
+      },
+      {
+        "id": "ose",
+        "type": "system",
+        "manifest": "https://github.com/NecroticGnome/ose-foundry-core/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "2.1.8",
+          "verified": "2.1"
+        }
       }
     ],
     "requires": [],
