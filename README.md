@@ -23,6 +23,7 @@ FoundryVTT v13 only unless otherwise noted.
 * [Alien RPG](https://foundryvtt.com/packages/alienrpg).
 * [Blades in the Dark](https://foundryvtt.com/packages/blades-in-the-dark).
 * [Call of Cthulhu 7th edition](https://foundryvtt.com/packages/CoC7). FoundryVTT v12 and v13.
+* [Custom System Builder](https://foundryvtt.com/packages/custom-system-builder).
 * [Cypher System](https://foundryvtt.com/packages/cyphersystem).
 * [D&D 5E](https://foundryvtt.com/packages/dnd5e). FoundryVTT v12 and v13.
 * [Daggerheart](https://foundryvtt.com/packages/daggerheart).
@@ -100,83 +101,103 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_alienrpg.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Character** | Description |
-| **Colony** | Description |
-| **Creature** | Notes |
-| **Planet** | Description |
+| Actor Type     | Note Location |
+| -------------  | ----------- |
+| **Character**  | Description |
+| **Colony**     | Description |
+| **Creature**   | Notes |
+| **Planet**     | Description |
 | **Spacecraft** | Description |
-| **Synthetic** | Description |
-| **Territory** | Description |
-| **Vehicles** | Description |
+| **Synthetic**  | Description |
+| **Territory**  | Description |
+| **Vehicles**   | Description |
 
 ### Blades in the Dark
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_blades-in-the-dark.jpg?raw=true)
 
-| Actor Type | Note Location |
+| Actor Type    | Note Location |
 | ------------- | ----------- |
-| **Clock** | Ticked Segments / Total Segments |
+| **Clock**     | Ticked Segments / Total Segments |
 | **Character** | Notes |
-| **Crew** | Notes |
-| **NPC** | Notes |
+| **Crew**      | Notes |
+| **NPC**       | Notes |
 
 ### Call of Cthulhu 7th edition
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_cthulhu.jpg?raw=true)
 
-| Actor Type | Note Location |
+| Actor Type    | Note Location |
 | ------------- | ----------- |
 | **Character** | Backstory |
 | **Container** | Description |
-| **Creature** | Notes |
-| **NPC** | Notes |
+| **Creature**  | Notes |
+| **NPC**       | Notes |
+
+### Custom System Builder
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_custom-system-builder.jpg?raw=true)
+
+Create a Template with these fields:
+
+* Label: Notes
+  * Component Type: Rich Text Area
+  * Component key: notes
+* Label: Private Notes
+  * Component Type: Rich Text Area
+  * Component key: privateNotes
+
+Then in a Character Actor, use the Template with the following fields:
+
+| Actor Type    | Note Settings  |
+| ------------- | -------------- |
+| **Character** | Notes          |
+|               | Private Notes  |
 
 ### Cypher System
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_cyphersystem.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Community** | Notes |
-| **Companion** | Notes |
-| **Marker** | Notes |
+| Actor Type       | Note Location |
+| -------------    | ----------- |
+| **Community**    | Notes |
+| **Companion**    | Notes |
+| **Marker**       | Notes |
 | **NPC/Creature** | Notes |
-| **PC** | Notes & GM Notes |
-| **Vehicle** | Notes |
+| **PC**           | Notes & GM Notes |
+| **Vehicle**      | Notes |
 
 ### D&D 5E
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dnd5e.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Player Character** | Biography |
+| Actor Type               | Note Location |
+| -------------            | ----------- |
+| **Player Character**     | Biography |
 | **Non-player Character** | Biography Public |
-| **Group** | Description |
-| **Vehicle** | Description |
-| **Encounter** | Description |
+| **Group**                | Description |
+| **Vehicle**              | Description |
+| **Encounter**            | Description |
 
 ### Daggerheart
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_daggerheart.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Adversary** | Notes |
-| **Character** | Biography - Background |
-| **Companion** | Partner |
+| Actor Type      | Note Location |
+| -------------   | ----------- |
+| **Adversary**   | Notes |
+| **Character**   | Biography - Background |
+| **Companion**   | Partner |
 | **Environment** | Notes |
 
 ### Das Schwarze Auge / The Dark Eye (5th Edition)
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dsa5.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Character** | Notes |
-| **Creature** | Description |
+| Actor Type               | Note Location |
+| -------------            | ----------- |
+| **Character**            | Notes |
+| **Creature**             | Description |
 | **Non-Player Character** | Notes |
 
 ### Delta Green

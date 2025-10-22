@@ -303,6 +303,15 @@
           "minimum": "2.1.8",
           "verified": "2.1"
         }
+      },
+      {
+        "id": "custom-system-builder",
+        "type": "system",
+        "manifest": "https://gitlab.com/custom-system-builder/custom-system-builder/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "5.0.0",
+          "verified": "5.0"
+        }
       }
     ],
     "requires": [],
