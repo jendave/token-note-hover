@@ -130,10 +130,8 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 
 | Actor Type    | Note Location |
 | ------------- | ----------- |
-| **Clock**     | Ticked Segments / Total Segments |
-| **Character** | Notes |
-| **Crew**      | Notes |
-| **NPC**       | Notes |
+| **Player Character** | Background / Description / Notes |
+| **Non-Player Character** | Role / Description / Notes |
 
 ### Call of Cthulhu 7th edition
 
