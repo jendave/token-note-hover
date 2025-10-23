@@ -4,7 +4,7 @@
 
 ## [3.0.24](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-10-23)
 
-* Added support for [Cairn](https://foundryvtt.com/packages/cairn).
+* Added support for [Cairn](https://foundryvtt.com/packages/cairn). Code provided by DanButcher45.
 
 ## [3.0.23](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-10-21)
 
