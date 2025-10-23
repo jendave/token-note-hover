@@ -312,6 +312,15 @@
           "minimum": "5.0.0",
           "verified": "5.0"
         }
+      },
+      {
+        "id": "cairn",
+        "type": "system",
+        "manifest": "https://github.com/yochaigal/Cairn-FoundryVTT/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "0.25",
+          "verified": "0.25"
+        }
       }
     ],
     "requires": [],

@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.24](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-10-23)
+
+* Added support for [Cairn](https://foundryvtt.com/packages/cairn).
+
 ## [3.0.23](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-10-21)
 
 * Added support for [Custom System Builder](https://foundryvtt.com/packages/custom-system-builder). Make sure to look at the documentation to configure the fields for the notes.

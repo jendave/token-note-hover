@@ -22,6 +22,7 @@ FoundryVTT v13 only unless otherwise noted.
 
 * [Alien RPG](https://foundryvtt.com/packages/alienrpg).
 * [Blades in the Dark](https://foundryvtt.com/packages/blades-in-the-dark).
+* [Cairn](https://foundryvtt.com/packages/cairn).
 * [Call of Cthulhu 7th edition](https://foundryvtt.com/packages/CoC7). FoundryVTT v12 and v13.
 * [Custom System Builder](https://foundryvtt.com/packages/custom-system-builder).
 * [Cypher System](https://foundryvtt.com/packages/cyphersystem).
@@ -115,6 +116,17 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 ### Blades in the Dark
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_blades-in-the-dark.jpg?raw=true)
+
+| Actor Type    | Note Location |
+| ------------- | ----------- |
+| **Clock**     | Ticked Segments / Total Segments |
+| **Character** | Notes |
+| **Crew**      | Notes |
+| **NPC**       | Notes |
+
+### Cairn
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_cairn.jpg?raw=true)
 
 | Actor Type    | Note Location |
 | ------------- | ----------- |

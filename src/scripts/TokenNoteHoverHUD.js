@@ -28,6 +28,7 @@ import { bladesInTheDark } from './systems/bladesInTheDark.js';
 import { pbta } from './systems/pbta.js';
 import { ose } from './systems/ose.js';
 import { customSystemBuilder } from './systems/customSystemBuilder.js';
+import { cairn } from './systems/cairn.js';
 
 /**
  * A HUD extension that shows the Note preview
@@ -156,6 +157,8 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       tempContent = await ose(actor, displayImages);
     } else if (game.data.system.id === 'custom-system-builder') {
       tempContent = await customSystemBuilder(actor, displayImages);
+    } else if (game.data.system.id === 'cairn') {
+      tempContent = await cairn(actor, displayImages);
     }
 
     this.contentAvailable = tempContent !== null && tempContent !== '';
