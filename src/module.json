@@ -307,7 +307,7 @@
       {
         "id": "custom-system-builder",
         "type": "system",
-        "manifest": "https://gitlab.com/custom-system-builder/custom-system-builder/releases/latest/download/system.json",
+        "manifest": "https://gitlab.com/custom-system-builder/custom-system-builder/-/releases/permalink/latest/downloads/system.json",
         "compatibility": {
           "minimum": "5.0.0",
           "verified": "5.0"
@@ -320,6 +320,15 @@
         "compatibility": {
           "minimum": "0.25",
           "verified": "0.25"
+        }
+      },
+      {
+        "id": "tormenta20",
+        "type": "system",
+        "manifest": "https://gitlab.com/api/v4/projects/20169602/packages/generic/tormenta20/latest/system.json",
+        "compatibility": {
+          "minimum": "1.5.012",
+          "verified": "1.5"
         }
       }
     ],

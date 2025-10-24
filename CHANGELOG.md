@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [3.0.25](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-10-23)
+
+* Added support for [Tormenta20](https://foundryvtt.com/packages/tormenta20).
+
 ## [3.0.24](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-10-23)
 
 * Added support for [Cairn](https://foundryvtt.com/packages/cairn). Code contributed by [DanButcher45](https://github.com/DanButcher45).

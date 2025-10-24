@@ -29,6 +29,7 @@ import { pbta } from './systems/pbta.js';
 import { ose } from './systems/ose.js';
 import { customSystemBuilder } from './systems/customSystemBuilder.js';
 import { cairn } from './systems/cairn.js';
+import { tormenta20 } from './systems/tormenta20.js';
 
 /**
  * A HUD extension that shows the Note preview
@@ -159,6 +160,8 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       tempContent = await customSystemBuilder(actor, displayImages);
     } else if (game.data.system.id === 'cairn') {
       tempContent = await cairn(actor, displayImages);
+    } else if (game.data.system.id === 'tormenta20') {
+      tempContent = await tormenta20(actor, displayImages);
     }
 
     this.contentAvailable = tempContent !== null && tempContent !== '';

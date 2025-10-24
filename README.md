@@ -45,6 +45,7 @@ FoundryVTT v13 only unless otherwise noted.
 * [Shadowdark RPG](https://foundryvtt.com/packages/shadowdark).
 * [Simple Worldbuilding System](https://foundryvtt.com/packages/worldbuilding). FoundryVTT v12 and v13.
 * [Starfinder 1st Edition](https://foundryvtt.com/packages/sfrpg). FoundryVTT v12 and v13.
+* [Tormenta20](https://foundryvtt.com/packages/tormenta20).
 * [Twodsix - Cepheus & Traveller](https://foundryvtt.com/packages/twodsix). FoundryVTT v12 and v13.
 * [Warhammer 40,000 Roleplay: Wrath & Glory](https://foundryvtt.com/packages/wrath-and-glory).
 * [Warhammer Fantasy Roleplay 4th Edition](https://foundryvtt.com/packages/wfrp4e).
@@ -103,46 +104,46 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_alienrpg.jpg?raw=true)
 
 | Actor Type     | Note Location |
-| -------------  | ----------- |
-| **Character**  | Description |
-| **Colony**     | Description |
-| **Creature**   | Notes |
-| **Planet**     | Description |
-| **Spacecraft** | Description |
-| **Synthetic**  | Description |
-| **Territory**  | Description |
-| **Vehicles**   | Description |
+| -------------- | ------------- |
+| **Character**  | Description   |
+| **Colony**     | Description   |
+| **Creature**   | Notes         |
+| **Planet**     | Description   |
+| **Spacecraft** | Description   |
+| **Synthetic**  | Description   |
+| **Territory**  | Description   |
+| **Vehicles**   | Description   |
 
 ### Blades in the Dark
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_blades-in-the-dark.jpg?raw=true)
 
-| Actor Type    | Note Location |
-| ------------- | ----------- |
+| Actor Type    | Note Location                    |
+| ------------- | -------------------------------- |
 | **Clock**     | Ticked Segments / Total Segments |
-| **Character** | Notes |
-| **Crew**      | Notes |
-| **NPC**       | Notes |
+| **Character** | Notes                            |
+| **Crew**      | Notes                            |
+| **NPC**       | Notes                            |
 
 ### Cairn
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_cairn.jpg?raw=true)
 
-| Actor Type    | Note Location |
-| ------------- | ----------- |
-| **Player Character** | Background / Description / Notes |
-| **Non-Player Character** | Role / Description / Notes |
+| Actor Type               | Note Location                    |
+| ------------------------ | -------------------------------- |
+| **Player Character**     | Background / Description / Notes |
+| **Non-Player Character** | Role / Description / Notes       |
 
 ### Call of Cthulhu 7th edition
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_cthulhu.jpg?raw=true)
 
 | Actor Type    | Note Location |
-| ------------- | ----------- |
-| **Character** | Backstory |
-| **Container** | Description |
-| **Creature**  | Notes |
-| **NPC**       | Notes |
+| ------------- | ------------- |
+| **Character** | Backstory     |
+| **Container** | Description   |
+| **Creature**  | Notes         |
+| **NPC**       | Notes         |
 
 ### Custom System Builder
 
@@ -168,47 +169,47 @@ Then in a Character Actor, use the Template with the following fields:
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_cyphersystem.jpg?raw=true)
 
-| Actor Type       | Note Location |
-| -------------    | ----------- |
-| **Community**    | Notes |
-| **Companion**    | Notes |
-| **Marker**       | Notes |
-| **NPC/Creature** | Notes |
+| Actor Type       | Note Location    |
+| ---------------- | ---------------- |
+| **Community**    | Notes            |
+| **Companion**    | Notes            |
+| **Marker**       | Notes            |
+| **NPC/Creature** | Notes            |
 | **PC**           | Notes & GM Notes |
-| **Vehicle**      | Notes |
+| **Vehicle**      | Notes            |
 
 ### D&D 5E
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dnd5e.jpg?raw=true)
 
-| Actor Type               | Note Location |
-| -------------            | ----------- |
-| **Player Character**     | Biography |
+| Actor Type               | Note Location    |
+| ------------------------ | ---------------- |
+| **Player Character**     | Biography        |
 | **Non-player Character** | Biography Public |
-| **Group**                | Description |
-| **Vehicle**              | Description |
-| **Encounter**            | Description |
+| **Group**                | Description      |
+| **Vehicle**              | Description      |
+| **Encounter**            | Description      |
 
 ### Daggerheart
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_daggerheart.jpg?raw=true)
 
-| Actor Type      | Note Location |
-| -------------   | ----------- |
-| **Adversary**   | Notes |
+| Actor Type      | Note Location          |
+| --------------- | ---------------------- |
+| **Adversary**   | Notes                  |
 | **Character**   | Biography - Background |
-| **Companion**   | Partner |
-| **Environment** | Notes |
+| **Companion**   | Partner                |
+| **Environment** | Notes                  |
 
 ### Das Schwarze Auge / The Dark Eye (5th Edition)
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dsa5.jpg?raw=true)
 
 | Actor Type               | Note Location |
-| -------------            | ----------- |
-| **Character**            | Notes |
-| **Creature**             | Description |
-| **Non-Player Character** | Notes |
+| ------------------------ | ------------- |
+| **Character**            | Notes         |
+| **Creature**             | Description   |
+| **Non-Player Character** | Notes         |
 
 ### Delta Green
 
@@ -330,9 +331,9 @@ Then in a Character Actor, use the Template with the following fields:
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_rqg.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Actor** | Allies & Notes |
+| Actor Type | Note Location  |
+| ---------- | -------------- |
+| **Actor**  | Allies & Notes |
 
 ### Savage Worlds Adventure Edition
 
@@ -349,32 +350,44 @@ Then in a Character Actor, use the Template with the following fields:
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_shadowdark.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
+| Actor Type | Note Location   |
+| ---------- | --------------- |
 | **Player** | Character Notes |
-| **NPC** | Description |
+| **NPC**    | Description     |
 
 ### Simple Worldbuilding System
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_simple.jpg?raw=true)
 
 | Actor Type | Note Location |
-| ------------- | ----------- |
-| **Actor** | Description |
+| ---------- | ------------- |
+| **Actor**  | Description   |
 
 ### Starfinder 1st Edition
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_sfrpg.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Player Character** | Biography & GM Notes |
-| **Drone** | Biography & GM Notes |
-| **Hazard** | Notes |
-| **Non-Player Character** | Biography & GM Notes|
-| **Old-Style NPC** | Biography & GM Notes |
-| **Starship** | Notes |
-| **Vehicle** | Notes |
+| Actor Type               | Note Location        |
+| ------------------------ | -------------------- |
+| **Player Character**     | Biography & GM Notes |
+| **Drone**                | Biography & GM Notes |
+| **Hazard**               | Notes                |
+| **Non-Player Character** | Biography & GM Notes |
+| **Old-Style NPC**        | Biography & GM Notes |
+| **Starship**             | Notes                |
+| **Vehicle**              | Notes                |
+
+### Tormenta20
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_tormenta20.jpg?raw=true)
+
+| Actor Type                | Note Location |
+| ------------------------- | ------------- |
+| **Ameaça**                | Diário        |
+| **Base**                  | Descrição     |
+| **Perigo Complexo**       | Objetivo      |
+| **Personagem do Mestre**  | Diário        |
+| **Personagem de Jogador** | Biografia     |
 
 ### Twodsix - Cepheus & Traveller
 
@@ -414,23 +427,23 @@ Then in a Character Actor, use the Template with the following fields:
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_worldofdarkness.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **All Actors** | Appearance |
+| Actor Type     | Note Location |
+| -------------- | ------------- |
+| **All Actors** | Appearance    |
 
 ### World of Darkness 5e
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_vtm5e.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Ghoul** | Notes - Public Notes & Private Notes |
-| **Group** | Notes - Public Notes & Storyteller Notes |
-| **Hunter** | Notes - Public Notes & Private Notes |
-| **Mortal** | Notes - Public Notes & Private Notes |
-| **Story Character** | Notes - Public Notes & Private Notes |
-| **Vampire** | Notes - Public Notes & Private Notes |
-| **Werewolf** | Notes - Public Notes & Private Notes |
+| Actor Type          | Note Location                            |
+| ------------------- | ---------------------------------------- |
+| **Ghoul**           | Notes - Public Notes & Private Notes     |
+| **Group**           | Notes - Public Notes & Storyteller Notes |
+| **Hunter**          | Notes - Public Notes & Private Notes     |
+| **Mortal**          | Notes - Public Notes & Private Notes     |
+| **Story Character** | Notes - Public Notes & Private Notes     |
+| **Vampire**         | Notes - Public Notes & Private Notes     |
+| **Werewolf**        | Notes - Public Notes & Private Notes     |
 
 ## Support
 
