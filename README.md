@@ -215,108 +215,108 @@ Then in a Character Actor, use the Template with the following fields:
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_deltagreen.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Agent** | Notes |
-| **NPC** | Notes |
-| **Unnatural** | Notes |
-| **Vehicle** | Notes |
+| Actor Type    | Note Location |
+| ------------- | ------------- |
+| **Agent**     | Notes         |
+| **NPC**       | Notes         |
+| **Unnatural** | Notes         |
+| **Vehicle**   | Notes         |
 
 ### Dragonbane - Drakar och Demoner
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dragonbane.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Player Character** | Notes |
-| **Monster** | Description |
-| **Non-Player Character** | Description |
+| Actor Type               | Note Location |
+| ------------------------ | ------------- |
+| **Player Character**     | Notes         |
+| **Monster**              | Description   |
+| **Non-Player Character** | Description   |
 
 ### Draw Steel
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_drawsteel.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
+| Actor Type    | Note Location              |
+| ------------- | -------------------------- |
 | **Character** | Biography & Director Notes |
-| **NPC** | Biography & Director Notes |
+| **NPC**       | Biography & Director Notes |
 
 ### Forbidden Lands
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_forbidden-lands.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Character** | Notes |
-| **Monster** | Notes |
-| **Party** | Notes |
-| **Stronghold** | Notes |
+| Actor Type     | Note Location |
+| -------------- | ------------- |
+| **Character**  | Notes         |
+| **Monster**    | Notes         |
+| **Party**      | Notes         |
+| **Stronghold** | Notes         |
 
 ### GURPS 4th Edition Game Aid (Unofficial)
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_gurps.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Character** | Notes |
-| **Enemy** | Notes |
+| Actor Type    | Note Location |
+| ------------- | ------------- |
+| **Character** | Notes         |
+| **Enemy**     | Notes         |
 
 ### Ironsworn/Starforged
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_ironsworn.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Character** | Notes |
-| **Shared Sheet** | Notes |
-| **NPC** | Text entry area |
-| **Starship** | Notes |
-| **Location** | Text entry area |
+| Actor Type       | Note Location   |
+| ---------------- | --------------- |
+| **Character**    | Notes           |
+| **Shared Sheet** | Notes           |
+| **NPC**          | Text entry area |
+| **Starship**     | Notes           |
+| **Location**     | Text entry area |
 
 ### Level Up: Advanced 5th Edition
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_a5e.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Player Character** | Notes |
+| Actor Type               | Note Location                   |
+| ------------------------ | ------------------------------- |
+| **Player Character**     | Notes                           |
 | **Non-Player Character** | Notes & Private Notes (GM only) |
 
 ### Old-School Essentials
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_ose.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Character** | Notes |
-| **Monster** | Notes |
+| Actor Type    | Note Location |
+| ------------- | ------------- |
+| **Character** | Notes         |
+| **Monster**   | Notes         |
 
 ### Pathfinder 1st Edition
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_pf1.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Player Character** | Notes |
-| **Haunt** | Notes |
-| **Trap** | Notes |
-| **Non-Player Character** | Notes |
-| **Vehicle** | Notes |
+| Actor Type               | Note Location |
+| ------------------------ | ------------- |
+| **Player Character**     | Notes         |
+| **Haunt**                | Notes         |
+| **Trap**                 | Notes         |
+| **Non-Player Character** | Notes         |
+| **Vehicle**              | Notes         |
 
 ### Pathfinder 2e
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_pf2e.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Player Character** | Biography Appearance |
-| **Non-player Character** | Notes Description |
-| **Army** | Description |
-| **Familiar** | Creature Type |
-| **Hazard** | Description |
-| **Loot** | Text entry area |
-| **Party** | List of party members |
-| **Vehicle** | Description |
+| Actor Type               | Note Location         |
+| ------------------------ | --------------------- |
+| **Player Character**     | Biography Appearance  |
+| **Non-player Character** | Notes Description     |
+| **Army**                 | Description           |
+| **Familiar**             | Creature Type         |
+| **Hazard**               | Description           |
+| **Loot**                 | Text entry area       |
+| **Party**                | List of party members |
+| **Vehicle**              | Description           |
 
 ### Powered by the Apocalypse
 
