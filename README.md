@@ -322,10 +322,10 @@ Then in a Character Actor, use the Template with the following fields:
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_pbta.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Character** | Biography |
-| **NPC** | Bio |
+| Actor Type    | Note Location |
+| ------------- | ------------- |
+| **Character** | Biography     |
+| **NPC**       | Bio           |
 
 ### RuneQuest Glorantha
 
@@ -339,12 +339,12 @@ Then in a Character Actor, use the Template with the following fields:
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_swade.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Player Character** | About - Notes |
-| **Non-Player Character** | Description |
-| **Group** | Description |
-| **Vehicle** | Description |
+| Actor Type               | Note Location |
+| ------------------------ | ------------- |
+| **Player Character**     | About - Notes |
+| **Non-Player Character** | Description   |
+| **Group**                | Description   |
+| **Vehicle**              | Description   |
 
 ### Shadowdark
 
@@ -393,35 +393,35 @@ Then in a Character Actor, use the Template with the following fields:
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_twodsix.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Traveller** | Character Notes |
-| **Animal** | Animal Notes |
-| **Robot** | Robot Notes |
-| **Ship** | Ship Notes |
-| **Space Object** | Notes |
-| **Vehicle** | Cargo Notes |
+| Actor Type       | Note Location   |
+| ---------------- | --------------- |
+| **Traveller**    | Character Notes |
+| **Animal**       | Animal Notes    |
+| **Robot**        | Robot Notes     |
+| **Ship**         | Ship Notes      |
+| **Space Object** | Notes           |
+| **Vehicle**      | Cargo Notes     |
 
 ### Warhammer 40,000 Roleplay: Wrath & Glory
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_wrath-and-glory.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Agent** | Notes |
-| **Threat** | Notes |
-| **Vehicle** | Notes |
+| Actor Type  | Note Location |
+| ----------- | ------------- |
+| **Agent**   | Notes         |
+| **Threat**  | Notes         |
+| **Vehicle** | Notes         |
 
 ### Warhammer Fantasy Roleplay 4th Edition
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_wfrp4e.jpg?raw=true)
 
-| Actor Type | Note Location |
-| ------------- | ----------- |
-| **Player Character** | Notes - Biography & GM Notes |
-| **Non-Player Character** | Notes - Biography & GM Notes |
-| **Creature** | Notes - Biography & GM Notes |
-| **Vehicle** | Description - Description & GM Notes |
+| Actor Type               | Note Location                        |
+| ------------------------ | ------------------------------------ |
+| **Player Character**     | Notes - Biography & GM Notes         |
+| **Non-Player Character** | Notes - Biography & GM Notes         |
+| **Creature**             | Notes - Biography & GM Notes         |
+| **Vehicle**              | Description - Description & GM Notes |
 
 ### World of Darkness 20th edition
 
