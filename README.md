@@ -32,6 +32,7 @@ FoundryVTT v13 only unless otherwise noted.
 * [Delta Green](https://foundryvtt.com/packages/deltagreen)
 * [Dragonbane - Drakar och Demoner](https://foundryvtt.com/packages/dragonbane)
 * [Draw Steel](https://foundryvtt.com/packages/draw-steel)
+* [Dungeon Crawl Classics](https://foundryvtt.com/packages/dcc)
 * [Forbidden Lands](https://foundryvtt.com/packages/forbidden-lands)
 * [GURPS 4th Edition Game Aid (Unofficial)](https://foundryvtt.com/packages/gurps)
 * [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn). FoundryVTT v12 and v13
@@ -240,6 +241,16 @@ Then in a Character Actor, use the Template with the following fields:
 | ------------- | -------------------------- |
 | **Character** | Biography & Director Notes |
 | **NPC**       | Biography & Director Notes |
+
+### Dungeon Crawl Classics
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dcc.jpg?raw=true)
+
+| Actor Type    | Note Location              |
+| ------------- | -------------------------- |
+| **Player**    | Notes                      |
+| **NPC**       | Notes                      |
+| **Party**     | Notes                      |
 
 ### Forbidden Lands
 

@@ -330,6 +330,15 @@
           "minimum": "1.5.012",
           "verified": "1.5"
         }
+      },
+      {
+        "id": "dcc",
+        "type": "system",
+        "manifest": "https://github.com/foundryvtt-dcc/dcc/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "0.63.4",
+          "verified": "0.63"
+        }
       }
     ],
     "requires": [],
