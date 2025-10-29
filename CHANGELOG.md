@@ -2,7 +2,7 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
-## [3.0.25](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-10-29)
+## [3.0.26](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-10-29)
 
 * Added support for [Dungeon Crawl Classics](https://foundryvtt.com/packages/dcc).
 
