@@ -570,4 +570,3 @@ Please check out my other modules and resources for Ironsworn, Ironsworn: Starfo
 * [Critical Success Oracles](https://jendave.itch.io/critical-success-oracles)
 * [I Owe My Soul to the Company Planet Oracles](https://jendave.itch.io/i-owe-my-soul-to-the-company-planet)
 * [Creature Rank Generator](https://jendave.itch.io/creature-rank-generator)
-
