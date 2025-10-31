@@ -23,35 +23,35 @@ FoundryVTT v13 only unless otherwise noted.
 * [Alien RPG](#alien-rpg)
 * [Blades in the Dark](#blades-in-the-dark)
 * [Cairn](#cairn)
-* [Call of Cthulhu 7th edition](#call-of-cthulhu-7th-edition). FoundryVTT v12 and v13
+* [Call of Cthulhu 7th edition](#call-of-cthulhu-7th-edition)
 * [Custom System Builder](#custom-system-builder)
-* [Cypher System](https://foundryvtt.com/packages/cyphersystem)
-* [D&D 5E](https://foundryvtt.com/packages/dnd5e). FoundryVTT v12 and v13
-* [Daggerheart](https://foundryvtt.com/packages/daggerheart)
-* [Das Schwarze Auge / The Dark Eye (5th Edition)](https://foundryvtt.com/packages/dsa5). FoundryVTT v12 and v13
-* [Delta Green](https://foundryvtt.com/packages/deltagreen)
-* [Dragonbane - Drakar och Demoner](https://foundryvtt.com/packages/dragonbane)
-* [Draw Steel](https://foundryvtt.com/packages/draw-steel)
-* [Dungeon Crawl Classics](https://foundryvtt.com/packages/dcc)
-* [Forbidden Lands](https://foundryvtt.com/packages/forbidden-lands)
-* [GURPS 4th Edition Game Aid (Unofficial)](https://foundryvtt.com/packages/gurps)
-* [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn). FoundryVTT v12 and v13
-* [Level Up: Advanced 5th Edition](https://foundryvtt.com/packages/a5e). FoundryVTT v12 only
-* [Old-School Essentials](https://foundryvtt.com/packages/ose)
-* [Pathfinder 1](https://foundryvtt.com/packages/pf1)
-* [Pathfinder 2e](https://foundryvtt.com/packages/pf2e). FoundryVTT v12 and v13
-* [Powered by the Apocalpypse](https://foundryvtt.com/packages/pbta)
-* [RuneQuest Glorantha](https://foundryvtt.com/packages/rqg). FoundryVTT v12 and v13
-* [Savage Worlds Adventure Edition](https://foundryvtt.com/packages/swade)
-* [Shadowdark RPG](https://foundryvtt.com/packages/shadowdark)
-* [Simple Worldbuilding System](https://foundryvtt.com/packages/worldbuilding). FoundryVTT v12 and v13
-* [Starfinder 1st Edition](https://foundryvtt.com/packages/sfrpg). FoundryVTT v12 and v13
-* [Tormenta20](https://foundryvtt.com/packages/tormenta20)
-* [Twodsix - Cepheus & Traveller](https://foundryvtt.com/packages/twodsix). FoundryVTT v12 and v13
-* [Warhammer 40,000 Roleplay: Wrath & Glory](https://foundryvtt.com/packages/wrath-and-glory)
-* [Warhammer Fantasy Roleplay 4th Edition](https://foundryvtt.com/packages/wfrp4e)
-* [World of Darkness 20th edition](https://foundryvtt.com/packages/worldofdarkness)
-* [World of Darkness 5e](https://foundryvtt.com/packages/vtm5e)
+* [Cypher System](#cypher-system)
+* [D\&D 5E](#dd-5e)
+* [Daggerheart](#daggerheart)
+* [Das Schwarze Auge / The Dark Eye (5th Edition)](#das-schwarze-auge--the-dark-eye-5th-edition)
+* [Delta Green](#delta-green)
+* [Dragonbane - Drakar och Demoner](#dragonbane---drakar-och-demoner)
+* [Draw Steel](#draw-steel)
+* [Dungeon Crawl Classics](#dungeon-crawl-classics)
+* [Forbidden Lands](#forbidden-lands)
+* [GURPS 4th Edition Game Aid (Unofficial)](#gurps-4th-edition-game-aid-unofficial)
+* [Ironsworn/Starforged](#ironswornstarforged)
+* [Level Up: Advanced 5th Edition](#level-up-advanced-5th-edition)
+* [Old-School Essentials](#old-school-essentials)
+* [Pathfinder 1st Edition](#pathfinder-1st-edition)
+* [Pathfinder 2e](#pathfinder-2e)
+* [Powered by the Apocalypse](#powered-by-the-apocalypse)
+* [RuneQuest Glorantha](#runequest-glorantha)
+* [Savage Worlds Adventure Edition](#savage-worlds-adventure-edition)
+* [Shadowdark](#shadowdark)
+* [Simple Worldbuilding System](#simple-worldbuilding-system)
+* [Starfinder 1st Edition](#starfinder-1st-edition)
+* [Tormenta20](#tormenta20)
+* [Twodsix - Cepheus \& Traveller](#twodsix---cepheus--traveller)
+* [Warhammer 40,000 Roleplay: Wrath \& Glory](#warhammer-40000-roleplay-wrath--glory)
+* [Warhammer Fantasy Roleplay 4th Edition](#warhammer-fantasy-roleplay-4th-edition)
+* [World of Darkness 20th edition](#world-of-darkness-20th-edition)
+* [World of Darkness 5e](#world-of-darkness-5e)
 
 ## Customization options
 
@@ -178,6 +178,8 @@ Then in a Character Actor, use the Template with the following fields:
 
 ### Cypher System
 
+[Cypher System](https://foundryvtt.com/packages/cyphersystem)
+
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_cyphersystem.jpg?raw=true)
 
 | Actor Type       | Note Location    |
@@ -191,6 +193,8 @@ Then in a Character Actor, use the Template with the following fields:
 
 ### D&D 5E
 
+[D&D 5E](https://foundryvtt.com/packages/dnd5e)
+
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dnd5e.jpg?raw=true)
 
 | Actor Type               | Note Location    |
@@ -203,6 +207,8 @@ Then in a Character Actor, use the Template with the following fields:
 
 ### Daggerheart
 
+[Daggerheart](https://foundryvtt.com/packages/daggerheart)
+
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_daggerheart.jpg?raw=true)
 
 | Actor Type      | Note Location          |
@@ -214,6 +220,8 @@ Then in a Character Actor, use the Template with the following fields:
 
 ### Das Schwarze Auge / The Dark Eye (5th Edition)
 
+[Das Schwarze Auge / The Dark Eye (5th Edition)](https://foundryvtt.com/packages/dsa5)
+
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dsa5.jpg?raw=true)
 
 | Actor Type               | Note Location |
@@ -223,6 +231,8 @@ Then in a Character Actor, use the Template with the following fields:
 | **Non-Player Character** | Notes         |
 
 ### Delta Green
+
+[Delta Green](https://foundryvtt.com/packages/deltagreen)
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_deltagreen.jpg?raw=true)
 
@@ -235,6 +245,8 @@ Then in a Character Actor, use the Template with the following fields:
 
 ### Dragonbane - Drakar och Demoner
 
+[Dragonbane - Drakar och Demoner](https://foundryvtt.com/packages/dragonbane)
+
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dragonbane.jpg?raw=true)
 
 | Actor Type               | Note Location |
@@ -245,6 +257,8 @@ Then in a Character Actor, use the Template with the following fields:
 
 ### Draw Steel
 
+[Draw Steel](https://foundryvtt.com/packages/draw-steel)
+
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_drawsteel.jpg?raw=true)
 
 | Actor Type    | Note Location              |
@@ -253,6 +267,8 @@ Then in a Character Actor, use the Template with the following fields:
 | **NPC**       | Biography & Director Notes |
 
 ### Dungeon Crawl Classics
+
+[Dungeon Crawl Classics](https://foundryvtt.com/packages/dcc)
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dcc.jpg?raw=true)
 
@@ -263,6 +279,8 @@ Then in a Character Actor, use the Template with the following fields:
 | **Party**     | Notes                      |
 
 ### Forbidden Lands
+
+[Forbidden Lands](https://foundryvtt.com/packages/forbidden-lands)
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_forbidden-lands.jpg?raw=true)
 
@@ -275,6 +293,8 @@ Then in a Character Actor, use the Template with the following fields:
 
 ### GURPS 4th Edition Game Aid (Unofficial)
 
+[GURPS 4th Edition Game Aid (Unofficial)](https://foundryvtt.com/packages/gurps)
+
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_gurps.jpg?raw=true)
 
 | Actor Type    | Note Location |
@@ -283,6 +303,8 @@ Then in a Character Actor, use the Template with the following fields:
 | **Enemy**     | Notes         |
 
 ### Ironsworn/Starforged
+
+[Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn)
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_ironsworn.jpg?raw=true)
 
@@ -296,6 +318,8 @@ Then in a Character Actor, use the Template with the following fields:
 
 ### Level Up: Advanced 5th Edition
 
+[Level Up: Advanced 5th Edition](https://foundryvtt.com/packages/a5e)
+
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_a5e.jpg?raw=true)
 
 | Actor Type               | Note Location                   |
@@ -305,6 +329,8 @@ Then in a Character Actor, use the Template with the following fields:
 
 ### Old-School Essentials
 
+[Old-School Essentials](https://foundryvtt.com/packages/ose)
+
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_ose.jpg?raw=true)
 
 | Actor Type    | Note Location |
@@ -313,6 +339,8 @@ Then in a Character Actor, use the Template with the following fields:
 | **Monster**   | Notes         |
 
 ### Pathfinder 1st Edition
+
+[Pathfinder 1](https://foundryvtt.com/packages/pf1)
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_pf1.jpg?raw=true)
 
@@ -325,6 +353,8 @@ Then in a Character Actor, use the Template with the following fields:
 | **Vehicle**              | Notes         |
 
 ### Pathfinder 2e
+
+[Pathfinder 2e](https://foundryvtt.com/packages/pf2e)
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_pf2e.jpg?raw=true)
 
@@ -341,6 +371,8 @@ Then in a Character Actor, use the Template with the following fields:
 
 ### Powered by the Apocalypse
 
+[Powered by the Apocalpypse](https://foundryvtt.com/packages/pbta)
+
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_pbta.jpg?raw=true)
 
 | Actor Type    | Note Location |
@@ -350,6 +382,8 @@ Then in a Character Actor, use the Template with the following fields:
 
 ### RuneQuest Glorantha
 
+[RuneQuest Glorantha](https://foundryvtt.com/packages/rqg)
+
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_rqg.jpg?raw=true)
 
 | Actor Type | Note Location  |
@@ -357,6 +391,8 @@ Then in a Character Actor, use the Template with the following fields:
 | **Actor**  | Allies & Notes |
 
 ### Savage Worlds Adventure Edition
+
+[Savage Worlds Adventure Edition](https://foundryvtt.com/packages/swade)
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_swade.jpg?raw=true)
 
@@ -369,6 +405,8 @@ Then in a Character Actor, use the Template with the following fields:
 
 ### Shadowdark
 
+[Shadowdark RPG](https://foundryvtt.com/packages/shadowdark)
+
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_shadowdark.jpg?raw=true)
 
 | Actor Type | Note Location   |
@@ -378,6 +416,8 @@ Then in a Character Actor, use the Template with the following fields:
 
 ### Simple Worldbuilding System
 
+[Simple Worldbuilding System](https://foundryvtt.com/packages/worldbuilding)
+
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_simple.jpg?raw=true)
 
 | Actor Type | Note Location |
@@ -385,6 +425,8 @@ Then in a Character Actor, use the Template with the following fields:
 | **Actor**  | Description   |
 
 ### Starfinder 1st Edition
+
+[Starfinder 1st Edition](https://foundryvtt.com/packages/sfrpg)
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_sfrpg.jpg?raw=true)
 
@@ -400,6 +442,8 @@ Then in a Character Actor, use the Template with the following fields:
 
 ### Tormenta20
 
+[Tormenta20](https://foundryvtt.com/packages/tormenta20)
+
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_tormenta20.jpg?raw=true)
 
 | Actor Type                | Note Location |
@@ -411,6 +455,8 @@ Then in a Character Actor, use the Template with the following fields:
 | **Personagem de Jogador** | Biografia     |
 
 ### Twodsix - Cepheus & Traveller
+
+[Twodsix - Cepheus & Traveller](https://foundryvtt.com/packages/twodsix)
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_twodsix.jpg?raw=true)
 
@@ -425,6 +471,8 @@ Then in a Character Actor, use the Template with the following fields:
 
 ### Warhammer 40,000 Roleplay: Wrath & Glory
 
+[Warhammer 40,000 Roleplay: Wrath & Glory](https://foundryvtt.com/packages/wrath-and-glory)
+
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_wrath-and-glory.jpg?raw=true)
 
 | Actor Type  | Note Location |
@@ -434,6 +482,8 @@ Then in a Character Actor, use the Template with the following fields:
 | **Vehicle** | Notes         |
 
 ### Warhammer Fantasy Roleplay 4th Edition
+
+[Warhammer Fantasy Roleplay 4th Edition](https://foundryvtt.com/packages/wfrp4e)
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_wfrp4e.jpg?raw=true)
 
@@ -446,6 +496,8 @@ Then in a Character Actor, use the Template with the following fields:
 
 ### World of Darkness 20th edition
 
+[World of Darkness 20th edition](https://foundryvtt.com/packages/worldofdarkness)
+
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_worldofdarkness.jpg?raw=true)
 
 | Actor Type     | Note Location |
@@ -453,6 +505,8 @@ Then in a Character Actor, use the Template with the following fields:
 | **All Actors** | Appearance    |
 
 ### World of Darkness 5e
+
+[World of Darkness 5e](https://foundryvtt.com/packages/vtm5e)
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_vtm5e.jpg?raw=true)
 
@@ -516,3 +570,4 @@ Please check out my other modules and resources for Ironsworn, Ironsworn: Starfo
 * [Critical Success Oracles](https://jendave.itch.io/critical-success-oracles)
 * [I Owe My Soul to the Company Planet Oracles](https://jendave.itch.io/i-owe-my-soul-to-the-company-planet)
 * [Creature Rank Generator](https://jendave.itch.io/creature-rank-generator)
+
