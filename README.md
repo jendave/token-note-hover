@@ -20,11 +20,11 @@ The tooltip will not display if the note is empty or while the token is being dr
 
 FoundryVTT v13 only unless otherwise noted.
 
-* [Alien RPG](https://foundryvtt.com/packages/alienrpg)
-* [Blades in the Dark](https://foundryvtt.com/packages/blades-in-the-dark)
-* [Cairn](https://foundryvtt.com/packages/cairn)
-* [Call of Cthulhu 7th edition](https://foundryvtt.com/packages/CoC7). FoundryVTT v12 and v13
-* [Custom System Builder](https://foundryvtt.com/packages/custom-system-builder)
+* [Alien RPG](#alien-rpg)
+* [Blades in the Dark](#blades-in-the-dark)
+* [Cairn](#cairn)
+* [Call of Cthulhu 7th edition](#call-of-cthulhu-7th-edition). FoundryVTT v12 and v13
+* [Custom System Builder](#custom-system-builder)
 * [Cypher System](https://foundryvtt.com/packages/cyphersystem)
 * [D&D 5E](https://foundryvtt.com/packages/dnd5e). FoundryVTT v12 and v13
 * [Daggerheart](https://foundryvtt.com/packages/daggerheart)
@@ -102,6 +102,8 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 
 ### Alien RPG
 
+[Alien RPG](https://foundryvtt.com/packages/alienrpg)
+
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_alienrpg.jpg?raw=true)
 
 | Actor Type     | Note Location |
@@ -117,6 +119,8 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 
 ### Blades in the Dark
 
+[Blades in the Dark](https://foundryvtt.com/packages/blades-in-the-dark)
+
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_blades-in-the-dark.jpg?raw=true)
 
 | Actor Type    | Note Location                    |
@@ -128,6 +132,8 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 
 ### Cairn
 
+[Cairn](https://foundryvtt.com/packages/cairn)
+
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_cairn.jpg?raw=true)
 
 | Actor Type               | Note Location                    |
@@ -136,6 +142,8 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Non-Player Character** | Role / Description / Notes       |
 
 ### Call of Cthulhu 7th edition
+
+[Call of Cthulhu 7th edition](https://foundryvtt.com/packages/CoC7)
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_cthulhu.jpg?raw=true)
 
@@ -147,6 +155,8 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **NPC**       | Notes         |
 
 ### Custom System Builder
+
+[Custom System Builder](https://foundryvtt.com/packages/custom-system-builder)
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_custom-system-builder.jpg?raw=true)
 
