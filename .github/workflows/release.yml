@@ -115,7 +115,7 @@ jobs:
         with:
           allowUpdates: true
           name: ${{ github.event.release.name }}
-          draft: ${{ github.event.release.unpublished }}
+          draft: false
           prerelease: ${{ github.event.release.prerelease }}
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "./dist/token-note-hover/module.json, ./dist/token-note-hover/module.zip"
