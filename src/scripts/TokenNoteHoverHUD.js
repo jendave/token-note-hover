@@ -170,11 +170,13 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       tempContent = await mutantyearzero(actor, displayImages);
     }
 
-    this.contentAvailable = tempContent !== null && tempContent !== '';
+
     const callData = { content: tempContent }; // so it can be changed
     foundry.helpers.Hooks.callAll("token-note-hover.contentCreate",actor, displayImages, callData);
 
     const content = callData.content;
+
+    this.contentAvailable = content !== null && content !== '';
 
     data.title = actor.name;
     data.body = content;
