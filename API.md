@@ -12,4 +12,4 @@ Is called with three arguments:
 
 
 Example use:
-Hooks.on('token-note-hover.contentCreate', (actor, imageDisplay, contentMap) => { contentMap.content = contentMap.content+`<p>The token's actor name is ${actor.name}</p>`; });
+`Hooks.on('token-note-hover.contentCreate', (actor, imageDisplay, contentMap) => { contentMap.content = contentMap.content+``<p>The token's actor name is ${actor.name}</p>``; });`
