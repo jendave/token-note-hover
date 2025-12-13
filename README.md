@@ -37,6 +37,7 @@ FoundryVTT v13 only unless otherwise noted.
 * [GURPS 4th Edition Game Aid (Unofficial)](#gurps-4th-edition-game-aid-unofficial)
 * [Ironsworn/Starforged](#ironswornstarforged)
 * [Level Up: Advanced 5th Edition](#level-up-advanced-5th-edition)
+* [Mutant Year Zero](#mutant-year-zero)
 * [Old-School Essentials](#old-school-essentials)
 * [Pathfinder 1st Edition](#pathfinder-1st-edition)
 * [Pathfinder 2e](#pathfinder-2e)
