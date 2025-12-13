@@ -339,6 +339,15 @@
           "minimum": "0.63.4",
           "verified": "0.63"
         }
+      },
+      {
+        "id": "mutant-year-zero",
+        "type": "system",
+        "manifest": "https://github.com/superseva/mutant-year-zero/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "13.0.3",
+          "verified": "13.0"
+        }
       }
     ],
     "requires": [],

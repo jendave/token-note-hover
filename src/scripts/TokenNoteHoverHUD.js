@@ -31,6 +31,7 @@ import { customSystemBuilder } from './systems/customSystemBuilder.js';
 import { cairn } from './systems/cairn.js';
 import { tormenta20 } from './systems/tormenta20.js';
 import { dcc } from './systems/dcc.js';
+import { mutantyearzero } from './systems/mutant-year-zero.js';
 
 /**
  * A HUD extension that shows the Note preview
@@ -165,6 +166,8 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       tempContent = await tormenta20(actor, displayImages);
     } else if (game.data.system.id === 'dcc') {
       tempContent = await dcc(actor, displayImages);
+    } else if (game.data.system.id === 'mutant-year-zero') {
+      tempContent = await mutantyearzero(actor, displayImages);
     }
 
     this.contentAvailable = tempContent !== null && tempContent !== '';

@@ -327,6 +327,23 @@ Then in a Character Actor, use the Template with the following fields:
 | **Player Character**     | Notes                           |
 | **Non-Player Character** | Notes & Private Notes (GM only) |
 
+### Mutant Year Zero
+
+[Mutant Year Zero](https://foundryvtt.com/packages/mutant-year-zero)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_mutant-year-zero.jpg?raw=true)
+
+| Actor Type    | Note Location |
+| ------------- | ------------- |
+| **Animal**    | Info          |
+| **Ark**       | Info          |
+| **Human**     | Info          |
+| **Mutant**    | Info          |
+| **NPC**       | Info          |
+| **Robot**     | Info          |
+| **Spaceship** | Info          |
+| **Vehicle**   | Info          |
+
 ### Old-School Essentials
 
 [Old-School Essentials](https://foundryvtt.com/packages/ose)
