@@ -1,4 +1,4 @@
-import CONSTANTS from './constants';
+import CONSTANTS from './constants.js';
 import { ironsworn } from "./systems/ironsworn.js";
 import { dnd5e } from "./systems/dnd5e.js";
 import { pf2e } from "./systems/pf2e.js";
@@ -170,9 +170,13 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       tempContent = await mutantyearzero(actor, displayImages);
     }
 
-    this.contentAvailable = tempContent !== null && tempContent !== '';
 
-    const content = tempContent;
+    const callData = { content: tempContent }; // so it can be changed
+    foundry.helpers.Hooks.callAll("token-note-hover.contentCreate",actor, displayImages, callData);
+
+    const content = callData.content;
+
+    this.contentAvailable = content !== null && content !== '';
 
     data.title = actor.name;
     data.body = content;
