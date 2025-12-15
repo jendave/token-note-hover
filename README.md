@@ -52,7 +52,7 @@ Hooks.on('tokenNoteHover.createContent', (actor, imageDisplay, contentMap) => { 
 * Create some tokens, place them on a scene and add some text to the `Notes` field on their character sheet.
 * A tooltip will display when the token is hovered over.
 
-![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_symbaroum.jpg?raw=true)
+![Screenshot](https://github.com/jendave/token-note-hover/blob/api/docs/screenshot_symbaroum.jpg?raw=true)
 
 * Similar code can be added to any system to enable this functionality.
 
