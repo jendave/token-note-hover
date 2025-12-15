@@ -172,7 +172,7 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
 
 
     const callData = { content: tempContent }; // so it can be changed
-    foundry.helpers.Hooks.callAll("token-note-hover.contentCreate",actor, displayImages, callData);
+    foundry.helpers.Hooks.callAll("tokenNoteHover.createContent", actor, displayImages, callData);
 
     const content = callData.content;
 
