@@ -616,6 +616,7 @@ This project is based on [Pin Cushion](https://github.com/p4535992/foundryvtt-pi
 
 * [Syrious](https://github.com/Syrious) - [Level Up: Advanced 5th Edition](https://foundryvtt.com/packages/a5e) system and code refactoring.
 * [DanButcher45](https://github.com/DanButcher45) - [Cairn](https://foundryvtt.com/packages/cairn) system.
+* [bithr](https://github.com/bithir) - API code.
 
 ## FoundryVTT Modules and Other Resources
 
