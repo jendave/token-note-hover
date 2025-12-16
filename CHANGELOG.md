@@ -2,6 +2,11 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [4.0.0](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-12-15)
+
+* Added hook API for custom content. Direct system support is no longer necessary. A system can use the hook to inject content into a hovered tooltip. Many thanks to [bithr](https://github.com/bithir) for the code contribution.
+* [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) is now system-agnostic. The direct system support remains and the new API can be used to display custom content from the systems themselves. Direct support for new systems can be added upon request.
+
 ## [3.0.27](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-12-12)
 
 * Added support for [Mutant Year Zero](https://foundryvtt.com/packages/mutant-year-zero).

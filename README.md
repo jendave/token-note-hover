@@ -16,9 +16,58 @@ The tooltip will not display if the note is empty or while the token is being dr
 * [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 3.0.0 and above only run on [FoundryVTT v13](https://foundryvtt.com/releases/13.341) and above.
 * [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 2.1.17 and below only run on [FoundryVTT v12](https://foundryvtt.com/releases/12.331).
 
-## Supported Systems
+## System Support
 
-FoundryVTT v13 only unless otherwise noted.
+[Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 4.0.0 and above supports both API Hooks and Direct System Support to enable the hovered-over tooltip display.
+
+### Token Note Hover API
+
+The Token Note Hover API provides a hook to display custom content. This allows systems and modules to inject content into the tooltip.
+
+#### Hook tokenNoteHover.createContent
+
+```javascript
+tokenNoteHover.createContent(
+        actor,
+        displayImages,
+        contentMap)
+```
+
+#### Hook Parameters
+
+* actor: the actor whose token is being hovered over
+* displayImages: if images should be displayed
+* contentMap: a map containing the HTML content to be displayed in the hovered note.
+
+#### Example of Using the API to Display a Hovered Note
+
+* Create a world using the [Symbaroum](https://foundryvtt.com/packages/symbaroum) system.
+* Install and enable the [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) and [World Scripter](https://foundryvtt.com/packages/world-scripter) modules.
+* In the [World Scripter](https://foundryvtt.com/packages/world-scripter) configuration dialog, paste the following code.
+
+```javascript
+Hooks.on('tokenNoteHover.createContent', (actor, imageDisplay, contentMap) => { contentMap.content = `<p>${actor.system.notes}</p>` });
+```
+
+* Create some tokens, place them on a scene and add some text to the `Notes` field on their character sheet.
+* A tooltip will display when the token is hovered over.
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_symbaroum.jpg?raw=true)
+
+* Similar code can be added to any system to enable this functionality.
+* Enriched HTML and other modules can be used for tooltip content. This example uses the [GM Notes](https://foundryvtt.com/packages/gm-notes/) module with a link to an Foundry item.
+
+```javascript
+Hooks.on('tokenNoteHover.createContent', (actor, imageDisplay, contentMap) => { 
+    if( game.user.isGM && actor.flags['gm-notes']?.notes ) contentMap.content = contentMap.content+`<p>${actor.flags['gm-notes']?.notes}</p>` 
+});
+```
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_gmnotes.jpg?raw=true)
+
+### Directly Supported Systems
+
+Many systems are directly supported by [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) module. FoundryVTT v13 only is supported.
 
 * [Alien RPG](#alien-rpg)
 * [Blades in the Dark](#blades-in-the-dark)
