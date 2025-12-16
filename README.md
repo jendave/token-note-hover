@@ -52,13 +52,22 @@ Hooks.on('tokenNoteHover.createContent', (actor, imageDisplay, contentMap) => { 
 * Create some tokens, place them on a scene and add some text to the `Notes` field on their character sheet.
 * A tooltip will display when the token is hovered over.
 
-![Screenshot](https://github.com/jendave/token-note-hover/blob/api/docs/screenshot_symbaroum.jpg?raw=true)
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_symbaroum.jpg?raw=true)
 
 * Similar code can be added to any system to enable this functionality.
+* Enriched HTML and other modules can be used for tooltip content. This example uses the [GM Notes](https://foundryvtt.com/packages/gm-notes/) module with a link to an Foundry item.
+
+```javascript
+Hooks.on('tokenNoteHover.createContent', (actor, imageDisplay, contentMap) => { 
+    if( game.user.isGM && actor.flags['gm-notes']?.notes ) contentMap.content = contentMap.content+`<p>${actor.flags['gm-notes']?.notes}</p>` 
+});
+```
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_gmnotes.jpg?raw=true)
 
 ### Directly Supported Systems
 
-Many systems are directly supported by [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) module. FoundryVTT v13 is supported only unless otherwise noted.
+Many systems are directly supported by [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) module. FoundryVTT v13 only is supported.
 
 * [Alien RPG](#alien-rpg)
 * [Blades in the Dark](#blades-in-the-dark)
