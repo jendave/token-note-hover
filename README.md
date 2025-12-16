@@ -18,7 +18,7 @@ The tooltip will not display if the note is empty or while the token is being dr
 
 ## System Support
 
-[Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 4.0.0 and above supports both API Hooks and Direct System Support to enable the hovered-over tooltip display.
+[Token Note Hover](https://foundryvtt.com/packages/token-note-hover) 4.0.0 and above supports both [API Hooks](#token-note-hover-api) and [Direct System Support](#directly-supported-systems) to enable the hovered-over tooltip display.
 
 ### Token Note Hover API
 
@@ -64,6 +64,10 @@ Hooks.on('tokenNoteHover.createContent', (actor, imageDisplay, contentMap) => {
 ```
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_gmnotes.jpg?raw=true)
+
+#### Modules and Systems Using the API
+
+* [GM Notes](https://foundryvtt.com/packages/gm-notes)
 
 ### Directly Supported Systems
 
