@@ -32,6 +32,7 @@ import { cairn } from './systems/cairn.js';
 import { tormenta20 } from './systems/tormenta20.js';
 import { dcc } from './systems/dcc.js';
 import { mutantyearzero } from './systems/mutant-year-zero.js';
+import { wod5e } from './systems/wod5e.js';
 
 /**
  * A HUD extension that shows the Note preview
@@ -168,6 +169,8 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       tempContent = await dcc(actor, displayImages);
     } else if (game.data.system.id === 'mutant-year-zero') {
       tempContent = await mutantyearzero(actor, displayImages);
+    } else if (game.data.system.id === 'wod5e') {
+      tempContent = await wod5e(actor, displayImages);
     }
 
 
