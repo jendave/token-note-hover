@@ -578,6 +578,7 @@ Then in a Character Actor, use the Template with the following fields:
 ### World of Darkness 5e
 
 [World of Darkness 5e (Archive)](https://foundryvtt.com/packages/vtm5e)
+
 [World of Darkness 5e](https://foundryvtt.com/packages/wod5e)
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_vtm5e.jpg?raw=true)
