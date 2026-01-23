@@ -117,6 +117,7 @@ Many systems are directly supported by [Token Note Hover](https://foundryvtt.com
 * Can require minimum token ownership level on notes for display.
 * Display token title in tooltip.
 * Hide/Display private notes.
+* Show notes only when configured HotKey is pressed.
 
 All settings, except for `token ownership required` are client-side only so each player can enable the features they need.
 
