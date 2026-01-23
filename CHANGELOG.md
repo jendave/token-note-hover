@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [4.0.2](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-01-23)
+
+* Added support for using a HotKey to show the hovered note.
+
 ## [4.0.1](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-12-16)
 
 * Added support for new system of [World of Darkness 5e](https://foundryvtt.com/packages/wod5e).
