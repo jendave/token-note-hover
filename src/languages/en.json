@@ -98,6 +98,22 @@
       "HidePrivateNotes": {
         "Name": "Hide Private Notes",
         "Hint": "Hide notes marked as private from the tooltip"
+      },
+      "UseHotkeyToOpenTooltip": {
+        "Name": "Use Hotkey to Open Tooltip",
+        "Hint": "Use a hotkey to open the tooltip. This overrides the mouse hover behavior."
+      },
+      "HotkeyToOpenTooltip": {
+        "Name": "Choose Hotkey to Open Tooltip",
+        "Hint": "Choose the hotkey to open the tooltip. Only used when Hotkey is enabled.",
+        "Choices": {
+          "ControlLeft": "Control Left",
+          "ControlRight": "Control Right",
+          "AltLeft": "Alt Left",
+          "AltRight": "Alt Right",
+          "MetaLeft": "Command Left Mac",
+          "MetaRight": "Command Right Mac"
+        }
       }
     }
   }

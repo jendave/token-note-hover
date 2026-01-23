@@ -194,4 +194,30 @@ export default function registerSettings() {
     default: false,
     type: Boolean,
   });
+
+  game.settings.register(CONSTANTS.MODULE_ID, 'useHotkeyToOpenTooltip', {
+    name: `${CONSTANTS.MODULE_ID}.Settings.UseHotkeyToOpenTooltip.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.UseHotkeyToOpenTooltip.Hint`,
+    scope: 'client',
+    config: true,
+    default: false,
+    type: Boolean,
+  });
+
+  game.settings.register(CONSTANTS.MODULE_ID, "hotkeyToOpenTooltip", {
+    name: `${CONSTANTS.MODULE_ID}.Settings.HotkeyToOpenTooltip.Name`,
+    hint: `${CONSTANTS.MODULE_ID}.Settings.HotkeyToOpenTooltip.Hint`,
+    scope: "client",
+    config: true,
+    type: String,
+    default: "ControlLeft",
+    choices: {
+      'ControlLeft': `${CONSTANTS.MODULE_ID}.Settings.HotkeyToOpenTooltip.Choices.ControlLeft`,
+      'ControlRight': `${CONSTANTS.MODULE_ID}.Settings.HotkeyToOpenTooltip.Choices.ControlRight`,
+      "AltLeft": `${CONSTANTS.MODULE_ID}.Settings.HotkeyToOpenTooltip.Choices.AltLeft`,
+      "AltRight": `${CONSTANTS.MODULE_ID}.Settings.HotkeyToOpenTooltip.Choices.AltRight`,
+      'MetaLeft': `${CONSTANTS.MODULE_ID}.Settings.HotkeyToOpenTooltip.Choices.MetaLeft`,
+      'MetaRight': `${CONSTANTS.MODULE_ID}.Settings.HotkeyToOpenTooltip.Choices.MetaRight`
+    },
+  });
 }

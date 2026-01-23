@@ -2,6 +2,13 @@ import CONSTANTS from './scripts/constants';
 import registerSettings from './scripts/settings';
 import TokenNoteHoverHUD from './scripts/TokenNoteHoverHUD';
 
+function isKeyHeld(key) {
+  // Access the internal Set of currently pressed keys.
+  // It stores the "code" property of the KeyboardEvent.
+  // console.log('game.keyboard.downKeys', game.keyboard.downKeys);
+  return game.keyboard.downKeys.has(key);
+}
+
 /**
  * OnMouseOver
  *
@@ -69,11 +76,26 @@ Hooks.on('controlToken', (obj, html) => {
  * Hook on Note hover
  */
 Hooks.on('hoverToken', (note, hovered) => {
+
+  const element = document.querySelector('#container.token-note-hover-hud-container');
+
+  if (element) {
+    element.addEventListener('mouseover', onMouseOver);
+    element.addEventListener('mouseleave', onMouseLeave);
+  }
+
   if (game.settings.get(CONSTANTS.MODULE_ID, 'hoverEnabled')) {
     if (note.hasActiveHUD === false && note.controlled === false) {
       const ownershipPermissionsRequired = game.settings.get(CONSTANTS.MODULE_ID, 'ownershipPermissionsRequired');
       const tooltipOpenDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipOpenDelay');
       const tooltipCloseDelay = game.settings.get(CONSTANTS.MODULE_ID, 'tooltipCloseDelay');
+      const useHotkeyToOpenTooltip = game.settings.get(CONSTANTS.MODULE_ID, 'useHotkeyToOpenTooltip');
+      const hotkeyToOpenTooltip = game.settings.get(CONSTANTS.MODULE_ID, 'hotkeyToOpenTooltip');
+
+      let hotKeyPressed = false;
+      if (isKeyHeld(hotkeyToOpenTooltip)) {
+        hotKeyPressed = true;
+      }
 
       if (!canvas.hud.tokenNoteHover) {
         canvas.hud.tokenNoteHover = new TokenNoteHoverHUD();
@@ -85,7 +107,12 @@ Hooks.on('hoverToken', (note, hovered) => {
         }
       }
 
-      if (hovered) {
+      let displayTooltip = false;
+      if (!useHotkeyToOpenTooltip || (useHotkeyToOpenTooltip && hotKeyPressed)) {
+        displayTooltip = true;
+      }
+
+      if (hovered && displayTooltip) {
         setTimeout(() => {
           if (note.interactionState === 1
             && (note.actor.permission >= ownershipPermissionsRequired
@@ -95,13 +122,6 @@ Hooks.on('hoverToken', (note, hovered) => {
         }, tooltipOpenDelay);
       }
     }
-  }
-
-  const element = document.querySelector('#container.token-note-hover-hud-container');
-
-  if (element) {
-    element.addEventListener('mouseover', onMouseOver);
-    element.addEventListener('mouseleave', onMouseLeave);
   }
 
   return canvas.hud.tokenNoteHover.close();
