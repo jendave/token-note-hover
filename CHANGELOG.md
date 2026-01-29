@@ -2,6 +2,12 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [4.0.3](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-01-29)
+
+* [Blades in the Dark](https://foundryvtt.com/packages/blades-in-the-dark) improvements.
+  * Fixed issue with formatting.
+  * Added note for Factions.
+
 ## [4.0.2](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-01-23)
 
 * Added support for using a HotKey to show the hovered note.
