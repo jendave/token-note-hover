@@ -2,6 +2,11 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [4.0.5](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-02-25)
+
+* Verified for v14.
+* Added support for [Universal Tabletop System](https://foundryvtt.com/packages/universal-tabletop-system)
+
 ## [4.0.4](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-02-03)
 
 * Fixed issue where sidebar would jump around if mouse was moved very quickly over tokens.

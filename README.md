@@ -102,6 +102,7 @@ Many systems are directly supported by [Token Note Hover](https://foundryvtt.com
 * [Starfinder 1st Edition](#starfinder-1st-edition)
 * [Tormenta20](#tormenta20)
 * [Twodsix - Cepheus \& Traveller](#twodsix---cepheus--traveller)
+* [Universal Tabletop System](#universal-tabletop-system)
 * [Warhammer 40,000 Roleplay: Wrath \& Glory](#warhammer-40000-roleplay-wrath--glory)
 * [Warhammer Fantasy Roleplay 4th Edition](#warhammer-fantasy-roleplay-4th-edition)
 * [World of Darkness 20th edition](#world-of-darkness-20th-edition)
@@ -540,6 +541,17 @@ Then in a Character Actor, use the Template with the following fields:
 | **Ship**         | Ship Notes      |
 | **Space Object** | Notes           |
 | **Vehicle**      | Cargo Notes     |
+
+### Universal Tabletop System
+
+[Universal Tabletop System](https://foundryvtt.com/packages/universal-tabletop-system)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_universal-tabletop-system.jpg?raw=true)
+
+| Actor Type      | Note Location |
+| --------------- | ------------- |
+| **Chess Piece** | Piece         |
+| **Game Token**  | Resource      |
 
 ### Warhammer 40,000 Roleplay: Wrath & Glory
 
