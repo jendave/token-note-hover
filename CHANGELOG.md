@@ -2,10 +2,14 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [4.0.6](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-03-11)
+
+* Added support for [Star Wars FFG system for Foundry VTT](https://foundryvtt.com/packages/starwarsffg).
+
 ## [4.0.5](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-02-25)
 
 * Verified for Foundry v14.
-* Added support for [Universal Tabletop System](https://foundryvtt.com/packages/universal-tabletop-system)
+* Added support for [Universal Tabletop System](https://foundryvtt.com/packages/universal-tabletop-system).
 
 ## [4.0.4](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-02-03)
 

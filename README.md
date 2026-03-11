@@ -99,6 +99,7 @@ Many systems are directly supported by [Token Note Hover](https://foundryvtt.com
 * [Savage Worlds Adventure Edition](#savage-worlds-adventure-edition)
 * [Shadowdark](#shadowdark)
 * [Simple Worldbuilding System](#simple-worldbuilding-system)
+* [Star Wars FFG system for Foundry VTT](#star-wars-ffg-system)
 * [Starfinder 1st Edition](#starfinder-1st-edition)
 * [Tormenta20](#tormenta20)
 * [Twodsix - Cepheus \& Traveller](#twodsix---cepheus--traveller)
@@ -496,6 +497,21 @@ Then in a Character Actor, use the Template with the following fields:
 | Actor Type | Note Location |
 | ---------- | ------------- |
 | **Actor**  | Description   |
+
+### Star Wars FFG system
+
+[Star Wars FFG system for Foundry VTT](https://foundryvtt.com/packages/starwarsffg)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_starwarsffg.jpg?raw=true)
+
+| Actor Type    | Note Location |
+| ------------- | ------------- |
+| **Character** | Biography     |
+| **Homestead** | Biography     |
+| **Minion**    | Biography     |
+| **Nemesis**   | Biography     |
+| **Rival**     | Biography     |
+| **Vehicle**   | Biography     |
 
 ### Starfinder 1st Edition
 
