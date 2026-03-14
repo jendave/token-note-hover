@@ -2,6 +2,11 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [4.0.7](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-03-34)
+
+* Fixed bugs and added new actor types for [Draw Steel](https://foundryvtt.com/packages/draw-steel).
+  * [Github Issue #36](https://github.com/jendave/token-note-hover/issues/36)
+
 ## [4.0.6](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-03-11)
 
 * Added support for [Star Wars FFG system for Foundry VTT](https://foundryvtt.com/packages/starwarsffg).
