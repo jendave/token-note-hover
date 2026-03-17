@@ -318,10 +318,13 @@ Then in a Character Actor, use the Template with the following fields:
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_drawsteel.jpg?raw=true)
 
-| Actor Type    | Note Location              |
-| ------------- | -------------------------- |
-| **Character** | Biography & Director Notes |
-| **NPC**       | Biography & Director Notes |
+| Actor Type   | Note Location                 |
+| ------------ | ----------------------------- |
+| **Hero**     | Biography & Director Notes    |
+| **NPC**      | Biography & Director Notes    |
+| **Object**   | Biography & Director Notes    |
+| **Retainer** | Biography & Director Notes    |
+| **Party**    | Party Members & Party Details |
 
 ### Dungeon Crawl Classics
 
