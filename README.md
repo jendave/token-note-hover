@@ -80,6 +80,7 @@ Many systems are directly supported by [Token Note Hover](https://foundryvtt.com
 * [Custom System Builder](#custom-system-builder)
 * [Cypher System](#cypher-system)
 * [Dungeons & Dragons Fifth Edition](#dungeons--dragons-fifth-edition)
+* * [Dungeons & Dragons Fifth Edition](#dungeons-dragons-fifth-edition)
 * [Daggerheart](#daggerheart)
 * [Das Schwarze Auge / The Dark Eye (5th Edition)](#das-schwarze-auge--the-dark-eye-5th-edition)
 * [Delta Green](#delta-green)
