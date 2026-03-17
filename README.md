@@ -79,7 +79,7 @@ Many systems are directly supported by [Token Note Hover](https://foundryvtt.com
 * [Call of Cthulhu 7th edition](#call-of-cthulhu-7th-edition)
 * [Custom System Builder](#custom-system-builder)
 * [Cypher System](#cypher-system)
-* [D\&D 5E](#dd-5e)
+* [Dungeons & Dragons Fifth Edition](#dungeons--dragons-fifth-edition)
 * [Daggerheart](#daggerheart)
 * [Das Schwarze Auge / The Dark Eye (5th Edition)](#das-schwarze-auge--the-dark-eye-5th-edition)
 * [Delta Green](#delta-green)
@@ -248,9 +248,9 @@ Then in a Character Actor, use the Template with the following fields:
 | **PC**           | Notes & GM Notes |
 | **Vehicle**      | Notes            |
 
-### D&D 5E
+### Dungeons & Dragons Fifth Edition
 
-[D&D 5E](https://foundryvtt.com/packages/dnd5e)
+[Dungeons & Dragons Fifth Edition](https://foundryvtt.com/packages/dnd5e)
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dnd5e.jpg?raw=true)
 
