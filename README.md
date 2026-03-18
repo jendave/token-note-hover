@@ -79,13 +79,13 @@ Many systems are directly supported by [Token Note Hover](https://foundryvtt.com
 * [Call of Cthulhu 7th edition](#call-of-cthulhu-7th-edition)
 * [Custom System Builder](#custom-system-builder)
 * [Cypher System](#cypher-system)
-* [Dungeons & Dragons Fifth Edition](#dungeons--dragons-fifth-edition)
 * [Daggerheart](#daggerheart)
 * [Das Schwarze Auge / The Dark Eye (5th Edition)](#das-schwarze-auge--the-dark-eye-5th-edition)
 * [Delta Green](#delta-green)
 * [Dragonbane - Drakar och Demoner](#dragonbane---drakar-och-demoner)
 * [Draw Steel](#draw-steel)
 * [Dungeon Crawl Classics](#dungeon-crawl-classics)
+* [Dungeons & Dragons Fifth Edition](#dungeons--dragons-fifth-edition)
 * [Forbidden Lands](#forbidden-lands)
 * [GURPS 4th Edition Game Aid (Unofficial)](#gurps-4th-edition-game-aid-unofficial)
 * [Ironsworn/Starforged](#ironswornstarforged)
@@ -248,20 +248,6 @@ Then in a Character Actor, use the Template with the following fields:
 | **PC**           | Notes & GM Notes |
 | **Vehicle**      | Notes            |
 
-### Dungeons & Dragons Fifth Edition
-
-[Dungeons & Dragons Fifth Edition](https://foundryvtt.com/packages/dnd5e)
-
-![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dnd5e.jpg?raw=true)
-
-| Actor Type               | Note Location    |
-| ------------------------ | ---------------- |
-| **Player Character**     | Biography        |
-| **Non-player Character** | Biography Public |
-| **Group**                | Description      |
-| **Vehicle**              | Description      |
-| **Encounter**            | Description      |
-
 ### Daggerheart
 
 [Daggerheart](https://foundryvtt.com/packages/daggerheart)
@@ -337,6 +323,20 @@ Then in a Character Actor, use the Template with the following fields:
 | **Player**    | Notes                      |
 | **NPC**       | Notes                      |
 | **Party**     | Notes                      |
+
+### Dungeons & Dragons Fifth Edition
+
+[Dungeons & Dragons Fifth Edition](https://foundryvtt.com/packages/dnd5e)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dnd5e.jpg?raw=true)
+
+| Actor Type               | Note Location    |
+| ------------------------ | ---------------- |
+| **Player Character**     | Biography        |
+| **Non-player Character** | Biography Public |
+| **Group**                | Description      |
+| **Vehicle**              | Description      |
+| **Encounter**            | Description      |
 
 ### Forbidden Lands
 
