@@ -467,6 +467,17 @@ Then in a Character Actor, use the Template with the following fields:
 | ---------- | -------------- |
 | **Actor**  | Allies & Notes |
 
+### Sandbox
+
+[Sandbox](https://foundryvtt.com/packages/sandbox)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_sandbox.jpg?raw=true)
+
+| Actor Type    | Note Location |
+| ------------- | ------------- |
+| **Character** | Biography     |
+| **NPC**       | Biography     |
+
 ### Savage Worlds Adventure Edition
 
 [Savage Worlds Adventure Edition](https://foundryvtt.com/packages/swade)

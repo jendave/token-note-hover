@@ -35,6 +35,7 @@ import { mutantyearzero } from './systems/mutant-year-zero.js';
 import { wod5e } from './systems/wod5e.js';
 import { universalTabletopSystem } from './systems/universal-tabletop-system.js';
 import { starwarsffg } from './systems/starwarsffg.js';
+import { sandbox } from './systems/sandbox.js';
 
 /**
  * A HUD extension that shows the Note preview
@@ -177,6 +178,8 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       tempContent = await universalTabletopSystem(actor, displayImages);
     } else if (game.data.system.id === 'starwarsffg') {
       tempContent = await starwarsffg(actor, displayImages);
+    } else if (game.data.system.id === 'sandbox') {
+      tempContent = await sandbox(actor, displayImages);
     }
 
 
