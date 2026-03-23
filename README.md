@@ -96,6 +96,7 @@ Many systems are directly supported by [Token Note Hover](https://foundryvtt.com
 * [Pathfinder 2e](#pathfinder-2e)
 * [Powered by the Apocalypse](#powered-by-the-apocalypse)
 * [RuneQuest Glorantha](#runequest-glorantha)
+* [Sandbox](#sandbox)
 * [Savage Worlds Adventure Edition](#savage-worlds-adventure-edition)
 * [Shadowdark](#shadowdark)
 * [Simple Worldbuilding System](#simple-worldbuilding-system)
