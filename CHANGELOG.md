@@ -2,7 +2,7 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
-## [4.0.7](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-03-23)
+## [4.0.8](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-03-23)
 
 * Added support for [Sandbox](https://foundryvtt.com/packages/sandbox).
 
