@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [4.0.9](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-03-27)
+
+* Updated *Group* Actor type for [D&D 5E](https://foundryvtt.com/packages/dnd5e).
+
 ## [4.0.8](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-03-23)
 
 * Added support for [Sandbox](https://foundryvtt.com/packages/sandbox).
