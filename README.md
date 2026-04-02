@@ -73,6 +73,7 @@ Hooks.on('tokenNoteHover.createContent', (actor, imageDisplay, contentMap) => {
 
 Many systems are directly supported by [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) module. FoundryVTT v13 only is supported.
 
+* [3.5e for Foundry VTT](https://foundryvtt.com/packages/D35E)
 * [Alien RPG](#alien-rpg)
 * [Blades in the Dark](#blades-in-the-dark)
 * [Cairn](#cairn)
@@ -157,6 +158,19 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 * [Force Client Settings](https://foundryvtt.com/packages/force-client-settings) for forcing chosen settings for clients to the defaults provided by the GM.
 
 ## Screenshots and Note Locations
+
+### 3.5e for Foundry VTT
+
+[3.5e for Foundry VTT](https://foundryvtt.com/packages/D35E)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_d35e.jpg?raw=true)
+
+| Actor Type    | Note Location      |
+| ------------- | ------------------ |
+| **Character** | Notes              |
+| **NPC**       | Notes              |
+| **Object**    | Object Description |
+| **Trap**      | Trap Description   |
 
 ### Alien RPG
 
