@@ -5,6 +5,7 @@
 ## [4.0.10](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-04-xx)
 
 * Fixed null error with session.activeHover.
+* Added support for [3.5e for Foundry VTT](https://foundryvtt.com/packages/D35E).
 
 ## [4.0.9](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-03-27)
 
