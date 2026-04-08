@@ -73,7 +73,7 @@ Hooks.on('tokenNoteHover.createContent', (actor, imageDisplay, contentMap) => {
 
 Many systems are directly supported by [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) module. FoundryVTT v13 only is supported.
 
-* [3.5e for Foundry VTT](https://foundryvtt.com/packages/D35E)
+* [3.5e for Foundry VTT](#35e-for-foundry-vtt)
 * [Alien RPG](#alien-rpg)
 * [Blades in the Dark](#blades-in-the-dark)
 * [Cairn](#cairn)
