@@ -2,7 +2,7 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
-## [4.0.10](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-04-xx)
+## [4.0.10](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-04-08)
 
 * Fixed null error with session.activeHover.
 * Added support for [3.5e for Foundry VTT](https://foundryvtt.com/packages/D35E).
