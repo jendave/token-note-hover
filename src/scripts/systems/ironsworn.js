@@ -181,6 +181,7 @@ async function getTreasuryNotes(displayImages, actor, actorIsOwner) {
     let publicNotes = "";
     publicNotes = publicNotes.concat(ship, commander, upkeep);
     let notes = publicNotes.concat(itemArray);
+    notes = notes.concat(actor.system?.biography);
   
     return await processNotes(notes, actorIsOwner, displayImages);
   }

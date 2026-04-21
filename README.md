@@ -386,10 +386,11 @@ Then in a Character Actor, use the Template with the following fields:
 | Actor Type       | Note Location   |
 | ---------------- | --------------- |
 | **Character**    | Notes           |
-| **Shared Sheet** | Notes           |
-| **NPC**          | Text entry area |
-| **Starship**     | Notes           |
 | **Location**     | Text entry area |
+| **NPC**          | Text entry area |
+| **Shared Sheet** | Notes           |
+| **Starship**     | Notes           |
+| **Treasury**     | Notes           |
 
 ### Level Up: Advanced 5th Edition
 
