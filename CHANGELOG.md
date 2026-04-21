@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [4.0.11](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-04-21)
+
+* Added *Treasury* Actor type for [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn).
+
 ## [4.0.10](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-04-08)
 
 * Fixed null error with session.activeHover.

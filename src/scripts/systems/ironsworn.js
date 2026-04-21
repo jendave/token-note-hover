@@ -1,4 +1,5 @@
 import CONSTANTS from '../constants';
+import { processNotes } from "../textUtil.js";
 
 export async function ironsworn(actor, displayImages, tempContent) {
     if (!actor) {
@@ -157,9 +158,29 @@ export async function ironsworn(actor, displayImages, tempContent) {
                     ).replaceAll(/<img.*>/g, "");
                 }
                 break;
+            case "treasury":
+                return await getTreasuryNotes(displayImages, actor, actorIsOwner);
             default:
                 tempContent = null;
         }
     }
     return tempContent;
 }
+
+async function getTreasuryNotes(displayImages, actor, actorIsOwner) {
+    let ship = `<div class=\"token-note-hover-hud-h3\">Ship: ${actor.system?.ship}</div>`;
+    let commander = `<div class=\"token-note-hover-hud-h3\">Commander: ${actor.system?.commander}</div>`;
+    let upkeep = `<div class=\"token-note-hover-hud-h3\">Upkeep: ${actor.system?.upkeep}</div>`;
+    const items = actor.system.parent.items;
+    let itemArray = "";
+    for (const item of items) {
+        itemArray = itemArray.concat("<ul>");
+        itemArray = itemArray.concat(`<li>${item.name}</li>`);
+        itemArray = itemArray.concat("</ul>");
+    }
+    let publicNotes = "";
+    publicNotes = publicNotes.concat(ship, commander, upkeep);
+    let notes = publicNotes.concat(itemArray);
+  
+    return await processNotes(notes, actorIsOwner, displayImages);
+  }
