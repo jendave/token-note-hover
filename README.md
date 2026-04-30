@@ -695,6 +695,7 @@ Please check out my other modules and resources for Ironsworn, Ironsworn: Starfo
 * [Ancient Wonders](https://foundryvtt.com/packages/ancient-wonders)
 * [Rise & Shiningstar - An Adventure for Ironsworn: Starforged](https://foundryvtt.com/packages/rise-and-shining-star)
 * [Roll Table Importer](https://foundryvtt.com/packages/roll-table-importer)
+* [Ironsworn Impacts](https://foundryvtt.com/packages/ironsworn-impacts)
 
 ### [Itch.io](https://jendave.itch.io/) Resources
 
