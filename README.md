@@ -73,6 +73,7 @@ Hooks.on('tokenNoteHover.createContent', (actor, imageDisplay, contentMap) => {
 
 Many systems are directly supported by [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) module. FoundryVTT v13 only is supported.
 
+* [3.5e for Foundry VTT](#35e-for-foundry-vtt)
 * [Alien RPG](#alien-rpg)
 * [Blades in the Dark](#blades-in-the-dark)
 * [Cairn](#cairn)
@@ -130,7 +131,7 @@ All settings, except for `token ownership required` are client-side only so each
 * [Ironsworn/Starforged Discord Server - FoundryVTT Channel](https://discord.com/channels/437120373436186625/867434336201605160) (jendave)
 * [FoundryVTT Discord Server - Module Discussion Channel](https://discord.com/channels/170995199584108546/513918036919713802) (jendave)
 * [VOID Affiliate Network Discord Server - Game Hacks Channel](https://discord.com/channels/1222986351272787990/1222986351792619687) (jendave)
-* [GitHub Repository](https://github.com/jendave/augmented-reality-foundry)
+* [GitHub Repository](https://github.com/jendave/token-note-hover)
 * [Itch.io](https://jendave.itch.io/)
 
 ## Module Installation
@@ -158,6 +159,19 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 * [Force Client Settings](https://foundryvtt.com/packages/force-client-settings) for forcing chosen settings for clients to the defaults provided by the GM.
 
 ## Screenshots and Note Locations
+
+### 3.5e for Foundry VTT
+
+[3.5e for Foundry VTT](https://foundryvtt.com/packages/D35E)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_d35e.jpg?raw=true)
+
+| Actor Type    | Note Location      |
+| ------------- | ------------------ |
+| **Character** | Notes              |
+| **NPC**       | Notes              |
+| **Object**    | Object Description |
+| **Trap**      | Trap Description   |
 
 ### Alien RPG
 
@@ -373,10 +387,11 @@ Then in a Character Actor, use the Template with the following fields:
 | Actor Type       | Note Location   |
 | ---------------- | --------------- |
 | **Character**    | Notes           |
-| **Shared Sheet** | Notes           |
-| **NPC**          | Text entry area |
-| **Starship**     | Notes           |
 | **Location**     | Text entry area |
+| **NPC**          | Text entry area |
+| **Shared Sheet** | Notes           |
+| **Starship**     | Notes           |
+| **Treasury**     | Notes           |
 
 ### LANCER
 
@@ -694,6 +709,7 @@ Please check out my other modules and resources for Ironsworn, Ironsworn: Starfo
 * [Ancient Wonders](https://foundryvtt.com/packages/ancient-wonders)
 * [Rise & Shiningstar - An Adventure for Ironsworn: Starforged](https://foundryvtt.com/packages/rise-and-shining-star)
 * [Roll Table Importer](https://foundryvtt.com/packages/roll-table-importer)
+* [Ironsworn Impacts](https://foundryvtt.com/packages/ironsworn-impacts)
 
 ### [Itch.io](https://jendave.itch.io/) Resources
 

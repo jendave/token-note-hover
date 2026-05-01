@@ -2,9 +2,18 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
-## [4.0.10](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-03-23)
+## [4.0.12](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-05-xx)
 
 * Added support for [LANCER](https://foundryvtt.com/packages/lancer).
+
+## [4.0.11](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-04-21)
+
+* Added *Treasury* Actor type for [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn).
+
+## [4.0.10](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-04-08)
+
+* Fixed null error with session.activeHover.
+* Added support for [3.5e for Foundry VTT](https://foundryvtt.com/packages/D35E).
 
 ## [4.0.9](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-03-27)
 
