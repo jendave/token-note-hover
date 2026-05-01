@@ -90,6 +90,7 @@ Many systems are directly supported by [Token Note Hover](https://foundryvtt.com
 * [Forbidden Lands](#forbidden-lands)
 * [GURPS 4th Edition Game Aid (Unofficial)](#gurps-4th-edition-game-aid-unofficial)
 * [Ironsworn/Starforged](#ironswornstarforged)
+* [LANCER](https://foundryvtt.com/packages/lancer)
 * [Level Up: Advanced 5th Edition](#level-up-advanced-5th-edition)
 * [Mutant Year Zero](#mutant-year-zero)
 * [Old-School Essentials](#old-school-essentials)
@@ -391,6 +392,19 @@ Then in a Character Actor, use the Template with the following fields:
 | **Shared Sheet** | Notes           |
 | **Starship**     | Notes           |
 | **Treasury**     | Notes           |
+
+### LANCER
+
+[LANCER](https://foundryvtt.com/packages/lancer)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_lancer.jpg?raw=true)
+
+| Actor Type     | Note Location |
+| -------------- | ------------- |
+| **Deployable** | Details       |
+| **Mech**       | [None]        |
+| **NPC**        | Notes         |
+| **Pilot**      | Notes         |
 
 ### Level Up: Advanced 5th Edition
 
