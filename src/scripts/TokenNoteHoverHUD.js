@@ -36,11 +36,8 @@ import { wod5e } from './systems/wod5e.js';
 import { universalTabletopSystem } from './systems/universal-tabletop-system.js';
 import { starwarsffg } from './systems/starwarsffg.js';
 import { sandbox } from './systems/sandbox.js';
-<<<<<<< HEAD
 import { lancer } from './systems/lancer.js';
-=======
 import { d35e } from './systems/d35e.js';
->>>>>>> main
 
 /**
  * A HUD extension that shows the Note preview
@@ -185,13 +182,10 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       tempContent = await starwarsffg(actor, displayImages);
     } else if (game.data.system.id === 'sandbox') {
       tempContent = await sandbox(actor, displayImages);
-<<<<<<< HEAD
     } else if (game.data.system.id === 'lancer') {
       tempContent = await lancer(actor, displayImages);
-=======
     } else if (game.data.system.id === 'D35E') {
       tempContent = await d35e(actor, displayImages);
->>>>>>> main
     }
 
     const callData = { content: tempContent }; // so it can be changed
