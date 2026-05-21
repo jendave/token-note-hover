@@ -2,7 +2,7 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
-## [4.0.12](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-05-xx)
+## [4.0.12](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-05-21)
 
 * Added support for [LANCER](https://foundryvtt.com/packages/lancer).
 
