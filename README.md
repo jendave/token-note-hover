@@ -78,6 +78,7 @@ Many systems are directly supported by [Token Note Hover](https://foundryvtt.com
 * [Blades in the Dark](#blades-in-the-dark)
 * [Cairn](#cairn)
 * [Call of Cthulhu 7th edition](#call-of-cthulhu-7th-edition)
+* [Cosmere Roleplaying Game](#cosmere-roleplaying-game)
 * [Custom System Builder](#custom-system-builder)
 * [Cypher System](#cypher-system)
 * [Daggerheart](#daggerheart)
@@ -87,6 +88,7 @@ Many systems are directly supported by [Token Note Hover](https://foundryvtt.com
 * [Draw Steel](#draw-steel)
 * [Dungeon Crawl Classics](#dungeon-crawl-classics)
 * [Dungeons & Dragons Fifth Edition](#dungeons--dragons-fifth-edition)
+* [Fallout: The Roleplaying Game](#fallout-the-roleplaying-game)
 * [Forbidden Lands](#forbidden-lands)
 * [GURPS 4th Edition Game Aid (Unofficial)](#gurps-4th-edition-game-aid-unofficial)
 * [Ironsworn/Starforged](#ironswornstarforged)
@@ -107,6 +109,7 @@ Many systems are directly supported by [Token Note Hover](https://foundryvtt.com
 * [Tormenta20](#tormenta20)
 * [Twodsix - Cepheus \& Traveller](#twodsix---cepheus--traveller)
 * [Universal Tabletop System](#universal-tabletop-system)
+* [Warhammer 40,000 Roleplay: Imperium Maledictum](#warhammer-40000-roleplay-imperium-maledictum)
 * [Warhammer 40,000 Roleplay: Wrath \& Glory](#warhammer-40000-roleplay-wrath--glory)
 * [Warhammer Fantasy Roleplay 4th Edition](#warhammer-fantasy-roleplay-4th-edition)
 * [World of Darkness 20th edition](#world-of-darkness-20th-edition)
@@ -226,6 +229,17 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Container** | Description   |
 | **Creature**  | Notes         |
 | **NPC**       | Notes         |
+
+### Cosmere Roleplaying Game
+
+[Cosmere Roleplaying Game](https://foundryvtt.com/packages/cosmere-rpg)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_cosmere.jpg?raw=true)
+
+| Actor Type    | Note Location |
+| ------------- | ------------- |
+| **Adversary** | Notes         |
+| **Character** | Notes         |
 
 ### Custom System Builder
 
@@ -353,6 +367,22 @@ Then in a Character Actor, use the Template with the following fields:
 | **Group**                | Description      |
 | **Vehicle**              | Description      |
 | **Encounter**            | Description      |
+
+### Fallout: The Roleplaying Game
+
+[Fallout: The Roleplaying Game](https://foundryvtt.com/packages/fallout)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_fallout.jpg?raw=true)
+
+| Actor Type              | Note Location |
+| ----------------------- | ------------- |
+| **Character**           | Data          |
+| **Creature**            | Data          |
+| **NPC**                 | Data          |
+| **Robot**               | Data          |
+| **Scavenging Location** | Notes         |
+| **Settlement**          | Data          |
+| **Vehicle**             | Data          |
 
 ### Forbidden Lands
 
@@ -613,6 +643,19 @@ Then in a Character Actor, use the Template with the following fields:
 | **Chess Piece** | Piece         |
 | **Game Token**  | Resource      |
 
+### Warhammer 40,000 Roleplay: Imperium Maledictum
+
+[Warhammer 40,000 Roleplay: Imperium Maledictum](https://foundryvtt.com/packages/impmal)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_impmal.jpg?raw=true)
+
+| Actor Type               | Note Location                |
+| ------------------------ | ---------------------------- |
+| **Non-Player Character** | Notes - Biography & GM Notes |
+| **Patron**               | Notes - Biography & GM Notes |
+| **Player Character**     | Notes - Biography & GM Notes |
+| **Vehicle**              | Notes - Biography & GM Notes |
+
 ### Warhammer 40,000 Roleplay: Wrath & Glory
 
 [Warhammer 40,000 Roleplay: Wrath & Glory](https://foundryvtt.com/packages/wrath-and-glory)
@@ -675,8 +718,10 @@ For questions, feature requests or bug reports, please open an [issue](https://g
 ## Troubleshooting and Tips
 
 * If the hover does not work or causes the sidebar to move unexpectedly try the following:
-  * In the `Configure Settings`, uncheck the `Hover Enabled` box, reload the screen, then re-check the `Hover Enabled` box.
+  * In the `Configure Settings`, uncheck the `Hover Enabled` box, save the settings, reload the screen, then re-check the `Hover Enabled` box.
   * Try uninstalling and re-installing the module.
+* If the hovered note appears in the upper left corner unexpectedly:
+  * Open `Configure Settings`, select `Token Note Hover` and re-save the settings.
 * The Token Note will not display if the token is selected or showing a HUD.
   * This ensures the note does not display when the token is being used to show other attributes.
   * In the `Configure Settings` dialog, enable the `Core` setting checkbox for `Left-Click to Release Objects` to de-select objects easily.

@@ -38,6 +38,9 @@ import { starwarsffg } from './systems/starwarsffg.js';
 import { sandbox } from './systems/sandbox.js';
 import { lancer } from './systems/lancer.js';
 import { d35e } from './systems/d35e.js';
+import { impmal } from './systems/impmal.js';
+import { fallout } from './systems/fallout.js';
+import { cosmereRPG } from './systems/cosmere-rpg.js';
 
 /**
  * A HUD extension that shows the Note preview
@@ -186,6 +189,12 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
       tempContent = await lancer(actor, displayImages);
     } else if (game.data.system.id === 'D35E') {
       tempContent = await d35e(actor, displayImages);
+    } else if (game.data.system.id === 'impmal') {
+      tempContent = await impmal(actor, displayImages);
+    } else if (game.data.system.id === 'fallout') {
+      tempContent = await fallout(actor, displayImages);
+    } else if (game.data.system.id === 'cosmere-rpg') {
+      tempContent = await cosmereRPG(actor, displayImages);
     }
 
     const callData = { content: tempContent }; // so it can be changed

@@ -2,6 +2,13 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [4.0.13](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-05-21)
+
+* Added support for:
+  * [Cosmere Roleplaying Game](https://foundryvtt.com/packages/cosmere-rpg)
+  * [Fallout: The Roleplaying Game](https://foundryvtt.com/packages/fallout)
+  * [Warhammer 40,000 Roleplay: Imperium Maledictum](https://foundryvtt.com/packages/impmal)
+
 ## [4.0.12](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-05-21)
 
 * Added support for [LANCER](https://foundryvtt.com/packages/lancer).
