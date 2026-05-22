@@ -153,6 +153,23 @@ To install the v12 version of this module, use this URL and click on `Install`:
 https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 ```
 
+## Support
+
+For questions, feature requests or bug reports, please open an [issue](https://github.com/jendave/token-note-hover/issues).
+
+[Pull requests](https://github.com/jendave/token-note-hover/pulls) are welcome. Please include a reason for the request or create an issue before starting one.
+
+## Troubleshooting and Tips
+
+* If the hover does not work or causes the sidebar to move unexpectedly try the following:
+  * In the `Configure Settings`, uncheck the `Hover Enabled` box, save the settings, reload the screen, then re-check the `Hover Enabled` box.
+  * Try uninstalling and re-installing the module.
+* If the hovered note appears in the upper left corner unexpectedly:
+  * Open `Configure Settings`, select `Token Note Hover` and re-save the settings.
+* The Token Note will not display if the token is selected or showing a HUD.
+  * This ensures the note does not display when the token is being used to show other attributes.
+  * In the `Configure Settings` dialog, enable the `Core` setting checkbox for `Left-Click to Release Objects` to de-select objects easily.
+
 ### Other Recommended Modules
 
 * [Zoom/Pan Options](https://foundryvtt.com/packages/zoom-pan-options) for `Zoom Around Cursor` setting.
@@ -708,23 +725,6 @@ Then in a Character Actor, use the Template with the following fields:
 | **Story Character** | Notes - Public Notes & Private Notes     |
 | **Vampire**         | Notes - Public Notes & Private Notes     |
 | **Werewolf**        | Notes - Public Notes & Private Notes     |
-
-## Support
-
-For questions, feature requests or bug reports, please open an [issue](https://github.com/jendave/token-note-hover/issues).
-
-[Pull requests](https://github.com/jendave/token-note-hover/pulls) are welcome. Please include a reason for the request or create an issue before starting one.
-
-## Troubleshooting and Tips
-
-* If the hover does not work or causes the sidebar to move unexpectedly try the following:
-  * In the `Configure Settings`, uncheck the `Hover Enabled` box, save the settings, reload the screen, then re-check the `Hover Enabled` box.
-  * Try uninstalling and re-installing the module.
-* If the hovered note appears in the upper left corner unexpectedly:
-  * Open `Configure Settings`, select `Token Note Hover` and re-save the settings.
-* The Token Note will not display if the token is selected or showing a HUD.
-  * This ensures the note does not display when the token is being used to show other attributes.
-  * In the `Configure Settings` dialog, enable the `Core` setting checkbox for `Left-Click to Release Objects` to de-select objects easily.
 
 ## Credits
 
