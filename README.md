@@ -71,7 +71,7 @@ Hooks.on('tokenNoteHover.createContent', (actor, imageDisplay, contentMap) => {
 
 ### Directly Supported Systems
 
-Many systems are directly supported by [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) module. FoundryVTT v13 only is supported.
+Many systems are directly supported by [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) module. FoundryVTT v13 and above are supported.
 
 * [3.5e for Foundry VTT](#35e-for-foundry-vtt)
 * [Alien RPG](#alien-rpg)
