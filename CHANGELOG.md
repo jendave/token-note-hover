@@ -2,6 +2,12 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [4.0.14](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-05-23)
+
+* Added support for:
+  * [The One Ring 2nd Edition](https://foundryvtt.com/packages/tor2e)
+  * [Shadowrun 5th Edition](https://foundryvtt.com/packages/shadowrun5e)
+
 ## [4.0.13](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-05-21)
 
 * Added support for:

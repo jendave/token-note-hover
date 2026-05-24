@@ -96,6 +96,7 @@ Many systems are directly supported by [Token Note Hover](https://foundryvtt.com
 * [Level Up: Advanced 5th Edition](#level-up-advanced-5th-edition)
 * [Mutant Year Zero](#mutant-year-zero)
 * [Old-School Essentials](#old-school-essentials)
+* [The One Ring 2nd Edition](#the-one-ring-2nd-edition)
 * [Pathfinder 1st Edition](#pathfinder-1st-edition)
 * [Pathfinder 2e](#pathfinder-2e)
 * [Powered by the Apocalypse](#powered-by-the-apocalypse)
@@ -103,6 +104,7 @@ Many systems are directly supported by [Token Note Hover](https://foundryvtt.com
 * [Sandbox](#sandbox)
 * [Savage Worlds Adventure Edition](#savage-worlds-adventure-edition)
 * [Shadowdark](#shadowdark)
+* [Shadowrun 5th Edition](#shadowrun-5th-edition)
 * [Simple Worldbuilding System](#simple-worldbuilding-system)
 * [Star Wars FFG system for Foundry VTT](#star-wars-ffg-system)
 * [Starfinder 1st Edition](#starfinder-1st-edition)
@@ -492,6 +494,20 @@ Then in a Character Actor, use the Template with the following fields:
 | **Character** | Notes         |
 | **Monster**   | Notes         |
 
+### The One Ring 2nd Edition
+
+[The One Ring 2nd Edition](https://foundryvtt.com/packages/tor2e)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_tor2e.jpg?raw=true)
+
+| Actor Type         | Note Location       |
+| ------------------ | ------------------- |
+| **Adversary**      | Description         |
+| **Community**      | Description & Notes |
+| **Lore Character** | Description & Notes |
+| **NPC**            | Description         |
+| **PC**             | Notes               |
+
 ### Pathfinder 1st Edition
 
 [Pathfinder 1](https://foundryvtt.com/packages/pf1)
@@ -578,6 +594,20 @@ Then in a Character Actor, use the Template with the following fields:
 | ---------- | --------------- |
 | **Player** | Character Notes |
 | **NPC**    | Description     |
+
+### Shadowrun 5th Edition
+
+[Shadowrun 5th Edition](https://foundryvtt.com/packages/shadowrun5e)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_shadowrun5e.jpg?raw=true)
+
+| Actor Type        | Note Location |
+| ----------------- | ------------- |
+| **Character**     | Description   |
+| **IC**            | Description   |
+| **Spirit**        | Description   |
+| **Sprite**        | Description   |
+| **Vehicle/Drone** | Description   |
 
 ### Simple Worldbuilding System
 
