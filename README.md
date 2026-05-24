@@ -80,6 +80,7 @@ Many systems are directly supported by [Token Note Hover](https://foundryvtt.com
 * [Call of Cthulhu 7th edition](#call-of-cthulhu-7th-edition)
 * [Cosmere Roleplaying Game](#cosmere-roleplaying-game)
 * [Custom System Builder](#custom-system-builder)
+* [Cyberpunk RED](https://foundryvtt.com/packages/cyberpunk-red-core)
 * [Cypher System](#cypher-system)
 * [Daggerheart](#daggerheart)
 * [Das Schwarze Auge / The Dark Eye (5th Edition)](#das-schwarze-auge--the-dark-eye-5th-edition)
@@ -281,6 +282,20 @@ Then in a Character Actor, use the Template with the following fields:
 | ------------- | -------------- |
 | **Character** | Notes          |
 |               | Private Notes  |
+
+### Cyberpunk RED
+
+[Cyberpunk RED](https://foundryvtt.com/packages/cyberpunk-red-core)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_cyberpunkred.jpg?raw=true)
+
+| Actor Type       | Note Location    |
+| ---------------- | ---------------- |
+| **Black ICE**    | Notes            |
+| **Character**    | Player Notes     |
+| **Container**    | Item List        |
+| **Demon**        | Notes            |
+| **Mook (NPC)**   | Player Notes     |
 
 ### Cypher System
 

@@ -34,6 +34,7 @@ import { dcc } from './systems/dcc.js';
 import { mutantyearzero } from './systems/mutant-year-zero.js';
 import { wod5e } from './systems/wod5e.js';
 import { universalTabletopSystem } from './systems/universal-tabletop-system.js';
+import { cyberpunkRedCore } from './systems/cyberpunk-red-core.js';
 import { starwarsffg } from './systems/starwarsffg.js';
 import { sandbox } from './systems/sandbox.js';
 import { lancer } from './systems/lancer.js';
@@ -242,6 +243,9 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
         break;
       case 'tor2e':
         tempContent = await tor2e(actor, displayImages);
+        break;
+      case 'cyberpunk-red-core':
+        tempContent = await cyberpunkRedCore(actor, displayImages);
         break;
     }
 
