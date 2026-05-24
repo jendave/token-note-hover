@@ -2,14 +2,57 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
-## [4.0.6](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-03-xx)
+## [4.0.15](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-05-xx)
 
 * Added support for [Cyberpunk RED](https://foundryvtt.com/packages/cyberpunk-red-core)
+
+## [4.0.14](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-05-23)
+
+* Added support for:
+  * [The One Ring 2nd Edition](https://foundryvtt.com/packages/tor2e)
+  * [Shadowrun 5th Edition](https://foundryvtt.com/packages/shadowrun5e)
+
+## [4.0.13](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-05-21)
+
+* Added support for:
+  * [Cosmere Roleplaying Game](https://foundryvtt.com/packages/cosmere-rpg)
+  * [Fallout: The Roleplaying Game](https://foundryvtt.com/packages/fallout)
+  * [Warhammer 40,000 Roleplay: Imperium Maledictum](https://foundryvtt.com/packages/impmal)
+
+## [4.0.12](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-05-21)
+
+* Added support for [LANCER](https://foundryvtt.com/packages/lancer).
+
+## [4.0.11](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-04-21)
+
+* Added *Treasury* Actor type for [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn).
+
+## [4.0.10](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-04-08)
+
+* Fixed null error with session.activeHover.
+* Added support for [3.5e for Foundry VTT](https://foundryvtt.com/packages/D35E).
+
+## [4.0.9](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-03-27)
+
+* Updated *Group* Actor type for [D&D 5E](https://foundryvtt.com/packages/dnd5e).
+
+## [4.0.8](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-03-23)
+
+* Added support for [Sandbox](https://foundryvtt.com/packages/sandbox).
+
+## [4.0.7](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-03-34)
+
+* Fixed bugs and added new actor types for [Draw Steel](https://foundryvtt.com/packages/draw-steel).
+  * [Github Issue #36](https://github.com/jendave/token-note-hover/issues/36)
+
+## [4.0.6](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-03-11)
+
+* Added support for [Star Wars FFG system for Foundry VTT](https://foundryvtt.com/packages/starwarsffg).
 
 ## [4.0.5](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-02-25)
 
 * Verified for Foundry v14.
-* Added support for [Universal Tabletop System](https://foundryvtt.com/packages/universal-tabletop-system)
+* Added support for [Universal Tabletop System](https://foundryvtt.com/packages/universal-tabletop-system).
 
 ## [4.0.4](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-02-03)
 

@@ -1,5 +1,9 @@
 # Notes and Tips
 
+## Convert from Markdown to HTML
+
+`pandoc -f markdown -t html README.md -o README.html`
+
 ## put into console to show hooks
 
 CONFIG.debug.hooks = true

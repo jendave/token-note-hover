@@ -35,7 +35,15 @@ import { mutantyearzero } from './systems/mutant-year-zero.js';
 import { wod5e } from './systems/wod5e.js';
 import { universalTabletopSystem } from './systems/universal-tabletop-system.js';
 import { cyberpunkRedCore } from './systems/cyberpunk-red-core.js';
-
+import { starwarsffg } from './systems/starwarsffg.js';
+import { sandbox } from './systems/sandbox.js';
+import { lancer } from './systems/lancer.js';
+import { d35e } from './systems/d35e.js';
+import { impmal } from './systems/impmal.js';
+import { fallout } from './systems/fallout.js';
+import { cosmereRPG } from './systems/cosmere-rpg.js';
+import { shadowrun5e } from './systems/shadowrun5e.js';
+import { tor2e } from './systems/tor2e.js';
 /**
  * A HUD extension that shows the Note preview
  *
@@ -103,82 +111,143 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
 
     let tempContent = '';
     const displayImages = game.settings.get(CONSTANTS.MODULE_ID, 'displayImages');
-    if (game.data.system.id === 'foundry-ironsworn') {
-      tempContent = await ironsworn(actor, displayImages, tempContent);
-    } else if (game.data.system.id === 'dnd5e') {
-      tempContent = await dnd5e(actor, displayImages);
-    } else if (game.data.system.id === 'pf2e') {
-      tempContent = await pf2e(actor, displayImages, tempContent);
-    } else if (game.data.system.id === 'twodsix') {
-      tempContent = await twodsix(actor, displayImages, tempContent);
-    } else if (game.data.system.id === 'CoC7') {
-      tempContent = await coc7(actor, displayImages, tempContent);
-    } else if (game.data.system.id === 'worldbuilding') {
-      tempContent = await worldbuilding(actor, displayImages, tempContent);
-    } else if (game.data.system.id === 'rqg') {
-      tempContent = await rqg(actor, displayImages, tempContent);
-    } else if (game.data.system.id === 'a5e') {
-      tempContent = await a5e(actor, displayImages);
-    } else if (game.data.system.id === 'dsa5') {
-      tempContent = await dsa5(actor, displayImages);
-    } else if (game.data.system.id === 'sfrpg') {
-      tempContent = await sfrpg(actor, displayImages);
-    } else if (game.data.system.id === 'pf1') {
-      tempContent = await pf1(actor, displayImages);
-    } else if (game.data.system.id === 'wfrp4e') {
-      tempContent = await wfrp4e(actor, displayImages);
-    } else if (game.data.system.id === 'cyphersystem') {
-      tempContent = await cyphersystem(actor, displayImages);
-    } else if (game.data.system.id === 'swade') {
-      tempContent = await swade(actor, displayImages);
-    } else if (game.data.system.id === 'vtm5e') {
-      tempContent = await vtm5e(actor, displayImages);
-    } else if (game.data.system.id === 'alienrpg') {
-      tempContent = await alienrpg(actor, displayImages);
-    } else if (game.data.system.id === 'shadowdark') {
-      tempContent = await shadowdark(actor, displayImages);
-    } else if (game.data.system.id === 'draw-steel') {
-      tempContent = await drawsteel(actor, displayImages);
-    } else if (game.data.system.id === 'daggerheart') {
-      tempContent = await daggerheart(actor, displayImages);
-    } else if (game.data.system.id === 'gurps') {
-      tempContent = await gurps(actor, displayImages);
-    } else if (game.data.system.id === 'wrath-and-glory') {
-      tempContent = await wrathAndGlory(actor, displayImages);
-    } else if (game.data.system.id === 'wrath-and-glory') {
-      tempContent = await wrathAndGlory(actor, displayImages);
-    } else if (game.data.system.id === 'dragonbane') {
-      tempContent = await dragonbane(actor, displayImages);
-    } else if (game.data.system.id === 'worldofdarkness') {
-      tempContent = await worldofdarkness(actor, displayImages);
-    } else if (game.data.system.id === 'forbidden-lands') {
-      tempContent = await forbiddenlands(actor, displayImages);
-    } else if (game.data.system.id === 'deltagreen') {
-      tempContent = await deltagreen(actor, displayImages);
-    } else if (game.data.system.id === 'blades-in-the-dark') {
-      tempContent = await bladesInTheDark(actor, displayImages);
-    } else if (game.data.system.id === 'pbta') {
-      tempContent = await pbta(actor, displayImages);
-    } else if (game.data.system.id === 'ose') {
-      tempContent = await ose(actor, displayImages);
-    } else if (game.data.system.id === 'custom-system-builder') {
-      tempContent = await customSystemBuilder(actor, displayImages);
-    } else if (game.data.system.id === 'cairn') {
-      tempContent = await cairn(actor, displayImages);
-    } else if (game.data.system.id === 'tormenta20') {
-      tempContent = await tormenta20(actor, displayImages);
-    } else if (game.data.system.id === 'dcc') {
-      tempContent = await dcc(actor, displayImages);
-    } else if (game.data.system.id === 'mutant-year-zero') {
-      tempContent = await mutantyearzero(actor, displayImages);
-    } else if (game.data.system.id === 'wod5e') {
-      tempContent = await wod5e(actor, displayImages);
-    } else if (game.data.system.id === 'universal-tabletop-system') {
-      tempContent = await universalTabletopSystem(actor, displayImages);
-    } else if (game.data.system.id === 'cyberpunk-red-core') {
-      tempContent = await cyberpunkRedCore(actor, displayImages);
+    switch (game.data.system.id) {
+      case 'foundry-ironsworn':
+        tempContent = await ironsworn(actor, displayImages, tempContent);
+        break;
+      case 'dnd5e':
+        tempContent = await dnd5e(actor, displayImages);
+        break;
+      case 'pf2e':
+        tempContent = await pf2e(actor, displayImages, tempContent);
+        break;
+      case 'twodsix':
+        tempContent = await twodsix(actor, displayImages, tempContent);
+        break;
+      case 'CoC7':
+        tempContent = await coc7(actor, displayImages, tempContent);
+        break;
+      case 'worldbuilding':
+        tempContent = await worldbuilding(actor, displayImages, tempContent);
+        break;
+      case 'rqg':
+        tempContent = await rqg(actor, displayImages, tempContent);
+        break;
+      case 'a5e':
+        tempContent = await a5e(actor, displayImages);
+        break;
+      case 'dsa5':
+        tempContent = await dsa5(actor, displayImages);
+        break;
+      case 'sfrpg':
+        tempContent = await sfrpg(actor, displayImages);
+        break;
+      case 'pf1':
+        tempContent = await pf1(actor, displayImages);
+        break;
+      case 'wfrp4e':
+        tempContent = await wfrp4e(actor, displayImages);
+        break;
+      case 'cyphersystem':
+        tempContent = await cyphersystem(actor, displayImages);
+        break;
+      case 'swade':
+        tempContent = await swade(actor, displayImages);
+        break;
+      case 'vtm5e':
+        tempContent = await vtm5e(actor, displayImages);
+        break;
+      case 'alienrpg':
+        tempContent = await alienrpg(actor, displayImages);
+        break;
+      case 'shadowdark':
+        tempContent = await shadowdark(actor, displayImages);
+        break;
+      case 'draw-steel':
+        tempContent = await drawsteel(actor, displayImages);
+        break;
+      case 'daggerheart':
+        tempContent = await daggerheart(actor, displayImages);
+        break;
+      case 'gurps':
+        tempContent = await gurps(actor, displayImages);
+        break;
+      case 'wrath-and-glory':
+        tempContent = await wrathAndGlory(actor, displayImages);
+        break;
+      case 'dragonbane':
+        tempContent = await dragonbane(actor, displayImages);
+        break;
+      case 'worldofdarkness':
+        tempContent = await worldofdarkness(actor, displayImages);
+        break;
+      case 'forbidden-lands':
+        tempContent = await forbiddenlands(actor, displayImages);
+        break;
+      case 'deltagreen':
+        tempContent = await deltagreen(actor, displayImages);
+        break;
+      case 'blades-in-the-dark':
+        tempContent = await bladesInTheDark(actor, displayImages);
+        break;
+      case 'pbta':
+        tempContent = await pbta(actor, displayImages);
+        break;
+      case 'ose':
+        tempContent = await ose(actor, displayImages);
+        break;
+      case 'custom-system-builder':
+        tempContent = await customSystemBuilder(actor, displayImages);
+        break;
+      case 'cairn':
+        tempContent = await cairn(actor, displayImages);
+        break;
+      case 'tormenta20':
+        tempContent = await tormenta20(actor, displayImages);
+        break;
+      case 'dcc':
+        tempContent = await dcc(actor, displayImages);
+        break;
+      case 'mutant-year-zero':
+        tempContent = await mutantyearzero(actor, displayImages);
+        break;
+      case 'wod5e':
+        tempContent = await wod5e(actor, displayImages);
+        break;
+      case 'universal-tabletop-system':
+        tempContent = await universalTabletopSystem(actor, displayImages);
+        break;
+      case 'starwarsffg':
+        tempContent = await starwarsffg(actor, displayImages);
+        break;
+      case 'sandbox':
+        tempContent = await sandbox(actor, displayImages);
+        break;
+      case 'lancer':
+        tempContent = await lancer(actor, displayImages);
+        break;
+      case 'D35E':
+        tempContent = await d35e(actor, displayImages);
+        break;
+      case 'impmal':
+        tempContent = await impmal(actor, displayImages);
+        break;
+      case 'fallout':
+        tempContent = await fallout(actor, displayImages);
+        break;
+      case 'cosmere-rpg':
+        tempContent = await cosmereRPG(actor, displayImages);
+        break;
+      case 'shadowrun5e':
+        tempContent = await shadowrun5e(actor, displayImages);
+        break;
+      case 'tor2e':
+        tempContent = await tor2e(actor, displayImages);
+        break;
+      case 'cyberpunk-red-core':
+        tempContent = await cyberpunkRedCore(actor, displayImages);
+        break;
     }
-
 
     const callData = { content: tempContent }; // so it can be changed
     foundry.helpers.Hooks.callAll("tokenNoteHover.createContent", actor, displayImages, callData);

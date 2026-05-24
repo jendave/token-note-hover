@@ -71,39 +71,48 @@ Hooks.on('tokenNoteHover.createContent', (actor, imageDisplay, contentMap) => {
 
 ### Directly Supported Systems
 
-Many systems are directly supported by [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) module. FoundryVTT v13 only is supported.
+Many systems are directly supported by [Token Note Hover](https://foundryvtt.com/packages/token-note-hover) module. FoundryVTT v13 and above are supported.
 
+* [3.5e for Foundry VTT](#35e-for-foundry-vtt)
 * [Alien RPG](#alien-rpg)
 * [Blades in the Dark](#blades-in-the-dark)
 * [Cairn](#cairn)
 * [Call of Cthulhu 7th edition](#call-of-cthulhu-7th-edition)
+* [Cosmere Roleplaying Game](#cosmere-roleplaying-game)
 * [Custom System Builder](#custom-system-builder)
 * [Cyberpunk RED](https://foundryvtt.com/packages/cyberpunk-red-core)
 * [Cypher System](#cypher-system)
-* [D\&D 5E](#dd-5e)
 * [Daggerheart](#daggerheart)
 * [Das Schwarze Auge / The Dark Eye (5th Edition)](#das-schwarze-auge--the-dark-eye-5th-edition)
 * [Delta Green](#delta-green)
 * [Dragonbane - Drakar och Demoner](#dragonbane---drakar-och-demoner)
 * [Draw Steel](#draw-steel)
 * [Dungeon Crawl Classics](#dungeon-crawl-classics)
+* [Dungeons & Dragons Fifth Edition](#dungeons--dragons-fifth-edition)
+* [Fallout: The Roleplaying Game](#fallout-the-roleplaying-game)
 * [Forbidden Lands](#forbidden-lands)
 * [GURPS 4th Edition Game Aid (Unofficial)](#gurps-4th-edition-game-aid-unofficial)
 * [Ironsworn/Starforged](#ironswornstarforged)
+* [LANCER](https://foundryvtt.com/packages/lancer)
 * [Level Up: Advanced 5th Edition](#level-up-advanced-5th-edition)
 * [Mutant Year Zero](#mutant-year-zero)
 * [Old-School Essentials](#old-school-essentials)
+* [The One Ring 2nd Edition](#the-one-ring-2nd-edition)
 * [Pathfinder 1st Edition](#pathfinder-1st-edition)
 * [Pathfinder 2e](#pathfinder-2e)
 * [Powered by the Apocalypse](#powered-by-the-apocalypse)
 * [RuneQuest Glorantha](#runequest-glorantha)
+* [Sandbox](#sandbox)
 * [Savage Worlds Adventure Edition](#savage-worlds-adventure-edition)
 * [Shadowdark](#shadowdark)
+* [Shadowrun 5th Edition](#shadowrun-5th-edition)
 * [Simple Worldbuilding System](#simple-worldbuilding-system)
+* [Star Wars FFG system for Foundry VTT](#star-wars-ffg-system)
 * [Starfinder 1st Edition](#starfinder-1st-edition)
 * [Tormenta20](#tormenta20)
 * [Twodsix - Cepheus \& Traveller](#twodsix---cepheus--traveller)
 * [Universal Tabletop System](#universal-tabletop-system)
+* [Warhammer 40,000 Roleplay: Imperium Maledictum](#warhammer-40000-roleplay-imperium-maledictum)
 * [Warhammer 40,000 Roleplay: Wrath \& Glory](#warhammer-40000-roleplay-wrath--glory)
 * [Warhammer Fantasy Roleplay 4th Edition](#warhammer-fantasy-roleplay-4th-edition)
 * [World of Darkness 20th edition](#world-of-darkness-20th-edition)
@@ -128,7 +137,7 @@ All settings, except for `token ownership required` are client-side only so each
 * [Ironsworn/Starforged Discord Server - FoundryVTT Channel](https://discord.com/channels/437120373436186625/867434336201605160) (jendave)
 * [FoundryVTT Discord Server - Module Discussion Channel](https://discord.com/channels/170995199584108546/513918036919713802) (jendave)
 * [VOID Affiliate Network Discord Server - Game Hacks Channel](https://discord.com/channels/1222986351272787990/1222986351792619687) (jendave)
-* [GitHub Repository](https://github.com/jendave/augmented-reality-foundry)
+* [GitHub Repository](https://github.com/jendave/token-note-hover)
 * [Itch.io](https://jendave.itch.io/)
 
 ## Module Installation
@@ -147,6 +156,23 @@ To install the v12 version of this module, use this URL and click on `Install`:
 https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 ```
 
+## Support
+
+For questions, feature requests or bug reports, please open an [issue](https://github.com/jendave/token-note-hover/issues).
+
+[Pull requests](https://github.com/jendave/token-note-hover/pulls) are welcome. Please include a reason for the request or create an issue before starting one.
+
+## Troubleshooting and Tips
+
+* If the hover does not work or causes the sidebar to move unexpectedly try the following:
+  * In the `Configure Settings`, uncheck the `Hover Enabled` box, save the settings, reload the screen, then re-check the `Hover Enabled` box.
+  * Try uninstalling and re-installing the module.
+* If the hovered note appears in the upper left corner unexpectedly:
+  * Open `Configure Settings`, select `Token Note Hover` and re-save the settings.
+* The Token Note will not display if the token is selected or showing a HUD.
+  * This ensures the note does not display when the token is being used to show other attributes.
+  * In the `Configure Settings` dialog, enable the `Core` setting checkbox for `Left-Click to Release Objects` to de-select objects easily.
+
 ### Other Recommended Modules
 
 * [Zoom/Pan Options](https://foundryvtt.com/packages/zoom-pan-options) for `Zoom Around Cursor` setting.
@@ -156,6 +182,19 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 * [Force Client Settings](https://foundryvtt.com/packages/force-client-settings) for forcing chosen settings for clients to the defaults provided by the GM.
 
 ## Screenshots and Note Locations
+
+### 3.5e for Foundry VTT
+
+[3.5e for Foundry VTT](https://foundryvtt.com/packages/D35E)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_d35e.jpg?raw=true)
+
+| Actor Type    | Note Location      |
+| ------------- | ------------------ |
+| **Character** | Notes              |
+| **NPC**       | Notes              |
+| **Object**    | Object Description |
+| **Trap**      | Trap Description   |
 
 ### Alien RPG
 
@@ -211,6 +250,17 @@ https://github.com/jendave/token-note-hover/releases/download/2.1.17/module.json
 | **Creature**  | Notes         |
 | **NPC**       | Notes         |
 
+### Cosmere Roleplaying Game
+
+[Cosmere Roleplaying Game](https://foundryvtt.com/packages/cosmere-rpg)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_cosmere.jpg?raw=true)
+
+| Actor Type    | Note Location |
+| ------------- | ------------- |
+| **Adversary** | Notes         |
+| **Character** | Notes         |
+
 ### Custom System Builder
 
 [Custom System Builder](https://foundryvtt.com/packages/custom-system-builder)
@@ -261,20 +311,6 @@ Then in a Character Actor, use the Template with the following fields:
 | **NPC/Creature** | Notes            |
 | **PC**           | Notes & GM Notes |
 | **Vehicle**      | Notes            |
-
-### D&D 5E
-
-[D&D 5E](https://foundryvtt.com/packages/dnd5e)
-
-![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dnd5e.jpg?raw=true)
-
-| Actor Type               | Note Location    |
-| ------------------------ | ---------------- |
-| **Player Character**     | Biography        |
-| **Non-player Character** | Biography Public |
-| **Group**                | Description      |
-| **Vehicle**              | Description      |
-| **Encounter**            | Description      |
 
 ### Daggerheart
 
@@ -332,10 +368,13 @@ Then in a Character Actor, use the Template with the following fields:
 
 ![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_drawsteel.jpg?raw=true)
 
-| Actor Type    | Note Location              |
-| ------------- | -------------------------- |
-| **Character** | Biography & Director Notes |
-| **NPC**       | Biography & Director Notes |
+| Actor Type   | Note Location                 |
+| ------------ | ----------------------------- |
+| **Hero**     | Biography & Director Notes    |
+| **NPC**      | Biography & Director Notes    |
+| **Object**   | Biography & Director Notes    |
+| **Retainer** | Biography & Director Notes    |
+| **Party**    | Party Members & Party Details |
 
 ### Dungeon Crawl Classics
 
@@ -348,6 +387,36 @@ Then in a Character Actor, use the Template with the following fields:
 | **Player**    | Notes                      |
 | **NPC**       | Notes                      |
 | **Party**     | Notes                      |
+
+### Dungeons & Dragons Fifth Edition
+
+[Dungeons & Dragons Fifth Edition](https://foundryvtt.com/packages/dnd5e)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_dnd5e.jpg?raw=true)
+
+| Actor Type               | Note Location    |
+| ------------------------ | ---------------- |
+| **Player Character**     | Biography        |
+| **Non-player Character** | Biography Public |
+| **Group**                | Description      |
+| **Vehicle**              | Description      |
+| **Encounter**            | Description      |
+
+### Fallout: The Roleplaying Game
+
+[Fallout: The Roleplaying Game](https://foundryvtt.com/packages/fallout)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_fallout.jpg?raw=true)
+
+| Actor Type              | Note Location |
+| ----------------------- | ------------- |
+| **Character**           | Data          |
+| **Creature**            | Data          |
+| **NPC**                 | Data          |
+| **Robot**               | Data          |
+| **Scavenging Location** | Notes         |
+| **Settlement**          | Data          |
+| **Vehicle**             | Data          |
 
 ### Forbidden Lands
 
@@ -382,10 +451,24 @@ Then in a Character Actor, use the Template with the following fields:
 | Actor Type       | Note Location   |
 | ---------------- | --------------- |
 | **Character**    | Notes           |
-| **Shared Sheet** | Notes           |
-| **NPC**          | Text entry area |
-| **Starship**     | Notes           |
 | **Location**     | Text entry area |
+| **NPC**          | Text entry area |
+| **Shared Sheet** | Notes           |
+| **Starship**     | Notes           |
+| **Treasury**     | Notes           |
+
+### LANCER
+
+[LANCER](https://foundryvtt.com/packages/lancer)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_lancer.jpg?raw=true)
+
+| Actor Type     | Note Location |
+| -------------- | ------------- |
+| **Deployable** | Details       |
+| **Mech**       | [None]        |
+| **NPC**        | Notes         |
+| **Pilot**      | Notes         |
 
 ### Level Up: Advanced 5th Edition
 
@@ -425,6 +508,20 @@ Then in a Character Actor, use the Template with the following fields:
 | ------------- | ------------- |
 | **Character** | Notes         |
 | **Monster**   | Notes         |
+
+### The One Ring 2nd Edition
+
+[The One Ring 2nd Edition](https://foundryvtt.com/packages/tor2e)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_tor2e.jpg?raw=true)
+
+| Actor Type         | Note Location       |
+| ------------------ | ------------------- |
+| **Adversary**      | Description         |
+| **Community**      | Description & Notes |
+| **Lore Character** | Description & Notes |
+| **NPC**            | Description         |
+| **PC**             | Notes               |
 
 ### Pathfinder 1st Edition
 
@@ -478,6 +575,17 @@ Then in a Character Actor, use the Template with the following fields:
 | ---------- | -------------- |
 | **Actor**  | Allies & Notes |
 
+### Sandbox
+
+[Sandbox](https://foundryvtt.com/packages/sandbox)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_sandbox.jpg?raw=true)
+
+| Actor Type    | Note Location |
+| ------------- | ------------- |
+| **Character** | Biography     |
+| **NPC**       | Biography     |
+
 ### Savage Worlds Adventure Edition
 
 [Savage Worlds Adventure Edition](https://foundryvtt.com/packages/swade)
@@ -502,6 +610,20 @@ Then in a Character Actor, use the Template with the following fields:
 | **Player** | Character Notes |
 | **NPC**    | Description     |
 
+### Shadowrun 5th Edition
+
+[Shadowrun 5th Edition](https://foundryvtt.com/packages/shadowrun5e)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_shadowrun5e.jpg?raw=true)
+
+| Actor Type        | Note Location |
+| ----------------- | ------------- |
+| **Character**     | Description   |
+| **IC**            | Description   |
+| **Spirit**        | Description   |
+| **Sprite**        | Description   |
+| **Vehicle/Drone** | Description   |
+
 ### Simple Worldbuilding System
 
 [Simple Worldbuilding System](https://foundryvtt.com/packages/worldbuilding)
@@ -511,6 +633,21 @@ Then in a Character Actor, use the Template with the following fields:
 | Actor Type | Note Location |
 | ---------- | ------------- |
 | **Actor**  | Description   |
+
+### Star Wars FFG system
+
+[Star Wars FFG system for Foundry VTT](https://foundryvtt.com/packages/starwarsffg)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_starwarsffg.jpg?raw=true)
+
+| Actor Type    | Note Location |
+| ------------- | ------------- |
+| **Character** | Biography     |
+| **Homestead** | Biography     |
+| **Minion**    | Biography     |
+| **Nemesis**   | Biography     |
+| **Rival**     | Biography     |
+| **Vehicle**   | Biography     |
 
 ### Starfinder 1st Edition
 
@@ -568,6 +705,19 @@ Then in a Character Actor, use the Template with the following fields:
 | **Chess Piece** | Piece         |
 | **Game Token**  | Resource      |
 
+### Warhammer 40,000 Roleplay: Imperium Maledictum
+
+[Warhammer 40,000 Roleplay: Imperium Maledictum](https://foundryvtt.com/packages/impmal)
+
+![Screenshot](https://github.com/jendave/token-note-hover/blob/main/docs/screenshot_impmal.jpg?raw=true)
+
+| Actor Type               | Note Location                |
+| ------------------------ | ---------------------------- |
+| **Non-Player Character** | Notes - Biography & GM Notes |
+| **Patron**               | Notes - Biography & GM Notes |
+| **Player Character**     | Notes - Biography & GM Notes |
+| **Vehicle**              | Notes - Biography & GM Notes |
+
 ### Warhammer 40,000 Roleplay: Wrath & Glory
 
 [Warhammer 40,000 Roleplay: Wrath & Glory](https://foundryvtt.com/packages/wrath-and-glory)
@@ -621,21 +771,6 @@ Then in a Character Actor, use the Template with the following fields:
 | **Vampire**         | Notes - Public Notes & Private Notes     |
 | **Werewolf**        | Notes - Public Notes & Private Notes     |
 
-## Support
-
-For questions, feature requests or bug reports, please open an [issue](https://github.com/jendave/token-note-hover/issues).
-
-[Pull requests](https://github.com/jendave/token-note-hover/pulls) are welcome. Please include a reason for the request or create an issue before starting one.
-
-## Troubleshooting and Tips
-
-* If the hover does not work or causes the sidebar to move unexpectedly try the following:
-  * In the `Configure Settings`, uncheck the `Hover Enabled` box, reload the screen, then re-check the `Hover Enabled` box.
-  * Try uninstalling and re-installing the module.
-* The Token Note will not display if the token is selected or showing a HUD.
-  * This ensures the note does not display when the token is being used to show other attributes.
-  * In the `Configure Settings` dialog, enable the `Core` setting checkbox for `Left-Click to Release Objects` to de-select objects easily.
-
 ## Credits
 
 Module by David Hudson and licensed for use under the [GNU GPL license v3](https://opensource.org/license/gpl-3-0).
@@ -664,6 +799,7 @@ Please check out my other modules and resources for Ironsworn, Ironsworn: Starfo
 * [Ancient Wonders](https://foundryvtt.com/packages/ancient-wonders)
 * [Rise & Shiningstar - An Adventure for Ironsworn: Starforged](https://foundryvtt.com/packages/rise-and-shining-star)
 * [Roll Table Importer](https://foundryvtt.com/packages/roll-table-importer)
+* [Ironsworn Impacts](https://foundryvtt.com/packages/ironsworn-impacts)
 
 ### [Itch.io](https://jendave.itch.io/) Resources
 
