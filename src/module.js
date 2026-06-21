@@ -146,8 +146,9 @@ Hooks.on('hoverToken', (note, hovered) => {
           // Only open if a newer hover hasn't occurred.
           if (seq !== hoverSeq) return;
           if (note.interactionState === 1
+            && note.actor
             && (note.actor.permission >= ownershipPermissionsRequired
-              || note.actor.ownership.default === -1)) {
+              || note.actor.ownership?.default === -1)) {
             canvas.hud.tokenNoteHover.bind(note);
           }
         }, tooltipOpenDelay);
