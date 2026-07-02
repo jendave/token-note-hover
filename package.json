@@ -17,7 +17,7 @@
                 "@fortawesome/fontawesome-svg-core": "^6.5.1",
                 "@fortawesome/free-solid-svg-icons": "^6.5.1",
                 "@fortawesome/react-fontawesome": "^0.2.0",
-                "@rollup/plugin-node-resolve": "^15.2.3",
+                "@rollup/plugin-node-resolve": "^16.0.3",
                 "@typhonjs-fvtt/runtime": "^0.1.2",
                 "@typhonjs-fvtt/svelte-standard": "^0.1.0",
                 "moment": "^2.30.1",
@@ -28,7 +28,7 @@
         "devDependencies": {
                 "@babel/eslint-parser": "^7.23.10",
                 "@foundryvtt/foundryvtt-cli": "^1.0.2",
-                "@rollup/plugin-node-resolve": "^15.2.3",
+                "@rollup/plugin-node-resolve": "^16.0.3",
                 "@typescript-eslint/eslint-plugin": "^7.1.1",
                 "@typhonjs-config/eslint-config": "^0.6.3",
                 "@typhonjs-fvtt/eslint-config-foundry.js": "^0.8.0",
