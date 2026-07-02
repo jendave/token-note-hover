@@ -69,6 +69,15 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v7
 
+      # Pin the Node version so releases don't break when the runner image
+      # updates its default Node. Matches the Node version FoundryVTT ships with.
+      # `cache: npm` speeds up installs.
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
       # Extract version embedded in the tag.
       # This step expects the tag to be one of the following formats:
       #   - "v<major>.<minor>.<patch>" (e.g., "v1.2.3")
@@ -78,7 +87,7 @@ jobs:
       # "version" key required for a valid module manifest.
       - name: Extract Version From Tag
         id: get_version
-        uses: battila7/get-version-action@master
+        run: echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
 
       # Modify "module.json" with values specific to the release.
       # Since the values for the "version" and "url" keys aren't known ahead of
@@ -92,14 +101,14 @@ jobs:
         with:
           files: "./src/module.json"
         env:
-          VERSION: ${{ steps.get_version.outputs.version-without-v }}
+          VERSION: ${{ steps.get_version.outputs.version }}
           URL: ${{ env.project_url }}
           MANIFEST: ${{ env.latest_manifest_url }}
           DOWNLOAD: ${{ env.release_module_url }}
 
-      # Install packages.
+      # Install packages from the lockfile for reproducible builds.
       - name: NPM Install packages
-        run: npm install
+        run: npm ci
 
       # Build distribution.
       - name: NPM Run build
