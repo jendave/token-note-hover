@@ -29,7 +29,7 @@ export async function ironsworn(actor, displayImages, tempContent) {
                 break;
             case "character":
                 if (game.settings.get(CONSTANTS.MODULE_ID, 'displayPC')) {
-                    if (actor.sheet?.constructor.name === "IronswornCharacterSheetV2") {
+                    if (actor.sheet?.constructor.name === "IronswornCharacterSheetV2" || actor.sheet?.constructor.name === "_IronswornCharacterSheetV2") {
                         if (displayImages) {
                             tempContent = await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.biography, {
                                 secrets: actorIsOwner,
@@ -45,7 +45,7 @@ export async function ironsworn(actor, displayImages, tempContent) {
                                 })
                             ).replaceAll(/<img.*>/g, "");
                         }
-                    } else if (actor.sheet?.constructor.name === "StarforgedCharacterSheet") {
+                    } else if (actor.sheet?.constructor.name === "StarforgedCharacterSheet" || actor.sheet?.constructor.name === "_StarforgedCharacterSheet") {
                         if (displayImages) {
                             tempContent = await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.notes, {
                                 secrets: actorIsOwner,

@@ -2,6 +2,11 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [4.1.0](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-06-21)
+
+* Simplify build system.
+* Minor fix for [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn).
+
 ## [4.0.15](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-06-21)
 
 * Fix null error for actor.
