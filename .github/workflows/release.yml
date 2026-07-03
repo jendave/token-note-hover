@@ -69,15 +69,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v7
 
-      # Pin the Node version so releases don't break when the runner image
-      # updates its default Node. Matches the Node version FoundryVTT ships with.
-      # `cache: npm` speeds up installs.
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: npm
-
       # Extract version embedded in the tag.
       # This step expects the tag to be one of the following formats:
       #   - "v<major>.<minor>.<patch>" (e.g., "v1.2.3")
@@ -88,6 +79,11 @@ jobs:
       - name: Extract Version From Tag
         id: get_version
         run: echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      # Copy the top-level docs into the module source directory so they are
+      # included at the root of the packaged module.
+      - name: Stage Release Files
+        run: cp README.md CHANGELOG.md LICENSE ./src/
 
       # Modify "module.json" with values specific to the release.
       # Since the values for the "version" and "url" keys aren't known ahead of
@@ -106,16 +102,10 @@ jobs:
           MANIFEST: ${{ env.latest_manifest_url }}
           DOWNLOAD: ${{ env.release_module_url }}
 
-      # Install packages from the lockfile for reproducible builds.
-      - name: NPM Install packages
-        run: npm ci
-
-      # Build distribution.
-      - name: NPM Run build
-        run: npm run build
-
-      - name: Create zip file
-        run: (cd ./dist/token-note-hover && zip -r ./module.zip .)
+      # The module is plain JavaScript that Foundry loads directly, so no build
+      # step is needed. Package the contents of `src/` as the module archive.
+      - name: Create Module Archive
+        run: (cd ./src && zip --recurse-paths ../module.zip . --exclude "*.DS_Store")
 
       # Update the GitHub release with the manifest and module archive files.
       - name: Update Release With Files
@@ -127,6 +117,6 @@ jobs:
           draft: false
           prerelease: ${{ github.event.release.prerelease }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "./dist/token-note-hover/module.json, ./dist/token-note-hover/module.zip"
+          artifacts: "./src/module.json, ./module.zip"
           tag: ${{ github.event.release.tag_name }}
           body: ${{ github.event.release.body }}

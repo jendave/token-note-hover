@@ -1,4 +1,4 @@
-import CONSTANTS from '../constants';
+import CONSTANTS from '../constants.js';
 import { processNotes } from "../textUtil.js";
 
 export async function ironsworn(actor, displayImages, tempContent) {

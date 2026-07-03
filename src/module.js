@@ -1,6 +1,6 @@
-import CONSTANTS from './scripts/constants';
-import registerSettings from './scripts/settings';
-import TokenNoteHoverHUD from './scripts/TokenNoteHoverHUD';
+import CONSTANTS from './scripts/constants.js';
+import registerSettings from './scripts/settings.js';
+import TokenNoteHoverHUD from './scripts/TokenNoteHoverHUD.js';
 
 function isKeyHeld(key) {
   // Access the internal Set of currently pressed keys.
