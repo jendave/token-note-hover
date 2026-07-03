@@ -2,7 +2,11 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
-## [4.1.0](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-06-21)
+## [4.1.1](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-07-03)
+
+* Fix build
+
+## [4.1.0](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-07-03)
 
 * Simplify build system.
 * Minor fix for [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn).
