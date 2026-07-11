@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [4.1.2](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-07-10)
+
+* More build fixes.
+
 ## [4.1.1](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-07-03)
 
 * Fix build
