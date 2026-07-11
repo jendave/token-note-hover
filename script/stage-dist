@@ -1,0 +1,18 @@
+#! /bin/bash
+# Assemble the distributable module under dist/. This module has no compendium
+# packs to compile, so the build simply stages the module source (everything
+# under src/) plus the top-level docs and licenses into dist/.
+
+set -eu
+
+mkdir -p dist
+
+# Module source: module.json, module.js, scripts/, styles/, languages/.
+cp -R src/. dist/
+
+# Top-level docs and licenses that ship with the module.
+for item in README.md CHANGELOG.md LICENSE; do
+	if [ -e "$item" ]; then
+		cp "$item" dist/
+	fi
+done

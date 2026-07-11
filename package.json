@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "name": "token-note-hover",
+  "description": "Token Note Hover module for Foundry VTT",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && script/stage-dist"
+  }
+}
