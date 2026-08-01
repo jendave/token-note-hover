@@ -72,7 +72,7 @@ jobs:
       # Pin the Node version so releases don't break when the runner image
       # updates its default Node. Matches the Node version FoundryVTT ships with.
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: npm
