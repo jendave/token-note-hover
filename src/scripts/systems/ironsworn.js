@@ -160,6 +160,23 @@ export async function ironsworn(actor, displayImages, tempContent) {
                 break;
             case "treasury":
                 return await getTreasuryNotes(displayImages, actor, actorIsOwner);
+            case "starforged-custom-oracles.faction":
+                if (displayImages) {
+                    tempContent = await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.description, {
+                        secrets: actorIsOwner,
+                        documents: true,
+                        async: true,
+                    });
+                } else {
+                    tempContent = (
+                        await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.description, {
+                            secrets: actorIsOwner,
+                            documents: true,
+                            async: true,
+                        })
+                    ).replaceAll(/<img.*>/g, "");
+                }
+                break;
             default:
                 tempContent = null;
         }
