@@ -67,7 +67,24 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
+
+      # Pin the Node version so releases don't break when the runner image
+      # updates its default Node. Matches the Node version FoundryVTT ships with.
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      # Install dependencies.
+      - name: NPM Install packages
+        run: npm ci
+
+      # Assemble the distributable module under dist/ (this module has no
+      # compendium packs, so the build just stages the module source and docs).
+      - name: Build Module
+        run: npm run build
 
       # Extract version embedded in the tag.
       # This step expects the tag to be one of the following formats:
@@ -78,35 +95,26 @@ jobs:
       # "version" key required for a valid module manifest.
       - name: Extract Version From Tag
         id: get_version
-        uses: battila7/get-version-action@master
+        run: echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
 
       # Modify "module.json" with values specific to the release.
       # Since the values for the "version" and "url" keys aren't known ahead of
-      # time, the manifest file in the repository is updated with these values.
-      #
-      # While this does modify the manifest file in-place, the changes are not
-      # commited to the repository, and only exist in the action's filesystem.
+      # time, the manifest file in the built dist/ is updated with these values.
       - name: Modify Module Manifest With Release-Specific Values
         id: sub_manifest_link_version
         uses: cschleiden/replace-tokens@v1
         with:
-          files: "./src/module.json"
+          files: "./dist/module.json"
         env:
-          VERSION: ${{ steps.get_version.outputs.version-without-v }}
+          VERSION: ${{ steps.get_version.outputs.version }}
           URL: ${{ env.project_url }}
           MANIFEST: ${{ env.latest_manifest_url }}
           DOWNLOAD: ${{ env.release_module_url }}
 
-      # Install packages.
-      - name: NPM Install packages
-        run: npm install
-
-      # Build distribution.
-      - name: NPM Run build
-        run: npm run build
-
-      - name: Create zip file
-        run: (cd ./dist/token-note-hover && zip -r ./module.zip .)
+      # The build assembles everything the module needs under dist/, so package
+      # the contents of dist/ as the archive root.
+      - name: Create Module Archive
+        run: (cd ./dist && zip --recurse-paths ../module.zip . --exclude "*.DS_Store")
 
       # Update the GitHub release with the manifest and module archive files.
       - name: Update Release With Files
@@ -118,6 +126,6 @@ jobs:
           draft: false
           prerelease: ${{ github.event.release.prerelease }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "./dist/token-note-hover/module.json, ./dist/token-note-hover/module.zip"
+          artifacts: "./dist/module.json, ./module.zip"
           tag: ${{ github.event.release.tag_name }}
           body: ${{ github.event.release.body }}

@@ -1,6 +1,6 @@
-import CONSTANTS from './scripts/constants';
-import registerSettings from './scripts/settings';
-import TokenNoteHoverHUD from './scripts/TokenNoteHoverHUD';
+import CONSTANTS from './scripts/constants.js';
+import registerSettings from './scripts/settings.js';
+import TokenNoteHoverHUD from './scripts/TokenNoteHoverHUD.js';
 
 function isKeyHeld(key) {
   // Access the internal Set of currently pressed keys.
@@ -146,8 +146,9 @@ Hooks.on('hoverToken', (note, hovered) => {
           // Only open if a newer hover hasn't occurred.
           if (seq !== hoverSeq) return;
           if (note.interactionState === 1
+            && note.actor
             && (note.actor.permission >= ownershipPermissionsRequired
-              || note.actor.ownership.default === -1)) {
+              || note.actor.ownership?.default === -1)) {
             canvas.hud.tokenNoteHover.bind(note);
           }
         }, tooltipOpenDelay);

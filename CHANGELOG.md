@@ -2,9 +2,30 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
-## [4.0.15](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-05-xx)
+## [New Version](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-xx-xx)
 
 * Added support for [Cyberpunk RED](https://foundryvtt.com/packages/cyberpunk-red-core)
+
+## [4.1.3](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-08-22)
+
+* Add Faction Actor type for [Ironsworn & Starforged](https://foundryvtt.com/packages/foundry-ironsworn) from the [Starforged Custom Compendiums](https://foundryvtt.com/packages/starforged-custom-oracles) module.
+
+## [4.1.2](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-07-10)
+
+* More build fixes.
+
+## [4.1.1](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-07-03)
+
+* Fix build
+
+## [4.1.0](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-07-03)
+
+* Simplify build system.
+* Minor fix for [Ironsworn/Starforged](https://foundryvtt.com/packages/foundry-ironsworn).
+
+## [4.0.15](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-06-21)
+
+* Fix null error for actor.
 
 ## [4.0.14](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-05-23)
 

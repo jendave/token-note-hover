@@ -1,4 +1,4 @@
-import CONSTANTS from '../constants';
+import CONSTANTS from '../constants.js';
 
 export async function coc7(actor, displayImages, tempContent) {
     if (!actor) {

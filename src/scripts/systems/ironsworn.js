@@ -1,4 +1,4 @@
-import CONSTANTS from '../constants';
+import CONSTANTS from '../constants.js';
 import { processNotes } from "../textUtil.js";
 
 export async function ironsworn(actor, displayImages, tempContent) {
@@ -29,7 +29,7 @@ export async function ironsworn(actor, displayImages, tempContent) {
                 break;
             case "character":
                 if (game.settings.get(CONSTANTS.MODULE_ID, 'displayPC')) {
-                    if (actor.sheet?.constructor.name === "IronswornCharacterSheetV2") {
+                    if (actor.sheet?.constructor.name === "IronswornCharacterSheetV2" || actor.sheet?.constructor.name === "_IronswornCharacterSheetV2") {
                         if (displayImages) {
                             tempContent = await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.biography, {
                                 secrets: actorIsOwner,
@@ -45,7 +45,7 @@ export async function ironsworn(actor, displayImages, tempContent) {
                                 })
                             ).replaceAll(/<img.*>/g, "");
                         }
-                    } else if (actor.sheet?.constructor.name === "StarforgedCharacterSheet") {
+                    } else if (actor.sheet?.constructor.name === "StarforgedCharacterSheet" || actor.sheet?.constructor.name === "_StarforgedCharacterSheet") {
                         if (displayImages) {
                             tempContent = await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.notes, {
                                 secrets: actorIsOwner,
@@ -160,6 +160,23 @@ export async function ironsworn(actor, displayImages, tempContent) {
                 break;
             case "treasury":
                 return await getTreasuryNotes(displayImages, actor, actorIsOwner);
+            case "starforged-custom-oracles.faction":
+                if (displayImages) {
+                    tempContent = await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.description, {
+                        secrets: actorIsOwner,
+                        documents: true,
+                        async: true,
+                    });
+                } else {
+                    tempContent = (
+                        await foundry.applications.ux.TextEditor.enrichHTML(actor.system?.description, {
+                            secrets: actorIsOwner,
+                            documents: true,
+                            async: true,
+                        })
+                    ).replaceAll(/<img.*>/g, "");
+                }
+                break;
             default:
                 tempContent = null;
         }
