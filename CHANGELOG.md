@@ -2,7 +2,7 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
-## [4.1.3](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-08-18)
+## [4.1.3](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-08-22)
 
 * Add Faction Actor type for [Ironsworn & Starforged](https://foundryvtt.com/packages/foundry-ironsworn) from the [Starforged Custom Compendiums](https://foundryvtt.com/packages/starforged-custom-oracles) module.
 
