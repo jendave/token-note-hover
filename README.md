@@ -441,6 +441,9 @@ Then in a Character Actor, use the Template with the following fields:
 | **Shared Sheet** | Notes           |
 | **Starship**     | Notes           |
 | **Treasury**     | Notes           |
+| **Faction**      | Notes (Optional)|
+
+> **Factions** only work if [Starforged Custom Compendiums](https://foundryvtt.com/packages/starforged-custom-oracles) is installed.
 
 ### LANCER
 
