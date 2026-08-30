@@ -456,6 +456,9 @@ Then in a Character Actor, use the Template with the following fields:
 | **Shared Sheet** | Notes           |
 | **Starship**     | Notes           |
 | **Treasury**     | Notes           |
+| **Faction**      | Notes (Optional)|
+
+> **Factions** only work if [Starforged Custom Compendiums](https://foundryvtt.com/packages/starforged-custom-oracles) is installed.
 
 ### LANCER
 
@@ -797,7 +800,7 @@ Please check out my other modules and resources for Ironsworn, Ironsworn: Starfo
 * [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 * [VOID 1680 AM for FoundryVTT](https://foundryvtt.com/packages/void-1680-am)
 * [Ancient Wonders](https://foundryvtt.com/packages/ancient-wonders)
-* [Rise & Shiningstar - An Adventure for Ironsworn: Starforged](https://foundryvtt.com/packages/rise-and-shining-star)
+* [Starforged Adventures](https://foundryvtt.com/packages/rise-and-shining-star)
 * [Roll Table Importer](https://foundryvtt.com/packages/roll-table-importer)
 * [Ironsworn Impacts](https://foundryvtt.com/packages/ironsworn-impacts)
 
