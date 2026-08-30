@@ -2,6 +2,10 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
+## [4.1.5](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-08-31)
+
+* Added support for [Text-Based Actors](https://foundryvtt.com/packages/taf).
+
 ## [4.1.4](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-08-30)
 
 * Added support for upcoming v13 version of [Cyberpunk RED](https://foundryvtt.com/packages/cyberpunk-red-core).

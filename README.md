@@ -109,6 +109,7 @@ Many systems are directly supported by [Token Note Hover](https://foundryvtt.com
 * [Simple Worldbuilding System](#simple-worldbuilding-system)
 * [Star Wars FFG system for Foundry VTT](#star-wars-ffg-system)
 * [Starfinder 1st Edition](#starfinder-1st-edition)
+* [Text-Based Actors](#text-based-actors)
 * [Tormenta20](#tormenta20)
 * [Twodsix - Cepheus \& Traveller](#twodsix---cepheus--traveller)
 * [Universal Tabletop System](#universal-tabletop-system)
@@ -667,6 +668,14 @@ Then in a Character Actor, use the Template with the following fields:
 | **Old-Style NPC**        | Biography & GM Notes |
 | **Starship**             | Notes                |
 | **Vehicle**              | Notes                |
+
+### Text-Based Actors
+
+[Text-Based Actors](https://foundryvtt.com/packages/taf)
+
+| Actor Type | Note Location |
+| ---------- | ------------- |
+| **Player** | Notes         |
 
 ### Tormenta20
 

@@ -44,6 +44,8 @@ import { fallout } from './systems/fallout.js';
 import { cosmereRPG } from './systems/cosmere-rpg.js';
 import { shadowrun5e } from './systems/shadowrun5e.js';
 import { tor2e } from './systems/tor2e.js';
+import { taf } from './systems/taf.js';
+
 /**
  * A HUD extension that shows the Note preview
  *
@@ -246,6 +248,9 @@ export default class TokenNoteHoverHUD extends foundry.applications.hud.BasePlac
         break;
       case 'cyberpunk-red-core':
         tempContent = await cyberpunkRedCore(actor, displayImages);
+        break;
+      case 'taf':
+        tempContent = await taf(actor, displayImages);
         break;
     }
 
