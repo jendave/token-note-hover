@@ -2,9 +2,9 @@
 
 [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
 
-## [New Version](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-xx-xx)
+## [4.1.4](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-08-30)
 
-* Added support for [Cyberpunk RED](https://foundryvtt.com/packages/cyberpunk-red-core)
+* Added support for upcoming v13 version of [Cyberpunk RED](https://foundryvtt.com/packages/cyberpunk-red-core).
 
 ## [4.1.3](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-08-22)
 

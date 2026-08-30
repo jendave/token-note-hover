@@ -80,7 +80,7 @@ Many systems are directly supported by [Token Note Hover](https://foundryvtt.com
 * [Call of Cthulhu 7th edition](#call-of-cthulhu-7th-edition)
 * [Cosmere Roleplaying Game](#cosmere-roleplaying-game)
 * [Custom System Builder](#custom-system-builder)
-* [Cyberpunk RED](https://foundryvtt.com/packages/cyberpunk-red-core)
+* [Cyberpunk RED](#cyberpunk-red)
 * [Cypher System](#cypher-system)
 * [Daggerheart](#daggerheart)
 * [Das Schwarze Auge / The Dark Eye (5th Edition)](#das-schwarze-auge--the-dark-eye-5th-edition)
